@@ -3,6 +3,17 @@
 // Author      : Ethan
 // Version     : Master
 // Copyright   : Ethan @2012
+//		iSampleSize = 189;
+//		iTraitNumber = 9;
+//		step=1.0;
+//
+//		sExpressDataFile = "data/express-66.txt";
+//		sGeneDataFile = "data/gene-66.txt";
+//		sTraitIntervalFile = "data/traitInterval-66.txt";
+//
+//		ifPrintInitDataReport = false;
+//		ifPrintCalReport = false;
+//		ifPrintFinalReport = true;
 // Description : Previewer for Interval Mapping of QTL Analysis
 //============================================================================
 
@@ -323,7 +334,8 @@ double d2r(double x) {
 	return 0.5 * (1 - exp(-2 * x * 0.01) );
 }
 
-double pairQTL(int currentTrait, double u0, double s0, double length, double startPoint, char** _mk, double* y, int sampleSize, int ifLast=0, int ifPrint=VERBOSE_MODE) {
+// 区间QTL分析
+double intervalQTL(int currentTrait, double u0, double s0, double length, double startPoint, char** _mk, double* y, int sampleSize, int ifLast=0, int ifPrint=VERBOSE_MODE) {
 	double r = d2r( length );
 	double r1 = d2r ( startPoint );
 	double r2 = d2r ( length-startPoint );
@@ -351,19 +363,78 @@ double pairQTL(int currentTrait, double u0, double s0, double length, double sta
 	return calculateLOD(gp, sampleSize, y, s0, s1, u0, u1, u2, u3, ifPrint);
 }
 
-int main() {
-	const int iSampleSize = 189;
-	const int iTraitNumber = 9;
+//打印帮助
+void printHelp(char* fileName) {
+	cout<<"Usage:\t" <<fileName <<" [ConfigFileName]" <<endl;
+}
 
-	string sExpressDataFile = "data/express-66.txt";
-	string sGeneDataFile = "data/gene-66.txt";
-	string sTraitIntervalFile = "data/traitInterval-66.txt";
+int main(int args, char* argv[]) {
+	int iSampleSize;
+	int iTraitNumber;
+	double step;
 
-	bool ifPrintInitDataReport = true;
-	bool ifPrintCalReport = false;
-	bool ifPrintFinalReport = true;
+	string sExpressDataFile;
+	string sGeneDataFile;
+	string sTraitIntervalFile;
 
-	double step=1.0;
+	bool ifPrintInitDataReport;
+	bool ifPrintCalReport;
+	bool ifPrintFinalReport;
+
+	if (args==1) {
+		cout<<"Please input the Number of Samples:";
+		cin>>iSampleSize;
+
+		cout<<iSampleSize<<endl<<"Please input the Number of Traits: ";
+		cin>>iTraitNumber;
+
+		cout<<iTraitNumber<<endl<<"Please input the length of step: ";
+		cin>>step;
+
+		cout<<step<<endl<<"Please locate the file of Express Data: ";
+		cin>>sExpressDataFile;
+
+		cout<<sExpressDataFile<<endl<<"Please locate the file of Gene Data: ";
+		cin>>sGeneDataFile;
+
+		cout<<sGeneDataFile<<endl<<"Please locate the file of Trait Interval Data: ";
+		cin>>sTraitIntervalFile;
+
+		cout<<sTraitIntervalFile<<endl<<"Do you want detailed Initialization Report?(0/1) ";
+		cin>>ifPrintInitDataReport;
+
+		cout<<(ifPrintInitDataReport?"True":"False")<<endl<<"Do you want detailed Calculation Report?(0/1) ";
+		cin>>ifPrintCalReport;
+
+		cout<<(ifPrintCalReport?"True":"False")<<endl<<"Do you want detailed Final Report?(0/1) ";
+		cin>>ifPrintFinalReport;
+
+		cout<<(ifPrintFinalReport?"True":"False")<<endl;
+	} else if (args==2){
+		cout <<"Input File:" <<argv[1] <<endl;
+		fstream fin;
+		fin.open(argv[1],ios::in);
+
+		fin >>iSampleSize >>iTraitNumber >>step;
+		fin >>sExpressDataFile;
+		fin >>sGeneDataFile;
+		fin >>sTraitIntervalFile;
+		fin >>ifPrintInitDataReport >>ifPrintCalReport >>ifPrintFinalReport;
+
+		fin.close();
+	} else {
+		printHelp(argv[0]);
+	}
+
+	cout <<"Input Summary:\t" <<iSampleSize <<" samples of " <<iTraitNumber <<" traits in following files:" <<endl;
+	cout <<"Express Data in:        " <<sExpressDataFile <<endl;
+	cout <<"Gene Data in:           " <<sGeneDataFile <<endl;
+	cout <<"Trait Interval Data in: " <<sTraitIntervalFile <<endl;
+	cout <<"Log Detail: " <<endl
+			<<"\tInitialization Report - " <<(ifPrintInitDataReport?"Yes":"No") <<endl
+			<<"\tCalculation Report - " <<(ifPrintCalReport?"Yes":"No") <<endl
+			<<"\tFinal Report - " <<(ifPrintFinalReport?"Yes":"No") <<endl;
+	cout <<"Calculate step:\t" <<step <<endl;
 
 	// 表型数据
 	double* y = new double[iSampleSize];
@@ -381,16 +452,17 @@ int main() {
 	//读取基因型数据文件
 	initGeneData(sGeneDataFile, iSampleSize, iTraitNumber, mk, ifPrintInitDataReport);
 
-	//位点遗传距离，见书115页
+	//读取位点距离数据，来源为见书115页
 	double* traitInterval= new double[iTraitNumber];
 	initIntervalData(sTraitIntervalFile, iTraitNumber-1, traitInterval, ifPrintInitDataReport);
 
+	//逐个位点计算LOD值
 	for (int currentTrait = 0; currentTrait<iTraitNumber-1; currentTrait++) {
 		if (ifPrintFinalReport) {
 			cout<<"---------"<<(currentTrait+1)<<"---("<<traitInterval[currentTrait]<<")--------"<<endl;
 		}
 		for (double startPoint=0.0; startPoint<traitInterval[currentTrait]; startPoint += step) {
-			double LOD = pairQTL(currentTrait, u0, s0, traitInterval[currentTrait], startPoint, mk, y, iSampleSize, currentTrait==iTraitNumber-1, ifPrintCalReport);
+			double LOD = intervalQTL(currentTrait, u0, s0, traitInterval[currentTrait], startPoint, mk, y, iSampleSize, currentTrait==iTraitNumber-1, ifPrintCalReport);
 			if (ifPrintFinalReport) {
 				cout<<"["<<startPoint<<"~"<<(startPoint+step)<<"]:["<<traitInterval[currentTrait]<<"] LOD="<<LOD<<endl;
 			}
