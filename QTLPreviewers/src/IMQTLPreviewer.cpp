@@ -13,14 +13,14 @@
 using namespace std;
 
 #define ACCURACY_REQ 0.000001
-#define VERBOSE_MODE 0
+#define VERBOSE_MODE 1
 
-//¸ÅÂÊÃÜ¶Èº¯Êı
+//æ¦‚ç‡å¯†åº¦å‡½æ•°
 double f(double x, double u, double s2) {
 	return ((1 / sqrt(2 * M_PI * s2)) * exp(-0.5 * (x - u) * (x - u) / s2));
 }
 
-//»ñÈ¡Æ½¾ùÖµ
+//è·å–å¹³å‡å€¼
 double getAverage(double* data, int size) {
 	int i;
 	double sum = 0;
@@ -29,7 +29,7 @@ double getAverage(double* data, int size) {
 	return sum / size;
 }
 
-//»ñÈ¡·½²î
+//è·å–æ–¹å·®
 double getVariance(double* data, int size, double average = 0) {
 	int i;
 	double sum = 0;
@@ -41,7 +41,7 @@ double getVariance(double* data, int size, double average = 0) {
 	return sum / size;
 }
 
-//´òÓ¡±íÏÖĞÍÊı¾İ
+//æ‰“å°è¡¨ç°å‹æ•°æ®
 void printExpressData(double *data, int size, double u0, double s0) {
 	cout<<"=======ExpressData======="<<endl;
 	for (int i = 0; i < size; i++) {
@@ -50,7 +50,7 @@ void printExpressData(double *data, int size, double u0, double s0) {
 	cout <<"u0=" <<u0 <<endl <<"s0=" <<s0 <<endl;
 }
 
-//³õÊ¼»¯±íÏÖĞÍÊı¾İ
+//åˆå§‹åŒ–è¡¨ç°å‹æ•°æ®
 void initExpressData(const string fileName, const int sampleNumber,
 		double* data, double* u0, double* s0, int ifPrint=VERBOSE_MODE) {
 	fstream fin;
@@ -67,7 +67,7 @@ void initExpressData(const string fileName, const int sampleNumber,
 	}
 }
 
-//´òÓ¡»ùÒòÊı¾İ
+//æ‰“å°åŸºå› æ•°æ®
 void printGeneData(char** _data, int sampleNumber, int traitNumber) {
 	char* data = (char*)_data;
 	cout<<"=======MarkData======"<<endl;
@@ -82,7 +82,7 @@ void printGeneData(char** _data, int sampleNumber, int traitNumber) {
 	}
 }
 
-//³õÊ¼»¯»ùÒòĞÍÊı¾İ
+//åˆå§‹åŒ–åŸºå› å‹æ•°æ®
 void initGeneData(string fileName, const int sampleNumber, const int traitNumber,
 		char** _data, int ifPrint=VERBOSE_MODE) {
 	char* data = (char*)_data;
@@ -104,7 +104,7 @@ void initGeneData(string fileName, const int sampleNumber, const int traitNumber
 	}
 }
 
-//´òÓ¡Î»µã¼ä¸ôÊı¾İ
+//æ‰“å°ä½ç‚¹é—´éš”æ•°æ®
 void printIntervalData(double* data, int intervalNumber) {
 	cout<<"=======TraitIntervalData======="<<endl;
 	for (int i = 0; i < intervalNumber; i++) {
@@ -112,7 +112,7 @@ void printIntervalData(double* data, int intervalNumber) {
 	}
 }
 
-//³õÊ¼»¯Î»µã¼ä¸ôÊı¾İ
+//åˆå§‹åŒ–ä½ç‚¹é—´éš”æ•°æ®
 void initIntervalData(string fileName, const int intervalNumber,
 		double* data, int ifPrint=VERBOSE_MODE) {
 	fstream fin;
@@ -127,9 +127,9 @@ void initIntervalData(string fileName, const int intervalNumber,
 	}
 }
 
-//¼ÆËãPij
+//è®¡ç®—Pij
 void calculatePij(double p[9][3], double r, double r1, double r2, int ifPrint=VERBOSE_MODE) {
-	//ÎŞ¸ÉÈÅÊ±F2ÈºÌå QTL »ùÒòÆµÂÊ·Ö²¼Êı×éº¯Êıp Êé107Ò³//
+	//æ— å¹²æ‰°æ—¶F2ç¾¤ä½“ QTL åŸºå› é¢‘ç‡åˆ†å¸ƒæ•°ç»„å‡½æ•°p ä¹¦107é¡µ//
 	p[0][0] = (1 - r1) * (1 - r1) * (1 - r2) * (1 - r2) / ((1 - r) * (1 - r));
 	p[0][1] = 2 * r1 * r2 * (1 - r1) * (1 - r2) / ((1 - r) * (1 - r));
 	p[0][2] = r1 * r1 * r2 * r2 / ((1 - r) * (1 - r));
@@ -171,13 +171,13 @@ void calculatePij(double p[9][3], double r, double r1, double r2, int ifPrint=VE
 	}
 }
 
-//Í³¼ÆGP
+//ç»Ÿè®¡GP
 void calculateGP(double** _gp, char** _mk, int sampleSize, int sampleIndex1, int sampleIndex2, double p[9][3], int ifPrint=VERBOSE_MODE) {
 	double* gp = (double *) _gp;
 	char* mk = (char*)_mk;
 	/*
-	 * ÎÄ¼ş¶Á³öºó±È½ÏBC1ÆµÂÊ·Ö²¼¶øµÃµÄÆµÂÊÊı×égp
-	 * Ethan£º¸ù¾İ»ùÒòĞÍÍ³¼Æ¶ÔÓ¦µÄÊµ¼ÊÊı¾İ¸ÅÂÊ
+	 * æ–‡ä»¶è¯»å‡ºåæ¯”è¾ƒBC1é¢‘ç‡åˆ†å¸ƒè€Œå¾—çš„é¢‘ç‡æ•°ç»„gp
+	 * Ethanï¼šæ ¹æ®åŸºå› å‹ç»Ÿè®¡å¯¹åº”çš„å®é™…æ•°æ®æ¦‚ç‡
 	 */
 
 
@@ -229,7 +229,7 @@ void calculateGP(double** _gp, char** _mk, int sampleSize, int sampleIndex1, int
 	}
 }
 
-//¼ÆËãLOD
+//è®¡ç®—LOD
 double calculateLOD(double** _gp, int sampleSize, double* y, double s0, double s1, double u0, double u1, double u2, double u3, int ifPrint=VERBOSE_MODE) {
 	double* gp = (double*) _gp;
 	double sum1=0, sum2=0;
@@ -243,7 +243,7 @@ double calculateLOD(double** _gp, int sampleSize, double* y, double s0, double s
 	}
 
 	// LOD=log(L0/L)=logL0-LogL
-	// Á¬³ËLog¸ÄÎª¼Ó·¨£¬³ı·¨¸Ä¼õ·¨
+	// è¿ä¹˜Logæ”¹ä¸ºåŠ æ³•ï¼Œé™¤æ³•æ”¹å‡æ³•
 	double lod;
 	lod = sum2 - sum1;
 
@@ -256,13 +256,13 @@ double calculateLOD(double** _gp, int sampleSize, double* y, double s0, double s
 void EMCalculate(double* y, double** _gp, const int sampleSize, double u0, double s0, double* u1, double* u2, double* u3, double* s1, int ifPrint=VERBOSE_MODE) {
 	double *gp = (double*)_gp;
 
-	// u1, u2, u3, sigma2 ¼û113
+	// u1, u2, u3, sigma2 è§113
 	double u10 = u0;
 	double u20 = u0;
 	double u30 = u0;
 	double s10 = s0;//*s1+1;
 
-	// ÊÕÁ²¾«¶ÈÒªÇó
+	// æ”¶æ•›ç²¾åº¦è¦æ±‚
 	int step=1;
 	if (ifPrint) {
 		cout<<"=======EMSteps======"<<endl;
@@ -284,13 +284,13 @@ void EMCalculate(double* y, double** _gp, const int sampleSize, double u0, doubl
 			double gpi3f = *(gp+i*sampleSize+2) * f(y[i], u30, s10);
 			double gpi = gpi1f + gpi2f + gpi3f;
 
-			py1 += gpi1f / gpi;		//PI1µÄÖµ
-			py2 += gpi2f / gpi;	//PI2µÄÖµ
-			py3 += gpi3f / gpi;	//PI3µÄÖµ
+			py1 += gpi1f / gpi;		//PI1çš„å€¼
+			py2 += gpi2f / gpi;	//PI2çš„å€¼
+			py3 += gpi3f / gpi;	//PI3çš„å€¼
 
-			py10 += gpi1f / gpi * y[i];	//PI1ºÍPI1*YIµÄºÍ
-			py20 += gpi2f / gpi * y[i];	//PI2ºÍPI2*YIµÄºÍ
-			py30 += gpi3f / gpi * y[i];	//PI3ºÍPI3*YIµÄºÍ
+			py10 += gpi1f / gpi * y[i];	//PI1å’ŒPI1*YIçš„å’Œ
+			py20 += gpi2f / gpi * y[i];	//PI2å’ŒPI2*YIçš„å’Œ
+			py30 += gpi3f / gpi * y[i];	//PI3å’ŒPI3*YIçš„å’Œ
 
 			py4 += gpi1f / gpi * (y[i] - u10) * (y[i] - u10);
 			py5 += gpi2f / gpi * (y[i] - u20) * (y[i] - u20);
@@ -307,7 +307,7 @@ void EMCalculate(double* y, double** _gp, const int sampleSize, double u0, doubl
 		}
 	}//end-while
 
-	//Êä³öÖÕÖµ
+	//è¾“å‡ºç»ˆå€¼
 	*u1 = u10;
 	*u2 = u20;
 	*u3 = u30;
@@ -318,7 +318,7 @@ void EMCalculate(double* y, double** _gp, const int sampleSize, double u0, doubl
 	}
 }
 
-//TODO d2rÊÇ×öÊ²Ã´µÄ£¿
+//TODO d2ræ˜¯åšä»€ä¹ˆçš„ï¼Ÿ
 double d2r(double x) {
 	return 0.5 * (1 - exp(-2 * x * 0.01) );
 }
@@ -332,11 +332,11 @@ double pairQTL(int currentTrait, double u0, double s0, double length, double sta
 		cout <<"r=" <<r <<"\tr1=" <<r1 <<"\tr2=" <<r2 <<"\td1=" <<startPoint <<"\td2=" <<(length-startPoint) <<"\td=" <<length <<endl;
 	}
 
-	//ÎŞ¸ÉÈÅÊ±F2ÈºÌå QTL »ùÒòÆµÂÊ·Ö²¼Êı×éº¯Êıp Êé107Ò³//
+	//æ— å¹²æ‰°æ—¶F2ç¾¤ä½“ QTL åŸºå› é¢‘ç‡åˆ†å¸ƒæ•°ç»„å‡½æ•°p ä¹¦107é¡µ//
 	double p[9][3];
 	calculatePij(p, r, r1, r2, ifPrint);
 
-	//Í³¼Æ¸÷ÀàĞÍ·Ö²¼±ÈÂÊ
+	//ç»Ÿè®¡å„ç±»å‹åˆ†å¸ƒæ¯”ç‡
 	double **gp = new double*[sampleSize];
 	for (int i=0; i<sampleSize; i++) {
 		gp[i] = new double[3];
@@ -345,7 +345,7 @@ double pairQTL(int currentTrait, double u0, double s0, double length, double sta
 	calculateGP(gp, _mk, sampleSize, currentTrait, currentTrait+1, p, ifPrint);
 
 	double u1=0, u2=0, u3=0, s1=0;
-	// EMËã·¨
+	// EMç®—æ³•
 	EMCalculate(y, gp, sampleSize, u0, s0, &u1, &u2, &u3, &s1, ifPrint);
 
 	return calculateLOD(gp, sampleSize, y, s0, s1, u0, u1, u2, u3, ifPrint);
@@ -355,43 +355,45 @@ int main() {
 	const int iSampleSize = 189;
 	const int iTraitNumber = 9;
 
-	/*
-	string sExpressDataFile = "express-66.txt";
-	string sGeneDataFile = "gene-66.txt";
-	string sTraitIntervalFile = "traitInterval-66.txt";
-	*/
+	string sExpressDataFile = "data/express-66.txt";
+	string sGeneDataFile = "data/gene-66.txt";
+	string sTraitIntervalFile = "data/traitInterval-66.txt";
 
-	string sExpressDataFile = "Debug/express-66.txt";
-	string sGeneDataFile = "Debug/gene-66.txt";
-	string sTraitIntervalFile = "Debug/traitInterval-66.txt";
+	bool ifPrintInitDataReport = true;
+	bool ifPrintCalReport = false;
+	bool ifPrintFinalReport = true;
 
 	double step=1.0;
 
-	// ±íĞÍÊı¾İ
+	// è¡¨å‹æ•°æ®
 	double* y = new double[iSampleSize];
-	// ¶ÁÈ¡±íĞÍÊı¾İÎÄ¼ş£¬²¢¼ÆËã±íĞÍÊı×éµÄ¾ùÖµ¡¢·½²î
+	// è¯»å–è¡¨å‹æ•°æ®æ–‡ä»¶ï¼Œå¹¶è®¡ç®—è¡¨å‹æ•°ç»„çš„å‡å€¼ã€æ–¹å·®
 	double u0=0, s0=0;
-	initExpressData(sExpressDataFile, iSampleSize, y, &u0, &s0);
+	initExpressData(sExpressDataFile, iSampleSize, y, &u0, &s0, ifPrintInitDataReport);
 
-	// »ùÒòĞÍÊı¾İ
+	// åŸºå› å‹æ•°æ®
 	//char mk[TRAIT_NUMBER][SAMPLE_SIZE];
 	char** mk = new char*[iTraitNumber];
 	for (int i=0; i<iTraitNumber; i++) {
 		mk[i] = new char[iSampleSize];
 	}
 
-	//¶ÁÈ¡»ùÒòĞÍÊı¾İÎÄ¼ş
-	initGeneData(sGeneDataFile, iSampleSize, iTraitNumber, mk);
+	//è¯»å–åŸºå› å‹æ•°æ®æ–‡ä»¶
+	initGeneData(sGeneDataFile, iSampleSize, iTraitNumber, mk, ifPrintInitDataReport);
 
-	//Î»µãÒÅ´«¾àÀë£¬¼ûÊé115Ò³
+	//ä½ç‚¹é—ä¼ è·ç¦»ï¼Œè§ä¹¦115é¡µ
 	double* traitInterval= new double[iTraitNumber];
-	initIntervalData(sTraitIntervalFile, iTraitNumber-1, traitInterval);
+	initIntervalData(sTraitIntervalFile, iTraitNumber-1, traitInterval, ifPrintInitDataReport);
 
 	for (int currentTrait = 0; currentTrait<iTraitNumber-1; currentTrait++) {
-		cout<<"---------"<<(currentTrait+1)<<"---("<<traitInterval[currentTrait]<<")--------"<<endl;
+		if (ifPrintFinalReport) {
+			cout<<"---------"<<(currentTrait+1)<<"---("<<traitInterval[currentTrait]<<")--------"<<endl;
+		}
 		for (double startPoint=0.0; startPoint<traitInterval[currentTrait]; startPoint += step) {
-			double LOD = pairQTL(currentTrait, u0, s0, traitInterval[currentTrait], startPoint, mk, y, iSampleSize, currentTrait==iTraitNumber-1);
-			cout<<"["<<startPoint<<"~"<<(startPoint+step)<<"]:["<<traitInterval[currentTrait]<<"] LOD="<<LOD<<endl;
+			double LOD = pairQTL(currentTrait, u0, s0, traitInterval[currentTrait], startPoint, mk, y, iSampleSize, currentTrait==iTraitNumber-1, ifPrintCalReport);
+			if (ifPrintFinalReport) {
+				cout<<"["<<startPoint<<"~"<<(startPoint+step)<<"]:["<<traitInterval[currentTrait]<<"] LOD="<<LOD<<endl;
+			}
 		}
 	}
 	return 1;
