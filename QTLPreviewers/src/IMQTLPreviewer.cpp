@@ -7,6 +7,7 @@
 //============================================================================
 
 #include <iostream>
+#include <fstream>
 #include <math.h>
 
 using namespace std;
@@ -50,14 +51,14 @@ void printExpressData(double *data, int size, double u0, double s0) {
 }
 
 //初始化表现型数据
-void initExpressData(const char* fileName, const int sampleNumber,
+void initExpressData(const string fileName, const int sampleNumber,
 		double* data, double* u0, double* s0, int ifPrint=VERBOSE_MODE) {
-	FILE * fp;
-	int i;
-	fp = fopen(fileName, "r");
-	for (i = 0; i < sampleNumber; i++)
-		fscanf(fp, "%lf", &data[i]);
-	fclose(fp);
+	fstream fin;
+	fin.open(fileName.data(),ios::in);
+	for (int i=0; i<sampleNumber; i++) {
+		fin >> data[i];
+	}
+	fin.close();
 
 	*u0 = getAverage(data, sampleNumber);
 	*s0 = getVariance(data, sampleNumber, *u0);
@@ -75,32 +76,28 @@ void printGeneData(char** _data, int sampleNumber, int traitNumber) {
 		cout<<"["<<i<<"]\t";
 		for (j = 0; j < sampleNumber; j++) {
 			if (j%20==0) cout<<endl <<"[" <<j <<"]";
-			cout<<data+i*sampleNumber+j;
+			cout<<*(data+i*sampleNumber+j);
 		}
 		cout<<endl;
 	}
 }
 
 //初始化基因型数据
-void initGeneData(const char* fileName, const int sampleNumber, const int traitNumber,
+void initGeneData(string fileName, const int sampleNumber, const int traitNumber,
 		char** _data, int ifPrint=VERBOSE_MODE) {
 	char* data = (char*)_data;
-	FILE * fp;
-	int t = 0, s = 0;
-	char c;
+	fstream fin;
+	fin.open(fileName.data(),ios::in);
 
-	fp = fopen(fileName, "r");
+	for (int i=0; i<traitNumber; i++) {
+		string line;
+		getline(fin, line);
 
-	for (t = 0; t < traitNumber; t++) {
-		for (s = 0; s < sampleNumber; s++) {
-			fscanf(fp, "%c",  data+t*sampleNumber+s );
-		}
-		fscanf(fp, "%c", &c);
-		if (c==13) {
-			fscanf(fp, "%c", &c);
+		for (int j=0; j<sampleNumber; j++) {
+			*(data+i*sampleNumber+j) = line[j];
 		}
 	}
-	fclose(fp);
+	fin.close();
 
 	if(ifPrint) {
 		printGeneData(_data, sampleNumber, traitNumber);
@@ -116,14 +113,14 @@ void printIntervalData(double* data, int intervalNumber) {
 }
 
 //初始化位点间隔数据
-void initIntervalData(const char* fileName, const int intervalNumber,
+void initIntervalData(string fileName, const int intervalNumber,
 		double* data, int ifPrint=VERBOSE_MODE) {
-	FILE * fp;
-	int i;
-	fp = fopen(fileName, "r");
-	for (i = 0; i < intervalNumber; i++)
-		fscanf(fp, "%lf", &data[i]);
-	fclose(fp);
+	fstream fin;
+	fin.open(fileName.data(),ios::in);
+	for (int i=0; i<intervalNumber; i++) {
+		fin >> data[i];
+	}
+	fin.close();
 
 	if (ifPrint) {
 		printIntervalData(data, intervalNumber);
@@ -357,9 +354,16 @@ double pairQTL(int currentTrait, double u0, double s0, double length, double sta
 int main() {
 	const int iSampleSize = 189;
 	const int iTraitNumber = 9;
-	const char* sExpressDataFile = "express-66.txt";
-	const char* sGeneDataFile = "gene-66.txt";
-	const char* sTraitIntervalFile = "traitInterval-66.txt";
+
+	/*
+	string sExpressDataFile = "express-66.txt";
+	string sGeneDataFile = "gene-66.txt";
+	string sTraitIntervalFile = "traitInterval-66.txt";
+	*/
+
+	string sExpressDataFile = "Debug/express-66.txt";
+	string sGeneDataFile = "Debug/gene-66.txt";
+	string sTraitIntervalFile = "Debug/traitInterval-66.txt";
 
 	double step=1.0;
 
