@@ -4,13 +4,13 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../src/IMQTLExample.cpp 
+../src/IMQTLPreviewer.cpp 
 
 OBJS += \
-./src/IMQTLExample.o 
+./src/IMQTLPreviewer.o 
 
 CPP_DEPS += \
-./src/IMQTLExample.d 
+./src/IMQTLPreviewer.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
