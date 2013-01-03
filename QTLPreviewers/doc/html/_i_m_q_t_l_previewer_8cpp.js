@@ -15,7 +15,7 @@ var _i_m_q_t_l_previewer_8cpp =
     [ "initExpressData", "_i_m_q_t_l_previewer_8cpp.html#a0c44a8c1cf9461c876d3f0b0c4c1a5f0", null ],
     [ "initGeneData", "_i_m_q_t_l_previewer_8cpp.html#a95c3efd5b3ab2e9e733100b2914f48e4", null ],
     [ "initIntervalData", "_i_m_q_t_l_previewer_8cpp.html#a3a1bfa33f44cf5bbb253a2a967cb9661", null ],
-    [ "intervalQTL", "_i_m_q_t_l_previewer_8cpp.html#a5840bc04e3fd1c45c8e0416a90d1b4e7", null ],
+    [ "intervalQTL", "_i_m_q_t_l_previewer_8cpp.html#ad78544756077d0fc8eda58dbbb6c6c69", null ],
     [ "main", "_i_m_q_t_l_previewer_8cpp.html#a7be7b3f3b810d259483db57fef9b4c4c", null ],
     [ "printExpressData", "_i_m_q_t_l_previewer_8cpp.html#a8fa269669786e8a8a5ba5711a71487d7", null ],
     [ "printGeneData", "_i_m_q_t_l_previewer_8cpp.html#a04be4abaa233224a7396347d25c4e722", null ],

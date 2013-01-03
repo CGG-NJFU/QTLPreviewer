@@ -78,11 +78,11 @@ double getVariance(double* data, int size, double average = 0) {
  * @param s0 统计量sigma平方
  */
 void printExpressData(double *data, int size, double u0, double s0) {
-	cout<<"=======ExpressData======="<<endl;
+	cout << "=======ExpressData=======" << endl;
 	for (int i = 0; i < size; i++) {
-		cout<<"["<<i<<"]\t"<<data[i]<<endl;
+		cout << "[" << i << "]\t" << data[i] << endl;
 	}
-	cout <<"u0=" <<u0 <<endl <<"s0=" <<s0 <<endl;
+	cout << "u0=" << u0 << endl << "s0=" << s0 << endl;
 }
 
 /**
@@ -95,10 +95,10 @@ void printExpressData(double *data, int size, double u0, double s0) {
  * @param ifPrintLog 是否打印日志
  */
 void initExpressData(const string fileName, const int sampleNumber,
-		double* data, double* u0, double* s0, int ifPrintLog=VERBOSE_MODE) {
+		double* data, double* u0, double* s0, int ifPrintLog = VERBOSE_MODE) {
 	fstream fin;
-	fin.open(fileName.data(),ios::in);
-	for (int i=0; i<sampleNumber; i++) {
+	fin.open(fileName.data(), ios::in);
+	for (int i = 0; i < sampleNumber; i++) {
 		fin >> data[i];
 	}
 	fin.close();
@@ -117,16 +117,17 @@ void initExpressData(const string fileName, const int sampleNumber,
  * @param traitNumber 位点数量
  */
 void printGeneData(char** _data, int sampleNumber, int traitNumber) {
-	char* data = (char*)_data;
-	cout<<"=======MarkData======"<<endl;
+	char* data = (char*) _data;
+	cout << "=======MarkData======" << endl;
 	int i, j;
 	for (i = 0; i < traitNumber; i++) {
-		cout<<"["<<i<<"]\t";
+		cout << "[" << i << "]\t";
 		for (j = 0; j < sampleNumber; j++) {
-			if (j%20==0) cout<<endl <<"[" <<j <<"]";
-			cout<<*(data+i*sampleNumber+j);
+			if (j % 20 == 0)
+				cout << endl << "[" << j << "]";
+			cout << *(data + i * sampleNumber + j);
 		}
-		cout<<endl;
+		cout << endl;
 	}
 }
 
@@ -138,23 +139,23 @@ void printGeneData(char** _data, int sampleNumber, int traitNumber) {
  * @param _data 数据数组
  * @param ifPrintLog 是否打印日志
  */
-void initGeneData(string fileName, const int sampleNumber, const int traitNumber,
-		char** _data, int ifPrintLog=VERBOSE_MODE) {
-	char* data = (char*)_data;
+void initGeneData(string fileName, const int sampleNumber,
+		const int traitNumber, char** _data, int ifPrintLog = VERBOSE_MODE) {
+	char* data = (char*) _data;
 	fstream fin;
-	fin.open(fileName.data(),ios::in);
+	fin.open(fileName.data(), ios::in);
 
-	for (int i=0; i<traitNumber; i++) {
+	for (int i = 0; i < traitNumber; i++) {
 		string line;
 		getline(fin, line);
 
-		for (int j=0; j<sampleNumber; j++) {
-			*(data+i*sampleNumber+j) = line[j];
+		for (int j = 0; j < sampleNumber; j++) {
+			*(data + i * sampleNumber + j) = line[j];
 		}
 	}
 	fin.close();
 
-	if(ifPrintLog) {
+	if (ifPrintLog) {
 		printGeneData(_data, sampleNumber, traitNumber);
 	}
 }
@@ -165,9 +166,9 @@ void initGeneData(string fileName, const int sampleNumber, const int traitNumber
  * @param intervalNumber 区间个数
  */
 void printIntervalData(double* data, int intervalNumber) {
-	cout<<"=======TraitIntervalData======="<<endl;
+	cout << "=======TraitIntervalData=======" << endl;
 	for (int i = 0; i < intervalNumber; i++) {
-		cout<<"["<<i<<"]\t"<<data[i]<<endl;
+		cout << "[" << i << "]\t" << data[i] << endl;
 	}
 }
 
@@ -178,11 +179,11 @@ void printIntervalData(double* data, int intervalNumber) {
  * @param data 区间距离数据
  * @param ifPrintLog 是否打印日志
  */
-void initIntervalData(string fileName, const int intervalNumber,
-		double* data, int ifPrintLog=VERBOSE_MODE) {
+void initIntervalData(string fileName, const int intervalNumber, double* data,
+		int ifPrintLog = VERBOSE_MODE) {
 	fstream fin;
-	fin.open(fileName.data(),ios::in);
-	for (int i=0; i<intervalNumber; i++) {
+	fin.open(fileName.data(), ios::in);
+	for (int i = 0; i < intervalNumber; i++) {
 		fin >> data[i];
 	}
 	fin.close();
@@ -200,7 +201,8 @@ void initIntervalData(string fileName, const int intervalNumber,
  * @param r2 遗传距离2
  * @param ifPrintLog 是否打印日志
  */
-void calculatePij(double p[9][3], double r, double r1, double r2, int ifPrintLog=VERBOSE_MODE) {
+void calculatePij(double p[9][3], double r, double r1, double r2,
+		int ifPrintLog = VERBOSE_MODE) {
 	p[0][0] = (1 - r1) * (1 - r1) * (1 - r2) * (1 - r2) / ((1 - r) * (1 - r));
 	p[0][1] = 2 * r1 * r2 * (1 - r1) * (1 - r2) / ((1 - r) * (1 - r));
 	p[0][2] = r1 * r1 * r2 * r2 / ((1 - r) * (1 - r));
@@ -235,9 +237,9 @@ void calculatePij(double p[9][3], double r, double r1, double r2, int ifPrintLog
 			double sum = 0;
 			for (int j = 0; j < 3; j++) {
 				sum += p[i][j];
-				cout<<p[i][j]<<"\t";
+				cout << p[i][j] << "\t";
 			}
-			cout<<sum<<"=1.0"<<endl;
+			cout << sum << "=1.0" << endl;
 		}
 	}
 }
@@ -252,15 +254,16 @@ void calculatePij(double p[9][3], double r, double r1, double r2, int ifPrintLog
  * @param p 分布概率函数
  * @param ifPrintLog 是否打印日志
  */
-void calculateGP(double** _gp, char** _mk, int sampleSize, int sampleIndex1, int sampleIndex2, double p[9][3], int ifPrintLog=VERBOSE_MODE) {
+void calculateGP(double** _gp, char** _mk, int sampleSize, int sampleIndex1,
+		int sampleIndex2, double p[9][3], int ifPrintLog = VERBOSE_MODE) {
 	double* gp = (double *) _gp;
-	char* mk = (char*)_mk;
+	char* mk = (char*) _mk;
 
 	for (int i = 0; i < sampleSize; i++) {
 		int lineNumber = 0;
 
-		char cSample1 = *(mk+sampleIndex1*sampleSize+i);
-		char cSample2 = *(mk+sampleIndex2*sampleSize+i);
+		char cSample1 = *(mk + sampleIndex1 * sampleSize + i);
+		char cSample2 = *(mk + sampleIndex2 * sampleSize + i);
 
 		if (cSample1 == 'A') {
 			if (cSample2 == 'A')
@@ -285,20 +288,19 @@ void calculateGP(double** _gp, char** _mk, int sampleSize, int sampleIndex1, int
 				lineNumber = 8;
 		}
 
-		*(gp+i*sampleSize+0) = p[lineNumber][0];
-		*(gp+i*sampleSize+1) = p[lineNumber][1];
-		*(gp+i*sampleSize+2) = p[lineNumber][2];
+		*(gp + i * sampleSize + 0) = p[lineNumber][0];
+		*(gp + i * sampleSize + 1) = p[lineNumber][1];
+		*(gp + i * sampleSize + 2) = p[lineNumber][2];
 		//cout<<i <<"\t" <<cSample1 <<"\t" <<cSample2 <<"\t" <<lineNumber <<endl;
 	}
 
-
 	if (ifPrintLog) {
-		cout<<"=======GPData======"<<endl;
+		cout << "=======GPData======" << endl;
 		for (int c = 0; c < sampleSize; c++) {
-			cout<<c <<"\t";
+			cout << c << "\t";
 			for (int l = 0; l < 3; l++)
-				cout<<*(gp+c*sampleSize+l) <<"\t";
-			cout<<endl;
+				cout << *(gp + c * sampleSize + l) << "\t";
+			cout << endl;
 		}
 	}
 }
@@ -317,16 +319,18 @@ void calculateGP(double** _gp, char** _mk, int sampleSize, int sampleIndex1, int
  * @param ifPrintLog 是否打印日志
  * @return LOD计分
  */
-double calculateLOD(double** _gp, int sampleSize, double* y, double s0, double s1, double u0, double u1, double u2, double u3, int ifPrintLog=VERBOSE_MODE) {
+double calculateLOD(double** _gp, int sampleSize, double* y, double s0,
+		double s1, double u0, double u1, double u2, double u3, int ifPrintLog =
+				VERBOSE_MODE) {
 	double* gp = (double*) _gp;
-	double sum1=0, sum2=0;
+	double sum1 = 0, sum2 = 0;
 	//cout <<"u0=" <<u0 <<endl <<"s0=" <<s0 <<endl;
 	for (int i = 0; i < sampleSize; i++) {
-		sum1 += log10( f(y[i], u0, s0) );
-		sum2 += log10( *(gp+i*sampleSize+0) * f(y[i], u1, s1)
-				+ *(gp+i*sampleSize+1) * f(y[i], u2, s1)
-				+ *(gp+i*sampleSize+2) * f(y[i], u3, s1)
-			);
+		sum1 += log10(f(y[i], u0, s0));
+		sum2 += log10(
+				*(gp + i * sampleSize + 0) * f(y[i], u1, s1)
+						+ *(gp + i * sampleSize + 1) * f(y[i], u2, s1)
+						+ *(gp + i * sampleSize + 2) * f(y[i], u3, s1));
 	}
 
 	// LOD=log(L0/L)=logL0-LogL
@@ -335,7 +339,7 @@ double calculateLOD(double** _gp, int sampleSize, double* y, double s0, double s
 	lod = sum2 - sum1;
 
 	if (ifPrintLog) {
-		cout<<"sum1="<<sum1<<"\tsum2="<<sum2<<"\tLOD="<<lod<<endl;
+		cout << "sum1=" << sum1 << "\tsum2=" << sum2 << "\tLOD=" << lod << endl;
 	}
 	return lod;
 }
@@ -353,25 +357,25 @@ double calculateLOD(double** _gp, int sampleSize, double* y, double s0, double s
  * @param s1
  * @param ifPrintLog 是否打印日志
  */
-void EMCalculate(double* y, double** _gp, const int sampleSize, double u0, double s0, double* u1, double* u2, double* u3, double* s1, int ifPrintLog=VERBOSE_MODE) {
-	double *gp = (double*)_gp;
+void EMCalculate(double* y, double** _gp, const int sampleSize, double u0,
+		double s0, double* u1, double* u2, double* u3, double* s1,
+		int ifPrintLog = VERBOSE_MODE) {
+	double *gp = (double*) _gp;
 
 	// u1, u2, u3, sigma2 见113
 	double u10 = u0;
 	double u20 = u0;
 	double u30 = u0;
-	double s10 = s0;//*s1+1;
+	double s10 = s0;	//*s1+1;
 
 	// 收敛精度要求
-	int step=1;
+	int step = 1;
 	if (ifPrintLog) {
-		cout<<"=======EMSteps======"<<endl;
-		cout<<"[step]\tu1\tu2\tu3\ts1\n";
+		cout << "=======EMSteps======" << endl;
+		cout << "[step]\tu1\tu2\tu3\ts1\n";
 	}
-	while ( fabs(u10 - *u1) > ACCURACY_REQ ||
-			fabs(u20 - *u2) > ACCURACY_REQ ||
-			fabs(u30 - *u3) > ACCURACY_REQ ||
-			fabs(s10 - *s1) > ACCURACY_REQ) {
+	while (fabs(u10 - *u1) > ACCURACY_REQ || fabs(u20 - *u2) > ACCURACY_REQ
+			|| fabs(u30 - *u3) > ACCURACY_REQ || fabs(s10 - *s1) > ACCURACY_REQ) {
 		double py1 = 0, py10 = 0;
 		double py2 = 0, py20 = 0;
 		double py3 = 0, py30 = 0;
@@ -379,9 +383,9 @@ void EMCalculate(double* y, double** _gp, const int sampleSize, double u0, doubl
 
 		int i;
 		for (i = 0; i < sampleSize; i++) {
-			double gpi1f = *(gp+i*sampleSize+0) * f(y[i], u10, s10);
-			double gpi2f = *(gp+i*sampleSize+1) * f(y[i], u20, s10);
-			double gpi3f = *(gp+i*sampleSize+2) * f(y[i], u30, s10);
+			double gpi1f = *(gp + i * sampleSize + 0) * f(y[i], u10, s10);
+			double gpi2f = *(gp + i * sampleSize + 1) * f(y[i], u20, s10);
+			double gpi3f = *(gp + i * sampleSize + 2) * f(y[i], u30, s10);
 			double gpi = gpi1f + gpi2f + gpi3f;
 
 			py1 += gpi1f / gpi;		//PI1的值
@@ -397,15 +401,20 @@ void EMCalculate(double* y, double** _gp, const int sampleSize, double u0, doubl
 			py6 += gpi3f / gpi * (y[i] - u30) * (y[i] - u30);
 		}
 
-		*u1 = u10; u10 = py10 / py1;
-		*u2 = u20; u20 = py20 / py2;
-		*u3 = u30; u30 = py30 / py3;
-		*s1 = s10; s10 = (py4 + py5 + py6) / sampleSize;
+		*u1 = u10;
+		u10 = py10 / py1;
+		*u2 = u20;
+		u20 = py20 / py2;
+		*u3 = u30;
+		u30 = py30 / py3;
+		*s1 = s10;
+		s10 = (py4 + py5 + py6) / sampleSize;
 
 		if (ifPrintLog) {
-			cout <<"[" <<step++ <<"]\t" <<*u1 <<"\t" <<*u2 <<"\t" <<*u3 <<"\t" <<*s1 <<endl;
+			cout << "[" << step++ << "]\t" << *u1 << "\t" << *u2 << "\t" << *u3
+					<< "\t" << *s1 << endl;
 		}
-	}//end-while
+	}	//end-while
 
 	//输出终值
 	*u1 = u10;
@@ -413,8 +422,9 @@ void EMCalculate(double* y, double** _gp, const int sampleSize, double u0, doubl
 	*u3 = u30;
 	*s1 = s10;
 	if (ifPrintLog) {
-		cout <<endl <<"Finals:" <<endl;
-		cout <<"u1=" <<*u1 <<"\tu2=" <<*u2 <<"\tu3=" <<*u3 <<"\ts1=" <<*s1 <<endl;
+		cout << endl << "Finals:" << endl;
+		cout << "u1=" << *u1 << "\tu2=" << *u2 << "\tu3=" << *u3 << "\ts1="
+				<< *s1 << endl;
 	}
 }
 
@@ -424,7 +434,7 @@ void EMCalculate(double* y, double** _gp, const int sampleSize, double u0, doubl
  * @return 重组率
  */
 double d2rHaldane(double d) {
-	return 0.5 * (1 - exp(-2 * d * 0.01) );
+	return 0.5 * (1 - exp(-2 * d * 0.01));
 }
 
 /**
@@ -445,47 +455,50 @@ double d2r(double x) {
 	return d2rHaldane(x);
 }
 
-// 区间QTL分析
 /**
- *
- * @param currentTrait
- * @param u0
- * @param s0
- * @param length
- * @param startPoint
- * @param _mk
- * @param y
- * @param sampleSize
- * @param ifLast
- * @param ifPrint
+ * 区间QTL分析
+ * @param currentTrait 当前位点序号
+ * @param u0 统计量mu
+ * @param s0 统计量sigma平方
+ * @param length 位点间隔
+ * @param startPoint 开始位置
+ * @param _mk 位点基因型数据
+ * @param y 位点表现型数据
+ * @param sampleSize 样本大小
+ * @param ifPrint 是否打印日志
  * @return
  */
-double intervalQTL(int currentTrait, double u0, double s0, double length, double startPoint, char** _mk, double* y, int sampleSize, int ifLast=0, int ifPrint=VERBOSE_MODE) {
-	double r = d2r( length );
-	double r1 = d2r ( startPoint );
-	double r2 = d2r ( length-startPoint );
+double intervalQTL(int currentTrait, double u0, double s0, double length,
+		double startPoint, char** _mk, double* y, int sampleSize,
+		int ifPrintLog = VERBOSE_MODE) {
+	double r = d2r(length);
+	double r1 = d2r(startPoint);
+	double r2 = d2r(length - startPoint);
 
-	if(ifPrint) {
-		cout <<"r=" <<r <<"\tr1=" <<r1 <<"\tr2=" <<r2 <<"\td1=" <<startPoint <<"\td2=" <<(length-startPoint) <<"\td=" <<length <<endl;
+	if (ifPrintLog) {
+		cout << "r=" << r << "\tr1=" << r1 << "\tr2=" << r2 << "\td1="
+				<< startPoint << "\td2=" << (length - startPoint) << "\td="
+				<< length << endl;
 	}
 
 	//无干扰时F2群体 QTL 基因频率分布数组函数p 书107页//
 	double p[9][3];
-	calculatePij(p, r, r1, r2, ifPrint);
+	calculatePij(p, r, r1, r2, ifPrintLog);
 
 	//统计各类型分布比率
 	double **gp = new double*[sampleSize];
-	for (int i=0; i<sampleSize; i++) {
+	for (int i = 0; i < sampleSize; i++) {
 		gp[i] = new double[3];
 	}
 
-	calculateGP(gp, _mk, sampleSize, currentTrait, currentTrait+1, p, ifPrint);
+	calculateGP(gp, _mk, sampleSize, currentTrait, currentTrait + 1, p,
+			ifPrintLog);
 
-	double u1=0, u2=0, u3=0, s1=0;
+	double u1 = 0, u2 = 0, u3 = 0, s1 = 0;
 	// EM算法
-	EMCalculate(y, gp, sampleSize, u0, s0, &u1, &u2, &u3, &s1, ifPrint);
+	EMCalculate(y, gp, sampleSize, u0, s0, &u1, &u2, &u3, &s1, ifPrintLog);
 
-	return calculateLOD(gp, sampleSize, y, s0, s1, u0, u1, u2, u3, ifPrint);
+	return calculateLOD(gp, sampleSize, y, s0, s1, u0, u1, u2, u3, ifPrintLog);
 }
 
 /**
@@ -493,7 +506,7 @@ double intervalQTL(int currentTrait, double u0, double s0, double length, double
  * @param fileName 文件名
  */
 void printHelp(char* fileName) {
-	cout<<"Usage:\t" <<fileName <<" [ConfigFileName]" <<endl;
+	cout << "Usage:\t" << fileName << " [ConfigFileName]" << endl;
 }
 
 int main(int args, char* argv[]) {
@@ -509,47 +522,52 @@ int main(int args, char* argv[]) {
 	bool ifPrintCalReport;
 	bool ifPrintFinalReport;
 
-	if (args==1) {
+	if (args == 1) {
 		/// 若参数个数为1，为手动模式运行，从操作台读取各个参数。
-		cout<<"Please input the Number of Samples:";
-		cin>>iSampleSize;
+		cout << "Please input the Number of Samples:";
+		cin >> iSampleSize;
 
-		cout<<iSampleSize<<endl<<"Please input the Number of Traits: ";
-		cin>>iTraitNumber;
+		cout << iSampleSize << endl << "Please input the Number of Traits: ";
+		cin >> iTraitNumber;
 
-		cout<<iTraitNumber<<endl<<"Please input the length of step: ";
-		cin>>step;
+		cout << iTraitNumber << endl << "Please input the length of step: ";
+		cin >> step;
 
-		cout<<step<<endl<<"Please locate the file of Express Data: ";
-		cin>>sExpressDataFile;
+		cout << step << endl << "Please locate the file of Express Data: ";
+		cin >> sExpressDataFile;
 
-		cout<<sExpressDataFile<<endl<<"Please locate the file of Gene Data: ";
-		cin>>sGeneDataFile;
+		cout << sExpressDataFile << endl
+				<< "Please locate the file of Gene Data: ";
+		cin >> sGeneDataFile;
 
-		cout<<sGeneDataFile<<endl<<"Please locate the file of Trait Interval Data: ";
-		cin>>sTraitIntervalFile;
+		cout << sGeneDataFile << endl
+				<< "Please locate the file of Trait Interval Data: ";
+		cin >> sTraitIntervalFile;
 
-		cout<<sTraitIntervalFile<<endl<<"Do you want detailed Initialization Report?(0/1) ";
-		cin>>ifPrintInitDataReport;
+		cout << sTraitIntervalFile << endl
+				<< "Do you want detailed Initialization Report?(0/1) ";
+		cin >> ifPrintInitDataReport;
 
-		cout<<(ifPrintInitDataReport?"True":"False")<<endl<<"Do you want detailed Calculation Report?(0/1) ";
-		cin>>ifPrintCalReport;
+		cout << (ifPrintInitDataReport ? "True" : "False") << endl
+				<< "Do you want detailed Calculation Report?(0/1) ";
+		cin >> ifPrintCalReport;
 
-		cout<<(ifPrintCalReport?"True":"False")<<endl<<"Do you want detailed Final Report?(0/1) ";
-		cin>>ifPrintFinalReport;
+		cout << (ifPrintCalReport ? "True" : "False") << endl
+				<< "Do you want detailed Final Report?(0/1) ";
+		cin >> ifPrintFinalReport;
 
-		cout<<(ifPrintFinalReport?"True":"False")<<endl;
-	} else if (args==2){
+		cout << (ifPrintFinalReport ? "True" : "False") << endl;
+	} else if (args == 2) {
 		/// 若参数个树为2，为自动模式，从配置文件读取参数。
-		cout <<"Input File:" <<argv[1] <<endl;
+		cout << "Input File:" << argv[1] << endl;
 		fstream fin;
-		fin.open(argv[1],ios::in);
+		fin.open(argv[1], ios::in);
 
-		fin >>iSampleSize >>iTraitNumber >>step;
-		fin >>sExpressDataFile;
-		fin >>sGeneDataFile;
-		fin >>sTraitIntervalFile;
-		fin >>ifPrintInitDataReport >>ifPrintCalReport >>ifPrintFinalReport;
+		fin >> iSampleSize >> iTraitNumber >> step;
+		fin >> sExpressDataFile;
+		fin >> sGeneDataFile;
+		fin >> sTraitIntervalFile;
+		fin >> ifPrintInitDataReport >> ifPrintCalReport >> ifPrintFinalReport;
 
 		fin.close();
 	} else {
@@ -558,43 +576,54 @@ int main(int args, char* argv[]) {
 	}
 
 	/// 汇总显示各输入参数
-	cout <<"Input Summary:\t" <<iSampleSize <<" samples of " <<iTraitNumber <<" traits in following files:" <<endl;
-	cout <<"Express Data in:        " <<sExpressDataFile <<endl;
-	cout <<"Gene Data in:           " <<sGeneDataFile <<endl;
-	cout <<"Trait Interval Data in: " <<sTraitIntervalFile <<endl;
-	cout <<"Log Detail: " <<endl
-			<<"\tInitialization Report - " <<(ifPrintInitDataReport?"Yes":"No") <<endl
-			<<"\tCalculation Report - " <<(ifPrintCalReport?"Yes":"No") <<endl
-			<<"\tFinal Report - " <<(ifPrintFinalReport?"Yes":"No") <<endl;
-	cout <<"Calculate step:\t" <<step <<endl;
+	cout << "Input Summary:\t" << iSampleSize << " samples of " << iTraitNumber
+			<< " traits in following files:" << endl;
+	cout << "Express Data in:        " << sExpressDataFile << endl;
+	cout << "Gene Data in:           " << sGeneDataFile << endl;
+	cout << "Trait Interval Data in: " << sTraitIntervalFile << endl;
+	cout << "Log Detail: " << endl << "\tInitialization Report - "
+			<< (ifPrintInitDataReport ? "Yes" : "No") << endl
+			<< "\tCalculation Report - " << (ifPrintCalReport ? "Yes" : "No")
+			<< endl << "\tFinal Report - "
+			<< (ifPrintFinalReport ? "Yes" : "No") << endl;
+	cout << "Calculate step:\t" << step << endl;
 
 	/// 读取表型数据文件，并计算表型数组的均值、方差
 	double* y = new double[iSampleSize];
-	double u0=0, s0=0;
-	initExpressData(sExpressDataFile, iSampleSize, y, &u0, &s0, ifPrintInitDataReport);
+	double u0 = 0, s0 = 0;
+	initExpressData(sExpressDataFile, iSampleSize, y, &u0, &s0,
+			ifPrintInitDataReport);
 
 	/// 初始化基因型数据
 	char** mk = new char*[iTraitNumber];
-	for (int i=0; i<iTraitNumber; i++) {
+	for (int i = 0; i < iTraitNumber; i++) {
 		mk[i] = new char[iSampleSize];
 	}
 	/// 读取基因型数据文件
-	initGeneData(sGeneDataFile, iSampleSize, iTraitNumber, mk, ifPrintInitDataReport);
+	initGeneData(sGeneDataFile, iSampleSize, iTraitNumber, mk,
+			ifPrintInitDataReport);
 
 	/// 初始化并读取位点距离数据，来源为见书115页
-	double* traitInterval= new double[iTraitNumber];
-	initIntervalData(sTraitIntervalFile, iTraitNumber-1, traitInterval, ifPrintInitDataReport);
+	double* traitInterval = new double[iTraitNumber];
+	initIntervalData(sTraitIntervalFile, iTraitNumber - 1, traitInterval,
+			ifPrintInitDataReport);
 
 	/// 逐个位点计算LOD值
-	for (int currentTrait = 0; currentTrait<iTraitNumber-1; currentTrait++) {
+	for (int currentTrait = 0; currentTrait < iTraitNumber - 1;
+			currentTrait++) {
 		if (ifPrintFinalReport) {
-			cout<<"---------"<<(currentTrait+1)<<"---("<<traitInterval[currentTrait]<<")--------"<<endl;
+			cout << "---------" << (currentTrait + 1) << "---("
+					<< traitInterval[currentTrait] << ")--------" << endl;
 		}
 		/// 按步长推进计算LOD值
-		for (double startPoint=0.0; startPoint<traitInterval[currentTrait]; startPoint += step) {
-			double LOD = intervalQTL(currentTrait, u0, s0, traitInterval[currentTrait], startPoint, mk, y, iSampleSize, currentTrait==iTraitNumber-1, ifPrintCalReport);
+		for (double startPoint = 0.0; startPoint < traitInterval[currentTrait];
+				startPoint += step) {
+			double LOD = intervalQTL(currentTrait, u0, s0,
+					traitInterval[currentTrait], startPoint, mk, y, iSampleSize, ifPrintCalReport);
 			if (ifPrintFinalReport) {
-				cout<<"["<<startPoint<<"~"<<(startPoint+step)<<"]:["<<traitInterval[currentTrait]<<"] LOD="<<LOD<<endl;
+				cout << "[" << startPoint << "~" << (startPoint + step) << "]:["
+						<< traitInterval[currentTrait] << "] LOD=" << LOD
+						<< endl;
 			}
 		}
 	}
