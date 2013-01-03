@@ -24,14 +24,25 @@
 using namespace std;
 
 #define ACCURACY_REQ 0.000001
-#define VERBOSE_MODE 1
+#define VERBOSE_MODE true
 
-//概率密度函数
+/**
+ * 概率密度函数
+ * @param x 输入
+ * @param u mu
+ * @param s2 sigma平方
+ * @return
+ */
 double f(double x, double u, double s2) {
 	return ((1 / sqrt(2 * M_PI * s2)) * exp(-0.5 * (x - u) * (x - u) / s2));
 }
 
-//获取平均值
+/**
+ * 获取平均值
+ * @param data 浮点数组
+ * @param size 数组尺寸
+ * @return 数组数据的平均值
+ */
 double getAverage(double* data, int size) {
 	int i;
 	double sum = 0;
@@ -40,19 +51,32 @@ double getAverage(double* data, int size) {
 	return sum / size;
 }
 
-//获取方差
+/**
+ * 获取方差
+ * @param data 浮点数组
+ * @param size 数组尺寸
+ * @param average 平均值，默认为0，视为自动计算
+ * @return 数组数据的方差
+ */
 double getVariance(double* data, int size, double average = 0) {
 	int i;
 	double sum = 0;
 	if (0 == average) {
 		average = getAverage(data, size);
 	}
-	for (i = 0; i < size; i++)
-		sum = sum + (data[i] - average) * (data[i] - average);
+	for (i = 0; i < size; i++) {
+		sum += (data[i] - average) * (data[i] - average);
+	}
 	return sum / size;
 }
 
-//打印表现型数据
+/**
+ * 打印样本的表现型数据
+ * @param data 样本表现型数组
+ * @param size 样本大小
+ * @param u0 统计量mu
+ * @param s0 统计量sigma平方
+ */
 void printExpressData(double *data, int size, double u0, double s0) {
 	cout<<"=======ExpressData======="<<endl;
 	for (int i = 0; i < size; i++) {
@@ -61,9 +85,17 @@ void printExpressData(double *data, int size, double u0, double s0) {
 	cout <<"u0=" <<u0 <<endl <<"s0=" <<s0 <<endl;
 }
 
-//初始化表现型数据
+/**
+ * 初始化样本的表现型数据
+ * @param fileName 样本数据文件的文件名
+ * @param sampleNumber 样本大小
+ * @param data 数据数组
+ * @param u0 统计量mu
+ * @param s0 统计量sigma平方
+ * @param ifPrintLog 是否打印日志
+ */
 void initExpressData(const string fileName, const int sampleNumber,
-		double* data, double* u0, double* s0, int ifPrint=VERBOSE_MODE) {
+		double* data, double* u0, double* s0, int ifPrintLog=VERBOSE_MODE) {
 	fstream fin;
 	fin.open(fileName.data(),ios::in);
 	for (int i=0; i<sampleNumber; i++) {
@@ -73,12 +105,17 @@ void initExpressData(const string fileName, const int sampleNumber,
 
 	*u0 = getAverage(data, sampleNumber);
 	*s0 = getVariance(data, sampleNumber, *u0);
-	if (ifPrint) {
+	if (ifPrintLog) {
 		printExpressData(data, sampleNumber, *u0, *s0);
 	}
 }
 
-//打印基因数据
+/**
+ * 打印样本的基因型数据
+ * @param _data 样本基因型数据
+ * @param sampleNumber 样本大小
+ * @param traitNumber 位点数量
+ */
 void printGeneData(char** _data, int sampleNumber, int traitNumber) {
 	char* data = (char*)_data;
 	cout<<"=======MarkData======"<<endl;
@@ -93,9 +130,16 @@ void printGeneData(char** _data, int sampleNumber, int traitNumber) {
 	}
 }
 
-//初始化基因型数据
+/**
+ * 初始化样本的基因型数据
+ * @param fileName 样本数据文件的文件名
+ * @param sampleNumber 样本大小
+ * @param traitNumber 位点数量
+ * @param _data 数据数组
+ * @param ifPrintLog 是否打印日志
+ */
 void initGeneData(string fileName, const int sampleNumber, const int traitNumber,
-		char** _data, int ifPrint=VERBOSE_MODE) {
+		char** _data, int ifPrintLog=VERBOSE_MODE) {
 	char* data = (char*)_data;
 	fstream fin;
 	fin.open(fileName.data(),ios::in);
@@ -110,12 +154,16 @@ void initGeneData(string fileName, const int sampleNumber, const int traitNumber
 	}
 	fin.close();
 
-	if(ifPrint) {
+	if(ifPrintLog) {
 		printGeneData(_data, sampleNumber, traitNumber);
 	}
 }
 
-//打印位点间隔数据
+/**
+ * 打印遗传图谱的遗传区间距离数据
+ * @param data 区间距离数据
+ * @param intervalNumber 区间个数
+ */
 void printIntervalData(double* data, int intervalNumber) {
 	cout<<"=======TraitIntervalData======="<<endl;
 	for (int i = 0; i < intervalNumber; i++) {
@@ -123,9 +171,15 @@ void printIntervalData(double* data, int intervalNumber) {
 	}
 }
 
-//初始化位点间隔数据
+/**
+ * 初始化遗传图谱的遗传区间距离数据
+ * @param fileName 区间距离数据文件的文件名
+ * @param intervalNumber 区间个数
+ * @param data 区间距离数据
+ * @param ifPrintLog 是否打印日志
+ */
 void initIntervalData(string fileName, const int intervalNumber,
-		double* data, int ifPrint=VERBOSE_MODE) {
+		double* data, int ifPrintLog=VERBOSE_MODE) {
 	fstream fin;
 	fin.open(fileName.data(),ios::in);
 	for (int i=0; i<intervalNumber; i++) {
@@ -133,14 +187,20 @@ void initIntervalData(string fileName, const int intervalNumber,
 	}
 	fin.close();
 
-	if (ifPrint) {
+	if (ifPrintLog) {
 		printIntervalData(data, intervalNumber);
 	}
 }
 
-//计算Pij
-void calculatePij(double p[9][3], double r, double r1, double r2, int ifPrint=VERBOSE_MODE) {
-	//无干扰时F2群体 QTL 基因频率分布数组函数p 书107页//
+/**
+ * 无干扰时F2群体QTL基因频率分布数组函数p，见书107页
+ * @param p 基因频率分布数组函数
+ * @param r 整体遗传距离
+ * @param r1 遗传距离1
+ * @param r2 遗传距离2
+ * @param ifPrintLog 是否打印日志
+ */
+void calculatePij(double p[9][3], double r, double r1, double r2, int ifPrintLog=VERBOSE_MODE) {
 	p[0][0] = (1 - r1) * (1 - r1) * (1 - r2) * (1 - r2) / ((1 - r) * (1 - r));
 	p[0][1] = 2 * r1 * r2 * (1 - r1) * (1 - r2) / ((1 - r) * (1 - r));
 	p[0][2] = r1 * r1 * r2 * r2 / ((1 - r) * (1 - r));
@@ -170,7 +230,7 @@ void calculatePij(double p[9][3], double r, double r1, double r2, int ifPrint=VE
 	p[8][1] = p[0][1];
 	p[8][2] = p[0][0];
 
-	if (ifPrint) {
+	if (ifPrintLog) {
 		for (int i = 0; i < 9; i++) {
 			double sum = 0;
 			for (int j = 0; j < 3; j++) {
@@ -182,16 +242,19 @@ void calculatePij(double p[9][3], double r, double r1, double r2, int ifPrint=VE
 	}
 }
 
-//统计GP
-void calculateGP(double** _gp, char** _mk, int sampleSize, int sampleIndex1, int sampleIndex2, double p[9][3], int ifPrint=VERBOSE_MODE) {
+/**
+ * 根据基因型数据统计对应的实际分布概率
+ * @param _gp 实际分布概率
+ * @param _mk 基因型数据数组
+ * @param sampleSize 样本大小
+ * @param sampleIndex1 样本编号1
+ * @param sampleIndex2 样本编号2
+ * @param p 分布概率函数
+ * @param ifPrintLog 是否打印日志
+ */
+void calculateGP(double** _gp, char** _mk, int sampleSize, int sampleIndex1, int sampleIndex2, double p[9][3], int ifPrintLog=VERBOSE_MODE) {
 	double* gp = (double *) _gp;
 	char* mk = (char*)_mk;
-	/*
-	 * 文件读出后比较BC1频率分布而得的频率数组gp
-	 * Ethan：根据基因型统计对应的实际数据概率
-	 */
-
-
 
 	for (int i = 0; i < sampleSize; i++) {
 		int lineNumber = 0;
@@ -229,7 +292,7 @@ void calculateGP(double** _gp, char** _mk, int sampleSize, int sampleIndex1, int
 	}
 
 
-	if (ifPrint) {
+	if (ifPrintLog) {
 		cout<<"=======GPData======"<<endl;
 		for (int c = 0; c < sampleSize; c++) {
 			cout<<c <<"\t";
@@ -240,8 +303,21 @@ void calculateGP(double** _gp, char** _mk, int sampleSize, int sampleIndex1, int
 	}
 }
 
-//计算LOD
-double calculateLOD(double** _gp, int sampleSize, double* y, double s0, double s1, double u0, double u1, double u2, double u3, int ifPrint=VERBOSE_MODE) {
+/**
+ * 利用LOD计分法计算LOD值
+ * @param _gp 实际分布概率
+ * @param sampleSize 样本大小
+ * @param y 表现型数据
+ * @param s0 表现型的统计量sigima平方
+ * @param s1
+ * @param u0 表现型的统计量mu
+ * @param u1
+ * @param u2
+ * @param u3
+ * @param ifPrintLog 是否打印日志
+ * @return LOD计分
+ */
+double calculateLOD(double** _gp, int sampleSize, double* y, double s0, double s1, double u0, double u1, double u2, double u3, int ifPrintLog=VERBOSE_MODE) {
 	double* gp = (double*) _gp;
 	double sum1=0, sum2=0;
 	//cout <<"u0=" <<u0 <<endl <<"s0=" <<s0 <<endl;
@@ -258,13 +334,26 @@ double calculateLOD(double** _gp, int sampleSize, double* y, double s0, double s
 	double lod;
 	lod = sum2 - sum1;
 
-	if (ifPrint) {
+	if (ifPrintLog) {
 		cout<<"sum1="<<sum1<<"\tsum2="<<sum2<<"\tLOD="<<lod<<endl;
 	}
 	return lod;
 }
 
-void EMCalculate(double* y, double** _gp, const int sampleSize, double u0, double s0, double* u1, double* u2, double* u3, double* s1, int ifPrint=VERBOSE_MODE) {
+/**
+ * 利用EM算法迭代计算最大似然估计
+ * @param y 表现型数据
+ * @param _gp 实际分布概率
+ * @param sampleSize 样本大小
+ * @param u0 样本的统计量mu
+ * @param s0 样本的统计量sigma平方
+ * @param u1
+ * @param u2
+ * @param u3
+ * @param s1
+ * @param ifPrintLog 是否打印日志
+ */
+void EMCalculate(double* y, double** _gp, const int sampleSize, double u0, double s0, double* u1, double* u2, double* u3, double* s1, int ifPrintLog=VERBOSE_MODE) {
 	double *gp = (double*)_gp;
 
 	// u1, u2, u3, sigma2 见113
@@ -275,7 +364,7 @@ void EMCalculate(double* y, double** _gp, const int sampleSize, double u0, doubl
 
 	// 收敛精度要求
 	int step=1;
-	if (ifPrint) {
+	if (ifPrintLog) {
 		cout<<"=======EMSteps======"<<endl;
 		cout<<"[step]\tu1\tu2\tu3\ts1\n";
 	}
@@ -313,7 +402,7 @@ void EMCalculate(double* y, double** _gp, const int sampleSize, double u0, doubl
 		*u3 = u30; u30 = py30 / py3;
 		*s1 = s10; s10 = (py4 + py5 + py6) / sampleSize;
 
-		if (ifPrint) {
+		if (ifPrintLog) {
 			cout <<"[" <<step++ <<"]\t" <<*u1 <<"\t" <<*u2 <<"\t" <<*u3 <<"\t" <<*s1 <<endl;
 		}
 	}//end-while
@@ -323,18 +412,54 @@ void EMCalculate(double* y, double** _gp, const int sampleSize, double u0, doubl
 	*u2 = u20;
 	*u3 = u30;
 	*s1 = s10;
-	if (ifPrint) {
+	if (ifPrintLog) {
 		cout <<endl <<"Finals:" <<endl;
 		cout <<"u1=" <<*u1 <<"\tu2=" <<*u2 <<"\tu3=" <<*u3 <<"\ts1=" <<*s1 <<endl;
 	}
 }
 
-//TODO d2r是做什么的？
+/**
+ * Haldane作图函数
+ * @param d 遗传距离
+ * @return 重组率
+ */
+double d2rHaldane(double d) {
+	return 0.5 * (1 - exp(-2 * d * 0.01) );
+}
+
+/**
+ * Kosambi作图函数
+ * @param d 遗传距离
+ * @return 重组率
+ */
+double d2rKosambi(double d) {
+	return 0.5 * tanh(2 * d * 0.01);
+}
+
+/**
+ * 作图函数，默认使用Haldane作图函数
+ * @param x 遗传距离
+ * @return 重组率
+ */
 double d2r(double x) {
-	return 0.5 * (1 - exp(-2 * x * 0.01) );
+	return d2rHaldane(x);
 }
 
 // 区间QTL分析
+/**
+ *
+ * @param currentTrait
+ * @param u0
+ * @param s0
+ * @param length
+ * @param startPoint
+ * @param _mk
+ * @param y
+ * @param sampleSize
+ * @param ifLast
+ * @param ifPrint
+ * @return
+ */
 double intervalQTL(int currentTrait, double u0, double s0, double length, double startPoint, char** _mk, double* y, int sampleSize, int ifLast=0, int ifPrint=VERBOSE_MODE) {
 	double r = d2r( length );
 	double r1 = d2r ( startPoint );
@@ -363,7 +488,10 @@ double intervalQTL(int currentTrait, double u0, double s0, double length, double
 	return calculateLOD(gp, sampleSize, y, s0, s1, u0, u1, u2, u3, ifPrint);
 }
 
-//打印帮助
+/**
+ * 打印帮助信息
+ * @param fileName 文件名
+ */
 void printHelp(char* fileName) {
 	cout<<"Usage:\t" <<fileName <<" [ConfigFileName]" <<endl;
 }
@@ -382,6 +510,7 @@ int main(int args, char* argv[]) {
 	bool ifPrintFinalReport;
 
 	if (args==1) {
+		/// 若参数个数为1，为手动模式运行，从操作台读取各个参数。
 		cout<<"Please input the Number of Samples:";
 		cin>>iSampleSize;
 
@@ -411,6 +540,7 @@ int main(int args, char* argv[]) {
 
 		cout<<(ifPrintFinalReport?"True":"False")<<endl;
 	} else if (args==2){
+		/// 若参数个树为2，为自动模式，从配置文件读取参数。
 		cout <<"Input File:" <<argv[1] <<endl;
 		fstream fin;
 		fin.open(argv[1],ios::in);
@@ -423,9 +553,11 @@ int main(int args, char* argv[]) {
 
 		fin.close();
 	} else {
+		/// 参数个数错误，打印帮助。
 		printHelp(argv[0]);
 	}
 
+	/// 汇总显示各输入参数
 	cout <<"Input Summary:\t" <<iSampleSize <<" samples of " <<iTraitNumber <<" traits in following files:" <<endl;
 	cout <<"Express Data in:        " <<sExpressDataFile <<endl;
 	cout <<"Gene Data in:           " <<sGeneDataFile <<endl;
@@ -436,31 +568,29 @@ int main(int args, char* argv[]) {
 			<<"\tFinal Report - " <<(ifPrintFinalReport?"Yes":"No") <<endl;
 	cout <<"Calculate step:\t" <<step <<endl;
 
-	// 表型数据
+	/// 读取表型数据文件，并计算表型数组的均值、方差
 	double* y = new double[iSampleSize];
-	// 读取表型数据文件，并计算表型数组的均值、方差
 	double u0=0, s0=0;
 	initExpressData(sExpressDataFile, iSampleSize, y, &u0, &s0, ifPrintInitDataReport);
 
-	// 基因型数据
-	//char mk[TRAIT_NUMBER][SAMPLE_SIZE];
+	/// 初始化基因型数据
 	char** mk = new char*[iTraitNumber];
 	for (int i=0; i<iTraitNumber; i++) {
 		mk[i] = new char[iSampleSize];
 	}
-
-	//读取基因型数据文件
+	/// 读取基因型数据文件
 	initGeneData(sGeneDataFile, iSampleSize, iTraitNumber, mk, ifPrintInitDataReport);
 
-	//读取位点距离数据，来源为见书115页
+	/// 初始化并读取位点距离数据，来源为见书115页
 	double* traitInterval= new double[iTraitNumber];
 	initIntervalData(sTraitIntervalFile, iTraitNumber-1, traitInterval, ifPrintInitDataReport);
 
-	//逐个位点计算LOD值
+	/// 逐个位点计算LOD值
 	for (int currentTrait = 0; currentTrait<iTraitNumber-1; currentTrait++) {
 		if (ifPrintFinalReport) {
 			cout<<"---------"<<(currentTrait+1)<<"---("<<traitInterval[currentTrait]<<")--------"<<endl;
 		}
+		/// 按步长推进计算LOD值
 		for (double startPoint=0.0; startPoint<traitInterval[currentTrait]; startPoint += step) {
 			double LOD = intervalQTL(currentTrait, u0, s0, traitInterval[currentTrait], startPoint, mk, y, iSampleSize, currentTrait==iTraitNumber-1, ifPrintCalReport);
 			if (ifPrintFinalReport) {
