@@ -4,13 +4,19 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../src/IMQTLPreviewer.cpp 
+../src/IMQTLPreviewer.cpp \
+../src/QTLUtils.cpp \
+../src/temp.cpp 
 
 OBJS += \
-./src/IMQTLPreviewer.o 
+./src/IMQTLPreviewer.o \
+./src/QTLUtils.o \
+./src/temp.o 
 
 CPP_DEPS += \
-./src/IMQTLPreviewer.d 
+./src/IMQTLPreviewer.d \
+./src/QTLUtils.d \
+./src/temp.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
