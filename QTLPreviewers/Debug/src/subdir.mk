@@ -4,16 +4,19 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../src/IMQTLLogger.cpp \
 ../src/IMQTLPreviewer.cpp \
 ../src/QTLUtils.cpp \
 ../src/temp.cpp 
 
 OBJS += \
+./src/IMQTLLogger.o \
 ./src/IMQTLPreviewer.o \
 ./src/QTLUtils.o \
 ./src/temp.o 
 
 CPP_DEPS += \
+./src/IMQTLLogger.d \
 ./src/IMQTLPreviewer.d \
 ./src/QTLUtils.d \
 ./src/temp.d 

@@ -11,6 +11,8 @@
 #include <ctime>
 #include <string>
 #include <iostream>
+#include <fstream>
+#include <vector>
 #include <math.h>
 
 #define SECOND_TO_MS 1000
@@ -35,18 +37,19 @@ float getTimeStamp();
 //------------- 数学计算 --------------
 //------------------------------------
 /**
- * 获取平均值
- * @param data 浮点数组
- * @param size 数组尺寸
- * @return 数组数据的平均值
+ * 获取向量中一组的算术平均值
+ * @param begin 起始数据
+ * @param end   结尾数据
+ * @return 算数平均值
  */
-template <typename T>
-T getAverage(T* data, int size) {
-	int i;
-	T sum = 0;
-	for (i = 0; i < size; i++)
-		sum += data[i];
-	return sum / (double)size;
+template<class Iterator>
+double getAverage(const Iterator begin, const Iterator end) {
+	Iterator it;
+	double sum = 0;
+	for ( it = begin; it != end; it++) {
+		sum += *it;
+	}
+	return sum/double(end-begin);
 }
 
 /**
@@ -56,16 +59,20 @@ T getAverage(T* data, int size) {
  * @param average 平均值，默认为0，视为自动计算
  * @return 数组数据的方差
  */
-template <typename T>
-T getVariance(T* data, int size, T average) {
-	int i;
-	T sum = 0;
+template <class Iterator>
+double getVariance(const Iterator begin, const Iterator end, const double average) {
+	double a = 0;
 	if (0 == average) {
-		average = getAverage(data, size);
+		a = getAverage(begin, end);
 	}
-	for (i = 0; i < size; i++) {
-		sum += (data[i] - average) * (data[i] - average);
+
+	Iterator it;
+	double sum = 0;
+	int size = 0;
+	for ( it = begin; it != end; it++, size++) {
+		sum += (*it - average) * (*it - average);
 	}
+
 	return sum / (double)size;
 }
 
@@ -87,5 +94,51 @@ void inputValueFromKeyboard(string variableName, T* variableValue) {
 }
 
 int inputBooleanFromKeyboard(string info=NULL);
+
+//-----------------------------------
+//------------- 屏幕输出--------------
+//-----------------------------------
+template <typename T>
+void printVectorData(const vector<T> data, const string title = NULL) {
+	if ( !title.empty() ) {
+		cout << "=======" <<title <<"=======" <<endl;
+	}
+	for (unsigned int i = 0; i < data.size(); i++) {
+		cout << "[" << i << "]\t" << data[i] <<"\n";
+	}
+}
+
+//-----------------------------------
+//------------- 文件输入--------------
+//-----------------------------------
+/**
+ * 从文件读入向量
+ * @param filename 文件名
+ * @param data 向量数据
+ * @param size 向量大小，默认0为自动根据
+ * @return 实际读入向量的大小
+ */
+template <typename T>
+int readFile2Vector(string filename, vector<T>& data, const int size = 0) {
+	fstream fin;
+	fin.open(filename.data(), ios::in);
+
+	if (size != 0) {
+		data = vector<T>(size);
+		for (int i=0; i<size; i++) {
+			fin >> data[i];
+		}
+	} else {
+		data = vector<T>();
+		while (!fin.eof()) {
+			T value;
+			fin >> value;
+			data.push_back(value);
+		}
+	}
+
+	fin.close();
+	return data.size();
+}
 
 #endif /* QTLUTILS_H_ */

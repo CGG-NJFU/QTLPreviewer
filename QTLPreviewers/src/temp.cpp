@@ -21,7 +21,7 @@ inline static void Output(Iterator beg,Iterator end) {
 	copy(beg,end,ostream_iterator<Type>(cout," "));
 }
 
-int tempMain() {
+void testR() {
 	int n=300;
 	float t;
 	vector<Type>v;
@@ -31,7 +31,6 @@ int tempMain() {
 		v.push_back(i+1);
 	}
 	Output(v.begin(),v.end());
-
 
 	cout<<endl;
 
@@ -48,4 +47,45 @@ int tempMain() {
 	cout<<"Reordered:"<<endl;
 	Output(v.begin(),v.end());
 	cout<<endl;
+}
+
+template<class Iterator>
+double getAverageNew(Iterator begin, Iterator end) {
+	Iterator it;
+	double sum = 0;
+	for(it=begin;it!=end;it++) {
+		sum += *it;
+	}
+	return sum/double(end-begin);
+}
+
+int tempMain() {
+	vector<EXPData> expData;
+	fstream fin;
+	fin.open("data/express-66.txt", ios::in);
+	while (!fin.eof()) {
+		EXPData e;
+		fin >> e;
+		expData.push_back(e);
+	}
+
+	EXPData u0 = getAverageNew( expData.begin(), expData.end() );
+	EXPData s0 = getVariance(expData.begin(), expData.end(), u0);
+
+	/*
+	for (int i = 0; i < 189; i++) {
+		EXPData input;
+		fin >> data[i];
+		//data.push_back(s);
+	}
+	*/
+	fin.close();
+
+	cout << "=======ExpressData=======" << endl;
+	for (int i = 0; i < 189; i++) {
+		cout << "[" << i << "]\t" << expData[i] << endl;
+	}
+	cout << "u0=" << u0 << endl << "s0=" << s0 << endl;
+
+	return 0;
 }

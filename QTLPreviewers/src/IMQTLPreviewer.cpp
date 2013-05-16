@@ -32,44 +32,28 @@ double f(double x, double u, double s2) {
 	return ((1 / sqrt(2 * M_PI * s2)) * exp(-0.5 * (x - u) * (x - u) / s2));
 }
 
-
-/**
- * 打印样本的表现型数据
- * @param data 样本表现型数组
- * @param size 样本大小
- * @param u0 统计量mu
- * @param s0 统计量sigma平方
- */
-void printExpressData(EXPData *data, int size, EXPData u0, EXPData s0) {
-	cout << "=======ExpressData=======" << endl;
-	for (int i = 0; i < size; i++) {
-		cout << "[" << i << "]\t" << data[i] << endl;
-	}
-	cout << "u0=" << u0 << endl << "s0=" << s0 << endl;
-}
-
 /**
  * 初始化样本的表现型数据
  * @param fileName 样本数据文件的文件名
  * @param sampleNumber 样本大小
- * @param data 数据数组
+ * @param expData 数据数组
  * @param u0 统计量mu 即平均值
  * @param s0 统计量sigma平方 及方差
  * @param ifPrintLog 是否打印日志
  */
 void initExpressData(const string fileName, const int sampleNumber,
-		EXPData* data, EXPData* u0, EXPData* s0, int ifPrintLog = VERBOSE_MODE) {
-	fstream fin;
-	fin.open(fileName.data(), ios::in);
-	for (int i = 0; i < sampleNumber; i++) {
-		fin >> data[i];
+		vector<EXPData>& expData, EXPData* u0, EXPData* s0, int ifPrintLog = VERBOSE_MODE) {
+	int realsize = readFile2Vector(fileName, expData);
+	if ( sampleNumber != realsize ) {
+		cout <<"Warning: sample size (" <<realsize <<") might be wrong, please check. EXIT." <<endl;
+		exit(0);
 	}
-	fin.close();
 
-	*u0 = getAverage(data, sampleNumber);
-	*s0 = getVariance(data, sampleNumber, *u0);
+	*u0 = getAverage( expData.begin(), expData.end() );
+	*s0 = getVariance( expData.begin(), expData.end(), *u0);
+
 	if (ifPrintLog) {
-		printExpressData(data, sampleNumber, *u0, *s0);
+		printExpressData(expData, *u0, *s0);
 	}
 }
 
@@ -122,35 +106,22 @@ void initGeneData(string fileName, const int sampleNumber,
 }
 
 /**
- * 打印遗传图谱的遗传区间距离数据
- * @param data 区间距离数据
- * @param intervalNumber 区间个数
- */
-void printIntervalData(double* data, int intervalNumber) {
-	cout << "=======TraitIntervalData=======" << endl;
-	for (int i = 0; i < intervalNumber; i++) {
-		cout << "[" << i << "]\t" << data[i] << endl;
-	}
-}
-
-/**
  * 初始化遗传图谱的遗传区间距离数据
  * @param fileName 区间距离数据文件的文件名
  * @param intervalNumber 区间个数
  * @param data 区间距离数据
  * @param ifPrintLog 是否打印日志
  */
-void initIntervalData(string fileName, const int intervalNumber, double* data,
+void initIntervalData(string fileName, const int intervalNumber, vector<double>& data,
 		int ifPrintLog = VERBOSE_MODE) {
-	fstream fin;
-	fin.open(fileName.data(), ios::in);
-	for (int i = 0; i < intervalNumber; i++) {
-		fin >> data[i];
+	int realsize = readFile2Vector(fileName, data);
+	if ( intervalNumber != realsize ) {
+		cout <<"Warning: the number of intervals (" <<realsize <<") might be wrong, please check. EXIT." <<endl;
+		exit(0);
 	}
-	fin.close();
 
 	if (ifPrintLog) {
-		printIntervalData(data, intervalNumber);
+		printIntervalData(data);
 	}
 }
 
@@ -261,9 +232,10 @@ void calculateGP(double** _gp, string* mk, const int sampleSize, const int sampl
  * @param ifPrintLog 是否打印日志
  * @return LOD计分
  */
-double calculateLOD(double** _gp, int sampleSize, EXPData* expData, EXPData s0,
-		EXPData s1, EXPData u0, EXPData u1, EXPData u2, EXPData u3, int ifPrintLog =
-				VERBOSE_MODE) {
+double calculateLOD(double** _gp, const int sampleSize, const vector<EXPData> expData,
+		const EXPData u0, const EXPData s0,
+		const EXPData u1, const EXPData u2, const EXPData u3,const EXPData s1,
+		const int ifPrintLog = VERBOSE_MODE) {
 	double* gp = (double*) _gp;
 	double sum1 = 0, sum2 = 0;
 	//cout <<"u0=" <<u0 <<endl <<"s0=" <<s0 <<endl;
@@ -299,9 +271,10 @@ double calculateLOD(double** _gp, int sampleSize, EXPData* expData, EXPData s0,
  * @param s1
  * @param ifPrintLog 是否打印日志
  */
-void EMCalculate(EXPData* expData, double** _gp, const int sampleSize, EXPData u0,
-		EXPData s0, EXPData* u1, EXPData* u2, EXPData* u3, EXPData* s1,
-		int ifPrintLog = VERBOSE_MODE) {
+void EMCalculate(double** _gp, const int sampleSize, vector<EXPData> expData,
+		const EXPData u0, const EXPData s0,
+		EXPData* u1, EXPData* u2, EXPData* u3, EXPData* s1,
+		const int ifPrintLog = VERBOSE_MODE) {
 	double *gp = (double*) _gp;
 
 	// u1, u2, u3, sigma2 见113
@@ -369,8 +342,6 @@ void EMCalculate(EXPData* expData, double** _gp, const int sampleSize, EXPData u
 				<< *s1 << endl;
 	}
 }
-
-
 
 /**
  * 计算基因型概率
@@ -513,7 +484,7 @@ int calcGeneCP(string geneMatrix[GENE_CP_SIZE], double rMatrix[GENE_CP_SIZE], co
  * @return 返回LOD值
  */
 double intervalQTL(int currentTrait, EXPData u0, EXPData s0, double length,
-		double startPoint, string* mk, EXPData* expData, int sampleSize,
+		double startPoint, string* mk, vector<EXPData> expData, int sampleSize,
 		string f, string m, string q, bool ifUseShortGeneData=false,
 		int ifPrintLog = VERBOSE_MODE) {
 	double r = d2r(length);
@@ -546,9 +517,9 @@ double intervalQTL(int currentTrait, EXPData u0, EXPData s0, double length,
 
 	double u1 = 0, u2 = 0, u3 = 0, s1 = 0;
 	// EM算法
-	EMCalculate(expData, gp, sampleSize, u0, s0, &u1, &u2, &u3, &s1, ifPrintLog);
+	EMCalculate(gp, sampleSize, expData, u0, s0, &u1, &u2, &u3, &s1, ifPrintLog);
 
-	return calculateLOD(gp, sampleSize, expData, s0, s1, u0, u1, u2, u3, ifPrintLog);
+	return calculateLOD(gp, sampleSize, expData, u0, s0, u1, u2, u3, s1, ifPrintLog);
 }
 
 /**
@@ -616,7 +587,7 @@ int mainQTL(int args, char* argv[]) {
 			<< "Calculate step:\t" << step << endl;
 
 	/// 读取表型数据文件，并计算表型数组的均值、方差
-	EXPData* expData = new EXPData[iSampleSize];
+	vector<EXPData> expData(iSampleSize);
 	EXPData u0 = 0, s0 = 0;
 	initExpressData(sExpressDataFile, iSampleSize, expData, &u0, &s0,
 			ifPrintInitDataReport);
@@ -630,7 +601,7 @@ int mainQTL(int args, char* argv[]) {
 	initGeneData(sGeneDataFile, iSampleSize, iTraitNumber, mk, ifPrintInitDataReport);
 
 	/// 初始化并读取位点距离数据，来源为见书115页
-	double* traitInterval = new double[iTraitNumber];
+	vector<double> traitInterval(iTraitNumber);
 	initIntervalData(sTraitIntervalFile, iTraitNumber - 1, traitInterval,
 			ifPrintInitDataReport);
 
@@ -663,6 +634,8 @@ int mainQTL(int args, char* argv[]) {
 }
 
 int main(int args, char* argv[]) {
+	//return tempMain();
+
 	getTimeStamp();
 	int re = mainQTL(args, argv);
 	float t = getTimeStamp();
