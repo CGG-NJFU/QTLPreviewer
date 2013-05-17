@@ -42,7 +42,7 @@ double f(double x, double u, double s2) {
  * @param ifPrintLog 是否打印日志
  */
 void initExpressData(const string fileName, const int sampleNumber,
-		vector<EXPData>& expData, EXPData* u0, EXPData* s0, int ifPrintLog = VERBOSE_MODE) {
+		vector<EXPData>& expData, EXPData* u0, EXPData* s0, const bool ifPrintLog = VERBOSE_MODE) {
 	int realsize = readFile2Vector(fileName, expData);
 	if ( sampleNumber != realsize ) {
 		cout <<"Warning: sample size (" <<realsize <<") might be wrong, please check. EXIT." <<endl;
@@ -58,26 +58,6 @@ void initExpressData(const string fileName, const int sampleNumber,
 }
 
 /**
- * 打印样本的基因型数据
- * @param data 样本基因型数据
- * @param sampleNumber 样本大小
- * @param traitNumber 位点数量
- */
-void printGeneData(string* data, int sampleNumber, int traitNumber) {
-	cout << "=======MarkData======" << endl;
-	int i, j;
-	for (i = 0; i < traitNumber; i++) {
-		cout << "[" << i << "]\t";
-		for (j = 0; j < sampleNumber; j++) {
-			if (j % 20 == 0)
-				cout << endl << "[" << j << "]";
-			cout << data[i][j];
-		}
-		cout << endl;
-	}
-}
-
-/**
  * 初始化样本的基因型数据
  * @param fileName 样本数据文件的文件名
  * @param sampleNumber 样本大小
@@ -85,23 +65,12 @@ void printGeneData(string* data, int sampleNumber, int traitNumber) {
  * @param data 数据数组
  * @param ifPrintLog 是否打印日志
  */
-void initGeneData(string fileName, const int sampleNumber,
-		const int traitNumber, string* data, int ifPrintLog = VERBOSE_MODE) {
-	fstream fin;
-	fin.open(fileName.data(), ios::in);
-
-	for (int i = 0; i < traitNumber; i++) {
-		string line;
-		getline(fin, line);
-
-		for (int j = 0; j < sampleNumber; j++) {
-			data[i][j] = line[j];
-		}
-	}
-	fin.close();
+void initGeneData(const string fileName, const int sampleNumber,
+		const int traitNumber, vector<vector<string> >& data, const bool ifPrintLog = VERBOSE_MODE) {
+	readFile2Matrix(fileName, data);
 
 	if (ifPrintLog) {
-		printGeneData(data, sampleNumber, traitNumber);
+		printGeneData(data);
 	}
 }
 
@@ -112,8 +81,8 @@ void initGeneData(string fileName, const int sampleNumber,
  * @param data 区间距离数据
  * @param ifPrintLog 是否打印日志
  */
-void initIntervalData(string fileName, const int intervalNumber, vector<double>& data,
-		int ifPrintLog = VERBOSE_MODE) {
+void initIntervalData(const string fileName, const int intervalNumber, vector<double>& data,
+		const bool ifPrintLog = VERBOSE_MODE) {
 	int realsize = readFile2Vector(fileName, data);
 	if ( intervalNumber != realsize ) {
 		cout <<"Warning: the number of intervals (" <<realsize <<") might be wrong, please check. EXIT." <<endl;
@@ -130,13 +99,11 @@ void initIntervalData(string fileName, const int intervalNumber, vector<double>&
  * @param input 输入数据
  * @return 转换后的数据
  */
-string HAB2ab(const char input) {
-	switch(input) {
-		case 'H': return "ab";
-		case 'A': return "aa";
-		case 'B': return "bb";
-		default: cout<<input; return NULL;
-	}
+string HAB2ab(const string input) {
+	if (input=="H") return "ab";
+	else if (input=="A") return "aa";
+	else if (input=="B") return "bb";
+	else return NULL;
 }
 
 /**
@@ -147,10 +114,10 @@ string HAB2ab(const char input) {
  * @param ifPrintLog 是否打印日志
  * @return 基因型的条件概率
  */
-double findGeneCP(const string* geneMatrix, const double* rMatrix, const string find, int ifPrintLog = VERBOSE_MODE) {
+double findGeneCP(const vector<string> geneMatrix, const vector<double> rMatrix, const string find, const bool ifPrintLog = VERBOSE_MODE) {
 	double same=0; //该基因型概率之和
 	double all=0; //总概率之和，相当书上表格横行之和
-	for (int i=0;i<GENE_CP_SIZE;i++) {
+	for (unsigned int i=0; i<geneMatrix.size(); i++) {
 		if ( geneMatrix[i].substr(0,GENE_CP_CUT) == find.substr(0,GENE_CP_CUT) ) {
 			if (ifPrintLog) {
 				cout <<geneMatrix[i] <<" added:\t" <<rMatrix[i] <<endl;
@@ -174,7 +141,7 @@ double findGeneCP(const string* geneMatrix, const double* rMatrix, const string 
 
 /**
  * 根据基因型数据统计对应的实际分布概率
- * @param _gp 实际分布概率
+ * @param gp 实际分布概率
  * @param mk 基因型数据数组
  * @param sampleSize 样本大小
  * @param sampleIndex1 样本编号1
@@ -184,26 +151,27 @@ double findGeneCP(const string* geneMatrix, const double* rMatrix, const string 
  * @param ifUseShortGeneData 是否使用短基因表示
  * @param ifPrintLog 是否打印日志
  */
-void calculateGP(double** _gp, string* mk, const int sampleSize, const int sampleIndex1,
-		const int sampleIndex2, const string* geneMatrix, const double* rMatrix, bool ifUseShortGeneData, int ifPrintLog = VERBOSE_MODE) {
-	double* gp = (double *) _gp;
-
+void calculateGP(vector<vector<double> >& gp, const vector<vector<string> >& mk, const string qtlGene, const int sampleSize, const int sampleIndex1,
+		const int sampleIndex2, const vector<string>& geneMatrix, const vector<double>& rMatrix, const bool ifUseShortGeneData = false, const bool ifPrintLog = VERBOSE_MODE) {
 	for (int i = 0; i < sampleSize; i++) {
-		//亲本的基因型
-		//TODO 修正，这里应该是string
-		char cSample1 = mk[sampleIndex1][i];
-		char cSample2 = mk[sampleIndex2][i];
+		string qtl[3];
+		qtl[0] = qtlGene[0]+qtlGene[0]; //"QQ"
+		qtl[1] = qtlGene[0]+qtlGene[1]; //"Qq"
+		qtl[2] = qtlGene[1]+qtlGene[1]; //"qq"
 
 		string gene;
-		if (ifUseShortGeneData) {
-			gene = HAB2ab(cSample1)+HAB2ab(cSample2);
-		} else {
-			gene = string(cSample1,1)+string(cSample2,1);
-		}
-		string qtl[3] = {"QQ", "Qq", "qq" };
 
+		//亲本的基因型
+		string sample1 = mk[sampleIndex1][i];
+		string sample2 = mk[sampleIndex2][i];
+
+		if (ifUseShortGeneData) {
+			gene = HAB2ab(sample1)+HAB2ab(sample2);
+		} else {
+			gene = sample1 + sample2;
+		}
 		for (int j=0; j<3; j++) {
-			*(gp + i * sampleSize + j) = findGeneCP(geneMatrix, rMatrix, gene+qtl[j], ifPrintLog);
+			gp[i][j] = findGeneCP(geneMatrix, rMatrix, gene+qtl[j], ifPrintLog);
 		}
 	}
 
@@ -212,7 +180,7 @@ void calculateGP(double** _gp, string* mk, const int sampleSize, const int sampl
 		for (int c = 0; c < sampleSize; c++) {
 			cout << c << "\t";
 			for (int l = 0; l < 3; l++)
-				cout << *(gp + c * sampleSize + l) << "\t";
+				cout << gp[c][l] << "\t";
 			cout << endl;
 		}
 	}
@@ -232,19 +200,18 @@ void calculateGP(double** _gp, string* mk, const int sampleSize, const int sampl
  * @param ifPrintLog 是否打印日志
  * @return LOD计分
  */
-double calculateLOD(double** _gp, const int sampleSize, const vector<EXPData> expData,
+double calculateLOD(vector<vector<double> > gp, const int sampleSize, const vector<EXPData> expData,
 		const EXPData u0, const EXPData s0,
-		const EXPData u1, const EXPData u2, const EXPData u3,const EXPData s1,
-		const int ifPrintLog = VERBOSE_MODE) {
-	double* gp = (double*) _gp;
+		const EXPData u1, const EXPData u2, const EXPData u3, const EXPData s1,
+		const bool ifPrintLog = VERBOSE_MODE) {
 	double sum1 = 0, sum2 = 0;
 	//cout <<"u0=" <<u0 <<endl <<"s0=" <<s0 <<endl;
 	for (int i = 0; i < sampleSize; i++) {
 		sum1 += log10(f(expData[i], u0, s0));
 		sum2 += log10(
-				*(gp + i * sampleSize + 0) * f(expData[i], u1, s1)
-						+ *(gp + i * sampleSize + 1) * f(expData[i], u2, s1)
-						+ *(gp + i * sampleSize + 2) * f(expData[i], u3, s1));
+				gp[i][0] * f(expData[i], u1, s1)
+						+ gp[i][1] * f(expData[i], u2, s1)
+						+ gp[i][2] * f(expData[i], u3, s1));
 	}
 
 	// LOD=log(L0/L)=logL0-LogL
@@ -261,7 +228,7 @@ double calculateLOD(double** _gp, const int sampleSize, const vector<EXPData> ex
 /**
  * 利用EM算法迭代计算最大似然估计
  * @param expData 表现型数据
- * @param _gp 实际分布概率
+ * @param gp 实际分布概率
  * @param sampleSize 样本大小
  * @param u0 样本的统计量mu
  * @param s0 样本的统计量sigma平方
@@ -271,12 +238,9 @@ double calculateLOD(double** _gp, const int sampleSize, const vector<EXPData> ex
  * @param s1
  * @param ifPrintLog 是否打印日志
  */
-void EMCalculate(double** _gp, const int sampleSize, vector<EXPData> expData,
-		const EXPData u0, const EXPData s0,
-		EXPData* u1, EXPData* u2, EXPData* u3, EXPData* s1,
-		const int ifPrintLog = VERBOSE_MODE) {
-	double *gp = (double*) _gp;
-
+void EMCalculate(const vector<vector<double> >& gp, const int sampleSize, const vector<EXPData> expData,
+		const EXPData u0, const EXPData s0, EXPData* u1, EXPData* u2, EXPData* u3, EXPData* s1,
+		const bool ifPrintLog = VERBOSE_MODE) {
 	// u1, u2, u3, sigma2 见113
 	EXPData u10 = u0;
 	EXPData u20 = u0;
@@ -298,9 +262,9 @@ void EMCalculate(double** _gp, const int sampleSize, vector<EXPData> expData,
 
 		int i;
 		for (i = 0; i < sampleSize; i++) {
-			double gpi1f = *(gp + i * sampleSize + 0) * f(expData[i], u10, s10);
-			double gpi2f = *(gp + i * sampleSize + 1) * f(expData[i], u20, s10);
-			double gpi3f = *(gp + i * sampleSize + 2) * f(expData[i], u30, s10);
+			double gpi1f = gp[i][0] * f(expData[i], u10, s10);
+			double gpi2f = gp[i][1] * f(expData[i], u20, s10);
+			double gpi3f = gp[i][2] * f(expData[i], u30, s10);
 			double gpi = gpi1f + gpi2f + gpi3f;
 
 			py1 += gpi1f / gpi;	//PI1的值
@@ -352,12 +316,14 @@ void EMCalculate(double** _gp, const int sampleSize, vector<EXPData> expData,
  * @param zeta 符合系数，默认为1
  * @return 基因型概率
  */
-double calcCross(bitset<GENE_CP_BIT> geneBit, double r1, double r2, double r=0, double zeta=1) {
+double calcCross(const bitset<GENE_CP_BIT> geneBit,
+		const double r1, const double r2, const double r=0, const double zeta=1) {
 	if (geneBit.size()!=GENE_CP_BIT) return 0;
 
 	double r12 = r1*r2*zeta;
+	double r0 = r;
 	if (r==0) {
-		r = r1+r2-2*r12;
+		r0 = r1+r2-2*r12;
 	}
 
 	// 配子产生的概率，见书105页
@@ -380,43 +346,16 @@ double calcCross(bitset<GENE_CP_BIT> geneBit, double r1, double r2, double r=0, 
 }
 
 /**
- * 打印基因型条件概率分布全数据
- * @param geneMatrix 基因型
- * @param rMatrix 条件概率
- */
-void printGeneCP(string geneMatrix[GENE_CP_SIZE], double rMatrix[GENE_CP_SIZE]) {
-	cout <<"1122:12 ->\t1122:12\tConditional Probability\n";
-	for (int i=0; i<GENE_CP_SIZE; i++) {
-		bitset<4> bs_up(i/GENE_CP_CUT);
-		bitset<2> bs_down(i%GENE_CP_CUT);
-		cout <<bs_up <<":" <<bs_down <<" -> \t"
-				<<geneMatrix[i].substr(0,GENE_CP_CUT) <<":" << geneMatrix[i].substr(GENE_CP_CUT,2) <<"\t"
-				<<rMatrix[i] <<endl;
-	}
-}
-
-/**
- * 重排一个字符串内字符，如bdcae重排为abcde
- * @param input 需要重排的字符串
- * @return
- */
-string reorderStr(string input) {
-	sort(input.begin(), input.end());
-	return input;
-}
-
-/**
  * 重排基因位顺序，如ba被重排为ab
  * @param geneMatrix 基因型数组
  * @return 成功运行返回1
  */
-int reorderGene(string geneMatrix[GENE_CP_SIZE]) {
-	for (int i=0; i<GENE_CP_SIZE; i++) {
+void reorderGene(vector<string>& geneMatrix) {
+	for (unsigned int i=0; i<geneMatrix.size(); i++) {
 			geneMatrix[i] = reorderStr(geneMatrix[i].substr(0,2)) +
 					reorderStr(geneMatrix[i].substr(2,2)) +
 					reorderStr(geneMatrix[i].substr(4,2));
 	}
-	return 1;
 }
 
 /**
@@ -434,16 +373,19 @@ int reorderGene(string geneMatrix[GENE_CP_SIZE]) {
  * @param ifPrintLog 是否打印日志
  * @return 成功运行则返回1
  */
-int calcGeneCP(string geneMatrix[GENE_CP_SIZE], double rMatrix[GENE_CP_SIZE], const string f, const string m, const string q, double r1, double r2, double r=0, double zeta=1, bool ifReorder=true, int ifPrintLog = VERBOSE_MODE) {
-	for (int i=0; i<GENE_CP_SIZE; i++) {
+int calcGeneCP(vector<string> geneMatrix, vector<double> rMatrix,
+		const string f, const string m, const string q,
+		const double r1, const double r2, const double r=0, const double zeta=1,
+		const bool ifReorder=true, const bool ifPrintLog = VERBOSE_MODE) {
+	for (unsigned int i=0; i<geneMatrix.size(); i++) {
 		bitset<4> bs_fm(i/GENE_CP_CUT); //前4位为亲本基因型
 		bitset<2> bs_qtl(i%GENE_CP_CUT); //后2位为QTL基因型
 
 		int fGene = bs_fm[3]*4 + bs_qtl[1]*2 + bs_fm[1]; //父本基因型
-		int qGene = bs_fm[2]*4 + bs_qtl[0]*2 + bs_fm[0]; //母本基因型
+		int mGene = bs_fm[2]*4 + bs_qtl[0]*2 + bs_fm[0]; //母本基因型
 
 		bitset<3> bs_up(fGene);
-		bitset<3> bs_down(qGene);
+		bitset<3> bs_down(mGene);
 
 		rMatrix[i] = calcCross(bs_up, r1, r2, r, zeta) * calcCross(bs_down, r1, r2, r, zeta);
 
@@ -483,10 +425,10 @@ int calcGeneCP(string geneMatrix[GENE_CP_SIZE], double rMatrix[GENE_CP_SIZE], co
  * @param ifPrintLog 是否打印日志
  * @return 返回LOD值
  */
-double intervalQTL(int currentTrait, EXPData u0, EXPData s0, double length,
-		double startPoint, string* mk, vector<EXPData> expData, int sampleSize,
-		string f, string m, string q, bool ifUseShortGeneData=false,
-		int ifPrintLog = VERBOSE_MODE) {
+double intervalQTL(const int currentTrait, const EXPData u0, const EXPData s0, const double length,
+		const double startPoint, const vector<vector<string> >& mk, const vector<EXPData> expData, const int sampleSize,
+		const string f, const string m, const string q, const bool ifUseShortGeneData=false,
+		const bool ifPrintLog = VERBOSE_MODE) {
 	double r = d2r(length);
 	double r1 = d2r(startPoint);
 	double r2 = d2r(length - startPoint);
@@ -497,23 +439,14 @@ double intervalQTL(int currentTrait, EXPData u0, EXPData s0, double length,
 				<< length << endl;
 	}
 
-	//不再使用该方法
-	//无干扰时F2群体 QTL 基因频率分布数组函数p 书107页//
-	//double p[9][3];
-	//calculatePij(p, r, r1, r2, ifPrintLog);
-
 	//计算基因型条件概率分布全数据，相当于生成书107页表
-	double* rMatrix = new double[GENE_CP_SIZE];
-	string* geneMatrix = new string[GENE_CP_SIZE];
+	vector<double> rMatrix(GENE_CP_SIZE);
+	vector<string> geneMatrix(GENE_CP_SIZE);
 	calcGeneCP(geneMatrix, rMatrix, f, m, q, r1, r2, r, 1, true, ifPrintLog);
 
 	//统计各类型分布比率
-	double **gp = new double*[sampleSize];
-	for (int i = 0; i < sampleSize; i++) {
-		gp[i] = new double[3];
-	}
-
-	calculateGP(gp, mk, sampleSize, currentTrait, currentTrait + 1, geneMatrix, rMatrix, ifUseShortGeneData, ifPrintLog);
+	vector<vector<double> > gp = vector<vector<double> >(sampleSize, vector<double>(3));
+	calculateGP(gp, mk, q, sampleSize, currentTrait, currentTrait + 1, geneMatrix, rMatrix, ifUseShortGeneData, ifPrintLog);
 
 	double u1 = 0, u2 = 0, u3 = 0, s1 = 0;
 	// EM算法
@@ -526,7 +459,7 @@ double intervalQTL(int currentTrait, EXPData u0, EXPData s0, double length,
  * 打印帮助信息
  * @param fileName 文件名
  */
-void printHelp(char* fileName) {
+void printHelp(const string fileName) {
 	cout << "Usage:\t" << fileName << " [ConfigFileName]" << endl;
 }
 
@@ -592,12 +525,9 @@ int mainQTL(int args, char* argv[]) {
 	initExpressData(sExpressDataFile, iSampleSize, expData, &u0, &s0,
 			ifPrintInitDataReport);
 
-	/// 初始化基因型数据
-	string* mk = new string[iTraitNumber];
-	for (int i = 0; i < iTraitNumber; i++) {
-		mk[i] = string(iSampleSize,' ');
-	}
-	/// 读取基因型数据文件
+	/// 初始化基因型数据并读取基因型数据文件
+	vector<vector<string> > mk;
+	mk = vector<vector<string> >(iTraitNumber, vector<string>(iSampleSize, "  "));
 	initGeneData(sGeneDataFile, iSampleSize, iTraitNumber, mk, ifPrintInitDataReport);
 
 	/// 初始化并读取位点距离数据，来源为见书115页
@@ -609,7 +539,7 @@ int mainQTL(int args, char* argv[]) {
 	string fGene = "abab";
 	string mGene = "abab";
 	string qGene = "Qq";
-	bool ifUseShortGeneData = true;
+	bool ifUseShortGeneData = false;
 
 	/// 逐个位点计算LOD值
 	for (int currentTrait = 0; currentTrait < iTraitNumber - 1;

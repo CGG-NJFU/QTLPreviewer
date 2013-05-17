@@ -13,6 +13,8 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <Iterator>
+#include <bitset>
 #include <math.h>
 
 #define SECOND_TO_MS 1000
@@ -22,11 +24,17 @@ typedef double EXPData; //表现型数据类型
 using namespace std;
 
 //---------------------------------
+//----------- 字符串函数 -----------
+//---------------------------------
+string reorderStr(const string input);
+
+//---------------------------------
 //----------- 遗传学函数 -----------
 //---------------------------------
-double d2r(double x);
-double d2rKosambi(double d);
-double d2rHaldane(double d);
+double d2r(const double x);
+double d2rKosambi(const double d);
+double d2rHaldane(const double d);
+//vector<string> generateAllGeneType(const string inputGene);
 
 //---------------------------------
 //------------- 时间 --------------
@@ -139,6 +147,27 @@ int readFile2Vector(string filename, vector<T>& data, const int size = 0) {
 
 	fin.close();
 	return data.size();
+}
+
+/**
+ * 从文件读入矩阵
+ * @param filename 文件名
+ * @param m 矩阵
+ * @return
+ */
+template <typename T>
+void readFile2Matrix(const string filename, vector< vector<T> >& m) {
+	fstream fin;
+	fin.open(filename.data(), ios::in);
+
+	for (unsigned int i=0; i<m.size(); i++) {
+		for (unsigned int j=0; j<m[i].size(); j++) {
+			T in;
+			fin >> in;
+			m[i][j] = in;
+		}
+	}
+	fin.close();
 }
 
 #endif /* QTLUTILS_H_ */

@@ -25,3 +25,36 @@ void printExpressData(const vector<EXPData> data, const EXPData u0, const EXPDat
 void printIntervalData(const vector<double> data) {
 	printVectorData(data, "TraitIntervalData");
 }
+
+/**
+ * 打印样本的基因型数据
+ * @param data 样本基因型数据
+ * @param sampleNumber 样本大小
+ * @param traitNumber 位点数量
+ */
+void printGeneData(const vector<vector<string> > data) {
+	cout << "=======MarkData======" << endl;
+	for (unsigned int i=0; i<data.size(); i++) {
+		cout <<"[" <<i <<"(" <<data[i].size() <<")" <<"]" <<"\t";
+		for (unsigned int j=0; j<data[i].size(); j++ ) {
+			cout <<data[i][j] <<" ";
+		}
+		cout <<endl;
+	}
+}
+
+/**
+ * 打印基因型条件概率分布全数据
+ * @param geneMatrix 基因型
+ * @param rMatrix 条件概率
+ */
+void printGeneCP(const vector<string>& geneMatrix, const vector<double> rMatrix) {
+	cout <<"ffmm:fm ->\tffmm:fm\tConditional Probability\n";
+	for (unsigned int i=0; i<geneMatrix.size(); i++) {
+		bitset<4> bs_up(i/4);  ///前四位为亲代基因型
+		bitset<2> bs_down(i%4); ///后二位为子代基因型
+		cout <<bs_up <<":" <<bs_down <<" -> \t"
+				<<geneMatrix[i].substr(0,4) <<":" << geneMatrix[i].substr(4,2) <<"\t"
+				<<rMatrix[i] <<endl;
+	}
+}

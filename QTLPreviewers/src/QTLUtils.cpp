@@ -31,7 +31,7 @@ int inputBooleanFromKeyboard(string info) {
  * @param d 遗传距离
  * @return 重组率
  */
-double d2rHaldane(double d) {
+double d2rHaldane(const double d) {
 	return 0.5 * (1 - exp(-2 * d * 0.01));
 }
 
@@ -40,7 +40,7 @@ double d2rHaldane(double d) {
  * @param d 遗传距离
  * @return 重组率
  */
-double d2rKosambi(double d) {
+double d2rKosambi(const double d) {
 	return 0.5 * tanh(2 * d * 0.01);
 }
 
@@ -49,6 +49,25 @@ double d2rKosambi(double d) {
  * @param x 遗传距离
  * @return 重组率
  */
-double d2r(double x) {
+double d2r(const double x) {
 	return d2rHaldane(x);
+}
+
+//vector<string> generateAllGeneType(const string inputGene) {
+//	vector<string> re(3);
+//	re[0] = inputGene[0]+inputGene[0];
+//	re[1] = inputGene[0]+inputGene[1];
+//	re[2] = inputGene[1]+inputGene[1];
+//	return re;
+//}
+
+/**
+ * 重排一个字符串内字符，如bdcae重排为abcde
+ * @param input 需要重排的字符串
+ * @return
+ */
+string reorderStr(const string input) {
+	string re = input;
+	sort(re.begin(), re.end());
+	return re;
 }

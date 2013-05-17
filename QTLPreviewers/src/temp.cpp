@@ -60,32 +60,15 @@ double getAverageNew(Iterator begin, Iterator end) {
 }
 
 int tempMain() {
-	vector<EXPData> expData;
-	fstream fin;
-	fin.open("data/express-66.txt", ios::in);
-	while (!fin.eof()) {
-		EXPData e;
-		fin >> e;
-		expData.push_back(e);
-	}
+	vector<vector<string> > m;
+	readFile2Matrix("data/geneFull-66.txt", m);
 
-	EXPData u0 = getAverageNew( expData.begin(), expData.end() );
-	EXPData s0 = getVariance(expData.begin(), expData.end(), u0);
-
-	/*
-	for (int i = 0; i < 189; i++) {
-		EXPData input;
-		fin >> data[i];
-		//data.push_back(s);
+	ostream_iterator<string> os(cout, " ");
+	for (unsigned int i=0; i<m.size(); i++) {
+		cout <<i <<"\t";
+		copy(m[i].begin() ,m[i].end(),os);
+		cout <<endl;
 	}
-	*/
-	fin.close();
-
-	cout << "=======ExpressData=======" << endl;
-	for (int i = 0; i < 189; i++) {
-		cout << "[" << i << "]\t" << expData[i] << endl;
-	}
-	cout << "u0=" << u0 << endl << "s0=" << s0 << endl;
 
 	return 0;
 }
