@@ -154,22 +154,23 @@ double findGeneCP(const vector<string> geneMatrix, const vector<double> rMatrix,
 void calculateGP(vector<vector<double> >& gp, const vector<vector<string> >& mk, const string qtlGene, const int sampleSize, const int sampleIndex1,
 		const int sampleIndex2, const vector<string>& geneMatrix, const vector<double>& rMatrix, const bool ifUseShortGeneData = false, const bool ifPrintLog = VERBOSE_MODE) {
 	for (int i = 0; i < sampleSize; i++) {
-		string qtl[3];
-		qtl[0] = qtlGene[0]+qtlGene[0]; //"QQ"
-		qtl[1] = qtlGene[0]+qtlGene[1]; //"Qq"
-		qtl[2] = qtlGene[1]+qtlGene[1]; //"qq"
+		vector<string> qtl(3);
+		qtl[0] = qtlGene.substr(0,1)+qtlGene.substr(0,1); //"QQ"
+		qtl[1] = qtlGene.substr(0,1)+qtlGene.substr(1,1); //"Qq"
+		qtl[2] = qtlGene.substr(1,1)+qtlGene.substr(1,1); //"qq"
 
-		string gene;
-
-		//亲本的基因型
+		///获取亲本的基因型
 		string sample1 = mk[sampleIndex1][i];
 		string sample2 = mk[sampleIndex2][i];
 
+		///拼接亲本基因型字符串
+		string gene;
 		if (ifUseShortGeneData) {
 			gene = HAB2ab(sample1)+HAB2ab(sample2);
 		} else {
 			gene = sample1 + sample2;
 		}
+		///计算实际分布概率
 		for (int j=0; j<3; j++) {
 			gp[i][j] = findGeneCP(geneMatrix, rMatrix, gene+qtl[j], ifPrintLog);
 		}
@@ -200,7 +201,7 @@ void calculateGP(vector<vector<double> >& gp, const vector<vector<string> >& mk,
  * @param ifPrintLog 是否打印日志
  * @return LOD计分
  */
-double calculateLOD(vector<vector<double> > gp, const int sampleSize, const vector<EXPData> expData,
+double calculateLOD(const vector<vector<double> > gp, const int sampleSize, const vector<EXPData> expData,
 		const EXPData u0, const EXPData s0,
 		const EXPData u1, const EXPData u2, const EXPData u3, const EXPData s1,
 		const bool ifPrintLog = VERBOSE_MODE) {
@@ -373,7 +374,7 @@ void reorderGene(vector<string>& geneMatrix) {
  * @param ifPrintLog 是否打印日志
  * @return 成功运行则返回1
  */
-int calcGeneCP(vector<string> geneMatrix, vector<double> rMatrix,
+int calcGeneCP(vector<string>& geneMatrix, vector<double>& rMatrix,
 		const string f, const string m, const string q,
 		const double r1, const double r2, const double r=0, const double zeta=1,
 		const bool ifReorder=true, const bool ifPrintLog = VERBOSE_MODE) {
