@@ -63,143 +63,282 @@ $(document).ready(function(){initNavTree('_i_m_q_t_l_previewer_8cpp.html','');})
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">IMQTLPreviewer.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;iostream&gt;</code><br/>
-<code>#include &lt;fstream&gt;</code><br/>
-<code>#include &lt;math.h&gt;</code><br/>
+<div class="textblock"><code>#include &quot;<a class="el" href="_i_m_q_t_l_previewer_8h_source.html">IMQTLPreviewer.h</a>&quot;</code><br/>
 </div>
 <p><a href="_i_m_q_t_l_previewer_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a0c65b1435131e94f43f9758926d712de"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#a0c65b1435131e94f43f9758926d712de">ACCURACY_REQ</a>&#160;&#160;&#160;0.000001</td></tr>
-<tr class="separator:a0c65b1435131e94f43f9758926d712de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5755cfbc5c4b61d5a5b88782eee01e8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a>&#160;&#160;&#160;true</td></tr>
-<tr class="separator:ad5755cfbc5c4b61d5a5b88782eee01e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a1776dab1a8b33353b644c08d2d28b07e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#a1776dab1a8b33353b644c08d2d28b07e">f</a> (double x, double u, double s2)</td></tr>
 <tr class="separator:a1776dab1a8b33353b644c08d2d28b07e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab36485539bd781ea107789255e54b05"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#aab36485539bd781ea107789255e54b05">getAverage</a> (double *data, int size)</td></tr>
-<tr class="separator:aab36485539bd781ea107789255e54b05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2204661868a8865d44c082b4158a40dc"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#a2204661868a8865d44c082b4158a40dc">getVariance</a> (double *data, int size, double average=0)</td></tr>
-<tr class="separator:a2204661868a8865d44c082b4158a40dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8fa269669786e8a8a5ba5711a71487d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#a8fa269669786e8a8a5ba5711a71487d7">printExpressData</a> (double *data, int size, double u0, double s0)</td></tr>
-<tr class="separator:a8fa269669786e8a8a5ba5711a71487d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c44a8c1cf9461c876d3f0b0c4c1a5f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#a0c44a8c1cf9461c876d3f0b0c4c1a5f0">initExpressData</a> (const string fileName, const int sampleNumber, double *data, double *u0, double *s0, int ifPrintLog=<a class="el" href="_i_m_q_t_l_previewer_8cpp.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a>)</td></tr>
-<tr class="separator:a0c44a8c1cf9461c876d3f0b0c4c1a5f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04be4abaa233224a7396347d25c4e722"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#a04be4abaa233224a7396347d25c4e722">printGeneData</a> (char **_data, int sampleNumber, int traitNumber)</td></tr>
-<tr class="separator:a04be4abaa233224a7396347d25c4e722"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95c3efd5b3ab2e9e733100b2914f48e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#a95c3efd5b3ab2e9e733100b2914f48e4">initGeneData</a> (string fileName, const int sampleNumber, const int traitNumber, char **_data, int ifPrintLog=<a class="el" href="_i_m_q_t_l_previewer_8cpp.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a>)</td></tr>
-<tr class="separator:a95c3efd5b3ab2e9e733100b2914f48e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c749a76ad156c11ccfadff8eaad975a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#a5c749a76ad156c11ccfadff8eaad975a">printIntervalData</a> (double *data, int intervalNumber)</td></tr>
-<tr class="separator:a5c749a76ad156c11ccfadff8eaad975a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a1bfa33f44cf5bbb253a2a967cb9661"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#a3a1bfa33f44cf5bbb253a2a967cb9661">initIntervalData</a> (string fileName, const int intervalNumber, double *data, int ifPrintLog=<a class="el" href="_i_m_q_t_l_previewer_8cpp.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a>)</td></tr>
-<tr class="separator:a3a1bfa33f44cf5bbb253a2a967cb9661"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3683a61a41f1d10ab7e68415458f885"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#ae3683a61a41f1d10ab7e68415458f885">calculatePij</a> (double p[9][3], double r, double r1, double r2, int ifPrintLog=<a class="el" href="_i_m_q_t_l_previewer_8cpp.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a>)</td></tr>
-<tr class="separator:ae3683a61a41f1d10ab7e68415458f885"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8cb1c63871bf2161dcea6fcaff5e5c5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#a8cb1c63871bf2161dcea6fcaff5e5c5f">calculateGP</a> (double **_gp, char **_mk, int sampleSize, int sampleIndex1, int sampleIndex2, double p[9][3], int ifPrintLog=<a class="el" href="_i_m_q_t_l_previewer_8cpp.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a>)</td></tr>
-<tr class="separator:a8cb1c63871bf2161dcea6fcaff5e5c5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8440d373e6d6674ba0f04b791b194692"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#a8440d373e6d6674ba0f04b791b194692">calculateLOD</a> (double **_gp, int sampleSize, double *y, double s0, double s1, double u0, double u1, double u2, double u3, int ifPrintLog=<a class="el" href="_i_m_q_t_l_previewer_8cpp.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a>)</td></tr>
-<tr class="separator:a8440d373e6d6674ba0f04b791b194692"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ef98e477c2f210e48be26b5ae19267c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#a8ef98e477c2f210e48be26b5ae19267c">EMCalculate</a> (double *y, double **_gp, const int sampleSize, double u0, double s0, double *u1, double *u2, double *u3, double *s1, int ifPrintLog=<a class="el" href="_i_m_q_t_l_previewer_8cpp.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a>)</td></tr>
-<tr class="separator:a8ef98e477c2f210e48be26b5ae19267c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb73a869ab533e9f30a9b952d73b3c2e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#aeb73a869ab533e9f30a9b952d73b3c2e">d2rHaldane</a> (double d)</td></tr>
-<tr class="separator:aeb73a869ab533e9f30a9b952d73b3c2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7e45edbc406bd60d79e7f522acf2f25"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#ae7e45edbc406bd60d79e7f522acf2f25">d2rKosambi</a> (double d)</td></tr>
-<tr class="separator:ae7e45edbc406bd60d79e7f522acf2f25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acacb91fcd6bf08760c56494f67d8329c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#acacb91fcd6bf08760c56494f67d8329c">d2r</a> (double x)</td></tr>
-<tr class="separator:acacb91fcd6bf08760c56494f67d8329c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad78544756077d0fc8eda58dbbb6c6c69"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#ad78544756077d0fc8eda58dbbb6c6c69">intervalQTL</a> (int currentTrait, double u0, double s0, double length, double startPoint, char **_mk, double *y, int sampleSize, int ifPrintLog=<a class="el" href="_i_m_q_t_l_previewer_8cpp.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a>)</td></tr>
-<tr class="separator:ad78544756077d0fc8eda58dbbb6c6c69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1aaab827226127e1efbf953ed15a90ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#a1aaab827226127e1efbf953ed15a90ce">printHelp</a> (char *fileName)</td></tr>
-<tr class="separator:a1aaab827226127e1efbf953ed15a90ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9856f70d041aeb90f803de6db5332c35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#a9856f70d041aeb90f803de6db5332c35">initExpressData</a> (const string fileName, const int sampleNumber, vector&lt; <a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a> &gt; &amp;expData, <a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a> *u0, <a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a> *s0, const bool ifPrintLog=<a class="el" href="_i_m_q_t_l_previewer_8h.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a>)</td></tr>
+<tr class="separator:a9856f70d041aeb90f803de6db5332c35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13f0b393e0aaa8c46723305bec4fafc4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#a13f0b393e0aaa8c46723305bec4fafc4">initChildrenGeneData</a> (const string fileName, const int sampleNumber, const int traitNumber, vector&lt; vector&lt; string &gt; &gt; &amp;data, const bool ifPrintLog=<a class="el" href="_i_m_q_t_l_previewer_8h.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a>)</td></tr>
+<tr class="separator:a13f0b393e0aaa8c46723305bec4fafc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4cd0774386ae5336076cffd94a33fe0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#ac4cd0774386ae5336076cffd94a33fe0">initParentGeneData</a> (const string fileName, vector&lt; string &gt; &amp;geneData, const int traitNumber, const string parentName, const bool ifPrintLog=<a class="el" href="_i_m_q_t_l_previewer_8h.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a>)</td></tr>
+<tr class="separator:ac4cd0774386ae5336076cffd94a33fe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ae6e98651d53990bf2e85b4a82a952a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#a8ae6e98651d53990bf2e85b4a82a952a">initIntervalData</a> (const string fileName, const int intervalNumber, vector&lt; double &gt; &amp;data, const bool ifPrintLog=<a class="el" href="_i_m_q_t_l_previewer_8h.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a>)</td></tr>
+<tr class="separator:a8ae6e98651d53990bf2e85b4a82a952a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e5ec6e852f36b02f4ce1a16f362841b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#a8e5ec6e852f36b02f4ce1a16f362841b">HAB2ab</a> (const string input)</td></tr>
+<tr class="separator:a8e5ec6e852f36b02f4ce1a16f362841b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dc4b01afa25ae025ee10efcd09a98e4"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#a8dc4b01afa25ae025ee10efcd09a98e4">findGeneCP</a> (const vector&lt; string &gt; geneMatrix, const vector&lt; double &gt; rMatrix, const string find, const bool ifPrintLog=<a class="el" href="_i_m_q_t_l_previewer_8h.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a>)</td></tr>
+<tr class="separator:a8dc4b01afa25ae025ee10efcd09a98e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa300738c9de2de20680031e3d5d180a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#aa300738c9de2de20680031e3d5d180a8">calculateGP</a> (vector&lt; vector&lt; double &gt; &gt; &amp;gp, const vector&lt; vector&lt; string &gt; &gt; &amp;mk, const string qtlGene, const int sampleSize, const int sampleIndex1, const int sampleIndex2, const vector&lt; string &gt; &amp;geneMatrix, const vector&lt; double &gt; &amp;rMatrix, const bool ifUseShortGeneData=false, const bool ifPrintLog=<a class="el" href="_i_m_q_t_l_previewer_8h.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a>)</td></tr>
+<tr class="separator:aa300738c9de2de20680031e3d5d180a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04980fe48067dbcf41999cbe356f0caf"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#a04980fe48067dbcf41999cbe356f0caf">calculateLOD</a> (const vector&lt; vector&lt; double &gt; &gt; gp, const int sampleSize, const vector&lt; <a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a> &gt; expData, const <a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a> u0, const <a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a> s0, const <a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a> u1, const <a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a> u2, const <a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a> u3, const <a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a> s1, const bool ifPrintLog=<a class="el" href="_i_m_q_t_l_previewer_8h.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a>)</td></tr>
+<tr class="separator:a04980fe48067dbcf41999cbe356f0caf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a686857736367f63f5f339be3f6d66b80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#a686857736367f63f5f339be3f6d66b80">EMCalculate</a> (const vector&lt; vector&lt; double &gt; &gt; &amp;gp, const int sampleSize, const vector&lt; <a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a> &gt; expData, const <a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a> u0, const <a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a> s0, <a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a> *u1, <a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a> *u2, <a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a> *u3, <a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a> *s1, const bool ifPrintLog=<a class="el" href="_i_m_q_t_l_previewer_8h.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a>)</td></tr>
+<tr class="separator:a686857736367f63f5f339be3f6d66b80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b4ace5f92d3aec6ce0b3b37cc4b1b45"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#a2b4ace5f92d3aec6ce0b3b37cc4b1b45">calcCross</a> (const bitset&lt; <a class="el" href="_i_m_q_t_l_previewer_8h.html#a9fc8b428a9f3620bdbf4a42350c4ea19">GENE_CP_BIT</a> &gt; geneBit, const double r1, const double r2, const double r=0, const double zeta=1)</td></tr>
+<tr class="separator:a2b4ace5f92d3aec6ce0b3b37cc4b1b45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a473f934d6d78c9712d9056ed5e3f6b19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#a473f934d6d78c9712d9056ed5e3f6b19">reorderGene</a> (vector&lt; string &gt; &amp;geneMatrix)</td></tr>
+<tr class="separator:a473f934d6d78c9712d9056ed5e3f6b19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa67a4a0c1db4dfdb4134220348807470"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#aa67a4a0c1db4dfdb4134220348807470">calcGeneCP</a> (vector&lt; string &gt; &amp;geneMatrix, vector&lt; double &gt; &amp;rMatrix, const string <a class="el" href="_i_m_q_t_l_previewer_8cpp.html#a1776dab1a8b33353b644c08d2d28b07e">f</a>, const string m, const string q, const double r1, const double r2, const double r=0, const double zeta=1, const bool ifReorder=true, const bool ifPrintLog=<a class="el" href="_i_m_q_t_l_previewer_8h.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a>)</td></tr>
+<tr class="separator:aa67a4a0c1db4dfdb4134220348807470"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5741dc3a319565def4362046559db42b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#a5741dc3a319565def4362046559db42b">intervalQTL</a> (const int currentTrait, const <a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a> u0, const <a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a> s0, const double length, const double startPoint, const vector&lt; vector&lt; string &gt; &gt; &amp;mk, const vector&lt; <a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a> &gt; expData, const int sampleSize, const string <a class="el" href="_i_m_q_t_l_previewer_8cpp.html#a1776dab1a8b33353b644c08d2d28b07e">f</a>, const string m, const string q, const bool ifUseShortGeneData=false, const bool ifPrintLog=<a class="el" href="_i_m_q_t_l_previewer_8h.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a>)</td></tr>
+<tr class="separator:a5741dc3a319565def4362046559db42b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa57e63ea6aaa7ab5fe779e8e09a98316"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#aa57e63ea6aaa7ab5fe779e8e09a98316">printHelp</a> (const string fileName)</td></tr>
+<tr class="separator:aa57e63ea6aaa7ab5fe779e8e09a98316"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae49ae7cd4497f45c1f84e93336a23b86"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#ae49ae7cd4497f45c1f84e93336a23b86">mainQTL</a> (int args, char *argv[])</td></tr>
+<tr class="separator:ae49ae7cd4497f45c1f84e93336a23b86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7be7b3f3b810d259483db57fef9b4c4c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#a7be7b3f3b810d259483db57fef9b4c4c">main</a> (int args, char *argv[])</td></tr>
 <tr class="separator:a7be7b3f3b810d259483db57fef9b4c4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="a0c65b1435131e94f43f9758926d712de"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ACCURACY_REQ&#160;&#160;&#160;0.000001</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00026">26</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00360">EMCalculate()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ad5755cfbc5c4b61d5a5b88782eee01e8"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define VERBOSE_MODE&#160;&#160;&#160;true</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00027">27</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
-
-</div>
-</div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a8cb1c63871bf2161dcea6fcaff5e5c5f"></a>
+<a class="anchor" id="a2b4ace5f92d3aec6ce0b3b37cc4b1b45"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double calcCross </td>
+          <td>(</td>
+          <td class="paramtype">const bitset&lt; <a class="el" href="_i_m_q_t_l_previewer_8h.html#a9fc8b428a9f3620bdbf4a42350c4ea19">GENE_CP_BIT</a> &gt;&#160;</td>
+          <td class="paramname"><em>geneBit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>r1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>r2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>r</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>zeta</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>计算基因型概率 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">geneBit</td><td>基因型的二进制表示，其中1表示大写，0表示小写 </td></tr>
+    <tr><td class="paramname">r1</td><td>左侧重组率 </td></tr>
+    <tr><td class="paramname">r2</td><td>右侧重组率 </td></tr>
+    <tr><td class="paramname">r</td><td>整体重组率，默认为0，通过r1和r2计算 </td></tr>
+    <tr><td class="paramname">zeta</td><td>符合系数，默认为1 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>基因型概率 </dd></dl>
+
+<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00338">338</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
+
+<p>References <a class="el" href="_i_m_q_t_l_previewer_8h_source.html#l00025">GENE_CP_BIT</a>.</p>
+
+<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00395">calcGeneCP()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa67a4a0c1db4dfdb4134220348807470"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int calcGeneCP </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>geneMatrix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vector&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rMatrix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string&#160;</td>
+          <td class="paramname"><em>q</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>r1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>r2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>r</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>zeta</em> = <code>1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>ifReorder</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>ifPrintLog</em> = <code><a class="el" href="_i_m_q_t_l_previewer_8h.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>计算基因型条件概率分布全数据 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">geneMatrix</td><td>基因型 </td></tr>
+    <tr><td class="paramname">rMatrix</td><td>条件型概率 </td></tr>
+    <tr><td class="paramname">f</td><td>父本基因型 </td></tr>
+    <tr><td class="paramname">m</td><td>母本基因型 </td></tr>
+    <tr><td class="paramname">q</td><td>QTL基因型 </td></tr>
+    <tr><td class="paramname">r1</td><td>左侧重组率 </td></tr>
+    <tr><td class="paramname">r2</td><td>右侧重组率 </td></tr>
+    <tr><td class="paramname">r</td><td>整体重组率 </td></tr>
+    <tr><td class="paramname">zeta</td><td>符合系数 </td></tr>
+    <tr><td class="paramname">ifReorder</td><td>是否自动重排基因位顺序，如ba被重排为ab </td></tr>
+    <tr><td class="paramname">ifPrintLog</td><td>是否打印日志 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>成功运行则返回1 </dd></dl>
+
+<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00395">395</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
+
+<p>References <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00338">calcCross()</a>, <a class="el" href="_i_m_q_t_l_previewer_8h_source.html#l00024">GENE_CP_CUT</a>, <a class="el" href="_i_m_q_t_l_logger_8cpp_source.html#l00058">printGeneCP()</a>, and <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00372">reorderGene()</a>.</p>
+
+<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00447">intervalQTL()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa300738c9de2de20680031e3d5d180a8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void calculateGP </td>
           <td>(</td>
-          <td class="paramtype">double **&#160;</td>
-          <td class="paramname"><em>_gp</em>, </td>
+          <td class="paramtype">vector&lt; vector&lt; double &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>gp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char **&#160;</td>
-          <td class="paramname"><em>_mk</em>, </td>
+          <td class="paramtype">const vector&lt; vector&lt; string &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mk</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">const string&#160;</td>
+          <td class="paramname"><em>qtlGene</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>sampleSize</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>sampleIndex1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>sampleIndex2</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>p</em>[9][3], </td>
+          <td class="paramtype">const vector&lt; string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>geneMatrix</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>ifPrintLog</em> = <code><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a></code>&#160;</td>
+          <td class="paramtype">const vector&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rMatrix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>ifUseShortGeneData</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>ifPrintLog</em> = <code><a class="el" href="_i_m_q_t_l_previewer_8h.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -211,86 +350,94 @@ Functions</h2></td></tr>
 <p>根据基因型数据统计对应的实际分布概率 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">_gp</td><td>实际分布概率 </td></tr>
-    <tr><td class="paramname">_mk</td><td>基因型数据数组 </td></tr>
+    <tr><td class="paramname">gp</td><td>实际分布概率 </td></tr>
+    <tr><td class="paramname">mk</td><td>基因型数据数组 </td></tr>
+    <tr><td class="paramname">qtlGene</td><td>QTL基因的字符串 </td></tr>
     <tr><td class="paramname">sampleSize</td><td>样本大小 </td></tr>
     <tr><td class="paramname">sampleIndex1</td><td>样本编号1 </td></tr>
     <tr><td class="paramname">sampleIndex2</td><td>样本编号2 </td></tr>
-    <tr><td class="paramname">p</td><td>分布概率函数 </td></tr>
+    <tr><td class="paramname">geneMatrix</td><td>基因型 </td></tr>
+    <tr><td class="paramname">rMatrix</td><td>条件型概率 </td></tr>
+    <tr><td class="paramname">ifUseShortGeneData</td><td>是否使用短基因表示 </td></tr>
     <tr><td class="paramname">ifPrintLog</td><td>是否打印日志 </td></tr>
   </table>
   </dd>
 </dl>
+<p>获取亲本的基因型</p>
+<p>拼接亲本基因型字符串</p>
+<p>计算实际分布概率 </p>
 
-<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00257">257</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00172">172</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00471">intervalQTL()</a>.</p>
+<p>References <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00134">findGeneCP()</a>, and <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00119">HAB2ab()</a>.</p>
+
+<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00447">intervalQTL()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a8440d373e6d6674ba0f04b791b194692"></a>
+<a class="anchor" id="a04980fe48067dbcf41999cbe356f0caf"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">double calculateLOD </td>
           <td>(</td>
-          <td class="paramtype">double **&#160;</td>
-          <td class="paramname"><em>_gp</em>, </td>
+          <td class="paramtype">const vector&lt; vector&lt; double &gt; &gt;&#160;</td>
+          <td class="paramname"><em>gp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>sampleSize</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double *&#160;</td>
-          <td class="paramname"><em>y</em>, </td>
+          <td class="paramtype">const vector&lt; <a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a> &gt;&#160;</td>
+          <td class="paramname"><em>expData</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>s0</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>s1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype">const <a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a>&#160;</td>
           <td class="paramname"><em>u0</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype">const <a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a>&#160;</td>
+          <td class="paramname"><em>s0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a>&#160;</td>
           <td class="paramname"><em>u1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype">const <a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a>&#160;</td>
           <td class="paramname"><em>u2</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype">const <a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a>&#160;</td>
           <td class="paramname"><em>u3</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>ifPrintLog</em> = <code><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a></code>&#160;</td>
+          <td class="paramtype">const <a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a>&#160;</td>
+          <td class="paramname"><em>s1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>ifPrintLog</em> = <code><a class="el" href="_i_m_q_t_l_previewer_8h.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -302,9 +449,9 @@ Functions</h2></td></tr>
 <p>利用LOD计分法计算LOD值 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">_gp</td><td>实际分布概率 </td></tr>
+    <tr><td class="paramname">gp</td><td>实际分布概率 </td></tr>
     <tr><td class="paramname">sampleSize</td><td>样本大小 </td></tr>
-    <tr><td class="paramname">y</td><td>表现型数据 </td></tr>
+    <tr><td class="paramname">expData</td><td>表现型数据 </td></tr>
     <tr><td class="paramname">s0</td><td>表现型的统计量sigima平方 </td></tr>
     <tr><td class="paramname">s1</td><td></td></tr>
     <tr><td class="paramname">u0</td><td>表现型的统计量mu </td></tr>
@@ -317,172 +464,23 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>LOD计分 </dd></dl>
 
-<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00322">322</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00222">222</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
 
-<p>References <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00036">f()</a>.</p>
+<p>References <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00031">f()</a>.</p>
 
-<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00471">intervalQTL()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ae3683a61a41f1d10ab7e68415458f885"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void calculatePij </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>p</em>[9][3], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>r1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>r2</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>ifPrintLog</em> = <code><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a></code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>无干扰时F2群体QTL基因频率分布数组函数p，见书107页 </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">p</td><td>基因频率分布数组函数 </td></tr>
-    <tr><td class="paramname">r</td><td>整体遗传距离 </td></tr>
-    <tr><td class="paramname">r1</td><td>遗传距离1 </td></tr>
-    <tr><td class="paramname">r2</td><td>遗传距离2 </td></tr>
-    <tr><td class="paramname">ifPrintLog</td><td>是否打印日志 </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00204">204</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00471">intervalQTL()</a>.</p>
+<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00447">intervalQTL()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="acacb91fcd6bf08760c56494f67d8329c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double d2r </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>x</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>作图函数，默认使用Haldane作图函数 </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">x</td><td>遗传距离 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>重组率 </dd></dl>
-
-<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00454">454</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
-
-<p>References <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00436">d2rHaldane()</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00471">intervalQTL()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aeb73a869ab533e9f30a9b952d73b3c2e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double d2rHaldane </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>d</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Haldane作图函数 </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">d</td><td>遗传距离 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>重组率 </dd></dl>
-
-<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00436">436</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00454">d2r()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ae7e45edbc406bd60d79e7f522acf2f25"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double d2rKosambi </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>d</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Kosambi作图函数 </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">d</td><td>遗传距离 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>重组率 </dd></dl>
-
-<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00445">445</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a8ef98e477c2f210e48be26b5ae19267c"></a>
+<a class="anchor" id="a686857736367f63f5f339be3f6d66b80"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void EMCalculate </td>
           <td>(</td>
-          <td class="paramtype">double *&#160;</td>
-          <td class="paramname"><em>y</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double **&#160;</td>
-          <td class="paramname"><em>_gp</em>, </td>
+          <td class="paramtype">const vector&lt; vector&lt; double &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>gp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -493,44 +491,50 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype">const vector&lt; <a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a> &gt;&#160;</td>
+          <td class="paramname"><em>expData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a>&#160;</td>
           <td class="paramname"><em>u0</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype">const <a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a>&#160;</td>
           <td class="paramname"><em>s0</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double *&#160;</td>
+          <td class="paramtype"><a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a> *&#160;</td>
           <td class="paramname"><em>u1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double *&#160;</td>
+          <td class="paramtype"><a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a> *&#160;</td>
           <td class="paramname"><em>u2</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double *&#160;</td>
+          <td class="paramtype"><a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a> *&#160;</td>
           <td class="paramname"><em>u3</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double *&#160;</td>
+          <td class="paramtype"><a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a> *&#160;</td>
           <td class="paramname"><em>s1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>ifPrintLog</em> = <code><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a></code>&#160;</td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>ifPrintLog</em> = <code><a class="el" href="_i_m_q_t_l_previewer_8h.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -542,8 +546,8 @@ Functions</h2></td></tr>
 <p>利用EM算法迭代计算最大似然估计 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">y</td><td>表现型数据 </td></tr>
-    <tr><td class="paramname">_gp</td><td>实际分布概率 </td></tr>
+    <tr><td class="paramname">expData</td><td>表现型数据 </td></tr>
+    <tr><td class="paramname">gp</td><td>实际分布概率 </td></tr>
     <tr><td class="paramname">sampleSize</td><td>样本大小 </td></tr>
     <tr><td class="paramname">u0</td><td>样本的统计量mu </td></tr>
     <tr><td class="paramname">s0</td><td>样本的统计量sigma平方 </td></tr>
@@ -556,11 +560,11 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00360">360</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00260">260</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
 
-<p>References <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00026">ACCURACY_REQ</a>, and <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00036">f()</a>.</p>
+<p>References <a class="el" href="_i_m_q_t_l_previewer_8h_source.html#l00021">ACCURACY_REQ</a>, and <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00031">f()</a>.</p>
 
-<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00471">intervalQTL()</a>.</p>
+<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00447">intervalQTL()</a>.</p>
 
 </div>
 </div>
@@ -604,27 +608,39 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00036">36</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00031">31</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00322">calculateLOD()</a>, and <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00360">EMCalculate()</a>.</p>
+<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00222">calculateLOD()</a>, and <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00260">EMCalculate()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="aab36485539bd781ea107789255e54b05"></a>
+<a class="anchor" id="a8dc4b01afa25ae025ee10efcd09a98e4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double getAverage </td>
+          <td class="memname">double findGeneCP </td>
           <td>(</td>
-          <td class="paramtype">double *&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
+          <td class="paramtype">const vector&lt; string &gt;&#160;</td>
+          <td class="paramname"><em>geneMatrix</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>size</em>&#160;</td>
+          <td class="paramtype">const vector&lt; double &gt;&#160;</td>
+          <td class="paramname"><em>rMatrix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string&#160;</td>
+          <td class="paramname"><em>find</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>ifPrintLog</em> = <code><a class="el" href="_i_m_q_t_l_previewer_8h.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -633,43 +649,87 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>获取平均值 </p>
+<p>查找基因型的条件概率 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>浮点数组 </td></tr>
-    <tr><td class="paramname">size</td><td>数组尺寸 </td></tr>
+    <tr><td class="paramname">geneMatrix</td><td>基因型 </td></tr>
+    <tr><td class="paramname">rMatrix</td><td>基因型概率 </td></tr>
+    <tr><td class="paramname">find</td><td>查找的匹配基因型 </td></tr>
+    <tr><td class="paramname">ifPrintLog</td><td>是否打印日志 </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>数组数据的平均值 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>基因型的条件概率 </dd></dl>
 
-<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00046">46</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00134">134</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00061">getVariance()</a>, and <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00097">initExpressData()</a>.</p>
+<p>References <a class="el" href="_i_m_q_t_l_previewer_8h_source.html#l00024">GENE_CP_CUT</a>.</p>
+
+<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00172">calculateGP()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a2204661868a8865d44c082b4158a40dc"></a>
+<a class="anchor" id="a8e5ec6e852f36b02f4ce1a16f362841b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double getVariance </td>
+          <td class="memname">string HAB2ab </td>
           <td>(</td>
-          <td class="paramtype">double *&#160;</td>
+          <td class="paramtype">const string&#160;</td>
+          <td class="paramname"><em>input</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>将HAB型的基因数据转成ab型的基因数据，H-ab，A-aa，B-bb </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>输入数据 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>转换后的数据 </dd></dl>
+
+<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00119">119</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00172">calculateGP()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a13f0b393e0aaa8c46723305bec4fafc4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initChildrenGeneData </td>
+          <td>(</td>
+          <td class="paramtype">const string&#160;</td>
+          <td class="paramname"><em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>sampleNumber</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>traitNumber</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vector&lt; vector&lt; string &gt; &gt; &amp;&#160;</td>
           <td class="paramname"><em>data</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>size</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>average</em> = <code>0</code>&#160;</td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>ifPrintLog</em> = <code><a class="el" href="_i_m_q_t_l_previewer_8h.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -678,26 +738,27 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>获取方差 </p>
+<p>初始化样本的基因型数据 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>浮点数组 </td></tr>
-    <tr><td class="paramname">size</td><td>数组尺寸 </td></tr>
-    <tr><td class="paramname">average</td><td>平均值，默认为0，视为自动计算 </td></tr>
+    <tr><td class="paramname">fileName</td><td>样本数据文件的文件名 </td></tr>
+    <tr><td class="paramname">sampleNumber</td><td>样本大小 </td></tr>
+    <tr><td class="paramname">traitNumber</td><td>位点数量 </td></tr>
+    <tr><td class="paramname">data</td><td>数据数组 </td></tr>
+    <tr><td class="paramname">ifPrintLog</td><td>是否打印日志 </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>数组数据的方差 </dd></dl>
 
-<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00061">61</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00067">67</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
 
-<p>References <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00046">getAverage()</a>.</p>
+<p>References <a class="el" href="_i_m_q_t_l_logger_8cpp_source.html#l00033">printChildrenGeneData()</a>, and <a class="el" href="_q_t_l_utils_8h_source.html#l00159">readFile2Matrix()</a>.</p>
 
-<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00097">initExpressData()</a>.</p>
+<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00485">mainQTL()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a0c44a8c1cf9461c876d3f0b0c4c1a5f0"></a>
+<a class="anchor" id="a9856f70d041aeb90f803de6db5332c35"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -716,26 +777,26 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double *&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
+          <td class="paramtype">vector&lt; <a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>expData</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double *&#160;</td>
+          <td class="paramtype"><a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a> *&#160;</td>
           <td class="paramname"><em>u0</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double *&#160;</td>
+          <td class="paramtype"><a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a> *&#160;</td>
           <td class="paramname"><em>s0</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>ifPrintLog</em> = <code><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a></code>&#160;</td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>ifPrintLog</em> = <code><a class="el" href="_i_m_q_t_l_previewer_8h.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -749,91 +810,30 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">fileName</td><td>样本数据文件的文件名 </td></tr>
     <tr><td class="paramname">sampleNumber</td><td>样本大小 </td></tr>
-    <tr><td class="paramname">data</td><td>数据数组 </td></tr>
-    <tr><td class="paramname">u0</td><td>统计量mu </td></tr>
-    <tr><td class="paramname">s0</td><td>统计量sigma平方 </td></tr>
+    <tr><td class="paramname">expData</td><td>数据数组 </td></tr>
+    <tr><td class="paramname">u0</td><td>统计量mu 即平均值 </td></tr>
+    <tr><td class="paramname">s0</td><td>统计量sigma平方 及方差 </td></tr>
     <tr><td class="paramname">ifPrintLog</td><td>是否打印日志 </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00097">97</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00044">44</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
 
-<p>References <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00046">getAverage()</a>, <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00061">getVariance()</a>, and <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00080">printExpressData()</a>.</p>
+<p>References <a class="el" href="_q_t_l_utils_8h_source.html#l00054">getAverage()</a>, <a class="el" href="_q_t_l_utils_8h_source.html#l00071">getVariance()</a>, <a class="el" href="_i_m_q_t_l_logger_8cpp_source.html#l00016">printExpressData()</a>, and <a class="el" href="_q_t_l_utils_8h_source.html#l00130">readFile2Vector()</a>.</p>
 
-<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00512">main()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a95c3efd5b3ab2e9e733100b2914f48e4"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void initGeneData </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>fileName</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>sampleNumber</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>traitNumber</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char **&#160;</td>
-          <td class="paramname"><em>_data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>ifPrintLog</em> = <code><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a></code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>初始化样本的基因型数据 </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fileName</td><td>样本数据文件的文件名 </td></tr>
-    <tr><td class="paramname">sampleNumber</td><td>样本大小 </td></tr>
-    <tr><td class="paramname">traitNumber</td><td>位点数量 </td></tr>
-    <tr><td class="paramname">_data</td><td>数据数组 </td></tr>
-    <tr><td class="paramname">ifPrintLog</td><td>是否打印日志 </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00142">142</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
-
-<p>References <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00119">printGeneData()</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00512">main()</a>.</p>
+<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00485">mainQTL()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a3a1bfa33f44cf5bbb253a2a967cb9661"></a>
+<a class="anchor" id="a8ae6e98651d53990bf2e85b4a82a952a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void initIntervalData </td>
           <td>(</td>
-          <td class="paramtype">string&#160;</td>
+          <td class="paramtype">const string&#160;</td>
           <td class="paramname"><em>fileName</em>, </td>
         </tr>
         <tr>
@@ -845,14 +845,14 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double *&#160;</td>
+          <td class="paramtype">vector&lt; double &gt; &amp;&#160;</td>
           <td class="paramname"><em>data</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>ifPrintLog</em> = <code><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a></code>&#160;</td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>ifPrintLog</em> = <code><a class="el" href="_i_m_q_t_l_previewer_8h.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -872,71 +872,156 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00182">182</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00102">102</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
 
-<p>References <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00168">printIntervalData()</a>.</p>
+<p>References <a class="el" href="_i_m_q_t_l_logger_8cpp_source.html#l00025">printIntervalData()</a>, and <a class="el" href="_q_t_l_utils_8h_source.html#l00130">readFile2Vector()</a>.</p>
 
-<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00512">main()</a>.</p>
+<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00485">mainQTL()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ad78544756077d0fc8eda58dbbb6c6c69"></a>
+<a class="anchor" id="ac4cd0774386ae5336076cffd94a33fe0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initParentGeneData </td>
+          <td>(</td>
+          <td class="paramtype">const string&#160;</td>
+          <td class="paramname"><em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vector&lt; string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>geneData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>traitNumber</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string&#160;</td>
+          <td class="paramname"><em>parentName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>ifPrintLog</em> = <code><a class="el" href="_i_m_q_t_l_previewer_8h.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>初始化亲本的基因型数据 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileName</td><td>亲本数据文件的文件名 </td></tr>
+    <tr><td class="paramname">geneData</td><td>数据数组 </td></tr>
+    <tr><td class="paramname">traitNumber</td><td>位点数量 </td></tr>
+    <tr><td class="paramname">parentName</td><td>亲本名称 </td></tr>
+    <tr><td class="paramname">ifPrintLog</td><td>是否打印日志 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00084">84</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
+
+<p>References <a class="el" href="_i_m_q_t_l_logger_8cpp_source.html#l00049">printParentGeneData()</a>, and <a class="el" href="_q_t_l_utils_8h_source.html#l00130">readFile2Vector()</a>.</p>
+
+<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00485">mainQTL()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5741dc3a319565def4362046559db42b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">double intervalQTL </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>currentTrait</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype">const <a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a>&#160;</td>
           <td class="paramname"><em>u0</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype">const <a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a>&#160;</td>
           <td class="paramname"><em>s0</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype">const double&#160;</td>
           <td class="paramname"><em>length</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype">const double&#160;</td>
           <td class="paramname"><em>startPoint</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char **&#160;</td>
-          <td class="paramname"><em>_mk</em>, </td>
+          <td class="paramtype">const vector&lt; vector&lt; string &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mk</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double *&#160;</td>
-          <td class="paramname"><em>y</em>, </td>
+          <td class="paramtype">const vector&lt; <a class="el" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a> &gt;&#160;</td>
+          <td class="paramname"><em>expData</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>sampleSize</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>ifPrintLog</em> = <code><a class="el" href="_i_m_q_t_l_previewer_8cpp.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a></code>&#160;</td>
+          <td class="paramtype">const string&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string&#160;</td>
+          <td class="paramname"><em>q</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>ifUseShortGeneData</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>ifPrintLog</em> = <code><a class="el" href="_i_m_q_t_l_previewer_8h.html#ad5755cfbc5c4b61d5a5b88782eee01e8">VERBOSE_MODE</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -953,20 +1038,24 @@ Functions</h2></td></tr>
     <tr><td class="paramname">s0</td><td>统计量sigma平方 </td></tr>
     <tr><td class="paramname">length</td><td>位点间隔 </td></tr>
     <tr><td class="paramname">startPoint</td><td>开始位置 </td></tr>
-    <tr><td class="paramname">_mk</td><td>位点基因型数据 </td></tr>
-    <tr><td class="paramname">y</td><td>位点表现型数据 </td></tr>
+    <tr><td class="paramname">mk</td><td>位点基因型数据 </td></tr>
+    <tr><td class="paramname">expData</td><td>位点表现型数据 </td></tr>
     <tr><td class="paramname">sampleSize</td><td>样本大小 </td></tr>
-    <tr><td class="paramname">ifPrint</td><td>是否打印日志 </td></tr>
+    <tr><td class="paramname">f</td><td>父本基因型 </td></tr>
+    <tr><td class="paramname">m</td><td>母本基因型 </td></tr>
+    <tr><td class="paramname">q</td><td>QTL基因型 </td></tr>
+    <tr><td class="paramname">ifUseShortGeneData</td><td>是否使用短基因表示 </td></tr>
+    <tr><td class="paramname">ifPrintLog</td><td>是否打印日志 </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>返回LOD值 </dd></dl>
 
-<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00471">471</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00447">447</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
 
-<p>References <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00257">calculateGP()</a>, <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00322">calculateLOD()</a>, <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00204">calculatePij()</a>, <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00454">d2r()</a>, and <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00360">EMCalculate()</a>.</p>
+<p>References <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00395">calcGeneCP()</a>, <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00172">calculateGP()</a>, <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00222">calculateLOD()</a>, <a class="el" href="_q_t_l_utils_8cpp_source.html#l00052">d2r()</a>, <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00260">EMCalculate()</a>, and <a class="el" href="_i_m_q_t_l_previewer_8h_source.html#l00023">GENE_CP_SIZE</a>.</p>
 
-<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00512">main()</a>.</p>
+<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00485">mainQTL()</a>.</p>
 
 </div>
 </div>
@@ -993,128 +1082,63 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00595">595</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
+
+<p>References <a class="el" href="_q_t_l_utils_8cpp_source.html#l00009">getTimeStamp()</a>, and <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00485">mainQTL()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae49ae7cd4497f45c1f84e93336a23b86"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mainQTL </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>args</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>argv</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 <p>若参数个数为1，为手动模式运行，从操作台读取各个参数。</p>
 <p>若参数个树为2，为自动模式，从配置文件读取参数。</p>
 <p>参数个数错误，打印帮助。</p>
 <p>汇总显示各输入参数</p>
 <p>读取表型数据文件，并计算表型数组的均值、方差</p>
-<p>初始化基因型数据</p>
-<p>读取基因型数据文件</p>
+<p>初始化基因型数据并读取基因型数据文件</p>
 <p>初始化并读取位点距离数据，来源为见书115页</p>
+<p>初始化亲本的基因型</p>
 <p>逐个位点计算LOD值</p>
 <p>按步长推进计算LOD值 </p>
 
-<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00512">512</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00485">485</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
 
-<p>References <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00097">initExpressData()</a>, <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00142">initGeneData()</a>, <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00182">initIntervalData()</a>, <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00471">intervalQTL()</a>, and <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00508">printHelp()</a>.</p>
+<p>References <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00067">initChildrenGeneData()</a>, <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00044">initExpressData()</a>, <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00102">initIntervalData()</a>, <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00084">initParentGeneData()</a>, <a class="el" href="_q_t_l_utils_8cpp_source.html#l00021">inputBooleanFromKeyboard()</a>, <a class="el" href="_q_t_l_utils_8h_source.html#l00097">inputValueFromKeyboard()</a>, <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00447">intervalQTL()</a>, and <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00481">printHelp()</a>.</p>
 
-</div>
-</div>
-<a class="anchor" id="a8fa269669786e8a8a5ba5711a71487d7"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void printExpressData </td>
-          <td>(</td>
-          <td class="paramtype">double *&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>size</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>u0</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>s0</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>打印样本的表现型数据 </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">data</td><td>样本表现型数组 </td></tr>
-    <tr><td class="paramname">size</td><td>样本大小 </td></tr>
-    <tr><td class="paramname">u0</td><td>统计量mu </td></tr>
-    <tr><td class="paramname">s0</td><td>统计量sigma平方 </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00080">80</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00097">initExpressData()</a>.</p>
+<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00595">main()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a04be4abaa233224a7396347d25c4e722"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void printGeneData </td>
-          <td>(</td>
-          <td class="paramtype">char **&#160;</td>
-          <td class="paramname"><em>_data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>sampleNumber</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>traitNumber</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>打印样本的基因型数据 </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">_data</td><td>样本基因型数据 </td></tr>
-    <tr><td class="paramname">sampleNumber</td><td>样本大小 </td></tr>
-    <tr><td class="paramname">traitNumber</td><td>位点数量 </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00119">119</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00142">initGeneData()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a1aaab827226127e1efbf953ed15a90ce"></a>
+<a class="anchor" id="aa57e63ea6aaa7ab5fe779e8e09a98316"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void printHelp </td>
           <td>(</td>
-          <td class="paramtype">char *&#160;</td>
+          <td class="paramtype">const string&#160;</td>
           <td class="paramname"><em>fileName</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1128,47 +1152,39 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00508">508</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00481">481</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00512">main()</a>.</p>
+<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00485">mainQTL()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a5c749a76ad156c11ccfadff8eaad975a"></a>
+<a class="anchor" id="a473f934d6d78c9712d9056ed5e3f6b19"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void printIntervalData </td>
+          <td class="memname">void reorderGene </td>
           <td>(</td>
-          <td class="paramtype">double *&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">vector&lt; string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>geneMatrix</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>intervalNumber</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>打印遗传图谱的遗传区间距离数据 </p>
+<p>重排基因位顺序，如ba被重排为ab </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>区间距离数据 </td></tr>
-    <tr><td class="paramname">intervalNumber</td><td>区间个数 </td></tr>
+    <tr><td class="paramname">geneMatrix</td><td>基因型数组 </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>成功运行返回1 </dd></dl>
 
-<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00168">168</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00372">372</a> of file <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html">IMQTLPreviewer.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00182">initIntervalData()</a>.</p>
+<p>References <a class="el" href="_q_t_l_utils_8cpp_source.html#l00069">reorderStr()</a>.</p>
+
+<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00395">calcGeneCP()</a>.</p>
 
 </div>
 </div>
@@ -1178,7 +1194,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="_i_m_q_t_l_previewer_8cpp.html">IMQTLPreviewer.cpp</a></li>
-    <li class="footer">Generated on Thu Jan 3 2013 16:12:08 for QTLPreviewers by
+    <li class="footer">Generated on Fri May 17 2013 22:52:15 for QTLPreviewers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3 </li>
   </ul>

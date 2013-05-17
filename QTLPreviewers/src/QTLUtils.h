@@ -62,8 +62,8 @@ double getAverage(const Iterator begin, const Iterator end) {
 
 /**
  * 获取方差
- * @param data 浮点数组
- * @param size 数组尺寸
+ * @param begin 开始位置的游标
+ * @param end 结束位置的游标
  * @param average 平均值，默认为0，视为自动计算
  * @return 数组数据的方差
  */
@@ -90,7 +90,7 @@ double getVariance(const Iterator begin, const Iterator end, const double averag
 
 /**
  * 从键盘输入变量的值
- * @param variableNamen 变量名
+ * @param variableName 变量名
  * @param variableValue 变量值
  */
 template <typename T>

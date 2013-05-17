@@ -46,7 +46,6 @@ void initExpressData(const string fileName, const int sampleNumber,
 	int realsize = readFile2Vector(fileName, expData);
 	if ( sampleNumber != realsize ) {
 		cout <<"Warning: sample size (" <<realsize <<") might be wrong, please check. EXIT." <<endl;
-		exit(0);
 	}
 
 	*u0 = getAverage( expData.begin(), expData.end() );
@@ -65,12 +64,31 @@ void initExpressData(const string fileName, const int sampleNumber,
  * @param data 数据数组
  * @param ifPrintLog 是否打印日志
  */
-void initGeneData(const string fileName, const int sampleNumber,
+void initChildrenGeneData(const string fileName, const int sampleNumber,
 		const int traitNumber, vector<vector<string> >& data, const bool ifPrintLog = VERBOSE_MODE) {
 	readFile2Matrix(fileName, data);
 
 	if (ifPrintLog) {
-		printGeneData(data);
+		printChildrenGeneData(data);
+	}
+}
+
+/**
+ * 初始化亲本的基因型数据
+ * @param fileName 亲本数据文件的文件名
+ * @param geneData 数据数组
+ * @param traitNumber 位点数量
+ * @param parentName 亲本名称
+ * @param ifPrintLog 是否打印日志
+ */
+void initParentGeneData(const string fileName, vector<string>& geneData, const int traitNumber, const string parentName, const bool ifPrintLog = VERBOSE_MODE) {
+	int realsize = readFile2Vector(fileName, geneData);
+	if ( traitNumber != realsize ) {
+		cout <<"Warning: trait number (" <<realsize <<") might be wrong, please check. EXIT." <<endl;
+	}
+
+	if (ifPrintLog) {
+		printParentGeneData(geneData, parentName);
 	}
 }
 
@@ -86,7 +104,6 @@ void initIntervalData(const string fileName, const int intervalNumber, vector<do
 	int realsize = readFile2Vector(fileName, data);
 	if ( intervalNumber != realsize ) {
 		cout <<"Warning: the number of intervals (" <<realsize <<") might be wrong, please check. EXIT." <<endl;
-		exit(0);
 	}
 
 	if (ifPrintLog) {
@@ -143,6 +160,7 @@ double findGeneCP(const vector<string> geneMatrix, const vector<double> rMatrix,
  * 根据基因型数据统计对应的实际分布概率
  * @param gp 实际分布概率
  * @param mk 基因型数据数组
+ * @param qtlGene QTL基因的字符串
  * @param sampleSize 样本大小
  * @param sampleIndex1 样本编号1
  * @param sampleIndex2 样本编号2
@@ -189,7 +207,7 @@ void calculateGP(vector<vector<double> >& gp, const vector<vector<string> >& mk,
 
 /**
  * 利用LOD计分法计算LOD值
- * @param _gp 实际分布概率
+ * @param gp 实际分布概率
  * @param sampleSize 样本大小
  * @param expData 表现型数据
  * @param s0 表现型的统计量sigima平方
@@ -310,7 +328,7 @@ void EMCalculate(const vector<vector<double> >& gp, const int sampleSize, const 
 
 /**
  * 计算基因型概率
- * @param gene 基因型的二进制表示，其中1表示大写，0表示小写
+ * @param geneBit 基因型的二进制表示，其中1表示大写，0表示小写
  * @param r1 左侧重组率
  * @param r2 右侧重组率
  * @param r 整体重组率，默认为0，通过r1和r2计算
@@ -416,7 +434,7 @@ int calcGeneCP(vector<string>& geneMatrix, vector<double>& rMatrix,
  * @param s0 统计量sigma平方
  * @param length 位点间隔
  * @param startPoint 开始位置
- * @param _mk 位点基因型数据
+ * @param mk 位点基因型数据
  * @param expData 位点表现型数据
  * @param sampleSize 样本大小
  * @param f 父本基因型
@@ -470,7 +488,9 @@ int mainQTL(int args, char* argv[]) {
 	double step;
 
 	string sExpressDataFile;
-	string sGeneDataFile;
+	string sChildrenGeneDataFile;
+	string sFParentsGeneDataFile;
+	string sMParentsGeneDataFile;
 	string sTraitIntervalFile;
 
 	bool ifPrintInitDataReport;
@@ -483,7 +503,9 @@ int mainQTL(int args, char* argv[]) {
 		inputValueFromKeyboard("the Number of Traits", &iTraitNumber);
 		inputValueFromKeyboard("the length of step", &step);
 		inputValueFromKeyboard("the Filename of Express Data", &sExpressDataFile);
-		inputValueFromKeyboard("the Filename of Gene Data", &sGeneDataFile);
+		inputValueFromKeyboard("the Filename of Gene Data for Children", &sChildrenGeneDataFile);
+		inputValueFromKeyboard("the Filename of Gene Data for Parent(F)", &sFParentsGeneDataFile);
+		inputValueFromKeyboard("the Filename of Gene Data for Parent(M)", &sMParentsGeneDataFile);
 		inputValueFromKeyboard("the Filename of Trait Interval Data", &sTraitIntervalFile);
 
 		ifPrintInitDataReport = inputBooleanFromKeyboard("Do you want detailed Initialization Report?");
@@ -497,7 +519,8 @@ int mainQTL(int args, char* argv[]) {
 
 		fin >> iSampleSize >> iTraitNumber >> step;
 		fin >> sExpressDataFile;
-		fin >> sGeneDataFile;
+		fin >> sChildrenGeneDataFile;
+		fin >> sFParentsGeneDataFile >>sMParentsGeneDataFile;
 		fin >> sTraitIntervalFile;
 		fin >> ifPrintInitDataReport >> ifPrintCalReport >> ifPrintFinalReport;
 
@@ -510,9 +533,11 @@ int mainQTL(int args, char* argv[]) {
 	/// 汇总显示各输入参数
 	cout << "Input Summary:\t" << iSampleSize << " samples of " << iTraitNumber
 			<< " traits in following files:" << endl
-			<< "Express Data in:        " << sExpressDataFile << endl
-			<< "Gene Data in:           " << sGeneDataFile << endl
-			<< "Trait Interval Data in: " << sTraitIntervalFile << endl
+			<< "\tExpress Data in:            " << sExpressDataFile << endl
+			<< "\tGene Data of Children in:   " << sChildrenGeneDataFile << endl
+			<< "\tGene Data of Parent(F) in:  " << sFParentsGeneDataFile << endl
+			<< "\tGene Data of Parent(M) in:  " << sMParentsGeneDataFile << endl
+			<< "\tTrait Interval Data in:     " << sTraitIntervalFile << endl
 			<< "Log Detail: " << endl << "\tInitialization Report - "
 			<< (ifPrintInitDataReport ? "Yes" : "No") << endl
 			<< "\tCalculation Report - " << (ifPrintCalReport ? "Yes" : "No")
@@ -529,7 +554,7 @@ int mainQTL(int args, char* argv[]) {
 	/// 初始化基因型数据并读取基因型数据文件
 	vector<vector<string> > mk;
 	mk = vector<vector<string> >(iTraitNumber, vector<string>(iSampleSize, "  "));
-	initGeneData(sGeneDataFile, iSampleSize, iTraitNumber, mk, ifPrintInitDataReport);
+	initChildrenGeneData(sChildrenGeneDataFile, iSampleSize, iTraitNumber, mk, ifPrintInitDataReport);
 
 	/// 初始化并读取位点距离数据，来源为见书115页
 	vector<double> traitInterval(iTraitNumber);
@@ -537,9 +562,12 @@ int mainQTL(int args, char* argv[]) {
 			ifPrintInitDataReport);
 
 	/// 初始化亲本的基因型
-	string fGene = "abab";
-	string mGene = "abab";
-	string qGene = "Qq";
+	vector<string> fGene(iTraitNumber, "abab");
+	initParentGeneData(sFParentsGeneDataFile, fGene, iTraitNumber, "Parent(F)", ifPrintInitDataReport);
+	vector<string> mGene(iTraitNumber, "abab");
+	initParentGeneData(sMParentsGeneDataFile, mGene, iTraitNumber, "Parent(M)", ifPrintInitDataReport);
+	vector<string> qGene(iTraitNumber, "Qq");
+
 	bool ifUseShortGeneData = false;
 
 	/// 逐个位点计算LOD值
@@ -553,7 +581,7 @@ int mainQTL(int args, char* argv[]) {
 		for (double startPoint = 0.0; startPoint < traitInterval[currentTrait];
 				startPoint += step) {
 			double LOD = intervalQTL(currentTrait, u0, s0,
-					traitInterval[currentTrait], startPoint, mk, expData, iSampleSize, fGene, mGene, qGene, ifUseShortGeneData ,ifPrintCalReport);
+					traitInterval[currentTrait], startPoint, mk, expData, iSampleSize, fGene[currentTrait], mGene[currentTrait], qGene[currentTrait], ifUseShortGeneData ,ifPrintCalReport);
 			if (ifPrintFinalReport) {
 				cout << "[" << startPoint << "~" << (startPoint + step) << "]:["
 						<< traitInterval[currentTrait] << "] LOD=" << LOD

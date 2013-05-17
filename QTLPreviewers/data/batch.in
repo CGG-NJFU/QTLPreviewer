@@ -2,7 +2,9 @@
 9
 1.0
 data/express-66.txt
-data/gene-66.txt
+data/geneFull-66.txt
+data/fGene.txt
+data/mGene.txt
 data/traitInterval-66.txt
 0
 0

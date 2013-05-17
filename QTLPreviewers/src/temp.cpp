@@ -1,74 +1,44 @@
 #include "IMQTLPreviewer.h"
 
-template<class Iterator>
-void Myrandom_shuffle(Iterator beg,Iterator end) {
-	Iterator it;
-	srand(unsigned(time(0)));
-	int diff;
-    Iterator swp;
-
-	for(it=beg+1;it!=end;it++) {
-		diff=rand()%(it-beg+1);
-		swp=beg+diff;
-		swap(*it,*swp);
-	}
-}
-
-typedef int Type;
-
-template<class Iterator>
-inline static void Output(Iterator beg,Iterator end) {
-	copy(beg,end,ostream_iterator<Type>(cout," "));
-}
-
-void testR() {
-	int n=300;
-	float t;
-	vector<Type>v;
-	int i;
-	cout<<"Original:"<<endl;
-	for(i=0;i<n;i++) {
-		v.push_back(i+1);
-	}
-	Output(v.begin(),v.end());
-
-	cout<<endl;
-
-	getTimeStamp();
-	int times = 1000;
-	for (int i=0; i<times; i++) {
-		Myrandom_shuffle(v.begin(),v.end());
-	}
-	t = getTimeStamp();
-
-	cout <<"Total time: " <<t <<" ms" <<endl
-			<<"Average time:" << t/times <<" ms" <<endl;
-
-	cout<<"Reordered:"<<endl;
-	Output(v.begin(),v.end());
-	cout<<endl;
-}
-
-template<class Iterator>
-double getAverageNew(Iterator begin, Iterator end) {
-	Iterator it;
-	double sum = 0;
-	for(it=begin;it!=end;it++) {
-		sum += *it;
-	}
-	return sum/double(end-begin);
-}
+#include <log4cpp/Category.hh>
+#include <log4cpp/Appender.hh>
+#include <log4cpp/FileAppender.hh>
+#include <log4cpp/OstreamAppender.hh>
+#include <log4cpp/Layout.hh>
+#include <log4cpp/BasicLayout.hh>
+#include <log4cpp/Priority.hh>
 
 int tempMain() {
-	vector<vector<string> > m;
-	readFile2Matrix("data/geneFull-66.txt", m);
+	log4cpp::Appender *appender1 = new log4cpp::OstreamAppender("console", &std::cout);
+	appender1->setLayout(new log4cpp::BasicLayout());
 
-	ostream_iterator<string> os(cout, " ");
-	for (unsigned int i=0; i<m.size(); i++) {
-		cout <<i <<"\t";
-		copy(m[i].begin() ,m[i].end(),os);
-		cout <<endl;
-	}
+	log4cpp::Appender *appender2 = new log4cpp::FileAppender("default", "program.log");
+	appender2->setLayout(new log4cpp::BasicLayout());
+
+	log4cpp::Category& root = log4cpp::Category::getRoot();
+	root.setPriority(log4cpp::Priority::ALERT);
+	root.addAppender(appender1);
+
+	log4cpp::Category& sub1 = log4cpp::Category::getInstance(std::string("sub1"));
+	sub1.addAppender(appender2);
+
+	// use of functions for logging messages
+	root.error("root error");
+	root.info("root info");
+	sub1.error("sub1 error");
+	sub1.warn("sub1 warn");
+
+	// printf-style for logging variables
+	root.warn("%d + %d == %s ?", 1, 1, "two");
+
+	// use of streams for logging messages
+	root << log4cpp::Priority::ERROR << "Streamed root error";
+	root << log4cpp::Priority::INFO << "Streamed root info";
+	sub1 << log4cpp::Priority::ERROR << "Streamed sub1 error";
+	sub1 << log4cpp::Priority::WARN << "Streamed sub1 warn";
+
+	// or this way:
+	root.errorStream() << "Another streamed error";
 
 	return 0;
 }

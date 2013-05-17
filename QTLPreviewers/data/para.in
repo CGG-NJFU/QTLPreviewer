@@ -1,7 +1,9 @@
 189
 9
 1.0
-data/express-66.txt
-data/geneFull-66.txt
-data/traitInterval-66.txt
-0 0 1
+data/expressData.txt
+data/geneChildFull.txt
+data/geneParentF.txt
+data/geneParentM.txt
+data/traitInterval.txt
+1 0 1

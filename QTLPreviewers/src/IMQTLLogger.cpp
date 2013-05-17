@@ -29,11 +29,9 @@ void printIntervalData(const vector<double> data) {
 /**
  * 打印样本的基因型数据
  * @param data 样本基因型数据
- * @param sampleNumber 样本大小
- * @param traitNumber 位点数量
  */
-void printGeneData(const vector<vector<string> > data) {
-	cout << "=======MarkData======" << endl;
+void printChildrenGeneData(const vector<vector<string> > data) {
+	cout << "=======Children MarkData======" << endl;
 	for (unsigned int i=0; i<data.size(); i++) {
 		cout <<"[" <<i <<"(" <<data[i].size() <<")" <<"]" <<"\t";
 		for (unsigned int j=0; j<data[i].size(); j++ ) {
@@ -41,6 +39,15 @@ void printGeneData(const vector<vector<string> > data) {
 		}
 		cout <<endl;
 	}
+}
+
+/**
+ * 打印亲本的基因型数据
+ * @param data 亲本基因型数据
+ * @param parentString 亲本名称
+ */
+void printParentGeneData(const vector<string> data, const string parentString) {
+	printVectorData(data, parentString+" MarkData");
 }
 
 /**
