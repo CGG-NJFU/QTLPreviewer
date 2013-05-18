@@ -19,7 +19,10 @@
 
 #include "IMQTLPreviewer.h"
 
+extern Category& logger;
+
 using namespace std;
+using namespace log4cpp;
 
 /**
  * 概率密度函数
@@ -45,7 +48,7 @@ void initExpressData(const string fileName, const int sampleNumber,
 		vector<EXPData>& expData, EXPData* u0, EXPData* s0, const bool ifPrintLog = VERBOSE_MODE) {
 	int realsize = readFile2Vector(fileName, expData);
 	if ( sampleNumber != realsize ) {
-		cout <<"Warning: sample size (" <<realsize <<") might be wrong, please check. EXIT." <<endl;
+		logger <<Priority::WARN <<"Sample size (" <<realsize <<") might be wrong, please check.";
 	}
 
 	*u0 = getAverage( expData.begin(), expData.end() );
@@ -59,8 +62,6 @@ void initExpressData(const string fileName, const int sampleNumber,
 /**
  * 初始化样本的基因型数据
  * @param fileName 样本数据文件的文件名
- * @param sampleNumber 样本大小
- * @param traitNumber 位点数量
  * @param data 数据数组
  * @param ifPrintLog 是否打印日志
  */
@@ -83,7 +84,7 @@ void initChildrenGeneData(const string fileName, vector<vector<string> >& data, 
 void initParentGeneData(const string fileName, vector<string>& geneData, const int traitNumber, const string parentName, const bool ifPrintLog = VERBOSE_MODE) {
 	int realsize = readFile2Vector(fileName, geneData);
 	if ( traitNumber != realsize ) {
-		cout <<"Warning: trait number (" <<realsize <<") might be wrong, please check. EXIT." <<endl;
+		logger <<Priority::WARN <<"Trait number (" <<realsize <<") might be wrong, please check.";
 	}
 
 	if (ifPrintLog) {
@@ -102,7 +103,7 @@ void initIntervalData(const string fileName, const int intervalNumber, vector<do
 		const bool ifPrintLog = VERBOSE_MODE) {
 	int realsize = readFile2Vector(fileName, data);
 	if ( intervalNumber != realsize ) {
-		cout <<"Warning: the number of intervals (" <<realsize <<") might be wrong, please check. EXIT." <<endl;
+		logger <<Priority::WARN <<"The number of intervals (" <<realsize <<") might be wrong, please check.";
 	}
 
 	if (ifPrintLog) {
@@ -136,7 +137,7 @@ double findGeneCP(const vector<string> geneMatrix, const vector<double> rMatrix,
 	for (unsigned int i=0; i<geneMatrix.size(); i++) {
 		if ( geneMatrix[i].substr(0,GENE_CP_CUT) == find.substr(0,GENE_CP_CUT) ) {
 			if (ifPrintLog) {
-				cout <<geneMatrix[i] <<" added:\t" <<rMatrix[i] <<endl;
+				logger <<Priority::DEBUG <<geneMatrix[i] <<" added:\t" <<rMatrix[i];
 			}
 			all += rMatrix[i];
 
@@ -150,7 +151,7 @@ double findGeneCP(const vector<string> geneMatrix, const vector<double> rMatrix,
 	if ( all == 0 ) re = 0; else re = same/all;
 
 	if (ifPrintLog) {
-		cout <<"CP: " <<re <<" (" <<same <<"/" <<all <<")" <<endl;
+		logger <<Priority::DEBUG <<"CP: " <<re <<" (" <<same <<"/" <<all <<")";
 	}
 	return re;
 }
@@ -165,7 +166,6 @@ double findGeneCP(const vector<string> geneMatrix, const vector<double> rMatrix,
  * @param sampleIndex2 样本编号2
  * @param geneMatrix 基因型
  * @param rMatrix 条件型概率
- * @param ifUseShortGeneData 是否使用短基因表示
  * @param ifPrintLog 是否打印日志
  */
 void calculateGP(vector<vector<double> >& gp, const vector<vector<string> >& mk, const string qtlGene, const int sampleSize, const int sampleIndex1,
@@ -186,12 +186,9 @@ void calculateGP(vector<vector<double> >& gp, const vector<vector<string> >& mk,
 	}
 
 	if (ifPrintLog) {
-		cout << "=======GPData======" << endl;
+		logger <<Priority::DEBUG << "=======GPData======";
 		for (int c = 0; c < sampleSize; c++) {
-			cout << c << "\t";
-			for (int l = 0; l < 3; l++)
-				cout << gp[c][l] << "\t";
-			cout << endl;
+			logger <<Priority::DEBUG << c << "\t" <<gp[c][0] <<"\t" <<gp[c][1] <<"\t"<<gp[c][1];
 		}
 	}
 }
@@ -215,7 +212,7 @@ double calculateLOD(const vector<vector<double> > gp, const int sampleSize, cons
 		const EXPData u1, const EXPData u2, const EXPData u3, const EXPData s1,
 		const bool ifPrintLog = VERBOSE_MODE) {
 	double sum1 = 0, sum2 = 0;
-	//cout <<"u0=" <<u0 <<endl <<"s0=" <<s0 <<endl;
+	logger <<Priority::DEBUG <<"u0=" <<u0 <<"\ts0=" <<s0;
 	for (int i = 0; i < sampleSize; i++) {
 		sum1 += log10(f(expData[i], u0, s0));
 		sum2 += log10(
@@ -230,7 +227,7 @@ double calculateLOD(const vector<vector<double> > gp, const int sampleSize, cons
 	lod = sum2 - sum1;
 
 	if (ifPrintLog) {
-		cout << "sum1=" << sum1 << "\tsum2=" << sum2 << "\tLOD=" << lod << endl;
+		logger <<Priority::DEBUG <<"sum1=" <<sum1 <<"\tsum2=" <<sum2 <<"\tLOD=" <<lod;
 	}
 	return lod;
 }
@@ -260,8 +257,8 @@ void EMCalculate(const vector<vector<double> >& gp, const int sampleSize, const 
 	// 收敛精度要求
 	int step = 1;
 	if (ifPrintLog) {
-		cout << "=======EMSteps======" << endl;
-		cout << "[step]\tu1\tu2\tu3\ts1\n";
+		logger <<Priority::DEBUG <<"=======EMSteps======";
+		logger <<Priority::DEBUG <<"[step]\tu1\tu2\tu3\ts1";
 	}
 	while (fabs(u10 - *u1) > ACCURACY_REQ || fabs(u20 - *u2) > ACCURACY_REQ
 			|| fabs(u30 - *u3) > ACCURACY_REQ || fabs(s10 - *s1) > ACCURACY_REQ) {
@@ -300,8 +297,8 @@ void EMCalculate(const vector<vector<double> >& gp, const int sampleSize, const 
 		s10 = (py4 + py5 + py6) / sampleSize;
 
 		if (ifPrintLog) {
-			cout << "[" << step++ << "]\t" << *u1 << "\t" << *u2 << "\t" << *u3
-					<< "\t" << *s1 << endl;
+			logger <<Priority::DEBUG << "[" << step++ << "]\t" << *u1 << "\t" << *u2 << "\t" << *u3
+					<< "\t" << *s1;
 		}
 	}	//end-while
 
@@ -311,9 +308,7 @@ void EMCalculate(const vector<vector<double> >& gp, const int sampleSize, const 
 	*u3 = u30;
 	*s1 = s10;
 	if (ifPrintLog) {
-		cout << endl << "Finals:" << endl;
-		cout << "u1=" << *u1 << "\tu2=" << *u2 << "\tu3=" << *u3 << "\ts1="
-				<< *s1 << endl;
+		logger <<Priority::DEBUG << "Finals:\tu1=" <<*u1 <<"\tu2=" <<*u2 <<"\tu3=" <<*u3 <<"\ts1=" <<*s1;
 	}
 }
 
@@ -431,7 +426,6 @@ int calcGeneCP(vector<string>& geneMatrix, vector<double>& rMatrix,
  * @param f 父本基因型
  * @param m 母本基因型
  * @param q QTL基因型
- * @param ifUseShortGeneData 是否使用短基因表示
  * @param ifPrintLog 是否打印日志
  * @return 返回LOD值
  */
@@ -444,9 +438,9 @@ double intervalQTL(const int currentTrait, const EXPData u0, const EXPData s0, c
 	double r2 = d2r(length - startPoint);
 
 	if (ifPrintLog) {
-		cout << "r=" << r << "\tr1=" << r1 << "\tr2=" << r2 << "\td1="
-				<< startPoint << "\td2=" << (length - startPoint) << "\td="
-				<< length << endl;
+		logger <<Priority::DEBUG <<"r=" <<r <<"\tr1=" <<r1 <<"\tr2=" <<r2 <<"\td1="
+				<<startPoint <<"\td2=" <<(length - startPoint) <<"\td="
+				<<length;
 	}
 
 	///计算基因型条件概率分布全数据，相当于生成书107页表
@@ -474,7 +468,13 @@ void printHelp(const string fileName) {
 	cout << "Usage:\t" << fileName << " [ConfigFileName]" << endl;
 }
 
-int mainQTL(int args, char* argv[]) {
+/**
+ * 运行一次QTL区间分析
+ * @param args 参数个数
+ * @param argv 参数内容
+ * @return 最大LOD值
+ */
+double IMQTLRun(int args, char* argv[]) {
 	int iSampleSize;
 	int iTraitNumber;
 	double step;
@@ -487,7 +487,9 @@ int mainQTL(int args, char* argv[]) {
 
 	bool ifPrintInitDataReport;
 	bool ifPrintCalReport;
-	bool ifPrintFinalReport;
+	bool ifPrintDetailedFinalReport;
+
+	int LODThresholdTimer;
 
 	if (args == 1) {
 		/// 若参数个数为1，为手动模式运行，从操作台读取各个参数。
@@ -502,19 +504,21 @@ int mainQTL(int args, char* argv[]) {
 
 		ifPrintInitDataReport = inputBooleanFromKeyboard("Do you want detailed Initialization Report?");
 		ifPrintCalReport = inputBooleanFromKeyboard("Do you want detailed Calculation Report?");
-		ifPrintFinalReport = inputBooleanFromKeyboard("Do you want detailed Final Report?");
-	} else if (args == 2) {
-		/// 若参数个树为2，为自动模式，从配置文件读取参数。
-		cout << "Input File:" << argv[1] << endl;
+		ifPrintDetailedFinalReport = inputBooleanFromKeyboard("Do you want detailed Final Report?");
+	} else if (args >= 2) {
+		/// 若参数个数大于2，为自动模式，从配置文件读取参数。
+		logger <<Priority::INFO << "Input File:" << argv[1];
 		fstream fin;
 		fin.open(argv[1], ios::in);
 
 		fin >> iSampleSize >> iTraitNumber >> step;
-		fin >> sExpressDataFile;
+		fin >> sTraitIntervalFile;
 		fin >> sChildrenGeneDataFile;
 		fin >> sFParentsGeneDataFile >>sMParentsGeneDataFile;
-		fin >> sTraitIntervalFile;
-		fin >> ifPrintInitDataReport >> ifPrintCalReport >> ifPrintFinalReport;
+		fin >> sExpressDataFile;
+		fin >> ifPrintInitDataReport >> ifPrintCalReport >> ifPrintDetailedFinalReport;
+
+		fin >> LODThresholdTimer;
 
 		fin.close();
 	} else {
@@ -523,35 +527,30 @@ int mainQTL(int args, char* argv[]) {
 	}
 
 	/// 汇总显示各输入参数
-	cout << "Input Summary:\t" << iSampleSize << " samples of " << iTraitNumber
-			<< " traits in following files:" << endl
-			<< "\tExpress Data in:            " << sExpressDataFile << endl
-			<< "\tGene Data of Children in:   " << sChildrenGeneDataFile << endl
-			<< "\tGene Data of Parent(F) in:  " << sFParentsGeneDataFile << endl
-			<< "\tGene Data of Parent(M) in:  " << sMParentsGeneDataFile << endl
-			<< "\tTrait Interval Data in:     " << sTraitIntervalFile << endl
-			<< "Log Detail: " << endl << "\tInitialization Report - "
-			<< (ifPrintInitDataReport ? "Yes" : "No") << endl
-			<< "\tCalculation Report - " << (ifPrintCalReport ? "Yes" : "No")
-			<< endl << "\tFinal Report - "
-			<< (ifPrintFinalReport ? "Yes" : "No") << endl
-			<< "Calculate step:\t" << step << endl;
+	logger <<Priority::INFO << "Input Summary:\t" << iSampleSize << " samples of " << iTraitNumber <<"\n"
+			<< " traits in following files:" <<"\n"
+			<< "\tTrait Interval Data in:     " << sTraitIntervalFile <<"\n"
+			<< "\tGene Data of Children in:   " << sChildrenGeneDataFile <<"\n"
+			<< "\tGene Data of Parent(F) in:  " << sFParentsGeneDataFile <<"\n"
+			<< "\tGene Data of Parent(M) in:  " << sMParentsGeneDataFile <<"\n"
+			<< "\tExpress Data in:            " << sExpressDataFile <<"\n"
+			<< "For LOD Threshold, " <<LODThresholdTimer <<" random data will run." <<"\n"
+			<< "Log Detail: " <<"\n"
+			<< "\tInitialization Report - " << (ifPrintInitDataReport ? "On" : "Off") <<"\n"
+			<< "\tCalculation Report    - " << (ifPrintCalReport ? "On" : "Off") <<"\n"
+			<< "\tDetailed Final Report - " << (ifPrintDetailedFinalReport ? "On" : "Off") <<"\n"
+			<< "Calculation step:\t" << step;
 
-	/// 读取表型数据文件，并计算表型数组的均值、方差
-	vector<EXPData> expData(iSampleSize);
-	EXPData u0 = 0, s0 = 0;
-	initExpressData(sExpressDataFile, iSampleSize, expData, &u0, &s0,
+	logger <<Priority::INFO <<"========= INIT  =========";
+	/// 初始化并读取位点距离数据
+	vector<double> traitInterval(iTraitNumber);
+	initIntervalData(sTraitIntervalFile, iTraitNumber - 1, traitInterval,
 			ifPrintInitDataReport);
 
 	/// 初始化基因型数据并读取基因型数据文件
 	vector<vector<string> > mk;
 	mk = vector<vector<string> >(iTraitNumber, vector<string>(iSampleSize, "  "));
 	initChildrenGeneData(sChildrenGeneDataFile, mk, ifPrintInitDataReport);
-
-	/// 初始化并读取位点距离数据
-	vector<double> traitInterval(iTraitNumber);
-	initIntervalData(sTraitIntervalFile, iTraitNumber - 1, traitInterval,
-			ifPrintInitDataReport);
 
 	/// 初始化亲本的基因型
 	vector<string> fGene(iTraitNumber, "abab");
@@ -560,15 +559,24 @@ int mainQTL(int args, char* argv[]) {
 	initParentGeneData(sMParentsGeneDataFile, mGene, iTraitNumber, "Parent(M)", ifPrintInitDataReport);
 	vector<string> qGene(iTraitNumber, "Qq");
 
+	/// 读取表型数据文件，并计算表型数组的均值、方差
+	vector<EXPData> expData(iSampleSize);
+	EXPData u0 = 0, s0 = 0;
+	initExpressData(sExpressDataFile, iSampleSize, expData, &u0, &s0,
+			ifPrintInitDataReport);
+
+	logger <<Priority::DEBUG <<"init done";
+
 	/// 逐个位点计算LOD值，并统计最大值
 	double maxLOD = 0;
 	int maxLODTrait;
 	int maxLODPosition;
+	logger <<Priority::INFO <<"========= START =========";
 	for (int currentTrait = 0; currentTrait < iTraitNumber - 1;
 			currentTrait++) {
-		if (ifPrintFinalReport) {
-			cout << "---------" << (currentTrait + 1) << "---("
-					<< traitInterval[currentTrait] << ")--------" << endl;
+		if (ifPrintDetailedFinalReport) {
+			logger <<Priority::INFO << "---------" << (currentTrait + 1) << "---("
+					<< traitInterval[currentTrait] << ")--------";
 		}
 		/// 按步长推进计算LOD值
 		for (double startPoint = 0.0; startPoint < traitInterval[currentTrait];
@@ -580,27 +588,28 @@ int mainQTL(int args, char* argv[]) {
 				maxLODTrait = currentTrait;
 				maxLODPosition = startPoint;
 			}
-			if (ifPrintFinalReport) {
-				cout << "[" << startPoint << "~" << (startPoint + step) << "]:["
-						<< traitInterval[currentTrait] << "] LOD=" << LOD
-						<< endl;
+			if (ifPrintDetailedFinalReport) {
+				logger <<Priority::INFO << "[" << startPoint << "~" << (startPoint + step) << "]:["
+						<< traitInterval[currentTrait] << "] LOD=" << LOD;
 			}
 		}
+		logger <<Priority::INFO <<"Trait " <<currentTrait+1 <<"~" <<currentTrait+2 <<" done\t("<<100*(currentTrait+1)/(iTraitNumber-1) <<"%)";
 	}
-	cout <<"MAX LOD:\t" <<maxLODTrait
-			<< "[" << maxLODPosition << "~" << (maxLODPosition + step) << "] = " <<maxLOD <<endl;
-	return 1;
+	logger <<Priority::INFO <<"MAX LOD:\tTrait " <<maxLODTrait+1 << "[" << maxLODPosition << "~" << (maxLODPosition + step) << "] = " <<maxLOD;
+	logger <<Priority::INFO <<"=========  END  =========";
+	return maxLOD;
 }
 
 int main(int args, char* argv[]) {
-	//return tempMain();
+	initLoggers();
 
 	getTimeStamp();
-	int re = mainQTL(args, argv);
+	double re = IMQTLRun(args, argv);
 	float t = getTimeStamp();
 
-	cout <<"Total time: " <<t <<" ms" <<endl
-		<<"Average time:" << t <<" ms" <<endl;
+	logger <<Priority::INFO <<"Total time: " <<t <<" ms";
+	logger <<Priority::INFO <<"Average time:" << t <<" ms";
 
-	return re;
+	haltLoggers();
+	return 0;
 }

@@ -65,7 +65,8 @@ $(document).ready(function(){initNavTree('_q_t_l_utils_8h.html','');});
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">QTLUtils.h File Reference</div>  </div>
 </div><!--header-->
@@ -78,6 +79,14 @@ $(document).ready(function(){initNavTree('_q_t_l_utils_8h.html','');});
 <code>#include &lt;Iterator&gt;</code><br/>
 <code>#include &lt;bitset&gt;</code><br/>
 <code>#include &lt;math.h&gt;</code><br/>
+<code>#include &lt;log4cpp/Category.hh&gt;</code><br/>
+<code>#include &lt;log4cpp/Appender.hh&gt;</code><br/>
+<code>#include &lt;log4cpp/FileAppender.hh&gt;</code><br/>
+<code>#include &lt;log4cpp/OstreamAppender.hh&gt;</code><br/>
+<code>#include &lt;log4cpp/Layout.hh&gt;</code><br/>
+<code>#include &lt;log4cpp/BasicLayout.hh&gt;</code><br/>
+<code>#include &lt;log4cpp/Priority.hh&gt;</code><br/>
+<code>#include &lt;log4cpp/PropertyConfigurator.hh&gt;</code><br/>
 </div>
 <p><a href="_q_t_l_utils_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -95,6 +104,9 @@ Typedefs</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a1bf46e1f45b4a7981b81caee0ee52ce1"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_q_t_l_utils_8h.html#a1bf46e1f45b4a7981b81caee0ee52ce1">reorderStr</a> (const string input)</td></tr>
 <tr class="separator:a1bf46e1f45b4a7981b81caee0ee52ce1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f5ee43f4eb5a3d92c8ad4159dec8189"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a9f5ee43f4eb5a3d92c8ad4159dec8189"><td class="memTemplItemLeft" align="right" valign="top">string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="_q_t_l_utils_8h.html#a9f5ee43f4eb5a3d92c8ad4159dec8189">to_string</a> (T const &amp;value)</td></tr>
+<tr class="separator:a9f5ee43f4eb5a3d92c8ad4159dec8189"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7317c4d28bb0e51117586d9fddf4d281"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_q_t_l_utils_8h.html#a7317c4d28bb0e51117586d9fddf4d281">d2r</a> (const double x)</td></tr>
 <tr class="separator:a7317c4d28bb0e51117586d9fddf4d281"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fbc43095643934f23c956ad2104862b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_q_t_l_utils_8h.html#a9fbc43095643934f23c956ad2104862b">d2rKosambi</a> (const double d)</td></tr>
@@ -123,6 +135,11 @@ Functions</h2></td></tr>
 <tr class="memitem:a474fa66fcca12d36baa585cd02ae83e1"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a474fa66fcca12d36baa585cd02ae83e1"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="_q_t_l_utils_8h.html#a474fa66fcca12d36baa585cd02ae83e1">readFile2Matrix</a> (const string filename, vector&lt; vector&lt; T &gt; &gt; &amp;m)</td></tr>
 <tr class="separator:a474fa66fcca12d36baa585cd02ae83e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a7d15bba702d9fd01b1e65b73b35ea7f9"><td class="memItemLeft" align="right" valign="top">Category &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_q_t_l_utils_8h.html#a7d15bba702d9fd01b1e65b73b35ea7f9">logger</a></td></tr>
+<tr class="separator:a7d15bba702d9fd01b1e65b73b35ea7f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="aded16d2351bd5cab9ae58ad4eea5822a"></a>
@@ -135,7 +152,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_q_t_l_utils_8h_source.html#l00020">20</a> of file <a class="el" href="_q_t_l_utils_8h_source.html">QTLUtils.h</a>.</p>
+<p>Definition at line <a class="el" href="_q_t_l_utils_8h_source.html#l00030">30</a> of file <a class="el" href="_q_t_l_utils_8h_source.html">QTLUtils.h</a>.</p>
 
 <p>Referenced by <a class="el" href="_q_t_l_utils_8cpp_source.html#l00009">getTimeStamp()</a>.</p>
 
@@ -152,7 +169,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_q_t_l_utils_8h_source.html#l00022">22</a> of file <a class="el" href="_q_t_l_utils_8h_source.html">QTLUtils.h</a>.</p>
+<p>Definition at line <a class="el" href="_q_t_l_utils_8h_source.html#l00032">32</a> of file <a class="el" href="_q_t_l_utils_8h_source.html">QTLUtils.h</a>.</p>
 
 </div>
 </div>
@@ -183,7 +200,7 @@ Functions</h2></td></tr>
 
 <p>References <a class="el" href="_q_t_l_utils_8cpp_source.html#l00034">d2rHaldane()</a>.</p>
 
-<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00447">intervalQTL()</a>.</p>
+<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00432">intervalQTL()</a>.</p>
 
 </div>
 </div>
@@ -276,9 +293,9 @@ template&lt;class Iterator &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>算数平均值 </dd></dl>
 
-<p>Definition at line <a class="el" href="_q_t_l_utils_8h_source.html#l00054">54</a> of file <a class="el" href="_q_t_l_utils_8h_source.html">QTLUtils.h</a>.</p>
+<p>Definition at line <a class="el" href="_q_t_l_utils_8h_source.html#l00079">79</a> of file <a class="el" href="_q_t_l_utils_8h_source.html">QTLUtils.h</a>.</p>
 
-<p>Referenced by <a class="el" href="_q_t_l_utils_8h_source.html#l00071">getVariance()</a>, and <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00044">initExpressData()</a>.</p>
+<p>Referenced by <a class="el" href="_q_t_l_utils_8h_source.html#l00096">getVariance()</a>, and <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00047">initExpressData()</a>.</p>
 
 </div>
 </div>
@@ -299,9 +316,9 @@ template&lt;class Iterator &gt; </div>
 
 <p>Definition at line <a class="el" href="_q_t_l_utils_8cpp_source.html#l00009">9</a> of file <a class="el" href="_q_t_l_utils_8cpp_source.html">QTLUtils.cpp</a>.</p>
 
-<p>References <a class="el" href="_q_t_l_utils_8h_source.html#l00020">SECOND_TO_MS</a>.</p>
+<p>References <a class="el" href="_q_t_l_utils_8h_source.html#l00030">SECOND_TO_MS</a>.</p>
 
-<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00595">main()</a>.</p>
+<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00603">main()</a>.</p>
 
 </div>
 </div>
@@ -347,11 +364,11 @@ template&lt;class Iterator &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>数组数据的方差 </dd></dl>
 
-<p>Definition at line <a class="el" href="_q_t_l_utils_8h_source.html#l00071">71</a> of file <a class="el" href="_q_t_l_utils_8h_source.html">QTLUtils.h</a>.</p>
+<p>Definition at line <a class="el" href="_q_t_l_utils_8h_source.html#l00096">96</a> of file <a class="el" href="_q_t_l_utils_8h_source.html">QTLUtils.h</a>.</p>
 
-<p>References <a class="el" href="_q_t_l_utils_8h_source.html#l00054">getAverage()</a>.</p>
+<p>References <a class="el" href="_q_t_l_utils_8h_source.html#l00079">getAverage()</a>.</p>
 
-<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00044">initExpressData()</a>.</p>
+<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00047">initExpressData()</a>.</p>
 
 </div>
 </div>
@@ -379,7 +396,7 @@ template&lt;class Iterator &gt; </div>
 
 <p>Definition at line <a class="el" href="_q_t_l_utils_8cpp_source.html#l00021">21</a> of file <a class="el" href="_q_t_l_utils_8cpp_source.html">QTLUtils.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00485">mainQTL()</a>.</p>
+<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00477">IMQTLRun()</a>.</p>
 
 </div>
 </div>
@@ -417,9 +434,9 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_q_t_l_utils_8h_source.html#l00097">97</a> of file <a class="el" href="_q_t_l_utils_8h_source.html">QTLUtils.h</a>.</p>
+<p>Definition at line <a class="el" href="_q_t_l_utils_8h_source.html#l00122">122</a> of file <a class="el" href="_q_t_l_utils_8h_source.html">QTLUtils.h</a>.</p>
 
-<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00485">mainQTL()</a>.</p>
+<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00477">IMQTLRun()</a>.</p>
 
 </div>
 </div>
@@ -449,9 +466,11 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_q_t_l_utils_8h_source.html#l00110">110</a> of file <a class="el" href="_q_t_l_utils_8h_source.html">QTLUtils.h</a>.</p>
+<p>Definition at line <a class="el" href="_q_t_l_utils_8h_source.html#l00135">135</a> of file <a class="el" href="_q_t_l_utils_8h_source.html">QTLUtils.h</a>.</p>
 
-<p>Referenced by <a class="el" href="_i_m_q_t_l_logger_8cpp_source.html#l00016">printExpressData()</a>, <a class="el" href="_i_m_q_t_l_logger_8cpp_source.html#l00025">printIntervalData()</a>, and <a class="el" href="_i_m_q_t_l_logger_8cpp_source.html#l00049">printParentGeneData()</a>.</p>
+<p>References <a class="el" href="_i_m_q_t_l_logger_8cpp_source.html#l00010">logger</a>.</p>
+
+<p>Referenced by <a class="el" href="_i_m_q_t_l_logger_8cpp_source.html#l00033">printExpressData()</a>, <a class="el" href="_i_m_q_t_l_logger_8cpp_source.html#l00042">printIntervalData()</a>, and <a class="el" href="_i_m_q_t_l_logger_8cpp_source.html#l00068">printParentGeneData()</a>.</p>
 
 </div>
 </div>
@@ -490,9 +509,9 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_q_t_l_utils_8h_source.html#l00159">159</a> of file <a class="el" href="_q_t_l_utils_8h_source.html">QTLUtils.h</a>.</p>
+<p>Definition at line <a class="el" href="_q_t_l_utils_8h_source.html#l00184">184</a> of file <a class="el" href="_q_t_l_utils_8h_source.html">QTLUtils.h</a>.</p>
 
-<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00067">initChildrenGeneData()</a>.</p>
+<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00068">initChildrenGeneData()</a>.</p>
 
 </div>
 </div>
@@ -538,9 +557,9 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>实际读入向量的大小 </dd></dl>
 
-<p>Definition at line <a class="el" href="_q_t_l_utils_8h_source.html#l00130">130</a> of file <a class="el" href="_q_t_l_utils_8h_source.html">QTLUtils.h</a>.</p>
+<p>Definition at line <a class="el" href="_q_t_l_utils_8h_source.html#l00155">155</a> of file <a class="el" href="_q_t_l_utils_8h_source.html">QTLUtils.h</a>.</p>
 
-<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00044">initExpressData()</a>, <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00102">initIntervalData()</a>, and <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00084">initParentGeneData()</a>.</p>
+<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00047">initExpressData()</a>, <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00102">initIntervalData()</a>, and <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00084">initParentGeneData()</a>.</p>
 
 </div>
 </div>
@@ -568,7 +587,52 @@ template&lt;typename T &gt; </div>
 
 <p>Definition at line <a class="el" href="_q_t_l_utils_8cpp_source.html#l00069">69</a> of file <a class="el" href="_q_t_l_utils_8cpp_source.html">QTLUtils.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00372">reorderGene()</a>.</p>
+<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00358">reorderGene()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9f5ee43f4eb5a3d92c8ad4159dec8189"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">string to_string </td>
+          <td>(</td>
+          <td class="paramtype">T const &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>将基本类型转换问字符串类型 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>基本类型值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>对应的字符串 </dd></dl>
+
+<p>Definition at line <a class="el" href="_q_t_l_utils_8h_source.html#l00050">50</a> of file <a class="el" href="_q_t_l_utils_8h_source.html">QTLUtils.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="a7d15bba702d9fd01b1e65b73b35ea7f9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Category&amp; logger</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_i_m_q_t_l_logger_8cpp_source.html#l00010">10</a> of file <a class="el" href="_i_m_q_t_l_logger_8cpp_source.html">IMQTLLogger.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00171">calculateGP()</a>, <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00210">calculateLOD()</a>, <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00248">EMCalculate()</a>, <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00134">findGeneCP()</a>, <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00477">IMQTLRun()</a>, <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00047">initExpressData()</a>, <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00102">initIntervalData()</a>, <a class="el" href="_i_m_q_t_l_logger_8cpp_source.html#l00012">initLoggers()</a>, <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00084">initParentGeneData()</a>, <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00432">intervalQTL()</a>, <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00603">main()</a>, <a class="el" href="_i_m_q_t_l_logger_8cpp_source.html#l00050">printChildrenGeneData()</a>, <a class="el" href="_i_m_q_t_l_logger_8cpp_source.html#l00033">printExpressData()</a>, <a class="el" href="_i_m_q_t_l_logger_8cpp_source.html#l00077">printGeneCP()</a>, and <a class="el" href="_q_t_l_utils_8h_source.html#l00135">printVectorData()</a>.</p>
 
 </div>
 </div>
@@ -578,7 +642,7 @@ template&lt;typename T &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="_q_t_l_utils_8h.html">QTLUtils.h</a></li>
-    <li class="footer">Generated on Fri May 17 2013 22:52:15 for QTLPreviewers by
+    <li class="footer">Generated on Sun May 19 2013 00:03:30 for QTLPreviewers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3 </li>
   </ul>

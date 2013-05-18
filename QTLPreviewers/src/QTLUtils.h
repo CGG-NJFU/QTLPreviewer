@@ -17,16 +17,41 @@
 #include <bitset>
 #include <math.h>
 
+// using log4cpp
+#include <log4cpp/Category.hh>
+#include <log4cpp/Appender.hh>
+#include <log4cpp/FileAppender.hh>
+#include <log4cpp/OstreamAppender.hh>
+#include <log4cpp/Layout.hh>
+#include <log4cpp/BasicLayout.hh>
+#include <log4cpp/Priority.hh>
+#include <log4cpp/PropertyConfigurator.hh>
+
 #define SECOND_TO_MS 1000
 
 typedef double EXPData; //表现型数据类型
 
 using namespace std;
+using namespace log4cpp;
+
+extern Category& logger;
 
 //---------------------------------
 //----------- 字符串函数 -----------
 //---------------------------------
 string reorderStr(const string input);
+
+/**
+ * 将基本类型转换问字符串类型
+ * @param value 基本类型值
+ * @return 对应的字符串
+ */
+template <typename T>
+string to_string(T const& value) {
+    stringstream sstr;
+    sstr << value;
+    return sstr.str();
+}
 
 //---------------------------------
 //----------- 遗传学函数 -----------
@@ -109,10 +134,10 @@ int inputBooleanFromKeyboard(string info=NULL);
 template <typename T>
 void printVectorData(const vector<T> data, const string title = NULL) {
 	if ( !title.empty() ) {
-		cout << "=======" <<title <<"=======" <<endl;
+		logger <<Priority::INFO << "=======" <<title <<"=======";
 	}
 	for (unsigned int i = 0; i < data.size(); i++) {
-		cout << "[" << i << "]\t" << data[i] <<"\n";
+		logger <<Priority::INFO << "[" << i << "]\t" << data[i];
 	}
 }
 

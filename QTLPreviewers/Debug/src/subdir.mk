@@ -6,27 +6,24 @@
 CPP_SRCS += \
 ../src/IMQTLLogger.cpp \
 ../src/IMQTLPreviewer.cpp \
-../src/QTLUtils.cpp \
-../src/temp.cpp 
+../src/QTLUtils.cpp 
 
 OBJS += \
 ./src/IMQTLLogger.o \
 ./src/IMQTLPreviewer.o \
-./src/QTLUtils.o \
-./src/temp.o 
+./src/QTLUtils.o 
 
 CPP_DEPS += \
 ./src/IMQTLLogger.d \
 ./src/IMQTLPreviewer.d \
-./src/QTLUtils.d \
-./src/temp.d 
+./src/QTLUtils.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
 src/%.o: ../src/%.cpp
 	@echo 'Building file: $<'
 	@echo 'Invoking: GCC C++ Compiler'
-	g++ -O0 -g3 -Wall -Wextra -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	g++ -I/usr/local/include -O0 -g3 -Wall -Wextra -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

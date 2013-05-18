@@ -13,5 +13,7 @@ var _q_t_l_utils_8h =
     [ "printVectorData", "_q_t_l_utils_8h.html#a19a6ce7a7f657e40564090c74daa6d51", null ],
     [ "readFile2Matrix", "_q_t_l_utils_8h.html#a474fa66fcca12d36baa585cd02ae83e1", null ],
     [ "readFile2Vector", "_q_t_l_utils_8h.html#aaf9bf56674f773cccc262d4294955bfa", null ],
-    [ "reorderStr", "_q_t_l_utils_8h.html#a1bf46e1f45b4a7981b81caee0ee52ce1", null ]
+    [ "reorderStr", "_q_t_l_utils_8h.html#a1bf46e1f45b4a7981b81caee0ee52ce1", null ],
+    [ "to_string", "_q_t_l_utils_8h.html#a9f5ee43f4eb5a3d92c8ad4159dec8189", null ],
+    [ "logger", "_q_t_l_utils_8h.html#a7d15bba702d9fd01b1e65b73b35ea7f9", null ]
 ];

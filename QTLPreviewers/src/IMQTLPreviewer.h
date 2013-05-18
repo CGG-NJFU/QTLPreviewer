@@ -24,6 +24,4 @@
 #define GENE_CP_CUT 4
 #define GENE_CP_BIT 3
 
-int tempMain();
-
 #endif /* IMQTLPREVIEWER_H_ */
