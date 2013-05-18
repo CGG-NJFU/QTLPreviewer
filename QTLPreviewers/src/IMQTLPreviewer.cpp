@@ -64,8 +64,7 @@ void initExpressData(const string fileName, const int sampleNumber,
  * @param data 数据数组
  * @param ifPrintLog 是否打印日志
  */
-void initChildrenGeneData(const string fileName, const int sampleNumber,
-		const int traitNumber, vector<vector<string> >& data, const bool ifPrintLog = VERBOSE_MODE) {
+void initChildrenGeneData(const string fileName, vector<vector<string> >& data, const bool ifPrintLog = VERBOSE_MODE) {
 	readFile2Matrix(fileName, data);
 
 	if (ifPrintLog) {
@@ -170,24 +169,16 @@ double findGeneCP(const vector<string> geneMatrix, const vector<double> rMatrix,
  * @param ifPrintLog 是否打印日志
  */
 void calculateGP(vector<vector<double> >& gp, const vector<vector<string> >& mk, const string qtlGene, const int sampleSize, const int sampleIndex1,
-		const int sampleIndex2, const vector<string>& geneMatrix, const vector<double>& rMatrix, const bool ifUseShortGeneData = false, const bool ifPrintLog = VERBOSE_MODE) {
+		const int sampleIndex2, const vector<string>& geneMatrix, const vector<double>& rMatrix, const bool ifPrintLog = VERBOSE_MODE) {
 	for (int i = 0; i < sampleSize; i++) {
 		vector<string> qtl(3);
 		qtl[0] = qtlGene.substr(0,1)+qtlGene.substr(0,1); //"QQ"
 		qtl[1] = qtlGene.substr(0,1)+qtlGene.substr(1,1); //"Qq"
 		qtl[2] = qtlGene.substr(1,1)+qtlGene.substr(1,1); //"qq"
 
-		///获取亲本的基因型
-		string sample1 = mk[sampleIndex1][i];
-		string sample2 = mk[sampleIndex2][i];
+		///获取并拼接样本的基因型
+		string gene = mk[sampleIndex1][i] + mk[sampleIndex2][i];
 
-		///拼接亲本基因型字符串
-		string gene;
-		if (ifUseShortGeneData) {
-			gene = HAB2ab(sample1)+HAB2ab(sample2);
-		} else {
-			gene = sample1 + sample2;
-		}
 		///计算实际分布概率
 		for (int j=0; j<3; j++) {
 			gp[i][j] = findGeneCP(geneMatrix, rMatrix, gene+qtl[j], ifPrintLog);
@@ -446,7 +437,7 @@ int calcGeneCP(vector<string>& geneMatrix, vector<double>& rMatrix,
  */
 double intervalQTL(const int currentTrait, const EXPData u0, const EXPData s0, const double length,
 		const double startPoint, const vector<vector<string> >& mk, const vector<EXPData> expData, const int sampleSize,
-		const string f, const string m, const string q, const bool ifUseShortGeneData=false,
+		const string f, const string m, const string q,
 		const bool ifPrintLog = VERBOSE_MODE) {
 	double r = d2r(length);
 	double r1 = d2r(startPoint);
@@ -458,19 +449,20 @@ double intervalQTL(const int currentTrait, const EXPData u0, const EXPData s0, c
 				<< length << endl;
 	}
 
-	//计算基因型条件概率分布全数据，相当于生成书107页表
+	///计算基因型条件概率分布全数据，相当于生成书107页表
 	vector<double> rMatrix(GENE_CP_SIZE);
 	vector<string> geneMatrix(GENE_CP_SIZE);
 	calcGeneCP(geneMatrix, rMatrix, f, m, q, r1, r2, r, 1, true, ifPrintLog);
 
-	//统计各类型分布比率
+	///统计各类型分布比率
 	vector<vector<double> > gp = vector<vector<double> >(sampleSize, vector<double>(3));
-	calculateGP(gp, mk, q, sampleSize, currentTrait, currentTrait + 1, geneMatrix, rMatrix, ifUseShortGeneData, ifPrintLog);
+	calculateGP(gp, mk, q, sampleSize, currentTrait, currentTrait + 1, geneMatrix, rMatrix, ifPrintLog);
 
 	double u1 = 0, u2 = 0, u3 = 0, s1 = 0;
-	// EM算法
+	/// EM算法
 	EMCalculate(gp, sampleSize, expData, u0, s0, &u1, &u2, &u3, &s1, ifPrintLog);
 
+	/// 计算LOD
 	return calculateLOD(gp, sampleSize, expData, u0, s0, u1, u2, u3, s1, ifPrintLog);
 }
 
@@ -554,9 +546,9 @@ int mainQTL(int args, char* argv[]) {
 	/// 初始化基因型数据并读取基因型数据文件
 	vector<vector<string> > mk;
 	mk = vector<vector<string> >(iTraitNumber, vector<string>(iSampleSize, "  "));
-	initChildrenGeneData(sChildrenGeneDataFile, iSampleSize, iTraitNumber, mk, ifPrintInitDataReport);
+	initChildrenGeneData(sChildrenGeneDataFile, mk, ifPrintInitDataReport);
 
-	/// 初始化并读取位点距离数据，来源为见书115页
+	/// 初始化并读取位点距离数据
 	vector<double> traitInterval(iTraitNumber);
 	initIntervalData(sTraitIntervalFile, iTraitNumber - 1, traitInterval,
 			ifPrintInitDataReport);
@@ -568,9 +560,10 @@ int mainQTL(int args, char* argv[]) {
 	initParentGeneData(sMParentsGeneDataFile, mGene, iTraitNumber, "Parent(M)", ifPrintInitDataReport);
 	vector<string> qGene(iTraitNumber, "Qq");
 
-	bool ifUseShortGeneData = false;
-
-	/// 逐个位点计算LOD值
+	/// 逐个位点计算LOD值，并统计最大值
+	double maxLOD = 0;
+	int maxLODTrait;
+	int maxLODPosition;
 	for (int currentTrait = 0; currentTrait < iTraitNumber - 1;
 			currentTrait++) {
 		if (ifPrintFinalReport) {
@@ -581,7 +574,12 @@ int mainQTL(int args, char* argv[]) {
 		for (double startPoint = 0.0; startPoint < traitInterval[currentTrait];
 				startPoint += step) {
 			double LOD = intervalQTL(currentTrait, u0, s0,
-					traitInterval[currentTrait], startPoint, mk, expData, iSampleSize, fGene[currentTrait], mGene[currentTrait], qGene[currentTrait], ifUseShortGeneData ,ifPrintCalReport);
+					traitInterval[currentTrait], startPoint, mk, expData, iSampleSize, fGene[currentTrait], mGene[currentTrait], qGene[currentTrait], ifPrintCalReport);
+			if (LOD > maxLOD) {
+				maxLOD = LOD;
+				maxLODTrait = currentTrait;
+				maxLODPosition = startPoint;
+			}
 			if (ifPrintFinalReport) {
 				cout << "[" << startPoint << "~" << (startPoint + step) << "]:["
 						<< traitInterval[currentTrait] << "] LOD=" << LOD
@@ -589,6 +587,8 @@ int mainQTL(int args, char* argv[]) {
 			}
 		}
 	}
+	cout <<"MAX LOD:\t" <<maxLODTrait
+			<< "[" << maxLODPosition << "~" << (maxLODPosition + step) << "] = " <<maxLOD <<endl;
 	return 1;
 }
 
