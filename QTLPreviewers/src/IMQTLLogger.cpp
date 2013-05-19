@@ -7,7 +7,7 @@
 
 #include "IMQTLLogger.h"
 
-Category& logger = log4cpp::Category::getInstance("rootAppender");
+Category& logger = log4cpp::Category::getInstance("rootCategory");
 
 /**
  * 初始化日志系统
