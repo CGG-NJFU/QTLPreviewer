@@ -6,20 +6,17 @@
 CPP_SRCS += \
 ../src/IMQTLLogger.cpp \
 ../src/IMQTLPreviewer.cpp \
-../src/QTLUtils.cpp \
-../src/temp.cpp 
+../src/QTLUtils.cpp 
 
 OBJS += \
 ./src/IMQTLLogger.o \
 ./src/IMQTLPreviewer.o \
-./src/QTLUtils.o \
-./src/temp.o 
+./src/QTLUtils.o 
 
 CPP_DEPS += \
 ./src/IMQTLLogger.d \
 ./src/IMQTLPreviewer.d \
-./src/QTLUtils.d \
-./src/temp.d 
+./src/QTLUtils.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

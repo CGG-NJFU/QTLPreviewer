@@ -9,30 +9,37 @@
 
 Category& logger = log4cpp::Category::getInstance("rootAppender");
 
-void initLoggers() {
+/**
+ * 初始化日志系统
+ * @return 返回是否初始化成功
+ */
+bool initLoggers() {
 	try {
 		PropertyConfigurator::configure("config/log4cpp.properties");
 	} catch (ConfigureFailure& f) {
 		cerr << "log4cpp configuration failed:" <<endl
-				<< f.what() << std::endl;
+				<< f.what() <<endl;
+		return false;
 	}
 
-	logger << Priority::DEBUG <<"LOG4CPP is ready";
+	logger << Priority::DEBUG <<"log4cpp is ready";
+	return true;
 }
 
+/**
+ * 关闭日志系统
+ */
 void haltLoggers() {
+	logger <<Priority::DEBUG <<"log4cpp is shutting down";
 	Category::shutdown();
 }
 
 /**
  * 打印样本的表现型数据
  * @param data 样本表现型数组
- * @param u0 统计量mu
- * @param s0 统计量sigma平方
  */
-void printExpressData(const vector<EXPData> data, const EXPData u0, const EXPData s0) {
-	printVectorData(data, "ExpressData");
-	logger <<Priority::DEBUG <<"u0=" <<u0 << "\ts0=" <<s0;
+void printExpressData(const vector<EXPData> data) {
+	printVectorData(data, "ExpressData", Priority::INFO);
 }
 
 /**
@@ -40,7 +47,7 @@ void printExpressData(const vector<EXPData> data, const EXPData u0, const EXPDat
  * @param data 区间距离数据
  */
 void printIntervalData(const vector<double> data) {
-	printVectorData(data, "TraitIntervalData");
+	printVectorData(data, "TraitIntervalData", Priority::INFO);
 }
 
 /**
@@ -48,7 +55,7 @@ void printIntervalData(const vector<double> data) {
  * @param data 样本基因型数据
  */
 void printChildrenGeneData(const vector<vector<string> > data) {
-	logger <<Priority::DEBUG <<"=======Children MarkData======";
+	logger <<Priority::INFO <<"=======Children MarkData======";
 	stringstream sstr;
 	for (unsigned int i=0; i<data.size(); i++) {
 		sstr <<endl;
@@ -57,7 +64,7 @@ void printChildrenGeneData(const vector<vector<string> > data) {
 			sstr <<data[i][j] <<" ";
 		}
 	}
-	logger <<Priority::DEBUG <<sstr.str();
+	logger <<Priority::INFO <<sstr.str();
 }
 
 /**
@@ -66,7 +73,7 @@ void printChildrenGeneData(const vector<vector<string> > data) {
  * @param parentString 亲本名称
  */
 void printParentGeneData(const vector<string> data, const string parentString) {
-	printVectorData(data, parentString+" MarkData");
+	printVectorData(data, parentString+" MarkData", Priority::INFO);
 }
 
 /**
@@ -75,7 +82,7 @@ void printParentGeneData(const vector<string> data, const string parentString) {
  * @param rMatrix 条件概率
  */
 void printGeneCP(const vector<string>& geneMatrix, const vector<double> rMatrix) {
-	logger <<Priority::DEBUG <<"ffmm:fm ->\tffmm:fm\tConditional Probability\n";
+	logger <<Priority::DEBUG <<"ffmm:fm ->\tffmm:fm\tConditional Probability";
 	for (unsigned int i=0; i<geneMatrix.size(); i++) {
 		bitset<4> bs_up(i/4);  ///前四位为亲代基因型
 		bitset<2> bs_down(i%4); ///后二位为子代基因型

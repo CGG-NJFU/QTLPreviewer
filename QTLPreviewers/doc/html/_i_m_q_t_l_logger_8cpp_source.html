@@ -77,64 +77,66 @@ $(document).ready(function(){initNavTree('_i_m_q_t_l_logger_8cpp_source.html',''
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
 <div class="line"><a name="l00010"></a><span class="lineno"><a class="code" href="_q_t_l_utils_8h.html#a7d15bba702d9fd01b1e65b73b35ea7f9">   10</a></span>&#160;Category&amp; <a class="code" href="_i_m_q_t_l_logger_8cpp.html#a7d15bba702d9fd01b1e65b73b35ea7f9">logger</a> = log4cpp::Category::getInstance(<span class="stringliteral">&quot;rootAppender&quot;</span>);</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="code" href="_i_m_q_t_l_logger_8h.html#aab72e4c7a8b27327b094f9587a62761e">   12</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_i_m_q_t_l_logger_8cpp.html#aab72e4c7a8b27327b094f9587a62761e">initLoggers</a>() {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        PropertyConfigurator::configure(<span class="stringliteral">&quot;config/log4cpp.properties&quot;</span>);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    } <span class="keywordflow">catch</span> (ConfigureFailure&amp; <a class="code" href="_i_m_q_t_l_previewer_8cpp.html#a1776dab1a8b33353b644c08d2d28b07e">f</a>) {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        cerr &lt;&lt; <span class="stringliteral">&quot;log4cpp configuration failed:&quot;</span> &lt;&lt;endl</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                &lt;&lt; f.what() &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    }</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="_i_m_q_t_l_logger_8cpp.html#a7d15bba702d9fd01b1e65b73b35ea7f9">logger</a> &lt;&lt; Priority::DEBUG &lt;&lt;<span class="stringliteral">&quot;LOG4CPP is ready&quot;</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="_i_m_q_t_l_logger_8h.html#ab360540241d677a922d40033bd90c391">   23</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_i_m_q_t_l_logger_8cpp.html#ab360540241d677a922d40033bd90c391">haltLoggers</a>() {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    Category::shutdown();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="_i_m_q_t_l_logger_8h.html#a95cb24505f8e19fe1cabd52963754931">   33</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_i_m_q_t_l_logger_8cpp.html#a95cb24505f8e19fe1cabd52963754931">printExpressData</a>(<span class="keyword">const</span> vector&lt;EXPData&gt; data, <span class="keyword">const</span> <a class="code" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a> u0, <span class="keyword">const</span> <a class="code" href="_q_t_l_utils_8h.html#acadf0b1675c82e02b5daab654b130cfc">EXPData</a> s0) {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="_q_t_l_utils_8h.html#a19a6ce7a7f657e40564090c74daa6d51">printVectorData</a>(data, <span class="stringliteral">&quot;ExpressData&quot;</span>);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="_i_m_q_t_l_logger_8cpp.html#a7d15bba702d9fd01b1e65b73b35ea7f9">logger</a> &lt;&lt;Priority::DEBUG &lt;&lt;<span class="stringliteral">&quot;u0=&quot;</span> &lt;&lt;u0 &lt;&lt; <span class="stringliteral">&quot;\ts0=&quot;</span> &lt;&lt;s0;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="code" href="_i_m_q_t_l_logger_8h.html#adea84b2e000ee7277d6c8c7a03c42086">   42</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_i_m_q_t_l_logger_8cpp.html#adea84b2e000ee7277d6c8c7a03c42086">printIntervalData</a>(<span class="keyword">const</span> vector&lt;double&gt; data) {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="_q_t_l_utils_8h.html#a19a6ce7a7f657e40564090c74daa6d51">printVectorData</a>(data, <span class="stringliteral">&quot;TraitIntervalData&quot;</span>);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="_i_m_q_t_l_logger_8h.html#a2e8945b28932e74eba60965fab6c2705">   50</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_i_m_q_t_l_logger_8cpp.html#a2e8945b28932e74eba60965fab6c2705">printChildrenGeneData</a>(<span class="keyword">const</span> vector&lt;vector&lt;string&gt; &gt; data) {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="_i_m_q_t_l_logger_8cpp.html#a7d15bba702d9fd01b1e65b73b35ea7f9">logger</a> &lt;&lt;Priority::DEBUG &lt;&lt;<span class="stringliteral">&quot;=======Children MarkData======&quot;</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    stringstream sstr;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt;data.size(); i++) {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        sstr &lt;&lt;endl;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        sstr &lt;&lt;<span class="stringliteral">&quot;[&quot;</span> &lt;&lt;i &lt;&lt;<span class="stringliteral">&quot;(&quot;</span> &lt;&lt;data[i].size() &lt;&lt;<span class="stringliteral">&quot;)&quot;</span> &lt;&lt;<span class="stringliteral">&quot;]&quot;</span> &lt;&lt;<span class="stringliteral">&quot;\t&quot;</span>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> j=0; j&lt;data[i].size(); j++ ) {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            sstr &lt;&lt;data[i][j] &lt;&lt;<span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="_i_m_q_t_l_logger_8cpp.html#a7d15bba702d9fd01b1e65b73b35ea7f9">logger</a> &lt;&lt;Priority::DEBUG &lt;&lt;sstr.str();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="code" href="_i_m_q_t_l_logger_8h.html#a281d222255b84f3bac40625ca2c6410a">   68</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_i_m_q_t_l_logger_8cpp.html#a281d222255b84f3bac40625ca2c6410a">printParentGeneData</a>(<span class="keyword">const</span> vector&lt;string&gt; data, <span class="keyword">const</span> <span class="keywordtype">string</span> parentString) {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="_q_t_l_utils_8h.html#a19a6ce7a7f657e40564090c74daa6d51">printVectorData</a>(data, parentString+<span class="stringliteral">&quot; MarkData&quot;</span>);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="code" href="_i_m_q_t_l_logger_8h.html#a58dcbea940f35795f0bd7f59d8db7412">   77</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_i_m_q_t_l_logger_8cpp.html#a58dcbea940f35795f0bd7f59d8db7412">printGeneCP</a>(<span class="keyword">const</span> vector&lt;string&gt;&amp; geneMatrix, <span class="keyword">const</span> vector&lt;double&gt; rMatrix) {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="_i_m_q_t_l_logger_8cpp.html#a7d15bba702d9fd01b1e65b73b35ea7f9">logger</a> &lt;&lt;Priority::DEBUG &lt;&lt;<span class="stringliteral">&quot;ffmm:fm -&gt;\tffmm:fm\tConditional Probability\n&quot;</span>;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt;geneMatrix.size(); i++) {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        bitset&lt;4&gt; bs_up(i/4);  </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        bitset&lt;2&gt; bs_down(i%4); </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="_i_m_q_t_l_logger_8cpp.html#a7d15bba702d9fd01b1e65b73b35ea7f9">logger</a> &lt;&lt;Priority::DEBUG &lt;&lt;bs_up &lt;&lt;<span class="stringliteral">&quot;:&quot;</span> &lt;&lt;bs_down &lt;&lt;<span class="stringliteral">&quot; -&gt; \t&quot;</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                &lt;&lt;geneMatrix[i].substr(0,4) &lt;&lt;<span class="stringliteral">&quot;:&quot;</span> &lt;&lt; geneMatrix[i].substr(4,2) &lt;&lt;<span class="stringliteral">&quot;\t&quot;</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                &lt;&lt;rMatrix[i];</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="code" href="_i_m_q_t_l_logger_8h.html#af1b40d6e60d0d427086a7a5efe3b4239">   16</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_i_m_q_t_l_logger_8cpp.html#af1b40d6e60d0d427086a7a5efe3b4239">initLoggers</a>() {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        PropertyConfigurator::configure(<span class="stringliteral">&quot;config/log4cpp.properties&quot;</span>);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    } <span class="keywordflow">catch</span> (ConfigureFailure&amp; <a class="code" href="_i_m_q_t_l_previewer_8cpp.html#a1776dab1a8b33353b644c08d2d28b07e">f</a>) {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        cerr &lt;&lt; <span class="stringliteral">&quot;log4cpp configuration failed:&quot;</span> &lt;&lt;endl</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                &lt;&lt; f.what() &lt;&lt;endl;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="_i_m_q_t_l_logger_8cpp.html#a7d15bba702d9fd01b1e65b73b35ea7f9">logger</a> &lt;&lt; Priority::DEBUG &lt;&lt;<span class="stringliteral">&quot;log4cpp is ready&quot;</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="_i_m_q_t_l_logger_8h.html#ab360540241d677a922d40033bd90c391">   32</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_i_m_q_t_l_logger_8cpp.html#ab360540241d677a922d40033bd90c391">haltLoggers</a>() {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="_i_m_q_t_l_logger_8cpp.html#a7d15bba702d9fd01b1e65b73b35ea7f9">logger</a> &lt;&lt;Priority::DEBUG &lt;&lt;<span class="stringliteral">&quot;log4cpp is shutting down&quot;</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    Category::shutdown();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="_i_m_q_t_l_logger_8h.html#a1c949db75f0c9c808bc5568250df9d79">   41</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_i_m_q_t_l_logger_8cpp.html#a1c949db75f0c9c808bc5568250df9d79">printExpressData</a>(<span class="keyword">const</span> vector&lt;EXPData&gt; data) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="_q_t_l_utils_8h.html#a4c5d8dcf6608d535875ca9bc3dd2b022">printVectorData</a>(data, <span class="stringliteral">&quot;ExpressData&quot;</span>, Priority::INFO);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="_i_m_q_t_l_logger_8h.html#adea84b2e000ee7277d6c8c7a03c42086">   49</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_i_m_q_t_l_logger_8cpp.html#adea84b2e000ee7277d6c8c7a03c42086">printIntervalData</a>(<span class="keyword">const</span> vector&lt;double&gt; data) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="_q_t_l_utils_8h.html#a4c5d8dcf6608d535875ca9bc3dd2b022">printVectorData</a>(data, <span class="stringliteral">&quot;TraitIntervalData&quot;</span>, Priority::INFO);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="code" href="_i_m_q_t_l_logger_8h.html#a2e8945b28932e74eba60965fab6c2705">   57</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_i_m_q_t_l_logger_8cpp.html#a2e8945b28932e74eba60965fab6c2705">printChildrenGeneData</a>(<span class="keyword">const</span> vector&lt;vector&lt;string&gt; &gt; data) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="_i_m_q_t_l_logger_8cpp.html#a7d15bba702d9fd01b1e65b73b35ea7f9">logger</a> &lt;&lt;Priority::INFO &lt;&lt;<span class="stringliteral">&quot;=======Children MarkData======&quot;</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    stringstream sstr;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt;data.size(); i++) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        sstr &lt;&lt;endl;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        sstr &lt;&lt;<span class="stringliteral">&quot;[&quot;</span> &lt;&lt;i &lt;&lt;<span class="stringliteral">&quot;(&quot;</span> &lt;&lt;data[i].size() &lt;&lt;<span class="stringliteral">&quot;)&quot;</span> &lt;&lt;<span class="stringliteral">&quot;]&quot;</span> &lt;&lt;<span class="stringliteral">&quot;\t&quot;</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> j=0; j&lt;data[i].size(); j++ ) {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            sstr &lt;&lt;data[i][j] &lt;&lt;<span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="_i_m_q_t_l_logger_8cpp.html#a7d15bba702d9fd01b1e65b73b35ea7f9">logger</a> &lt;&lt;Priority::INFO &lt;&lt;sstr.str();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="code" href="_i_m_q_t_l_logger_8h.html#a281d222255b84f3bac40625ca2c6410a">   75</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_i_m_q_t_l_logger_8cpp.html#a281d222255b84f3bac40625ca2c6410a">printParentGeneData</a>(<span class="keyword">const</span> vector&lt;string&gt; data, <span class="keyword">const</span> <span class="keywordtype">string</span> parentString) {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="_q_t_l_utils_8h.html#a4c5d8dcf6608d535875ca9bc3dd2b022">printVectorData</a>(data, parentString+<span class="stringliteral">&quot; MarkData&quot;</span>, Priority::INFO);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="code" href="_i_m_q_t_l_logger_8h.html#a58dcbea940f35795f0bd7f59d8db7412">   84</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_i_m_q_t_l_logger_8cpp.html#a58dcbea940f35795f0bd7f59d8db7412">printGeneCP</a>(<span class="keyword">const</span> vector&lt;string&gt;&amp; geneMatrix, <span class="keyword">const</span> vector&lt;double&gt; rMatrix) {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="_i_m_q_t_l_logger_8cpp.html#a7d15bba702d9fd01b1e65b73b35ea7f9">logger</a> &lt;&lt;Priority::DEBUG &lt;&lt;<span class="stringliteral">&quot;ffmm:fm -&gt;\tffmm:fm\tConditional Probability&quot;</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt;geneMatrix.size(); i++) {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        bitset&lt;4&gt; bs_up(i/4);  </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        bitset&lt;2&gt; bs_down(i%4); </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <a class="code" href="_i_m_q_t_l_logger_8cpp.html#a7d15bba702d9fd01b1e65b73b35ea7f9">logger</a> &lt;&lt;Priority::DEBUG &lt;&lt;bs_up &lt;&lt;<span class="stringliteral">&quot;:&quot;</span> &lt;&lt;bs_down &lt;&lt;<span class="stringliteral">&quot; -&gt; \t&quot;</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                &lt;&lt;geneMatrix[i].substr(0,4) &lt;&lt;<span class="stringliteral">&quot;:&quot;</span> &lt;&lt; geneMatrix[i].substr(4,2) &lt;&lt;<span class="stringliteral">&quot;\t&quot;</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                &lt;&lt;rMatrix[i];</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="_i_m_q_t_l_logger_8cpp.html">IMQTLLogger.cpp</a></li>
-    <li class="footer">Generated on Sun May 19 2013 00:03:30 for QTLPreviewers by
+    <li class="footer">Generated on Sun May 19 2013 21:50:37 for QTLPreviewers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3 </li>
   </ul>

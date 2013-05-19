@@ -132,12 +132,12 @@ int inputBooleanFromKeyboard(string info=NULL);
 //------------- 屏幕输出--------------
 //-----------------------------------
 template <typename T>
-void printVectorData(const vector<T> data, const string title = NULL) {
+void printVectorData(const vector<T> data, const string title = NULL, Priority::PriorityLevel pl = Priority::DEBUG, const int startNumber = 1) {
 	if ( !title.empty() ) {
-		logger <<Priority::INFO << "=======" <<title <<"=======";
+		logger <<pl << "=======" <<title <<"=======";
 	}
 	for (unsigned int i = 0; i < data.size(); i++) {
-		logger <<Priority::INFO << "[" << i << "]\t" << data[i];
+		logger <<pl << "[" << i+startNumber << "]\t" << data[i];
 	}
 }
 
