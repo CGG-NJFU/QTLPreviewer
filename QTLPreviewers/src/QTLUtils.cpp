@@ -18,9 +18,9 @@ float getTimeStamp() {
  * @param info 提示信息
  * @return 判断值
  */
-int inputBooleanFromKeyboard(string info) {
-	int re;
-	cout <<info <<"(1.True, 0.False) ";
+bool inputBooleanFromKeyboard(string info) {
+	bool re;
+	cout <<info <<" (1.True, Any Other.False) ";
 	cin >>re;
 	cout <<(re ? "True" : "False") <<endl;
 	return re;
@@ -53,13 +53,18 @@ double d2r(const double x) {
 	return d2rHaldane(x);
 }
 
-//vector<string> generateAllGeneType(const string inputGene) {
-//	vector<string> re(3);
-//	re[0] = inputGene[0]+inputGene[0];
-//	re[1] = inputGene[0]+inputGene[1];
-//	re[2] = inputGene[1]+inputGene[1];
-//	return re;
-//}
+/**
+ * 生成全基因型排列，如Qq=》{QQ, Qq, qq}
+ * @param inputGene 基因型字母
+ * @return 基因型字母全排列
+ */
+vector<string> generateAllGeneType(const string inputGene) {
+	vector<string> re(3);
+	re[0] = inputGene.substr(0,1)+inputGene.substr(0,1); //"QQ"
+	re[1] = inputGene.substr(0,1)+inputGene.substr(1,1); //"Qq"
+	re[2] = inputGene.substr(1,1)+inputGene.substr(1,1); //"qq"
+	return re;
+}
 
 /**
  * 重排一个字符串内字符，如bdcae重排为abcde
@@ -70,4 +75,27 @@ string reorderStr(const string input) {
 	string re = input;
 	sort(re.begin(), re.end());
 	return re;
+}
+
+/**
+ * 生成序列顺序向量
+ * @param length 序列长度
+ * @param first 首序列标号，下标范围[0~length-1]
+ * @return 生成的序列顺序向量
+ */
+vector<int> first_permutation_order(const unsigned int length, const unsigned int first) {
+	vector<int> order(length);
+	order[0] = (first-1)%length;
+	for(unsigned int i=1;i<length;i++) {
+		if (i<=(first-1)%length) order[i+1]=i;
+		else order[i]=i;
+	}
+	return order;
+}
+
+vector<int> last_permutation_order(const unsigned int length, const unsigned int first) {
+	vector<int> order;
+	order = first_permutation_order(length, first%length+1);
+	prev_permutation(order.begin(), order.end());
+	return order;
 }

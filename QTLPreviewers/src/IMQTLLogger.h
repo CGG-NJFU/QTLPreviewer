@@ -18,6 +18,8 @@ void printIntervalData(const vector<double> data);
 void printChildrenGeneData(const vector<vector<string> > data);
 void printParentGeneData(const vector<string> data, const string parentString);
 void printGeneCP(const vector<string>& geneMatrix, const vector<double> rMatrix);
+void printLODJudgement(const bool ifOK, const string methodName, const unsigned int timer,
+		const double refLOD, const double maxLOD);
 
 extern Category& logger;
 bool initLoggers();

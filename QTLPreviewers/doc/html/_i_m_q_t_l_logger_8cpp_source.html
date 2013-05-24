@@ -75,7 +75,7 @@ $(document).ready(function(){initNavTree('_i_m_q_t_l_logger_8cpp_source.html',''
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_i_m_q_t_l_logger_8h.html">IMQTLLogger.h</a>&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="code" href="_q_t_l_utils_8h.html#a7d15bba702d9fd01b1e65b73b35ea7f9">   10</a></span>&#160;Category&amp; <a class="code" href="_i_m_q_t_l_logger_8cpp.html#a7d15bba702d9fd01b1e65b73b35ea7f9">logger</a> = log4cpp::Category::getInstance(<span class="stringliteral">&quot;rootAppender&quot;</span>);</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="code" href="_q_t_l_utils_8h.html#a7d15bba702d9fd01b1e65b73b35ea7f9">   10</a></span>&#160;Category&amp; <a class="code" href="_i_m_q_t_l_logger_8cpp.html#a7d15bba702d9fd01b1e65b73b35ea7f9">logger</a> = log4cpp::Category::getInstance(<span class="stringliteral">&quot;rootCategory&quot;</span>);</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
 <div class="line"><a name="l00016"></a><span class="lineno"><a class="code" href="_i_m_q_t_l_logger_8h.html#af1b40d6e60d0d427086a7a5efe3b4239">   16</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_i_m_q_t_l_logger_8cpp.html#af1b40d6e60d0d427086a7a5efe3b4239">initLoggers</a>() {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">try</span> {</div>
@@ -130,13 +130,28 @@ $(document).ready(function(){initNavTree('_i_m_q_t_l_logger_8cpp_source.html',''
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                &lt;&lt;rMatrix[i];</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="code" href="_i_m_q_t_l_logger_8h.html#aea5998d3c15d8e4cb96de07577002a80">  103</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_i_m_q_t_l_logger_8cpp.html#aea5998d3c15d8e4cb96de07577002a80">printLODJudgement</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> ifOK, <span class="keyword">const</span> <span class="keywordtype">string</span> methodName, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> timer,</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span> refLOD, <span class="keyword">const</span> <span class="keywordtype">double</span> maxLOD) {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">if</span> (ifOK) { </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <a class="code" href="_i_m_q_t_l_logger_8cpp.html#a7d15bba702d9fd01b1e65b73b35ea7f9">logger</a> &lt;&lt; Priority::NOTICE &lt;&lt; <span class="stringliteral">&quot;Max of &quot;</span> &lt;&lt; timer - 1</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt;methodName &lt;&lt;<span class="stringliteral">&quot; re-mix data is &quot;</span> &lt;&lt; refLOD &lt;&lt; <span class="stringliteral">&quot; &gt;&quot;</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                &lt;&lt; (refLOD / maxLOD - 1) * 100 &lt;&lt; <span class="stringliteral">&quot;%&quot;</span>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <a class="code" href="_i_m_q_t_l_logger_8cpp.html#a7d15bba702d9fd01b1e65b73b35ea7f9">logger</a> &lt;&lt; Priority::WARN &lt;&lt; <span class="stringliteral">&quot;QTL DETECTED: LOD:&quot;</span> &lt;&lt; maxLOD;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <a class="code" href="_i_m_q_t_l_logger_8cpp.html#a7d15bba702d9fd01b1e65b73b35ea7f9">logger</a> &lt;&lt; Priority::NOTICE &lt;&lt; <span class="stringliteral">&quot;Please check full log for QTL detail &quot;</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                &lt;&lt; maxLOD;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    } <span class="keywordflow">else</span> { </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <a class="code" href="_i_m_q_t_l_logger_8cpp.html#a7d15bba702d9fd01b1e65b73b35ea7f9">logger</a> &lt;&lt; Priority::WARN</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                &lt;&lt; <span class="stringliteral">&quot;QTL detection need more verification, please check.&quot;</span>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="_i_m_q_t_l_logger_8cpp.html">IMQTLLogger.cpp</a></li>
-    <li class="footer">Generated on Sun May 19 2013 21:50:37 for QTLPreviewers by
+    <li class="footer">Generated on Fri May 24 2013 22:16:03 for QTLPreviewers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3 </li>
   </ul>

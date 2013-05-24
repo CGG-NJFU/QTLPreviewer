@@ -3,17 +3,9 @@
 // Author      : Ethan
 // Version     : Master
 // Copyright   : Ethan @2012
-//		iSampleSize = 189;
-//		iTraitNumber = 9;
-//		step=1.0;
-//
-//		sExpressDataFile = "data/express-66.txt";
-//		sGeneDataFile = "data/gene-66.txt";
-//		sTraitIntervalFile = "data/traitInterval-66.txt";
-//
-//		ifPrintInitDataReport = false;
-//		ifPrintCalReport = false;
-//		ifPrintFinalReport = true;
+// 运行配置文件见 dara/para.in
+// 日志配置文件见 config/log4cpp.properties
+// 主要编译选项见 src/IMQTLPreviewer.h
 // Description : Previewer for Interval Mapping of QTL Analysis
 //============================================================================
 
@@ -133,12 +125,9 @@ double findGeneCP(const vector<string> geneMatrix, const vector<double> rMatrix,
  * @param geneMatrix 基因型
  * @param rMatrix 条件型概率
  */
-void calculateGP(vector<vector<double> >& gp, const vector<vector<string> >& mk, const string qtlGene, const int sampleIndex1,
+void calcGP(vector<vector<double> >& gp, const vector<vector<string> >& mk, const string qtlGene, const int sampleIndex1,
 		const int sampleIndex2, const vector<string>& geneMatrix, const vector<double>& rMatrix) {
-	vector<string> qtl(3);
-	qtl[0] = qtlGene.substr(0,1)+qtlGene.substr(0,1); //"QQ"
-	qtl[1] = qtlGene.substr(0,1)+qtlGene.substr(1,1); //"Qq"
-	qtl[2] = qtlGene.substr(1,1)+qtlGene.substr(1,1); //"qq"
+	vector<string> qtl = generateAllGeneType(qtlGene);
 
 	unsigned int sampleSize = mk[0].size();
 	if (sampleSize != gp.size()) {
@@ -175,7 +164,7 @@ void calculateGP(vector<vector<double> >& gp, const vector<vector<string> >& mk,
  * @param u3
  * @return LOD计分
  */
-double calculateLOD(const vector<vector<double> > gp, const vector<EXPData> expData,
+double calcLOD(const vector<vector<double> > gp, const vector<EXPData> expData,
 		const EXPData u0, const EXPData s0,
 		const EXPData u1, const EXPData u2, const EXPData u3, const EXPData s1 ) {
 	double sum1 = 0, sum2 = 0;
@@ -185,7 +174,7 @@ double calculateLOD(const vector<vector<double> > gp, const vector<EXPData> expD
 		logger <<Priority::WARN <<"DATASET size error might be in calculateLOD function";
 	}
 
-	logger <<Priority::DEBUG << "start to calculate LOD";
+	logger <<Priority::DEBUG <<"start to calculate LOD";
 	logger <<Priority::DEBUG <<"u0=" <<u0 <<"\ts0=" <<s0;
 	for (unsigned int i = 0; i < sampleSize; i++) {
 		sum1 += log10(f(expData[i], u0, s0));
@@ -216,7 +205,7 @@ double calculateLOD(const vector<vector<double> > gp, const vector<EXPData> expD
  * @param u3
  * @param s1
  */
-void EMCalculate(const vector<vector<double> >& gp, const vector<EXPData> expData,
+void EMCalc(const vector<vector<double> >& gp, const vector<EXPData> expData,
 		const EXPData u0, const EXPData s0, EXPData* u1, EXPData* u2, EXPData* u3, EXPData* s1) {
 	unsigned int sampleSize = expData.size();
 	if (sampleSize != gp.size()) {
@@ -326,7 +315,7 @@ double calcCross(const bitset<GENE_CP_BIT> geneBit,
  * @param geneMatrix 基因型数组
  * @return 成功运行返回1
  */
-void reorderGene(vector<string>& geneMatrix) {
+void sortGene(vector<string>& geneMatrix) {
 	logger <<Priority::DEBUG <<"Reordering Gene...";
 	for (unsigned int i=0; i<geneMatrix.size(); i++) {
 			geneMatrix[i] = reorderStr(geneMatrix[i].substr(0,2)) +
@@ -382,7 +371,7 @@ int calcGeneCP(vector<string>& geneMatrix, vector<double>& rMatrix,
 	}
 
 	if (ifReorder) {
-		reorderGene(geneMatrix);
+		sortGene(geneMatrix);
 	}
 
 	printGeneCP(geneMatrix, rMatrix);
@@ -423,14 +412,14 @@ double intervalQTL(const int currentTrait, const EXPData u0, const EXPData s0, c
 
 	///统计各类型分布比率
 	vector<vector<double> > gp = vector<vector<double> >(sampleSize, vector<double>(3));
-	calculateGP(gp, mk, q, currentTrait, currentTrait + 1, geneMatrix, rMatrix);
+	calcGP(gp, mk, q, currentTrait, currentTrait + 1, geneMatrix, rMatrix);
 
 	double u1 = 0, u2 = 0, u3 = 0, s1 = 0;
 	/// EM算法
-	EMCalculate(gp, expData, u0, s0, &u1, &u2, &u3, &s1);
+	EMCalc(gp, expData, u0, s0, &u1, &u2, &u3, &s1);
 
 	/// 计算LOD
-	return calculateLOD(gp, expData, u0, s0, u1, u2, u3, s1);
+	return calcLOD(gp, expData, u0, s0, u1, u2, u3, s1);
 }
 
 /**
@@ -459,7 +448,7 @@ double QTLRun(const vector<vector<string> >& mk, const vector<EXPData>& expData,
 	int iTraitNumber = traitInterval.size();
 	unsigned int iSampleSize = mk[0].size();
 	if (iSampleSize != expData.size()) {
-		logger <<Priority::WARN <<"DATASET size error might be in EMCalculate function";
+		logger <<Priority::WARN <<"DATASET size error might be in QTLRun function";
 	}
 
 	/// 初始化表型数据，计算算术平均值和方差
@@ -470,11 +459,8 @@ double QTLRun(const vector<vector<string> >& mk, const vector<EXPData>& expData,
 
 	if (iRemixExpDataTimer==0) { //重排模式下不输出详细日志
 		logger <<Priority::INFO <<"u0=" <<u0 << "\ts0=" <<s0;
-		useExpData = expData;
-	} else { /// 若启用重排模式，随机重排所有表型数据
-		useExpData = vector<EXPData>(expData);
-		random_shuffle(useExpData.begin(), useExpData.end());
 	}
+	useExpData = expData;
 
 	/// 逐个位点计算LOD值，并统计最大值
 	double maxLOD = 0;
@@ -514,15 +500,130 @@ double QTLRun(const vector<vector<string> >& mk, const vector<EXPData>& expData,
 				<< (maxLODPosition+step>traitInterval[maxLODTrait]?traitInterval[maxLODTrait]:maxLODPosition+step)
 				<< "] = " <<maxLOD;
 	} else {
-		logger <<Priority::NOTICE <<"[" <<iRemixExpDataTimer <<"] MAX LOD in Remix: = " <<maxLOD;
+		logger <<Priority::NOTICE <<"[" <<iRemixExpDataTimer <<"] MAX LOD in Random Re-mix: = " <<maxLOD;
 	}
 	return maxLOD;
 }
 
-double mainRun(int args, char* argv[]) {
+/**
+ * 判定LOD参考值与假定LOD最大值的关系
+ * @param refLOD LOD参考值
+ * @param maxLOD 假定LOD最大值
+ * @return 若参考值超过阈值，则返回True，否则返回false
+ */
+bool judgeLOD(const double refLOD, const double maxLOD) {
+	/// 如果LOD参考值大于假定LOD最大值，打印警报日志
+	if (refLOD >= maxLOD) {
+		logger << Priority::WARN << "maxLOD (" << maxLOD
+				<< ") is challenged by a re-mix data[" << refLOD << ">(" <<(refLOD/maxLOD-1)*100 <<"%)]";
+		/// 如果LOD参考值大于假定LOD最大值的阈值，退出，判定LOD无效
+		if (refLOD >= maxLOD * LOD_THRESHOLD)
+			return true;
+	}
+	return false;
+}
+
+/**
+ * 利用排列数向量混淆表型数据，计算LOD参考值
+ * @param permutationOrder 排列数首序列标号
+ * @param max_permutation 最大排列数
+ * @param maxLOD 假定LOD最大值
+ * @param mk 子代基因型数据
+ * @param expData 子代表现型数据
+ * @param traitInterval 位点间隔距离
+ * @param fGene 父本基因型数据
+ * @param mGene 母本基因型数据
+ * @param qGene QTL基因型数据
+ * @param dStep 步长
+ * @return 总计算次数
+ */
+unsigned int LODPermutationRun(const int permutationOrder,
+		const double maxLOD, const vector<vector<string> >& mk,
+		const vector<EXPData>& expData, const vector<double>& traitInterval,
+		const vector<string>& fGene, const vector<string>& mGene,
+		const vector<string>& qGene, const double dStep, const unsigned int max_permutation = MAX_PERMUTATION) {
+	unsigned int timer;
+
+	///启动LOD特殊性检查
+	logger <<Priority::INFO <<"========= REMIX =========";
+
+	///生成重排使用的排列数向量
+	int sampleSize = expData.size();
+	vector<int> order = first_permutation_order(sampleSize, permutationOrder);
+	vector<int> end = last_permutation_order(sampleSize, permutationOrder);
+
+	double secLOD=0;
+	for (timer=1; order!=end && timer<=max_permutation; timer++) {
+		///按排列数向量重排表型数据
+		vector<EXPData> useExpData = vector<EXPData>(expData);
+		reorderTargetBy(useExpData, order);
+
+		///计算重排的LOD参考值
+		double permutationLOD = QTLRun(mk, useExpData, traitInterval, fGene, mGene, qGene, dStep, timer);
+		if (permutationLOD > secLOD) {
+			secLOD = permutationLOD;
+		}
+		///判定LOD参考值
+		if ( judgeLOD(permutationLOD, maxLOD) ) break;
+		next_permutation(order.begin(), order.end());
+
+	}
+	///打印判定结果
+	printLODJudgement( order==end||timer>max_permutation, "permutation", timer, secLOD, maxLOD);
+	return timer;
+}
+
+/**
+ * 利用随机排列混淆表型数据，计算LOD参考值
+ * @param iRandomLODTimer 随机次数
+ * @param maxLOD 假定LOD最大值
+ * @param mk 子代基因型数据
+ * @param expData 子代表现型数据
+ * @param traitInterval 位点间隔距离
+ * @param fGene 父本基因型数据
+ * @param mGene 母本基因型数据
+ * @param qGene QTL基因型数据
+ * @param dStep 步长
+ * @return 总计算次数
+ */
+unsigned int LODRandomRun(const unsigned int iRandomLODTimer, const double maxLOD,
+		const vector<vector<string> >& mk, const vector<EXPData>& expData,
+		const vector<double>& traitInterval, const vector<string>& fGene,
+		const vector<string>& mGene, const vector<string>& qGene,
+		const double dStep) {
+	double secLOD = 0;
+	unsigned int timer;
+	///启动LOD特殊性检查
+	if ( iRandomLODTimer > 0 ) {
+		logger <<Priority::INFO <<"========= REMIX =========";
+
+		for (timer = 1; timer<=iRandomLODTimer; timer++) {
+			///若启用随机重排模式，随机重排所有表型数据
+			vector<EXPData> useExpData;
+			useExpData = vector<EXPData>(expData);
+			random_shuffle(useExpData.begin(), useExpData.end());
+
+			///计算LOD参考值
+			double randomLOD = QTLRun(mk, useExpData, traitInterval, fGene, mGene, qGene, dStep, timer);
+			if ( randomLOD > secLOD ) {
+				secLOD = randomLOD;
+			}
+			/// 判定LOD参考值
+			if ( judgeLOD(randomLOD, maxLOD) ) break;
+		}
+		///打印判定结果
+		printLODJudgement( timer>iRandomLODTimer, "random", timer, secLOD, maxLOD);
+	} else {
+		///若配置中检查次数为0，则视为跳过检查阶段
+		logger <<Priority::WARN <<"Re-mix verification passed, QTL detection is in-completed.";
+	}
+	return timer;
+}
+
+int mainRun(int args, char* argv[]) {
 	int iSampleSize;
 	int iTraitNumber;
-	double step;
+	double dStep;
 
 	string sExpressDataFile;
 	string sChildrenGeneDataFile;
@@ -530,7 +631,9 @@ double mainRun(int args, char* argv[]) {
 	string sMParentsGeneDataFile;
 	string sTraitIntervalFile;
 
-	unsigned int LODThresholdTimer;
+	bool bIfUseRandomLOD;
+	unsigned int iRandomLODTimer = 0;
+	int iPermutationOrder;
 
 	/// 初始化日志系统、计时器开始计时
 	bool ifLogOK = initLoggers();
@@ -540,25 +643,37 @@ double mainRun(int args, char* argv[]) {
 		/// 若参数个数为1，为手动模式运行，从操作台读取各个参数。
 		inputValueFromKeyboard("the Number of Samples", &iSampleSize);
 		inputValueFromKeyboard("the Number of Traits", &iTraitNumber);
-		inputValueFromKeyboard("the length of step", &step);
+		inputValueFromKeyboard("the length of step", &dStep);
 		inputValueFromKeyboard("the Filename of Express Data", &sExpressDataFile);
 		inputValueFromKeyboard("the Filename of Gene Data for Children", &sChildrenGeneDataFile);
 		inputValueFromKeyboard("the Filename of Gene Data for Parent(F)", &sFParentsGeneDataFile);
 		inputValueFromKeyboard("the Filename of Gene Data for Parent(M)", &sMParentsGeneDataFile);
 		inputValueFromKeyboard("the Filename of Trait Interval Data", &sTraitIntervalFile);
-	} else if (args >= 2) {
+
+		bIfUseRandomLOD = inputBooleanFromKeyboard("Use Random LOD detection?");
+		if (bIfUseRandomLOD) {
+			inputValueFromKeyboard("the times of Random LOD Calculation", &iRandomLODTimer);
+		} else {
+			inputValueFromKeyboard("the Filename of Permutation Order", &iPermutationOrder);
+		}
+	} else if (args == 2) {
 		/// 若参数个数大于2，为自动模式，从配置文件读取参数。
 		logger <<Priority::INFO << "Input File:" << argv[1];
 		fstream fin;
 		fin.open(argv[1], ios::in);
 
-		fin >> iSampleSize >> iTraitNumber >> step;
+		fin >> iSampleSize >> iTraitNumber >> dStep;
 		fin >> sTraitIntervalFile;
 		fin >> sChildrenGeneDataFile;
 		fin >> sFParentsGeneDataFile >>sMParentsGeneDataFile;
 		fin >> sExpressDataFile;
 
-		fin >> LODThresholdTimer;
+		fin >> bIfUseRandomLOD;
+		if (bIfUseRandomLOD) {
+			fin >> iRandomLODTimer;
+		} else {
+			fin >> iPermutationOrder;
+		}
 
 		fin.close();
 	} else {
@@ -567,15 +682,14 @@ double mainRun(int args, char* argv[]) {
 	}
 
 	/// 汇总显示各输入参数
-	logger <<Priority::NOTICE << "\nInput Summary:\t" << iSampleSize << " samples of " << iTraitNumber <<"\n"
+	logger <<Priority::NOTICE << "\nInput Summary:\t" << iSampleSize << " samples of " << iTraitNumber
 			<< " traits in following files:" <<"\n"
 			<< "\tTrait Interval Data in:     " << sTraitIntervalFile <<"\n"
 			<< "\tGene Data of Children in:   " << sChildrenGeneDataFile <<"\n"
 			<< "\tGene Data of Parent(F) in:  " << sFParentsGeneDataFile <<"\n"
 			<< "\tGene Data of Parent(M) in:  " << sMParentsGeneDataFile <<"\n"
 			<< "\tExpress Data in:            " << sExpressDataFile <<"\n"
-			<< "For LOD Threshold, " <<LODThresholdTimer <<" random data will run." <<"\n"
-			<< "Calculation step:\t" << step;
+			<< "Calculation dStep:\t" << dStep;
 
 	logger <<Priority::INFO <<"========= INIT  =========";
 	/// 初始化并读取位点距离数据
@@ -599,37 +713,24 @@ double mainRun(int args, char* argv[]) {
 	initExpressData(sExpressDataFile, iSampleSize, expData);
 
 	logger <<Priority::DEBUG <<"init done";
-
 	logger <<Priority::INFO <<"========= START =========";
-	double maxLOD = QTLRun(mk, expData, traitInterval, fGene, mGene, qGene, step);
+	/// 计算LOD最大值
+	double maxLOD = QTLRun(mk, expData, traitInterval, fGene, mGene, qGene, dStep);
 
-
-	double secLOD = 0;
-	unsigned int timer;
-	///启动LOD特殊性检查
-	if ( LODThresholdTimer > 0 ) {
-		logger <<Priority::INFO <<"========= REMIX =========";
-
-		for (timer = 1; timer<=LODThresholdTimer; timer++) {
-			double remixLOD = QTLRun(mk, expData, traitInterval, fGene, mGene, qGene, step, timer);
-			if ( remixLOD > secLOD ) {
-				secLOD = remixLOD;
-			}
-			if ( remixLOD >= maxLOD) {
-				logger <<Priority::WARN <<"maxLOD (" << maxLOD <<") is challenged by a re-mix data(" <<remixLOD <<")";
-				break;
-			}
-		}
-		if ( timer > LODThresholdTimer) { ///若通过特殊性检查，则QTL识别成功
-			logger <<Priority::NOTICE <<"Max of " <<LODThresholdTimer <<" random re-mix data is " <<secLOD;
-			logger <<Priority::WARN <<"QTL DETECTED";
-		} else { ///否则，该位点QTL不存在
-			logger <<Priority::WARN <<"QTL detection need more verification, please check.";
-		}
+	/// 验证LOD最大值的有效性
+	logger <<Priority::INFO <<"==== LOD Calculation ====";
+	unsigned int timer=1;
+	if (bIfUseRandomLOD) {
+		/// 方法一：利用随机排列混淆表型数据，计算LOD参考值
+		logger <<Priority::NOTICE <<"\nFor LOD Detection: " <<iRandomLODTimer <<" random data will run.";
+		timer = LODRandomRun(iRandomLODTimer, maxLOD, mk, expData, traitInterval, fGene, mGene, qGene, dStep);
 	} else {
-		logger <<Priority::WARN <<"Re-mix verification passed, QTL detection is in-completed.";
+		/// 方法二：利用排列数向量混淆表型数据，计算LOD参考值
+		logger <<Priority::NOTICE <<"\nFor LOD Detection: OrderGroup \"" <<iPermutationOrder <<"/"<<iSampleSize <<"\" will run.";
+		timer = LODPermutationRun(iPermutationOrder, maxLOD, mk, expData, traitInterval, fGene, mGene, qGene, dStep);
 	}
 
+	/// 若日志系统故障，只通过标准流输出最终结果，并提示检查日志系统
 	if ( !ifLogOK ) {
 		cout <<"maxLOD=" <<maxLOD <<endl
 				<<"For more detail, please install and configure log4cpp in your system.";
@@ -639,15 +740,15 @@ double mainRun(int args, char* argv[]) {
 	/// 完成计时
 	float t = getTimeStamp();
 	logger <<Priority::NOTICE <<"Total time: " <<t <<" ms";
-	logger <<Priority::NOTICE <<"Average time:" << t/timer <<" ms";
+	logger <<Priority::NOTICE <<"Average time: " <<t/timer <<" ms";
 
 	/// 退出日志系统
 	haltLoggers();
 
-	return maxLOD;
+	return 0;
 }
 
 int main(int args, char* argv[]) {
-	mainRun(args, argv);
-	return 0;
+	return mainRun(args, argv);
 }
+

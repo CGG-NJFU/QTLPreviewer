@@ -91,3 +91,26 @@ void printGeneCP(const vector<string>& geneMatrix, const vector<double> rMatrix)
 				<<rMatrix[i];
 	}
 }
+
+/**
+ * 打印LOD判定结果
+ * @param ifOK 判定条件
+ * @param methodName 方法名称
+ * @param timer 计数器
+ * @param refLOD 参考LOD值
+ * @param maxLOD LOD最大值
+ */
+void printLODJudgement(const bool ifOK, const string methodName, const unsigned int timer,
+		const double refLOD, const double maxLOD) {
+	if (ifOK) { ///若通过特殊性检查，则QTL识别成功
+		logger << Priority::NOTICE << "Max of " << timer - 1
+				<< " " <<methodName <<" re-mix data is " << refLOD << " >"
+				<< (refLOD / maxLOD - 1) * 100 << "%";
+		logger << Priority::WARN << "QTL DETECTED: LOD:" << maxLOD;
+		logger << Priority::NOTICE << "Please check full log for QTL detail "
+				<< maxLOD;
+	} else { ///否则，该位点QTL不存在
+		logger << Priority::WARN
+				<< "QTL detection need more verification, please check.";
+	}
+}

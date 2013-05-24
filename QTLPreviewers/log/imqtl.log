@@ -1,142 +1,1774 @@
-2013-05-19 22:40:39-567	[NOTICE]	 
-Input Summary:	189 samples of 9
- traits in following files:
+2013-05-24 18:20:19-399	[NOTICE]	 
+Input Summary:	189 samples of 9 traits in following files:
 	Trait Interval Data in:     data/traitInterval.txt
 	Gene Data of Children in:   data/geneChildFull.txt
 	Gene Data of Parent(F) in:  data/geneParentF.txt
 	Gene Data of Parent(M) in:  data/geneParentM.txt
 	Express Data in:            data/expressData.txt
-For LOD Threshold, 100 random data will run.
-Calculation step:	1
-2013-05-19 22:40:39-586	[NOTICE]	 1	[ 0 ~ 1 ]:[ 9.1 ]	3.13799
-2013-05-19 22:40:39-599	[NOTICE]	 1	[ 1 ~ 2 ]:[ 9.1 ]	3.69102
-2013-05-19 22:40:39-613	[NOTICE]	 1	[ 2 ~ 3 ]:[ 9.1 ]	4.23699
-2013-05-19 22:40:39-628	[NOTICE]	 1	[ 3 ~ 4 ]:[ 9.1 ]	4.75821
-2013-05-19 22:40:39-643	[NOTICE]	 1	[ 4 ~ 5 ]:[ 9.1 ]	5.24998
-2013-05-19 22:40:39-657	[NOTICE]	 1	[ 5 ~ 6 ]:[ 9.1 ]	5.71234
-2013-05-19 22:40:39-673	[NOTICE]	 1	[ 6 ~ 7 ]:[ 9.1 ]	6.14586
-2013-05-19 22:40:39-687	[NOTICE]	 1	[ 7 ~ 8 ]:[ 9.1 ]	6.55037
-2013-05-19 22:40:39-703	[NOTICE]	 1	[ 8 ~ 9 ]:[ 9.1 ]	6.92516
-2013-05-19 22:40:39-716	[NOTICE]	 1	[ 9 ~ 9.1 ]:[ 9.1 ]	7.2693
-2013-05-19 22:40:39-729	[NOTICE]	 2	[ 0 ~ 1 ]:[ 4.2 ]	7.30199
-2013-05-19 22:40:39-745	[NOTICE]	 2	[ 1 ~ 2 ]:[ 4.2 ]	7.46431
-2013-05-19 22:40:39-763	[NOTICE]	 2	[ 2 ~ 3 ]:[ 4.2 ]	7.52697
-2013-05-19 22:40:39-779	[NOTICE]	 2	[ 3 ~ 4 ]:[ 4.2 ]	7.4863
-2013-05-19 22:40:39-794	[NOTICE]	 2	[ 4 ~ 4.2 ]:[ 4.2 ]	7.32971
-2013-05-19 22:40:39-810	[NOTICE]	 3	[ 0 ~ 1 ]:[ 1.3 ]	7.28291
-2013-05-19 22:40:39-824	[NOTICE]	 3	[ 1 ~ 1.3 ]:[ 1.3 ]	7.05734
-2013-05-19 22:40:39-838	[NOTICE]	 4	[ 0 ~ 0.8 ]:[ 0.8 ]	6.94697
-2013-05-19 22:40:39-854	[NOTICE]	 5	[ 0 ~ 1 ]:[ 1.6 ]	7.51325
-2013-05-19 22:40:39-869	[NOTICE]	 5	[ 1 ~ 1.6 ]:[ 1.6 ]	9.0754
-2013-05-19 22:40:39-881	[NOTICE]	 6	[ 0 ~ 1 ]:[ 3.3 ]	9.5439
-2013-05-19 22:40:39-894	[NOTICE]	 6	[ 1 ~ 2 ]:[ 3.3 ]	10.6045
-2013-05-19 22:40:39-909	[NOTICE]	 6	[ 2 ~ 3 ]:[ 3.3 ]	10.6748
-2013-05-19 22:40:39-923	[NOTICE]	 6	[ 3 ~ 3.3 ]:[ 3.3 ]	10.1002
-2013-05-19 22:40:39-936	[NOTICE]	 7	[ 0 ~ 1 ]:[ 2.2 ]	9.75363
-2013-05-19 22:40:39-948	[NOTICE]	 7	[ 1 ~ 2 ]:[ 2.2 ]	9.09651
-2013-05-19 22:40:39-960	[NOTICE]	 7	[ 2 ~ 2.2 ]:[ 2.2 ]	7.99696
-2013-05-19 22:40:39-960	[NOTICE]	 MAX LOD:	Trait 6[2~3] = 10.6748
-2013-05-19 22:40:40-285	[NOTICE]	 [1] MAX LOD in Remix: = 0.615813
-2013-05-19 22:40:40-654	[NOTICE]	 [2] MAX LOD in Remix: = 1.01219
-2013-05-19 22:40:40-993	[NOTICE]	 [3] MAX LOD in Remix: = 0.119327
-2013-05-19 22:40:41-320	[NOTICE]	 [4] MAX LOD in Remix: = 0.531487
-2013-05-19 22:40:41-635	[NOTICE]	 [5] MAX LOD in Remix: = 0.426308
-2013-05-19 22:40:41-945	[NOTICE]	 [6] MAX LOD in Remix: = 0.38951
-2013-05-19 22:40:42-262	[NOTICE]	 [7] MAX LOD in Remix: = 0.658653
-2013-05-19 22:40:42-573	[NOTICE]	 [8] MAX LOD in Remix: = 0.39276
-2013-05-19 22:40:42-892	[NOTICE]	 [9] MAX LOD in Remix: = 0.572093
-2013-05-19 22:40:43-205	[NOTICE]	 [10] MAX LOD in Remix: = 0.720349
-2013-05-19 22:40:43-514	[NOTICE]	 [11] MAX LOD in Remix: = 0.514655
-2013-05-19 22:40:43-833	[NOTICE]	 [12] MAX LOD in Remix: = 0.693171
-2013-05-19 22:40:44-151	[NOTICE]	 [13] MAX LOD in Remix: = 1.0642
-2013-05-19 22:40:44-464	[NOTICE]	 [14] MAX LOD in Remix: = 0.542712
-2013-05-19 22:40:44-780	[NOTICE]	 [15] MAX LOD in Remix: = 1.38145
-2013-05-19 22:40:45-093	[NOTICE]	 [16] MAX LOD in Remix: = 0.388268
-2013-05-19 22:40:45-405	[NOTICE]	 [17] MAX LOD in Remix: = 1.24154
-2013-05-19 22:40:45-722	[NOTICE]	 [18] MAX LOD in Remix: = 1.06349
-2013-05-19 22:40:46-038	[NOTICE]	 [19] MAX LOD in Remix: = 0.288483
-2013-05-19 22:40:46-346	[NOTICE]	 [20] MAX LOD in Remix: = 0.162901
-2013-05-19 22:40:46-656	[NOTICE]	 [21] MAX LOD in Remix: = 0.269582
-2013-05-19 22:40:46-970	[NOTICE]	 [22] MAX LOD in Remix: = 2.6929
-2013-05-19 22:40:47-280	[NOTICE]	 [23] MAX LOD in Remix: = 0.469252
-2013-05-19 22:40:47-597	[NOTICE]	 [24] MAX LOD in Remix: = 0.616408
-2013-05-19 22:40:47-911	[NOTICE]	 [25] MAX LOD in Remix: = 1.30327
-2013-05-19 22:40:48-234	[NOTICE]	 [26] MAX LOD in Remix: = 1.05294
-2013-05-19 22:40:48-542	[NOTICE]	 [27] MAX LOD in Remix: = 0.296294
-2013-05-19 22:40:48-854	[NOTICE]	 [28] MAX LOD in Remix: = 0.29677
-2013-05-19 22:40:49-167	[NOTICE]	 [29] MAX LOD in Remix: = 1.68434
-2013-05-19 22:40:49-486	[NOTICE]	 [30] MAX LOD in Remix: = 0.757243
-2013-05-19 22:40:49-797	[NOTICE]	 [31] MAX LOD in Remix: = 3.5155
-2013-05-19 22:40:50-113	[NOTICE]	 [32] MAX LOD in Remix: = 0.339958
-2013-05-19 22:40:50-427	[NOTICE]	 [33] MAX LOD in Remix: = 0.598239
-2013-05-19 22:40:50-746	[NOTICE]	 [34] MAX LOD in Remix: = 0.481612
-2013-05-19 22:40:51-064	[NOTICE]	 [35] MAX LOD in Remix: = 0.701391
-2013-05-19 22:40:51-374	[NOTICE]	 [36] MAX LOD in Remix: = 2.79999
-2013-05-19 22:40:51-694	[NOTICE]	 [37] MAX LOD in Remix: = 0.487298
-2013-05-19 22:40:52-012	[NOTICE]	 [38] MAX LOD in Remix: = 0.797866
-2013-05-19 22:40:52-332	[NOTICE]	 [39] MAX LOD in Remix: = 0.297923
-2013-05-19 22:40:52-646	[NOTICE]	 [40] MAX LOD in Remix: = 0.757806
-2013-05-19 22:40:52-961	[NOTICE]	 [41] MAX LOD in Remix: = 0.538378
-2013-05-19 22:40:53-277	[NOTICE]	 [42] MAX LOD in Remix: = 2.42827
-2013-05-19 22:40:53-591	[NOTICE]	 [43] MAX LOD in Remix: = 0.683634
-2013-05-19 22:40:53-902	[NOTICE]	 [44] MAX LOD in Remix: = 0.743588
-2013-05-19 22:40:54-220	[NOTICE]	 [45] MAX LOD in Remix: = 0.561211
-2013-05-19 22:40:54-537	[NOTICE]	 [46] MAX LOD in Remix: = 1.10685
-2013-05-19 22:40:54-914	[NOTICE]	 [47] MAX LOD in Remix: = 0.537024
-2013-05-19 22:40:55-249	[NOTICE]	 [48] MAX LOD in Remix: = 0.396902
-2013-05-19 22:40:55-570	[NOTICE]	 [49] MAX LOD in Remix: = 0.832542
-2013-05-19 22:40:55-883	[NOTICE]	 [50] MAX LOD in Remix: = 0.565738
-2013-05-19 22:40:56-208	[NOTICE]	 [51] MAX LOD in Remix: = 0.478998
-2013-05-19 22:40:56-518	[NOTICE]	 [52] MAX LOD in Remix: = 0.359912
-2013-05-19 22:40:56-838	[NOTICE]	 [53] MAX LOD in Remix: = 0.314533
-2013-05-19 22:40:57-152	[NOTICE]	 [54] MAX LOD in Remix: = 0.904917
-2013-05-19 22:40:57-468	[NOTICE]	 [55] MAX LOD in Remix: = 0.920122
-2013-05-19 22:40:57-783	[NOTICE]	 [56] MAX LOD in Remix: = 0.551081
-2013-05-19 22:40:58-100	[NOTICE]	 [57] MAX LOD in Remix: = 0.981189
-2013-05-19 22:40:58-421	[NOTICE]	 [58] MAX LOD in Remix: = 0.300715
-2013-05-19 22:40:58-735	[NOTICE]	 [59] MAX LOD in Remix: = 0.433114
-2013-05-19 22:40:59-060	[NOTICE]	 [60] MAX LOD in Remix: = 0.533732
-2013-05-19 22:40:59-416	[NOTICE]	 [61] MAX LOD in Remix: = 0.21158
-2013-05-19 22:40:59-829	[NOTICE]	 [62] MAX LOD in Remix: = 0.103978
-2013-05-19 22:41:00-314	[NOTICE]	 [63] MAX LOD in Remix: = 1.44269
-2013-05-19 22:41:00-741	[NOTICE]	 [64] MAX LOD in Remix: = 0.716816
-2013-05-19 22:41:01-113	[NOTICE]	 [65] MAX LOD in Remix: = 0.179581
-2013-05-19 22:41:01-433	[NOTICE]	 [66] MAX LOD in Remix: = 0.357617
-2013-05-19 22:41:01-748	[NOTICE]	 [67] MAX LOD in Remix: = 1.02989
-2013-05-19 22:41:02-070	[NOTICE]	 [68] MAX LOD in Remix: = 0.614929
-2013-05-19 22:41:02-381	[NOTICE]	 [69] MAX LOD in Remix: = 0.638427
-2013-05-19 22:41:02-696	[NOTICE]	 [70] MAX LOD in Remix: = 1.00253
-2013-05-19 22:41:03-013	[NOTICE]	 [71] MAX LOD in Remix: = 0.340792
-2013-05-19 22:41:03-359	[NOTICE]	 [72] MAX LOD in Remix: = 0.258551
-2013-05-19 22:41:03-679	[NOTICE]	 [73] MAX LOD in Remix: = 0.820914
-2013-05-19 22:41:03-992	[NOTICE]	 [74] MAX LOD in Remix: = 0.799181
-2013-05-19 22:41:04-307	[NOTICE]	 [75] MAX LOD in Remix: = 0.850175
-2013-05-19 22:41:04-625	[NOTICE]	 [76] MAX LOD in Remix: = 0.750973
-2013-05-19 22:41:04-948	[NOTICE]	 [77] MAX LOD in Remix: = 1.00773
-2013-05-19 22:41:05-257	[NOTICE]	 [78] MAX LOD in Remix: = 0.744199
-2013-05-19 22:41:05-567	[NOTICE]	 [79] MAX LOD in Remix: = 1.23498
-2013-05-19 22:41:05-881	[NOTICE]	 [80] MAX LOD in Remix: = 0.857315
-2013-05-19 22:41:06-196	[NOTICE]	 [81] MAX LOD in Remix: = 0.246547
-2013-05-19 22:41:06-504	[NOTICE]	 [82] MAX LOD in Remix: = 0.627493
-2013-05-19 22:41:06-815	[NOTICE]	 [83] MAX LOD in Remix: = 2.11849
-2013-05-19 22:41:07-126	[NOTICE]	 [84] MAX LOD in Remix: = 0.473099
-2013-05-19 22:41:07-441	[NOTICE]	 [85] MAX LOD in Remix: = 0.702355
-2013-05-19 22:41:07-751	[NOTICE]	 [86] MAX LOD in Remix: = 0.573198
-2013-05-19 22:41:08-068	[NOTICE]	 [87] MAX LOD in Remix: = 0.61357
-2013-05-19 22:41:08-384	[NOTICE]	 [88] MAX LOD in Remix: = 0.38897
-2013-05-19 22:41:08-705	[NOTICE]	 [89] MAX LOD in Remix: = 0.260068
-2013-05-19 22:41:09-023	[NOTICE]	 [90] MAX LOD in Remix: = 0.316984
-2013-05-19 22:41:09-335	[NOTICE]	 [91] MAX LOD in Remix: = 0.546704
-2013-05-19 22:41:09-648	[NOTICE]	 [92] MAX LOD in Remix: = 0.747252
-2013-05-19 22:41:09-968	[NOTICE]	 [93] MAX LOD in Remix: = 1.60181
-2013-05-19 22:41:10-284	[NOTICE]	 [94] MAX LOD in Remix: = 0.862243
-2013-05-19 22:41:10-608	[NOTICE]	 [95] MAX LOD in Remix: = 0.49729
-2013-05-19 22:41:10-926	[NOTICE]	 [96] MAX LOD in Remix: = 0.253102
-2013-05-19 22:41:11-242	[NOTICE]	 [97] MAX LOD in Remix: = 0.343988
-2013-05-19 22:41:11-557	[NOTICE]	 [98] MAX LOD in Remix: = 0.564013
-2013-05-19 22:41:11-883	[NOTICE]	 [99] MAX LOD in Remix: = 1.39784
-2013-05-19 22:41:12-195	[NOTICE]	 [100] MAX LOD in Remix: = 0.179888
-2013-05-19 22:41:12-195	[NOTICE]	 Max of 100 random re-mix data is 3.5155
-2013-05-19 22:41:12-195	[WARN]	 QTL DETECTED
-2013-05-19 22:41:12-195	[NOTICE]	 Total time: 32600.6 ms
-2013-05-19 22:41:12-195	[NOTICE]	 Average time:322.779 ms
+Calculation dStep:	1
+2013-05-24 18:20:19-417	[NOTICE]	 1	[ 0 ~ 1 ]:[ 9.1 ]	3.13799
+2013-05-24 18:20:19-431	[NOTICE]	 1	[ 1 ~ 2 ]:[ 9.1 ]	3.69102
+2013-05-24 18:20:19-445	[NOTICE]	 1	[ 2 ~ 3 ]:[ 9.1 ]	4.23699
+2013-05-24 18:20:19-458	[NOTICE]	 1	[ 3 ~ 4 ]:[ 9.1 ]	4.75821
+2013-05-24 18:20:19-471	[NOTICE]	 1	[ 4 ~ 5 ]:[ 9.1 ]	5.24998
+2013-05-24 18:20:19-491	[NOTICE]	 1	[ 5 ~ 6 ]:[ 9.1 ]	5.71234
+2013-05-24 18:20:19-507	[NOTICE]	 1	[ 6 ~ 7 ]:[ 9.1 ]	6.14586
+2013-05-24 18:20:19-521	[NOTICE]	 1	[ 7 ~ 8 ]:[ 9.1 ]	6.55037
+2013-05-24 18:20:19-536	[NOTICE]	 1	[ 8 ~ 9 ]:[ 9.1 ]	6.92516
+2013-05-24 18:20:19-551	[NOTICE]	 1	[ 9 ~ 9.1 ]:[ 9.1 ]	7.2693
+2013-05-24 18:20:19-566	[NOTICE]	 2	[ 0 ~ 1 ]:[ 4.2 ]	7.30199
+2013-05-24 18:20:19-581	[NOTICE]	 2	[ 1 ~ 2 ]:[ 4.2 ]	7.46431
+2013-05-24 18:20:19-594	[NOTICE]	 2	[ 2 ~ 3 ]:[ 4.2 ]	7.52697
+2013-05-24 18:20:19-607	[NOTICE]	 2	[ 3 ~ 4 ]:[ 4.2 ]	7.4863
+2013-05-24 18:20:19-621	[NOTICE]	 2	[ 4 ~ 4.2 ]:[ 4.2 ]	7.32971
+2013-05-24 18:20:19-635	[NOTICE]	 3	[ 0 ~ 1 ]:[ 1.3 ]	7.28291
+2013-05-24 18:20:19-648	[NOTICE]	 3	[ 1 ~ 1.3 ]:[ 1.3 ]	7.05734
+2013-05-24 18:20:19-661	[NOTICE]	 4	[ 0 ~ 0.8 ]:[ 0.8 ]	6.94697
+2013-05-24 18:20:19-674	[NOTICE]	 5	[ 0 ~ 1 ]:[ 1.6 ]	7.51325
+2013-05-24 18:20:19-690	[NOTICE]	 5	[ 1 ~ 1.6 ]:[ 1.6 ]	9.0754
+2013-05-24 18:20:19-707	[NOTICE]	 6	[ 0 ~ 1 ]:[ 3.3 ]	9.5439
+2013-05-24 18:20:19-720	[NOTICE]	 6	[ 1 ~ 2 ]:[ 3.3 ]	10.6045
+2013-05-24 18:20:19-737	[NOTICE]	 6	[ 2 ~ 3 ]:[ 3.3 ]	10.6748
+2013-05-24 18:20:19-756	[NOTICE]	 6	[ 3 ~ 3.3 ]:[ 3.3 ]	10.1002
+2013-05-24 18:20:19-771	[NOTICE]	 7	[ 0 ~ 1 ]:[ 2.2 ]	9.75363
+2013-05-24 18:20:19-785	[NOTICE]	 7	[ 1 ~ 2 ]:[ 2.2 ]	9.09651
+2013-05-24 18:20:19-799	[NOTICE]	 7	[ 2 ~ 2.2 ]:[ 2.2 ]	7.99696
+2013-05-24 18:20:19-799	[NOTICE]	 MAX LOD:	Trait 6[2~3] = 10.6748
+2013-05-24 18:20:19-799	[NOTICE]	 
+For LOD Detection: OrderGroup "2/189" will run.
+2013-05-24 18:20:20-155	[NOTICE]	 [1] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 18:20:20-155	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.9209)
+2013-05-24 18:20:20-509	[NOTICE]	 [2] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 18:20:20-509	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.8124)
+2013-05-24 18:20:20-877	[NOTICE]	 [3] MAX LOD in Random Re-mix: = 9.7719
+2013-05-24 18:20:21-225	[NOTICE]	 [4] MAX LOD in Random Re-mix: = 9.17366
+2013-05-24 18:20:21-558	[NOTICE]	 [5] MAX LOD in Random Re-mix: = 9.4459
+2013-05-24 18:20:21-898	[NOTICE]	 [6] MAX LOD in Random Re-mix: = 8.95577
+2013-05-24 18:20:22-244	[NOTICE]	 [7] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 18:20:22-244	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.9209)
+2013-05-24 18:20:22-584	[NOTICE]	 [8] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 18:20:22-584	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.8124)
+2013-05-24 18:20:22-919	[NOTICE]	 [9] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 18:20:23-262	[NOTICE]	 [10] MAX LOD in Random Re-mix: = 9.50597
+2013-05-24 18:20:23-613	[NOTICE]	 [11] MAX LOD in Random Re-mix: = 9.67605
+2013-05-24 18:20:23-939	[NOTICE]	 [12] MAX LOD in Random Re-mix: = 9.28362
+2013-05-24 18:20:24-274	[NOTICE]	 [13] MAX LOD in Random Re-mix: = 9.7719
+2013-05-24 18:20:24-606	[NOTICE]	 [14] MAX LOD in Random Re-mix: = 9.17366
+2013-05-24 18:20:24-938	[NOTICE]	 [15] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 18:20:25-271	[NOTICE]	 [16] MAX LOD in Random Re-mix: = 9.50597
+2013-05-24 18:20:25-603	[NOTICE]	 [17] MAX LOD in Random Re-mix: = 8.14217
+2013-05-24 18:20:25-933	[NOTICE]	 [18] MAX LOD in Random Re-mix: = 8.24009
+2013-05-24 18:20:26-265	[NOTICE]	 [19] MAX LOD in Random Re-mix: = 9.4459
+2013-05-24 18:20:26-595	[NOTICE]	 [20] MAX LOD in Random Re-mix: = 8.95577
+2013-05-24 18:20:26-928	[NOTICE]	 [21] MAX LOD in Random Re-mix: = 9.67605
+2013-05-24 18:20:27-262	[NOTICE]	 [22] MAX LOD in Random Re-mix: = 9.28362
+2013-05-24 18:20:27-601	[NOTICE]	 [23] MAX LOD in Random Re-mix: = 8.14217
+2013-05-24 18:20:27-934	[NOTICE]	 [24] MAX LOD in Random Re-mix: = 8.24009
+2013-05-24 18:20:28-267	[NOTICE]	 [25] MAX LOD in Random Re-mix: = 10.4154
+2013-05-24 18:20:28-599	[NOTICE]	 [26] MAX LOD in Random Re-mix: = 10.306
+2013-05-24 18:20:28-932	[NOTICE]	 [27] MAX LOD in Random Re-mix: = 9.31836
+2013-05-24 18:20:29-276	[NOTICE]	 [28] MAX LOD in Random Re-mix: = 8.71386
+2013-05-24 18:20:29-609	[NOTICE]	 [29] MAX LOD in Random Re-mix: = 9.00128
+2013-05-24 18:20:29-940	[NOTICE]	 [30] MAX LOD in Random Re-mix: = 8.50578
+2013-05-24 18:20:30-272	[NOTICE]	 [31] MAX LOD in Random Re-mix: = 10.4154
+2013-05-24 18:20:30-617	[NOTICE]	 [32] MAX LOD in Random Re-mix: = 10.306
+2013-05-24 18:20:30-951	[NOTICE]	 [33] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 18:20:31-282	[NOTICE]	 [34] MAX LOD in Random Re-mix: = 9.70944
+2013-05-24 18:20:31-629	[NOTICE]	 [35] MAX LOD in Random Re-mix: = 9.67605
+2013-05-24 18:20:31-979	[NOTICE]	 [36] MAX LOD in Random Re-mix: = 9.48815
+2013-05-24 18:20:32-331	[NOTICE]	 [37] MAX LOD in Random Re-mix: = 9.31836
+2013-05-24 18:20:32-691	[NOTICE]	 [38] MAX LOD in Random Re-mix: = 8.71386
+2013-05-24 18:20:33-053	[NOTICE]	 [39] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 18:20:33-431	[NOTICE]	 [40] MAX LOD in Random Re-mix: = 9.70944
+2013-05-24 18:20:33-795	[NOTICE]	 [41] MAX LOD in Random Re-mix: = 8.14217
+2013-05-24 18:20:34-153	[NOTICE]	 [42] MAX LOD in Random Re-mix: = 8.45009
+2013-05-24 18:20:34-523	[NOTICE]	 [43] MAX LOD in Random Re-mix: = 9.00128
+2013-05-24 18:20:34-903	[NOTICE]	 [44] MAX LOD in Random Re-mix: = 8.50578
+2013-05-24 18:20:35-235	[NOTICE]	 [45] MAX LOD in Random Re-mix: = 9.67605
+2013-05-24 18:20:35-566	[NOTICE]	 [46] MAX LOD in Random Re-mix: = 9.48815
+2013-05-24 18:20:35-903	[NOTICE]	 [47] MAX LOD in Random Re-mix: = 8.14217
+2013-05-24 18:20:36-255	[NOTICE]	 [48] MAX LOD in Random Re-mix: = 8.45009
+2013-05-24 18:50:32-079	[NOTICE]	 
+Input Summary:	189 samples of 9 traits in following files:
+	Trait Interval Data in:     data/traitInterval.txt
+	Gene Data of Children in:   data/geneChildFull.txt
+	Gene Data of Parent(F) in:  data/geneParentF.txt
+	Gene Data of Parent(M) in:  data/geneParentM.txt
+	Express Data in:            data/expressData.txt
+Calculation dStep:	1
+2013-05-24 18:50:32-094	[NOTICE]	 1	[ 0 ~ 1 ]:[ 9.1 ]	3.13799
+2013-05-24 18:50:32-108	[NOTICE]	 1	[ 1 ~ 2 ]:[ 9.1 ]	3.69102
+2013-05-24 18:50:32-120	[NOTICE]	 1	[ 2 ~ 3 ]:[ 9.1 ]	4.23699
+2013-05-24 18:50:32-132	[NOTICE]	 1	[ 3 ~ 4 ]:[ 9.1 ]	4.75821
+2013-05-24 18:50:32-144	[NOTICE]	 1	[ 4 ~ 5 ]:[ 9.1 ]	5.24998
+2013-05-24 18:50:32-160	[NOTICE]	 1	[ 5 ~ 6 ]:[ 9.1 ]	5.71234
+2013-05-24 18:50:32-172	[NOTICE]	 1	[ 6 ~ 7 ]:[ 9.1 ]	6.14586
+2013-05-24 18:50:32-184	[NOTICE]	 1	[ 7 ~ 8 ]:[ 9.1 ]	6.55037
+2013-05-24 18:50:32-202	[NOTICE]	 1	[ 8 ~ 9 ]:[ 9.1 ]	6.92516
+2013-05-24 18:50:32-216	[NOTICE]	 1	[ 9 ~ 9.1 ]:[ 9.1 ]	7.2693
+2013-05-24 18:50:32-230	[NOTICE]	 2	[ 0 ~ 1 ]:[ 4.2 ]	7.30199
+2013-05-24 18:50:32-250	[NOTICE]	 2	[ 1 ~ 2 ]:[ 4.2 ]	7.46431
+2013-05-24 18:50:32-269	[NOTICE]	 2	[ 2 ~ 3 ]:[ 4.2 ]	7.52697
+2013-05-24 18:50:32-287	[NOTICE]	 2	[ 3 ~ 4 ]:[ 4.2 ]	7.4863
+2013-05-24 18:50:32-307	[NOTICE]	 2	[ 4 ~ 4.2 ]:[ 4.2 ]	7.32971
+2013-05-24 18:50:32-325	[NOTICE]	 3	[ 0 ~ 1 ]:[ 1.3 ]	7.28291
+2013-05-24 18:50:32-340	[NOTICE]	 3	[ 1 ~ 1.3 ]:[ 1.3 ]	7.05734
+2013-05-24 18:50:32-358	[NOTICE]	 4	[ 0 ~ 0.8 ]:[ 0.8 ]	6.94697
+2013-05-24 18:50:32-375	[NOTICE]	 5	[ 0 ~ 1 ]:[ 1.6 ]	7.51325
+2013-05-24 18:50:32-393	[NOTICE]	 5	[ 1 ~ 1.6 ]:[ 1.6 ]	9.0754
+2013-05-24 18:50:32-406	[NOTICE]	 6	[ 0 ~ 1 ]:[ 3.3 ]	9.5439
+2013-05-24 18:50:32-423	[NOTICE]	 6	[ 1 ~ 2 ]:[ 3.3 ]	10.6045
+2013-05-24 18:50:32-435	[NOTICE]	 6	[ 2 ~ 3 ]:[ 3.3 ]	10.6748
+2013-05-24 18:50:32-451	[NOTICE]	 6	[ 3 ~ 3.3 ]:[ 3.3 ]	10.1002
+2013-05-24 18:50:32-466	[NOTICE]	 7	[ 0 ~ 1 ]:[ 2.2 ]	9.75363
+2013-05-24 18:50:32-478	[NOTICE]	 7	[ 1 ~ 2 ]:[ 2.2 ]	9.09651
+2013-05-24 18:50:32-494	[NOTICE]	 7	[ 2 ~ 2.2 ]:[ 2.2 ]	7.99696
+2013-05-24 18:50:32-494	[NOTICE]	 MAX LOD:	Trait 6[2~3] = 10.6748
+2013-05-24 18:50:32-495	[NOTICE]	 
+For LOD Detection: OrderGroup "2/189" will run.
+2013-05-24 18:50:32-891	[NOTICE]	 [1] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 18:50:32-891	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.9209)
+2013-05-24 18:50:33-252	[NOTICE]	 [2] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 18:50:33-252	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.8124)
+2013-05-24 18:50:33-593	[NOTICE]	 [3] MAX LOD in Random Re-mix: = 9.7719
+2013-05-24 18:50:33-911	[NOTICE]	 [4] MAX LOD in Random Re-mix: = 9.17366
+2013-05-24 18:50:34-236	[NOTICE]	 [5] MAX LOD in Random Re-mix: = 9.4459
+2013-05-24 18:50:34-554	[NOTICE]	 [6] MAX LOD in Random Re-mix: = 8.95577
+2013-05-24 18:50:34-881	[NOTICE]	 [7] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 18:50:34-881	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.9209)
+2013-05-24 18:50:35-200	[NOTICE]	 [8] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 18:50:35-200	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.8124)
+2013-05-24 18:50:35-520	[NOTICE]	 [9] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 18:50:35-846	[NOTICE]	 [10] MAX LOD in Random Re-mix: = 9.50597
+2013-05-24 18:50:36-173	[NOTICE]	 [11] MAX LOD in Random Re-mix: = 9.67605
+2013-05-24 18:50:36-522	[NOTICE]	 [12] MAX LOD in Random Re-mix: = 9.28362
+2013-05-24 18:50:36-846	[NOTICE]	 [13] MAX LOD in Random Re-mix: = 9.7719
+2013-05-24 18:50:37-174	[NOTICE]	 [14] MAX LOD in Random Re-mix: = 9.17366
+2013-05-24 18:50:37-491	[NOTICE]	 [15] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 18:50:37-823	[NOTICE]	 [16] MAX LOD in Random Re-mix: = 9.50597
+2013-05-24 18:50:38-161	[NOTICE]	 [17] MAX LOD in Random Re-mix: = 8.14217
+2013-05-24 18:50:38-488	[NOTICE]	 [18] MAX LOD in Random Re-mix: = 8.24009
+2013-05-24 18:50:38-809	[NOTICE]	 [19] MAX LOD in Random Re-mix: = 9.4459
+2013-05-24 18:50:39-133	[NOTICE]	 [20] MAX LOD in Random Re-mix: = 8.95577
+2013-05-24 18:50:39-453	[NOTICE]	 [21] MAX LOD in Random Re-mix: = 9.67605
+2013-05-24 18:50:39-772	[NOTICE]	 [22] MAX LOD in Random Re-mix: = 9.28362
+2013-05-24 18:50:40-091	[NOTICE]	 [23] MAX LOD in Random Re-mix: = 8.14217
+2013-05-24 18:50:40-412	[NOTICE]	 [24] MAX LOD in Random Re-mix: = 8.24009
+2013-05-24 20:53:16-002	[NOTICE]	 
+Input Summary:	189 samples of 9 traits in following files:
+	Trait Interval Data in:     data/traitInterval.txt
+	Gene Data of Children in:   data/geneChildFull.txt
+	Gene Data of Parent(F) in:  data/geneParentF.txt
+	Gene Data of Parent(M) in:  data/geneParentM.txt
+	Express Data in:            data/expressData.txt
+Calculation dStep:	1
+2013-05-24 20:53:16-025	[NOTICE]	 1	[ 0 ~ 1 ]:[ 9.1 ]	3.13799
+2013-05-24 20:53:16-038	[NOTICE]	 1	[ 1 ~ 2 ]:[ 9.1 ]	3.69102
+2013-05-24 20:53:16-053	[NOTICE]	 1	[ 2 ~ 3 ]:[ 9.1 ]	4.23699
+2013-05-24 20:53:16-065	[NOTICE]	 1	[ 3 ~ 4 ]:[ 9.1 ]	4.75821
+2013-05-24 20:53:16-077	[NOTICE]	 1	[ 4 ~ 5 ]:[ 9.1 ]	5.24998
+2013-05-24 20:53:16-090	[NOTICE]	 1	[ 5 ~ 6 ]:[ 9.1 ]	5.71234
+2013-05-24 20:53:16-102	[NOTICE]	 1	[ 6 ~ 7 ]:[ 9.1 ]	6.14586
+2013-05-24 20:53:16-115	[NOTICE]	 1	[ 7 ~ 8 ]:[ 9.1 ]	6.55037
+2013-05-24 20:53:16-138	[NOTICE]	 1	[ 8 ~ 9 ]:[ 9.1 ]	6.92516
+2013-05-24 20:53:16-156	[NOTICE]	 1	[ 9 ~ 9.1 ]:[ 9.1 ]	7.2693
+2013-05-24 20:53:16-173	[NOTICE]	 2	[ 0 ~ 1 ]:[ 4.2 ]	7.30199
+2013-05-24 20:53:16-191	[NOTICE]	 2	[ 1 ~ 2 ]:[ 4.2 ]	7.46431
+2013-05-24 20:53:16-210	[NOTICE]	 2	[ 2 ~ 3 ]:[ 4.2 ]	7.52697
+2013-05-24 20:53:16-229	[NOTICE]	 2	[ 3 ~ 4 ]:[ 4.2 ]	7.4863
+2013-05-24 20:53:16-247	[NOTICE]	 2	[ 4 ~ 4.2 ]:[ 4.2 ]	7.32971
+2013-05-24 20:53:16-259	[NOTICE]	 3	[ 0 ~ 1 ]:[ 1.3 ]	7.28291
+2013-05-24 20:53:16-271	[NOTICE]	 3	[ 1 ~ 1.3 ]:[ 1.3 ]	7.05734
+2013-05-24 20:53:16-286	[NOTICE]	 4	[ 0 ~ 0.8 ]:[ 0.8 ]	6.94697
+2013-05-24 20:53:16-302	[NOTICE]	 5	[ 0 ~ 1 ]:[ 1.6 ]	7.51325
+2013-05-24 20:53:16-316	[NOTICE]	 5	[ 1 ~ 1.6 ]:[ 1.6 ]	9.0754
+2013-05-24 20:53:16-332	[NOTICE]	 6	[ 0 ~ 1 ]:[ 3.3 ]	9.5439
+2013-05-24 20:53:16-345	[NOTICE]	 6	[ 1 ~ 2 ]:[ 3.3 ]	10.6045
+2013-05-24 20:53:16-361	[NOTICE]	 6	[ 2 ~ 3 ]:[ 3.3 ]	10.6748
+2013-05-24 20:53:16-379	[NOTICE]	 6	[ 3 ~ 3.3 ]:[ 3.3 ]	10.1002
+2013-05-24 20:53:16-398	[NOTICE]	 7	[ 0 ~ 1 ]:[ 2.2 ]	9.75363
+2013-05-24 20:53:16-414	[NOTICE]	 7	[ 1 ~ 2 ]:[ 2.2 ]	9.09651
+2013-05-24 20:53:16-430	[NOTICE]	 7	[ 2 ~ 2.2 ]:[ 2.2 ]	7.99696
+2013-05-24 20:53:16-430	[NOTICE]	 MAX LOD:	Trait 6[2~3] = 10.6748
+2013-05-24 20:53:16-430	[NOTICE]	 
+For LOD Detection: OrderGroup "2/189" will run.
+2013-05-24 20:53:16-791	[NOTICE]	 [1] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 20:53:16-791	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.9209)
+2013-05-24 20:53:17-202	[NOTICE]	 [2] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 20:53:17-202	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.8124)
+2013-05-24 20:53:17-534	[NOTICE]	 [3] MAX LOD in Random Re-mix: = 9.7719
+2013-05-24 20:53:17-855	[NOTICE]	 [4] MAX LOD in Random Re-mix: = 9.17366
+2013-05-24 20:53:18-183	[NOTICE]	 [5] MAX LOD in Random Re-mix: = 9.4459
+2013-05-24 20:53:18-521	[NOTICE]	 [6] MAX LOD in Random Re-mix: = 8.95577
+2013-05-24 20:53:18-846	[NOTICE]	 [7] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 20:53:18-846	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.9209)
+2013-05-24 20:53:19-165	[NOTICE]	 [8] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 20:53:19-165	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.8124)
+2013-05-24 20:53:19-485	[NOTICE]	 [9] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 20:53:19-810	[NOTICE]	 [10] MAX LOD in Random Re-mix: = 9.50597
+2013-05-24 20:53:20-131	[NOTICE]	 [11] MAX LOD in Random Re-mix: = 9.67605
+2013-05-24 20:53:20-455	[NOTICE]	 [12] MAX LOD in Random Re-mix: = 9.28362
+2013-05-24 20:53:20-771	[NOTICE]	 [13] MAX LOD in Random Re-mix: = 9.7719
+2013-05-24 20:53:21-090	[NOTICE]	 [14] MAX LOD in Random Re-mix: = 9.17366
+2013-05-24 20:53:21-404	[NOTICE]	 [15] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 20:53:21-721	[NOTICE]	 [16] MAX LOD in Random Re-mix: = 9.50597
+2013-05-24 20:53:22-039	[NOTICE]	 [17] MAX LOD in Random Re-mix: = 8.14217
+2013-05-24 20:53:22-355	[NOTICE]	 [18] MAX LOD in Random Re-mix: = 8.24009
+2013-05-24 20:53:22-678	[NOTICE]	 [19] MAX LOD in Random Re-mix: = 9.4459
+2013-05-24 20:53:22-998	[NOTICE]	 [20] MAX LOD in Random Re-mix: = 8.95577
+2013-05-24 20:53:23-326	[NOTICE]	 [21] MAX LOD in Random Re-mix: = 9.67605
+2013-05-24 20:53:23-659	[NOTICE]	 [22] MAX LOD in Random Re-mix: = 9.28362
+2013-05-24 20:53:23-978	[NOTICE]	 [23] MAX LOD in Random Re-mix: = 8.14217
+2013-05-24 20:53:24-311	[NOTICE]	 [24] MAX LOD in Random Re-mix: = 8.24009
+2013-05-24 20:53:24-633	[NOTICE]	 [25] MAX LOD in Random Re-mix: = 10.4154
+2013-05-24 20:53:24-955	[NOTICE]	 [26] MAX LOD in Random Re-mix: = 10.306
+2013-05-24 20:53:25-286	[NOTICE]	 [27] MAX LOD in Random Re-mix: = 9.31836
+2013-05-24 20:53:25-616	[NOTICE]	 [28] MAX LOD in Random Re-mix: = 8.71386
+2013-05-24 21:08:48-774	[NOTICE]	 
+Input Summary:	189 samples of 9 traits in following files:
+	Trait Interval Data in:     data/traitInterval.txt
+	Gene Data of Children in:   data/geneChildFull.txt
+	Gene Data of Parent(F) in:  data/geneParentF.txt
+	Gene Data of Parent(M) in:  data/geneParentM.txt
+	Express Data in:            data/expressData.txt
+Calculation dStep:	1
+2013-05-24 21:08:48-789	[NOTICE]	 1	[ 0 ~ 1 ]:[ 9.1 ]	3.13799
+2013-05-24 21:08:48-803	[NOTICE]	 1	[ 1 ~ 2 ]:[ 9.1 ]	3.69102
+2013-05-24 21:08:48-819	[NOTICE]	 1	[ 2 ~ 3 ]:[ 9.1 ]	4.23699
+2013-05-24 21:08:48-832	[NOTICE]	 1	[ 3 ~ 4 ]:[ 9.1 ]	4.75821
+2013-05-24 21:08:48-844	[NOTICE]	 1	[ 4 ~ 5 ]:[ 9.1 ]	5.24998
+2013-05-24 21:08:48-857	[NOTICE]	 1	[ 5 ~ 6 ]:[ 9.1 ]	5.71234
+2013-05-24 21:08:48-869	[NOTICE]	 1	[ 6 ~ 7 ]:[ 9.1 ]	6.14586
+2013-05-24 21:08:48-889	[NOTICE]	 1	[ 7 ~ 8 ]:[ 9.1 ]	6.55037
+2013-05-24 21:08:48-907	[NOTICE]	 1	[ 8 ~ 9 ]:[ 9.1 ]	6.92516
+2013-05-24 21:08:48-926	[NOTICE]	 1	[ 9 ~ 9.1 ]:[ 9.1 ]	7.2693
+2013-05-24 21:08:48-938	[NOTICE]	 2	[ 0 ~ 1 ]:[ 4.2 ]	7.30199
+2013-05-24 21:08:48-950	[NOTICE]	 2	[ 1 ~ 2 ]:[ 4.2 ]	7.46431
+2013-05-24 21:08:48-967	[NOTICE]	 2	[ 2 ~ 3 ]:[ 4.2 ]	7.52697
+2013-05-24 21:08:48-983	[NOTICE]	 2	[ 3 ~ 4 ]:[ 4.2 ]	7.4863
+2013-05-24 21:08:48-995	[NOTICE]	 2	[ 4 ~ 4.2 ]:[ 4.2 ]	7.32971
+2013-05-24 21:08:49-009	[NOTICE]	 3	[ 0 ~ 1 ]:[ 1.3 ]	7.28291
+2013-05-24 21:08:49-023	[NOTICE]	 3	[ 1 ~ 1.3 ]:[ 1.3 ]	7.05734
+2013-05-24 21:08:49-041	[NOTICE]	 4	[ 0 ~ 0.8 ]:[ 0.8 ]	6.94697
+2013-05-24 21:08:49-057	[NOTICE]	 5	[ 0 ~ 1 ]:[ 1.6 ]	7.51325
+2013-05-24 21:08:49-069	[NOTICE]	 5	[ 1 ~ 1.6 ]:[ 1.6 ]	9.0754
+2013-05-24 21:08:49-085	[NOTICE]	 6	[ 0 ~ 1 ]:[ 3.3 ]	9.5439
+2013-05-24 21:08:49-105	[NOTICE]	 6	[ 1 ~ 2 ]:[ 3.3 ]	10.6045
+2013-05-24 21:08:49-123	[NOTICE]	 6	[ 2 ~ 3 ]:[ 3.3 ]	10.6748
+2013-05-24 21:08:49-136	[NOTICE]	 6	[ 3 ~ 3.3 ]:[ 3.3 ]	10.1002
+2013-05-24 21:08:49-148	[NOTICE]	 7	[ 0 ~ 1 ]:[ 2.2 ]	9.75363
+2013-05-24 21:08:49-161	[NOTICE]	 7	[ 1 ~ 2 ]:[ 2.2 ]	9.09651
+2013-05-24 21:08:49-174	[NOTICE]	 7	[ 2 ~ 2.2 ]:[ 2.2 ]	7.99696
+2013-05-24 21:08:49-174	[NOTICE]	 MAX LOD:	Trait 6[2~3] = 10.6748
+2013-05-24 21:08:49-174	[NOTICE]	 
+For LOD Detection: OrderGroup "2/189" will run.
+2013-05-24 21:08:49-519	[NOTICE]	 [1] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 21:08:49-519	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.9209)
+2013-05-24 21:08:49-866	[NOTICE]	 [2] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 21:08:49-866	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.8124)
+2013-05-24 21:08:50-199	[NOTICE]	 [3] MAX LOD in Random Re-mix: = 9.7719
+2013-05-24 21:08:50-531	[NOTICE]	 [4] MAX LOD in Random Re-mix: = 9.17366
+2013-05-24 21:08:50-854	[NOTICE]	 [5] MAX LOD in Random Re-mix: = 9.4459
+2013-05-24 21:08:51-179	[NOTICE]	 [6] MAX LOD in Random Re-mix: = 8.95577
+2013-05-24 21:08:51-496	[NOTICE]	 [7] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 21:08:51-497	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.9209)
+2013-05-24 21:08:51-824	[NOTICE]	 [8] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 21:08:51-824	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.8124)
+2013-05-24 21:08:52-153	[NOTICE]	 [9] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 21:08:52-475	[NOTICE]	 [10] MAX LOD in Random Re-mix: = 9.50597
+2013-05-24 21:08:52-475	[WARN]	 QTL detection need more verification, please check.
+2013-05-24 21:08:52-475	[NOTICE]	 Total time: 3694.72 ms
+2013-05-24 21:08:52-475	[NOTICE]	 Average time: 335.884 ms
+2013-05-24 21:09:45-652	[NOTICE]	 
+Input Summary:	189 samples of 9 traits in following files:
+	Trait Interval Data in:     data/traitInterval.txt
+	Gene Data of Children in:   data/geneChildFull.txt
+	Gene Data of Parent(F) in:  data/geneParentF.txt
+	Gene Data of Parent(M) in:  data/geneParentM.txt
+	Express Data in:            data/expressData.txt
+Calculation dStep:	1
+2013-05-24 21:09:45-670	[NOTICE]	 1	[ 0 ~ 1 ]:[ 9.1 ]	3.13799
+2013-05-24 21:09:45-682	[NOTICE]	 1	[ 1 ~ 2 ]:[ 9.1 ]	3.69102
+2013-05-24 21:09:45-694	[NOTICE]	 1	[ 2 ~ 3 ]:[ 9.1 ]	4.23699
+2013-05-24 21:09:45-706	[NOTICE]	 1	[ 3 ~ 4 ]:[ 9.1 ]	4.75821
+2013-05-24 21:09:45-718	[NOTICE]	 1	[ 4 ~ 5 ]:[ 9.1 ]	5.24998
+2013-05-24 21:09:45-730	[NOTICE]	 1	[ 5 ~ 6 ]:[ 9.1 ]	5.71234
+2013-05-24 21:09:45-742	[NOTICE]	 1	[ 6 ~ 7 ]:[ 9.1 ]	6.14586
+2013-05-24 21:09:45-754	[NOTICE]	 1	[ 7 ~ 8 ]:[ 9.1 ]	6.55037
+2013-05-24 21:09:45-766	[NOTICE]	 1	[ 8 ~ 9 ]:[ 9.1 ]	6.92516
+2013-05-24 21:09:45-778	[NOTICE]	 1	[ 9 ~ 9.1 ]:[ 9.1 ]	7.2693
+2013-05-24 21:09:45-790	[NOTICE]	 2	[ 0 ~ 1 ]:[ 4.2 ]	7.30199
+2013-05-24 21:09:45-802	[NOTICE]	 2	[ 1 ~ 2 ]:[ 4.2 ]	7.46431
+2013-05-24 21:09:45-814	[NOTICE]	 2	[ 2 ~ 3 ]:[ 4.2 ]	7.52697
+2013-05-24 21:09:45-826	[NOTICE]	 2	[ 3 ~ 4 ]:[ 4.2 ]	7.4863
+2013-05-24 21:09:45-838	[NOTICE]	 2	[ 4 ~ 4.2 ]:[ 4.2 ]	7.32971
+2013-05-24 21:09:45-850	[NOTICE]	 3	[ 0 ~ 1 ]:[ 1.3 ]	7.28291
+2013-05-24 21:09:45-861	[NOTICE]	 3	[ 1 ~ 1.3 ]:[ 1.3 ]	7.05734
+2013-05-24 21:09:45-873	[NOTICE]	 4	[ 0 ~ 0.8 ]:[ 0.8 ]	6.94697
+2013-05-24 21:09:45-885	[NOTICE]	 5	[ 0 ~ 1 ]:[ 1.6 ]	7.51325
+2013-05-24 21:09:45-897	[NOTICE]	 5	[ 1 ~ 1.6 ]:[ 1.6 ]	9.0754
+2013-05-24 21:09:45-909	[NOTICE]	 6	[ 0 ~ 1 ]:[ 3.3 ]	9.5439
+2013-05-24 21:09:45-920	[NOTICE]	 6	[ 1 ~ 2 ]:[ 3.3 ]	10.6045
+2013-05-24 21:09:45-932	[NOTICE]	 6	[ 2 ~ 3 ]:[ 3.3 ]	10.6748
+2013-05-24 21:09:45-944	[NOTICE]	 6	[ 3 ~ 3.3 ]:[ 3.3 ]	10.1002
+2013-05-24 21:09:45-956	[NOTICE]	 7	[ 0 ~ 1 ]:[ 2.2 ]	9.75363
+2013-05-24 21:09:45-968	[NOTICE]	 7	[ 1 ~ 2 ]:[ 2.2 ]	9.09651
+2013-05-24 21:09:45-980	[NOTICE]	 7	[ 2 ~ 2.2 ]:[ 2.2 ]	7.99696
+2013-05-24 21:09:45-980	[NOTICE]	 MAX LOD:	Trait 6[2~3] = 10.6748
+2013-05-24 21:09:45-980	[NOTICE]	 
+For LOD Detection: OrderGroup "2/189" will run.
+2013-05-24 21:09:46-299	[NOTICE]	 [1] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 21:09:46-299	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.9209)
+2013-05-24 21:09:46-620	[NOTICE]	 [2] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 21:09:46-620	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.8124)
+2013-05-24 21:09:46-941	[NOTICE]	 [3] MAX LOD in Random Re-mix: = 9.7719
+2013-05-24 21:09:47-262	[NOTICE]	 [4] MAX LOD in Random Re-mix: = 9.17366
+2013-05-24 21:09:47-583	[NOTICE]	 [5] MAX LOD in Random Re-mix: = 9.4459
+2013-05-24 21:09:47-906	[NOTICE]	 [6] MAX LOD in Random Re-mix: = 8.95577
+2013-05-24 21:09:48-232	[NOTICE]	 [7] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 21:09:48-232	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.9209)
+2013-05-24 21:09:48-549	[NOTICE]	 [8] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 21:09:48-549	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.8124)
+2013-05-24 21:09:48-868	[NOTICE]	 [9] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 21:09:49-191	[NOTICE]	 [10] MAX LOD in Random Re-mix: = 9.50597
+2013-05-24 21:09:49-191	[WARN]	 QTL detection need more verification, please check.
+2013-05-24 21:09:49-191	[NOTICE]	 Total time: 3532.73 ms
+2013-05-24 21:09:49-191	[NOTICE]	 Average time: 321.157 ms
+2013-05-24 21:09:59-954	[NOTICE]	 
+Input Summary:	189 samples of 9 traits in following files:
+	Trait Interval Data in:     data/traitInterval.txt
+	Gene Data of Children in:   data/geneChildFull.txt
+	Gene Data of Parent(F) in:  data/geneParentF.txt
+	Gene Data of Parent(M) in:  data/geneParentM.txt
+	Express Data in:            data/expressData.txt
+Calculation dStep:	1
+2013-05-24 21:09:59-971	[NOTICE]	 1	[ 0 ~ 1 ]:[ 9.1 ]	3.13799
+2013-05-24 21:09:59-994	[NOTICE]	 1	[ 1 ~ 2 ]:[ 9.1 ]	3.69102
+2013-05-24 21:10:00-017	[NOTICE]	 1	[ 2 ~ 3 ]:[ 9.1 ]	4.23699
+2013-05-24 21:10:00-031	[NOTICE]	 1	[ 3 ~ 4 ]:[ 9.1 ]	4.75821
+2013-05-24 21:10:00-045	[NOTICE]	 1	[ 4 ~ 5 ]:[ 9.1 ]	5.24998
+2013-05-24 21:10:00-058	[NOTICE]	 1	[ 5 ~ 6 ]:[ 9.1 ]	5.71234
+2013-05-24 21:10:00-072	[NOTICE]	 1	[ 6 ~ 7 ]:[ 9.1 ]	6.14586
+2013-05-24 21:10:00-088	[NOTICE]	 1	[ 7 ~ 8 ]:[ 9.1 ]	6.55037
+2013-05-24 21:10:00-104	[NOTICE]	 1	[ 8 ~ 9 ]:[ 9.1 ]	6.92516
+2013-05-24 21:10:00-120	[NOTICE]	 1	[ 9 ~ 9.1 ]:[ 9.1 ]	7.2693
+2013-05-24 21:10:00-133	[NOTICE]	 2	[ 0 ~ 1 ]:[ 4.2 ]	7.30199
+2013-05-24 21:10:00-146	[NOTICE]	 2	[ 1 ~ 2 ]:[ 4.2 ]	7.46431
+2013-05-24 21:10:00-162	[NOTICE]	 2	[ 2 ~ 3 ]:[ 4.2 ]	7.52697
+2013-05-24 21:10:00-179	[NOTICE]	 2	[ 3 ~ 4 ]:[ 4.2 ]	7.4863
+2013-05-24 21:10:00-196	[NOTICE]	 2	[ 4 ~ 4.2 ]:[ 4.2 ]	7.32971
+2013-05-24 21:10:00-209	[NOTICE]	 3	[ 0 ~ 1 ]:[ 1.3 ]	7.28291
+2013-05-24 21:10:00-222	[NOTICE]	 3	[ 1 ~ 1.3 ]:[ 1.3 ]	7.05734
+2013-05-24 21:10:00-235	[NOTICE]	 4	[ 0 ~ 0.8 ]:[ 0.8 ]	6.94697
+2013-05-24 21:10:00-251	[NOTICE]	 5	[ 0 ~ 1 ]:[ 1.6 ]	7.51325
+2013-05-24 21:10:00-269	[NOTICE]	 5	[ 1 ~ 1.6 ]:[ 1.6 ]	9.0754
+2013-05-24 21:10:00-286	[NOTICE]	 6	[ 0 ~ 1 ]:[ 3.3 ]	9.5439
+2013-05-24 21:10:00-301	[NOTICE]	 6	[ 1 ~ 2 ]:[ 3.3 ]	10.6045
+2013-05-24 21:10:00-319	[NOTICE]	 6	[ 2 ~ 3 ]:[ 3.3 ]	10.6748
+2013-05-24 21:10:00-336	[NOTICE]	 6	[ 3 ~ 3.3 ]:[ 3.3 ]	10.1002
+2013-05-24 21:10:00-354	[NOTICE]	 7	[ 0 ~ 1 ]:[ 2.2 ]	9.75363
+2013-05-24 21:10:00-372	[NOTICE]	 7	[ 1 ~ 2 ]:[ 2.2 ]	9.09651
+2013-05-24 21:10:00-384	[NOTICE]	 7	[ 2 ~ 2.2 ]:[ 2.2 ]	7.99696
+2013-05-24 21:10:00-384	[NOTICE]	 MAX LOD:	Trait 6[2~3] = 10.6748
+2013-05-24 21:10:00-384	[NOTICE]	 
+For LOD Detection: OrderGroup "2/189" will run.
+2013-05-24 21:10:00-748	[NOTICE]	 [1] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 21:10:00-748	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.9209)
+2013-05-24 21:10:01-089	[NOTICE]	 [2] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 21:10:01-089	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.8124)
+2013-05-24 21:10:01-429	[NOTICE]	 [3] MAX LOD in Random Re-mix: = 9.7719
+2013-05-24 21:10:01-784	[NOTICE]	 [4] MAX LOD in Random Re-mix: = 9.17366
+2013-05-24 21:10:02-120	[NOTICE]	 [5] MAX LOD in Random Re-mix: = 9.4459
+2013-05-24 21:10:02-452	[NOTICE]	 [6] MAX LOD in Random Re-mix: = 8.95577
+2013-05-24 21:10:02-784	[NOTICE]	 [7] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 21:10:02-784	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.9209)
+2013-05-24 21:10:03-118	[NOTICE]	 [8] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 21:10:03-118	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.8124)
+2013-05-24 21:10:03-448	[NOTICE]	 [9] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 21:10:03-785	[NOTICE]	 [10] MAX LOD in Random Re-mix: = 9.50597
+2013-05-24 21:10:03-785	[WARN]	 QTL detection need more verification, please check.
+2013-05-24 21:10:03-785	[NOTICE]	 Total time: 3821.7 ms
+2013-05-24 21:10:03-785	[NOTICE]	 Average time: 347.427 ms
+2013-05-24 21:10:21-163	[NOTICE]	 
+Input Summary:	189 samples of 9 traits in following files:
+	Trait Interval Data in:     data/traitInterval.txt
+	Gene Data of Children in:   data/geneChildFull.txt
+	Gene Data of Parent(F) in:  data/geneParentF.txt
+	Gene Data of Parent(M) in:  data/geneParentM.txt
+	Express Data in:            data/expressData.txt
+Calculation dStep:	1
+2013-05-24 21:10:21-181	[NOTICE]	 1	[ 0 ~ 1 ]:[ 9.1 ]	3.13799
+2013-05-24 21:10:21-194	[NOTICE]	 1	[ 1 ~ 2 ]:[ 9.1 ]	3.69102
+2013-05-24 21:10:21-207	[NOTICE]	 1	[ 2 ~ 3 ]:[ 9.1 ]	4.23699
+2013-05-24 21:10:21-219	[NOTICE]	 1	[ 3 ~ 4 ]:[ 9.1 ]	4.75821
+2013-05-24 21:10:21-232	[NOTICE]	 1	[ 4 ~ 5 ]:[ 9.1 ]	5.24998
+2013-05-24 21:10:21-245	[NOTICE]	 1	[ 5 ~ 6 ]:[ 9.1 ]	5.71234
+2013-05-24 21:10:21-262	[NOTICE]	 1	[ 6 ~ 7 ]:[ 9.1 ]	6.14586
+2013-05-24 21:10:21-277	[NOTICE]	 1	[ 7 ~ 8 ]:[ 9.1 ]	6.55037
+2013-05-24 21:10:21-292	[NOTICE]	 1	[ 8 ~ 9 ]:[ 9.1 ]	6.92516
+2013-05-24 21:10:21-308	[NOTICE]	 1	[ 9 ~ 9.1 ]:[ 9.1 ]	7.2693
+2013-05-24 21:10:21-325	[NOTICE]	 2	[ 0 ~ 1 ]:[ 4.2 ]	7.30199
+2013-05-24 21:10:21-339	[NOTICE]	 2	[ 1 ~ 2 ]:[ 4.2 ]	7.46431
+2013-05-24 21:10:21-356	[NOTICE]	 2	[ 2 ~ 3 ]:[ 4.2 ]	7.52697
+2013-05-24 21:10:21-371	[NOTICE]	 2	[ 3 ~ 4 ]:[ 4.2 ]	7.4863
+2013-05-24 21:10:21-389	[NOTICE]	 2	[ 4 ~ 4.2 ]:[ 4.2 ]	7.32971
+2013-05-24 21:10:21-402	[NOTICE]	 3	[ 0 ~ 1 ]:[ 1.3 ]	7.28291
+2013-05-24 21:10:21-420	[NOTICE]	 3	[ 1 ~ 1.3 ]:[ 1.3 ]	7.05734
+2013-05-24 21:10:21-435	[NOTICE]	 4	[ 0 ~ 0.8 ]:[ 0.8 ]	6.94697
+2013-05-24 21:10:21-450	[NOTICE]	 5	[ 0 ~ 1 ]:[ 1.6 ]	7.51325
+2013-05-24 21:10:21-464	[NOTICE]	 5	[ 1 ~ 1.6 ]:[ 1.6 ]	9.0754
+2013-05-24 21:10:21-478	[NOTICE]	 6	[ 0 ~ 1 ]:[ 3.3 ]	9.5439
+2013-05-24 21:10:21-496	[NOTICE]	 6	[ 1 ~ 2 ]:[ 3.3 ]	10.6045
+2013-05-24 21:10:21-516	[NOTICE]	 6	[ 2 ~ 3 ]:[ 3.3 ]	10.6748
+2013-05-24 21:10:21-529	[NOTICE]	 6	[ 3 ~ 3.3 ]:[ 3.3 ]	10.1002
+2013-05-24 21:10:21-542	[NOTICE]	 7	[ 0 ~ 1 ]:[ 2.2 ]	9.75363
+2013-05-24 21:10:21-554	[NOTICE]	 7	[ 1 ~ 2 ]:[ 2.2 ]	9.09651
+2013-05-24 21:10:21-568	[NOTICE]	 7	[ 2 ~ 2.2 ]:[ 2.2 ]	7.99696
+2013-05-24 21:10:21-568	[NOTICE]	 MAX LOD:	Trait 6[2~3] = 10.6748
+2013-05-24 21:10:21-568	[NOTICE]	 
+For LOD Detection: OrderGroup "2/189" will run.
+2013-05-24 21:10:21-968	[NOTICE]	 [1] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 21:10:21-968	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.9209)
+2013-05-24 21:10:22-314	[NOTICE]	 [2] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 21:10:22-314	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.8124)
+2013-05-24 21:10:22-646	[NOTICE]	 [3] MAX LOD in Random Re-mix: = 9.7719
+2013-05-24 21:10:22-970	[NOTICE]	 [4] MAX LOD in Random Re-mix: = 9.17366
+2013-05-24 21:10:23-293	[NOTICE]	 [5] MAX LOD in Random Re-mix: = 9.4459
+2013-05-24 21:10:23-618	[NOTICE]	 [6] MAX LOD in Random Re-mix: = 8.95577
+2013-05-24 21:10:23-933	[NOTICE]	 [7] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 21:10:23-933	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.9209)
+2013-05-24 21:10:24-246	[NOTICE]	 [8] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 21:10:24-246	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.8124)
+2013-05-24 21:10:24-569	[NOTICE]	 [9] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 21:10:24-887	[NOTICE]	 [10] MAX LOD in Random Re-mix: = 9.50597
+2013-05-24 21:10:24-887	[NOTICE]	 Max of 11 permutation re-mix data is 10.9209
+2013-05-24 21:10:24-887	[WARN]	 QTL DETECTED: LOD:10.6748
+2013-05-24 21:10:24-887	[NOTICE]	 Please check full log for QTL detail 10.6748
+2013-05-24 21:10:24-887	[NOTICE]	 Total time: 3714.03 ms
+2013-05-24 21:10:24-887	[NOTICE]	 Average time: 337.639 ms
+2013-05-24 21:11:10-791	[NOTICE]	 
+Input Summary:	189 samples of 9 traits in following files:
+	Trait Interval Data in:     data/traitInterval.txt
+	Gene Data of Children in:   data/geneChildFull.txt
+	Gene Data of Parent(F) in:  data/geneParentF.txt
+	Gene Data of Parent(M) in:  data/geneParentM.txt
+	Express Data in:            data/expressData.txt
+Calculation dStep:	1
+2013-05-24 21:11:10-807	[NOTICE]	 1	[ 0 ~ 1 ]:[ 9.1 ]	3.13799
+2013-05-24 21:11:10-819	[NOTICE]	 1	[ 1 ~ 2 ]:[ 9.1 ]	3.69102
+2013-05-24 21:11:10-831	[NOTICE]	 1	[ 2 ~ 3 ]:[ 9.1 ]	4.23699
+2013-05-24 21:11:10-843	[NOTICE]	 1	[ 3 ~ 4 ]:[ 9.1 ]	4.75821
+2013-05-24 21:11:10-856	[NOTICE]	 1	[ 4 ~ 5 ]:[ 9.1 ]	5.24998
+2013-05-24 21:11:10-868	[NOTICE]	 1	[ 5 ~ 6 ]:[ 9.1 ]	5.71234
+2013-05-24 21:11:10-879	[NOTICE]	 1	[ 6 ~ 7 ]:[ 9.1 ]	6.14586
+2013-05-24 21:11:10-891	[NOTICE]	 1	[ 7 ~ 8 ]:[ 9.1 ]	6.55037
+2013-05-24 21:11:10-904	[NOTICE]	 1	[ 8 ~ 9 ]:[ 9.1 ]	6.92516
+2013-05-24 21:11:10-915	[NOTICE]	 1	[ 9 ~ 9.1 ]:[ 9.1 ]	7.2693
+2013-05-24 21:11:10-927	[NOTICE]	 2	[ 0 ~ 1 ]:[ 4.2 ]	7.30199
+2013-05-24 21:11:10-939	[NOTICE]	 2	[ 1 ~ 2 ]:[ 4.2 ]	7.46431
+2013-05-24 21:11:10-951	[NOTICE]	 2	[ 2 ~ 3 ]:[ 4.2 ]	7.52697
+2013-05-24 21:11:10-966	[NOTICE]	 2	[ 3 ~ 4 ]:[ 4.2 ]	7.4863
+2013-05-24 21:11:10-978	[NOTICE]	 2	[ 4 ~ 4.2 ]:[ 4.2 ]	7.32971
+2013-05-24 21:11:10-989	[NOTICE]	 3	[ 0 ~ 1 ]:[ 1.3 ]	7.28291
+2013-05-24 21:11:11-002	[NOTICE]	 3	[ 1 ~ 1.3 ]:[ 1.3 ]	7.05734
+2013-05-24 21:11:11-014	[NOTICE]	 4	[ 0 ~ 0.8 ]:[ 0.8 ]	6.94697
+2013-05-24 21:11:11-026	[NOTICE]	 5	[ 0 ~ 1 ]:[ 1.6 ]	7.51325
+2013-05-24 21:11:11-040	[NOTICE]	 5	[ 1 ~ 1.6 ]:[ 1.6 ]	9.0754
+2013-05-24 21:11:11-055	[NOTICE]	 6	[ 0 ~ 1 ]:[ 3.3 ]	9.5439
+2013-05-24 21:11:11-067	[NOTICE]	 6	[ 1 ~ 2 ]:[ 3.3 ]	10.6045
+2013-05-24 21:11:11-079	[NOTICE]	 6	[ 2 ~ 3 ]:[ 3.3 ]	10.6748
+2013-05-24 21:11:11-090	[NOTICE]	 6	[ 3 ~ 3.3 ]:[ 3.3 ]	10.1002
+2013-05-24 21:11:11-102	[NOTICE]	 7	[ 0 ~ 1 ]:[ 2.2 ]	9.75363
+2013-05-24 21:11:11-114	[NOTICE]	 7	[ 1 ~ 2 ]:[ 2.2 ]	9.09651
+2013-05-24 21:11:11-126	[NOTICE]	 7	[ 2 ~ 2.2 ]:[ 2.2 ]	7.99696
+2013-05-24 21:11:11-126	[NOTICE]	 MAX LOD:	Trait 6[2~3] = 10.6748
+2013-05-24 21:11:11-126	[NOTICE]	 
+For LOD Detection: OrderGroup "2/189" will run.
+2013-05-24 21:11:11-448	[NOTICE]	 [1] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 21:11:11-448	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.9209)
+2013-05-24 21:11:11-779	[NOTICE]	 [2] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 21:11:11-779	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.8124)
+2013-05-24 21:11:12-101	[NOTICE]	 [3] MAX LOD in Random Re-mix: = 9.7719
+2013-05-24 21:11:12-427	[NOTICE]	 [4] MAX LOD in Random Re-mix: = 9.17366
+2013-05-24 21:11:12-745	[NOTICE]	 [5] MAX LOD in Random Re-mix: = 9.4459
+2013-05-24 21:11:13-063	[NOTICE]	 [6] MAX LOD in Random Re-mix: = 8.95577
+2013-05-24 21:11:13-427	[NOTICE]	 [7] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 21:11:13-427	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.9209)
+2013-05-24 21:11:13-753	[NOTICE]	 [8] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 21:11:13-753	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.8124)
+2013-05-24 21:11:14-072	[NOTICE]	 [9] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 21:11:14-436	[NOTICE]	 [10] MAX LOD in Random Re-mix: = 9.50597
+2013-05-24 21:11:14-436	[NOTICE]	 Max of 10 permutation re-mix data is 10.9209
+2013-05-24 21:11:14-436	[WARN]	 QTL DETECTED: LOD:10.6748
+2013-05-24 21:11:14-436	[NOTICE]	 Please check full log for QTL detail 10.6748
+2013-05-24 21:11:14-436	[NOTICE]	 Total time: 3642.47 ms
+2013-05-24 21:11:14-436	[NOTICE]	 Average time: 331.133 ms
+2013-05-24 21:11:19-711	[NOTICE]	 
+Input Summary:	189 samples of 9 traits in following files:
+	Trait Interval Data in:     data/traitInterval.txt
+	Gene Data of Children in:   data/geneChildFull.txt
+	Gene Data of Parent(F) in:  data/geneParentF.txt
+	Gene Data of Parent(M) in:  data/geneParentM.txt
+	Express Data in:            data/expressData.txt
+Calculation dStep:	1
+2013-05-24 21:11:19-731	[NOTICE]	 1	[ 0 ~ 1 ]:[ 9.1 ]	3.13799
+2013-05-24 21:11:19-743	[NOTICE]	 1	[ 1 ~ 2 ]:[ 9.1 ]	3.69102
+2013-05-24 21:11:19-759	[NOTICE]	 1	[ 2 ~ 3 ]:[ 9.1 ]	4.23699
+2013-05-24 21:11:19-776	[NOTICE]	 1	[ 3 ~ 4 ]:[ 9.1 ]	4.75821
+2013-05-24 21:11:19-795	[NOTICE]	 1	[ 4 ~ 5 ]:[ 9.1 ]	5.24998
+2013-05-24 21:11:19-814	[NOTICE]	 1	[ 5 ~ 6 ]:[ 9.1 ]	5.71234
+2013-05-24 21:11:19-827	[NOTICE]	 1	[ 6 ~ 7 ]:[ 9.1 ]	6.14586
+2013-05-24 21:11:19-845	[NOTICE]	 1	[ 7 ~ 8 ]:[ 9.1 ]	6.55037
+2013-05-24 21:11:19-861	[NOTICE]	 1	[ 8 ~ 9 ]:[ 9.1 ]	6.92516
+2013-05-24 21:11:19-879	[NOTICE]	 1	[ 9 ~ 9.1 ]:[ 9.1 ]	7.2693
+2013-05-24 21:11:19-891	[NOTICE]	 2	[ 0 ~ 1 ]:[ 4.2 ]	7.30199
+2013-05-24 21:11:19-903	[NOTICE]	 2	[ 1 ~ 2 ]:[ 4.2 ]	7.46431
+2013-05-24 21:11:19-915	[NOTICE]	 2	[ 2 ~ 3 ]:[ 4.2 ]	7.52697
+2013-05-24 21:11:19-929	[NOTICE]	 2	[ 3 ~ 4 ]:[ 4.2 ]	7.4863
+2013-05-24 21:11:19-944	[NOTICE]	 2	[ 4 ~ 4.2 ]:[ 4.2 ]	7.32971
+2013-05-24 21:11:19-959	[NOTICE]	 3	[ 0 ~ 1 ]:[ 1.3 ]	7.28291
+2013-05-24 21:11:19-976	[NOTICE]	 3	[ 1 ~ 1.3 ]:[ 1.3 ]	7.05734
+2013-05-24 21:11:19-992	[NOTICE]	 4	[ 0 ~ 0.8 ]:[ 0.8 ]	6.94697
+2013-05-24 21:11:20-006	[NOTICE]	 5	[ 0 ~ 1 ]:[ 1.6 ]	7.51325
+2013-05-24 21:11:20-018	[NOTICE]	 5	[ 1 ~ 1.6 ]:[ 1.6 ]	9.0754
+2013-05-24 21:11:20-034	[NOTICE]	 6	[ 0 ~ 1 ]:[ 3.3 ]	9.5439
+2013-05-24 21:11:20-050	[NOTICE]	 6	[ 1 ~ 2 ]:[ 3.3 ]	10.6045
+2013-05-24 21:11:20-064	[NOTICE]	 6	[ 2 ~ 3 ]:[ 3.3 ]	10.6748
+2013-05-24 21:11:20-076	[NOTICE]	 6	[ 3 ~ 3.3 ]:[ 3.3 ]	10.1002
+2013-05-24 21:11:20-090	[NOTICE]	 7	[ 0 ~ 1 ]:[ 2.2 ]	9.75363
+2013-05-24 21:11:20-103	[NOTICE]	 7	[ 1 ~ 2 ]:[ 2.2 ]	9.09651
+2013-05-24 21:11:20-119	[NOTICE]	 7	[ 2 ~ 2.2 ]:[ 2.2 ]	7.99696
+2013-05-24 21:11:20-119	[NOTICE]	 MAX LOD:	Trait 6[2~3] = 10.6748
+2013-05-24 21:11:20-119	[NOTICE]	 
+For LOD Detection: OrderGroup "2/189" will run.
+2013-05-24 21:11:20-472	[NOTICE]	 [1] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 21:11:20-472	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.9209)
+2013-05-24 21:11:20-804	[NOTICE]	 [2] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 21:11:20-804	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.8124)
+2013-05-24 21:11:21-131	[NOTICE]	 [3] MAX LOD in Random Re-mix: = 9.7719
+2013-05-24 21:11:21-464	[NOTICE]	 [4] MAX LOD in Random Re-mix: = 9.17366
+2013-05-24 21:11:21-797	[NOTICE]	 [5] MAX LOD in Random Re-mix: = 9.4459
+2013-05-24 21:11:22-130	[NOTICE]	 [6] MAX LOD in Random Re-mix: = 8.95577
+2013-05-24 21:11:22-455	[NOTICE]	 [7] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 21:11:22-455	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.9209)
+2013-05-24 21:11:22-775	[NOTICE]	 [8] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 21:11:22-775	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.8124)
+2013-05-24 21:11:23-092	[NOTICE]	 [9] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 21:11:23-408	[NOTICE]	 [10] MAX LOD in Random Re-mix: = 9.50597
+2013-05-24 21:11:23-408	[NOTICE]	 Max of 10 permutation re-mix data is 10.9209
+2013-05-24 21:11:23-408	[WARN]	 QTL DETECTED: LOD:10.6748
+2013-05-24 21:11:23-408	[NOTICE]	 Please check full log for QTL detail 10.6748
+2013-05-24 21:11:23-408	[NOTICE]	 Total time: 3689.07 ms
+2013-05-24 21:11:23-408	[NOTICE]	 Average time: 335.37 ms
+2013-05-24 21:29:27-729	[NOTICE]	 
+Input Summary:	189 samples of 9 traits in following files:
+	Trait Interval Data in:     data/traitInterval.txt
+	Gene Data of Children in:   data/geneChildFull.txt
+	Gene Data of Parent(F) in:  data/geneParentF.txt
+	Gene Data of Parent(M) in:  data/geneParentM.txt
+	Express Data in:            data/expressData.txt
+Calculation dStep:	1
+2013-05-24 21:29:27-743	[NOTICE]	 1	[ 0 ~ 1 ]:[ 9.1 ]	3.13799
+2013-05-24 21:29:27-756	[NOTICE]	 1	[ 1 ~ 2 ]:[ 9.1 ]	3.69102
+2013-05-24 21:29:27-769	[NOTICE]	 1	[ 2 ~ 3 ]:[ 9.1 ]	4.23699
+2013-05-24 21:29:27-782	[NOTICE]	 1	[ 3 ~ 4 ]:[ 9.1 ]	4.75821
+2013-05-24 21:29:27-795	[NOTICE]	 1	[ 4 ~ 5 ]:[ 9.1 ]	5.24998
+2013-05-24 21:29:27-808	[NOTICE]	 1	[ 5 ~ 6 ]:[ 9.1 ]	5.71234
+2013-05-24 21:29:27-825	[NOTICE]	 1	[ 6 ~ 7 ]:[ 9.1 ]	6.14586
+2013-05-24 21:29:27-839	[NOTICE]	 1	[ 7 ~ 8 ]:[ 9.1 ]	6.55037
+2013-05-24 21:29:27-855	[NOTICE]	 1	[ 8 ~ 9 ]:[ 9.1 ]	6.92516
+2013-05-24 21:29:27-869	[NOTICE]	 1	[ 9 ~ 9.1 ]:[ 9.1 ]	7.2693
+2013-05-24 21:29:27-887	[NOTICE]	 2	[ 0 ~ 1 ]:[ 4.2 ]	7.30199
+2013-05-24 21:29:27-901	[NOTICE]	 2	[ 1 ~ 2 ]:[ 4.2 ]	7.46431
+2013-05-24 21:29:27-918	[NOTICE]	 2	[ 2 ~ 3 ]:[ 4.2 ]	7.52697
+2013-05-24 21:29:27-937	[NOTICE]	 2	[ 3 ~ 4 ]:[ 4.2 ]	7.4863
+2013-05-24 21:29:27-953	[NOTICE]	 2	[ 4 ~ 4.2 ]:[ 4.2 ]	7.32971
+2013-05-24 21:29:27-968	[NOTICE]	 3	[ 0 ~ 1 ]:[ 1.3 ]	7.28291
+2013-05-24 21:29:27-982	[NOTICE]	 3	[ 1 ~ 1.3 ]:[ 1.3 ]	7.05734
+2013-05-24 21:29:27-998	[NOTICE]	 4	[ 0 ~ 0.8 ]:[ 0.8 ]	6.94697
+2013-05-24 21:29:28-015	[NOTICE]	 5	[ 0 ~ 1 ]:[ 1.6 ]	7.51325
+2013-05-24 21:29:28-031	[NOTICE]	 5	[ 1 ~ 1.6 ]:[ 1.6 ]	9.0754
+2013-05-24 21:29:28-045	[NOTICE]	 6	[ 0 ~ 1 ]:[ 3.3 ]	9.5439
+2013-05-24 21:29:28-060	[NOTICE]	 6	[ 1 ~ 2 ]:[ 3.3 ]	10.6045
+2013-05-24 21:29:28-074	[NOTICE]	 6	[ 2 ~ 3 ]:[ 3.3 ]	10.6748
+2013-05-24 21:29:28-086	[NOTICE]	 6	[ 3 ~ 3.3 ]:[ 3.3 ]	10.1002
+2013-05-24 21:29:28-098	[NOTICE]	 7	[ 0 ~ 1 ]:[ 2.2 ]	9.75363
+2013-05-24 21:29:28-111	[NOTICE]	 7	[ 1 ~ 2 ]:[ 2.2 ]	9.09651
+2013-05-24 21:29:28-123	[NOTICE]	 7	[ 2 ~ 2.2 ]:[ 2.2 ]	7.99696
+2013-05-24 21:29:28-124	[NOTICE]	 MAX LOD:	Trait 6[2~3] = 10.6748
+2013-05-24 21:29:28-124	[NOTICE]	 
+For LOD Detection: OrderGroup "2/189" will run.
+2013-05-24 21:29:28-488	[NOTICE]	 [1] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 21:29:28-897	[NOTICE]	 [2] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 21:29:29-245	[NOTICE]	 [3] MAX LOD in Random Re-mix: = 9.7719
+2013-05-24 21:29:29-595	[NOTICE]	 [4] MAX LOD in Random Re-mix: = 9.17366
+2013-05-24 21:29:29-935	[NOTICE]	 [5] MAX LOD in Random Re-mix: = 9.4459
+2013-05-24 21:29:30-278	[NOTICE]	 [6] MAX LOD in Random Re-mix: = 8.95577
+2013-05-24 21:29:30-615	[NOTICE]	 [7] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 21:29:30-948	[NOTICE]	 [8] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 21:29:31-281	[NOTICE]	 [9] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 21:29:31-611	[NOTICE]	 [10] MAX LOD in Random Re-mix: = 9.50597
+2013-05-24 21:29:31-943	[NOTICE]	 [11] MAX LOD in Random Re-mix: = 9.67605
+2013-05-24 21:29:32-281	[NOTICE]	 [12] MAX LOD in Random Re-mix: = 9.28362
+2013-05-24 21:29:32-603	[NOTICE]	 [13] MAX LOD in Random Re-mix: = 9.7719
+2013-05-24 21:29:32-939	[NOTICE]	 [14] MAX LOD in Random Re-mix: = 9.17366
+2013-05-24 21:29:33-270	[NOTICE]	 [15] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 21:29:33-604	[NOTICE]	 [16] MAX LOD in Random Re-mix: = 9.50597
+2013-05-24 21:29:33-935	[NOTICE]	 [17] MAX LOD in Random Re-mix: = 8.14217
+2013-05-24 21:29:34-258	[NOTICE]	 [18] MAX LOD in Random Re-mix: = 8.24009
+2013-05-24 21:29:34-587	[NOTICE]	 [19] MAX LOD in Random Re-mix: = 9.4459
+2013-05-24 21:29:34-922	[NOTICE]	 [20] MAX LOD in Random Re-mix: = 8.95577
+2013-05-24 21:29:35-258	[NOTICE]	 [21] MAX LOD in Random Re-mix: = 9.67605
+2013-05-24 21:29:35-588	[NOTICE]	 [22] MAX LOD in Random Re-mix: = 9.28362
+2013-05-24 21:29:35-922	[NOTICE]	 [23] MAX LOD in Random Re-mix: = 8.14217
+2013-05-24 21:29:36-256	[NOTICE]	 [24] MAX LOD in Random Re-mix: = 8.24009
+2013-05-24 21:29:36-588	[NOTICE]	 [25] MAX LOD in Random Re-mix: = 10.4154
+2013-05-24 21:29:36-934	[NOTICE]	 [26] MAX LOD in Random Re-mix: = 10.306
+2013-05-24 21:29:37-261	[NOTICE]	 [27] MAX LOD in Random Re-mix: = 9.31836
+2013-05-24 21:29:37-600	[NOTICE]	 [28] MAX LOD in Random Re-mix: = 8.71386
+2013-05-24 21:29:37-935	[NOTICE]	 [29] MAX LOD in Random Re-mix: = 9.00128
+2013-05-24 21:29:38-263	[NOTICE]	 [30] MAX LOD in Random Re-mix: = 8.50578
+2013-05-24 21:29:38-596	[NOTICE]	 [31] MAX LOD in Random Re-mix: = 10.4154
+2013-05-24 21:29:38-925	[NOTICE]	 [32] MAX LOD in Random Re-mix: = 10.306
+2013-05-24 21:29:39-263	[NOTICE]	 [33] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 21:29:39-596	[NOTICE]	 [34] MAX LOD in Random Re-mix: = 9.70944
+2013-05-24 21:29:39-927	[NOTICE]	 [35] MAX LOD in Random Re-mix: = 9.67605
+2013-05-24 21:29:40-286	[NOTICE]	 [36] MAX LOD in Random Re-mix: = 9.48815
+2013-05-24 21:29:40-655	[NOTICE]	 [37] MAX LOD in Random Re-mix: = 9.31836
+2013-05-24 21:29:40-989	[NOTICE]	 [38] MAX LOD in Random Re-mix: = 8.71386
+2013-05-24 21:29:41-333	[NOTICE]	 [39] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 21:29:41-685	[NOTICE]	 [40] MAX LOD in Random Re-mix: = 9.70944
+2013-05-24 21:29:42-032	[NOTICE]	 [41] MAX LOD in Random Re-mix: = 8.14217
+2013-05-24 21:29:42-363	[NOTICE]	 [42] MAX LOD in Random Re-mix: = 8.45009
+2013-05-24 21:29:59-349	[NOTICE]	 
+Input Summary:	189 samples of 9 traits in following files:
+	Trait Interval Data in:     data/traitInterval.txt
+	Gene Data of Children in:   data/geneChildFull.txt
+	Gene Data of Parent(F) in:  data/geneParentF.txt
+	Gene Data of Parent(M) in:  data/geneParentM.txt
+	Express Data in:            data/expressData.txt
+Calculation dStep:	1
+2013-05-24 21:29:59-366	[NOTICE]	 1	[ 0 ~ 1 ]:[ 9.1 ]	3.13799
+2013-05-24 21:29:59-380	[NOTICE]	 1	[ 1 ~ 2 ]:[ 9.1 ]	3.69102
+2013-05-24 21:29:59-392	[NOTICE]	 1	[ 2 ~ 3 ]:[ 9.1 ]	4.23699
+2013-05-24 21:29:59-404	[NOTICE]	 1	[ 3 ~ 4 ]:[ 9.1 ]	4.75821
+2013-05-24 21:29:59-417	[NOTICE]	 1	[ 4 ~ 5 ]:[ 9.1 ]	5.24998
+2013-05-24 21:29:59-429	[NOTICE]	 1	[ 5 ~ 6 ]:[ 9.1 ]	5.71234
+2013-05-24 21:29:59-441	[NOTICE]	 1	[ 6 ~ 7 ]:[ 9.1 ]	6.14586
+2013-05-24 21:29:59-455	[NOTICE]	 1	[ 7 ~ 8 ]:[ 9.1 ]	6.55037
+2013-05-24 21:29:59-469	[NOTICE]	 1	[ 8 ~ 9 ]:[ 9.1 ]	6.92516
+2013-05-24 21:29:59-483	[NOTICE]	 1	[ 9 ~ 9.1 ]:[ 9.1 ]	7.2693
+2013-05-24 21:29:59-495	[NOTICE]	 2	[ 0 ~ 1 ]:[ 4.2 ]	7.30199
+2013-05-24 21:29:59-515	[NOTICE]	 2	[ 1 ~ 2 ]:[ 4.2 ]	7.46431
+2013-05-24 21:29:59-530	[NOTICE]	 2	[ 2 ~ 3 ]:[ 4.2 ]	7.52697
+2013-05-24 21:29:59-543	[NOTICE]	 2	[ 3 ~ 4 ]:[ 4.2 ]	7.4863
+2013-05-24 21:29:59-557	[NOTICE]	 2	[ 4 ~ 4.2 ]:[ 4.2 ]	7.32971
+2013-05-24 21:29:59-572	[NOTICE]	 3	[ 0 ~ 1 ]:[ 1.3 ]	7.28291
+2013-05-24 21:29:59-588	[NOTICE]	 3	[ 1 ~ 1.3 ]:[ 1.3 ]	7.05734
+2013-05-24 21:29:59-601	[NOTICE]	 4	[ 0 ~ 0.8 ]:[ 0.8 ]	6.94697
+2013-05-24 21:29:59-616	[NOTICE]	 5	[ 0 ~ 1 ]:[ 1.6 ]	7.51325
+2013-05-24 21:29:59-629	[NOTICE]	 5	[ 1 ~ 1.6 ]:[ 1.6 ]	9.0754
+2013-05-24 21:29:59-642	[NOTICE]	 6	[ 0 ~ 1 ]:[ 3.3 ]	9.5439
+2013-05-24 21:29:59-654	[NOTICE]	 6	[ 1 ~ 2 ]:[ 3.3 ]	10.6045
+2013-05-24 21:29:59-667	[NOTICE]	 6	[ 2 ~ 3 ]:[ 3.3 ]	10.6748
+2013-05-24 21:29:59-681	[NOTICE]	 6	[ 3 ~ 3.3 ]:[ 3.3 ]	10.1002
+2013-05-24 21:29:59-693	[NOTICE]	 7	[ 0 ~ 1 ]:[ 2.2 ]	9.75363
+2013-05-24 21:29:59-705	[NOTICE]	 7	[ 1 ~ 2 ]:[ 2.2 ]	9.09651
+2013-05-24 21:29:59-721	[NOTICE]	 7	[ 2 ~ 2.2 ]:[ 2.2 ]	7.99696
+2013-05-24 21:29:59-721	[NOTICE]	 MAX LOD:	Trait 6[2~3] = 10.6748
+2013-05-24 21:29:59-721	[NOTICE]	 
+For LOD Detection: OrderGroup "2/189" will run.
+2013-05-24 21:30:00-083	[NOTICE]	 [1] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 21:30:00-421	[NOTICE]	 [2] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 21:30:00-755	[NOTICE]	 [3] MAX LOD in Random Re-mix: = 9.7719
+2013-05-24 21:30:01-085	[NOTICE]	 [4] MAX LOD in Random Re-mix: = 9.17366
+2013-05-24 21:30:01-416	[NOTICE]	 [5] MAX LOD in Random Re-mix: = 9.4459
+2013-05-24 21:30:01-738	[NOTICE]	 [6] MAX LOD in Random Re-mix: = 8.95577
+2013-05-24 21:30:02-063	[NOTICE]	 [7] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 21:30:02-385	[NOTICE]	 [8] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 21:30:02-705	[NOTICE]	 [9] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 21:30:03-023	[NOTICE]	 [10] MAX LOD in Random Re-mix: = 9.50597
+2013-05-24 21:30:03-024	[NOTICE]	 Max of 10 permutation re-mix data is 10.9209
+2013-05-24 21:30:03-024	[WARN]	 QTL DETECTED: LOD:10.6748
+2013-05-24 21:30:03-024	[NOTICE]	 Please check full log for QTL detail 10.6748
+2013-05-24 21:30:03-024	[NOTICE]	 Total time: 3669.29 ms
+2013-05-24 21:30:03-024	[NOTICE]	 Average time: 333.571 ms
+2013-05-24 21:31:31-496	[NOTICE]	 
+Input Summary:	189 samples of 9 traits in following files:
+	Trait Interval Data in:     data/traitInterval.txt
+	Gene Data of Children in:   data/geneChildFull.txt
+	Gene Data of Parent(F) in:  data/geneParentF.txt
+	Gene Data of Parent(M) in:  data/geneParentM.txt
+	Express Data in:            data/expressData.txt
+Calculation dStep:	1
+2013-05-24 21:31:31-516	[NOTICE]	 1	[ 0 ~ 1 ]:[ 9.1 ]	3.13799
+2013-05-24 21:31:31-534	[NOTICE]	 1	[ 1 ~ 2 ]:[ 9.1 ]	3.69102
+2013-05-24 21:31:31-548	[NOTICE]	 1	[ 2 ~ 3 ]:[ 9.1 ]	4.23699
+2013-05-24 21:31:31-560	[NOTICE]	 1	[ 3 ~ 4 ]:[ 9.1 ]	4.75821
+2013-05-24 21:31:31-573	[NOTICE]	 1	[ 4 ~ 5 ]:[ 9.1 ]	5.24998
+2013-05-24 21:31:31-585	[NOTICE]	 1	[ 5 ~ 6 ]:[ 9.1 ]	5.71234
+2013-05-24 21:31:31-597	[NOTICE]	 1	[ 6 ~ 7 ]:[ 9.1 ]	6.14586
+2013-05-24 21:31:31-611	[NOTICE]	 1	[ 7 ~ 8 ]:[ 9.1 ]	6.55037
+2013-05-24 21:31:31-628	[NOTICE]	 1	[ 8 ~ 9 ]:[ 9.1 ]	6.92516
+2013-05-24 21:31:31-642	[NOTICE]	 1	[ 9 ~ 9.1 ]:[ 9.1 ]	7.2693
+2013-05-24 21:31:31-657	[NOTICE]	 2	[ 0 ~ 1 ]:[ 4.2 ]	7.30199
+2013-05-24 21:31:31-673	[NOTICE]	 2	[ 1 ~ 2 ]:[ 4.2 ]	7.46431
+2013-05-24 21:31:31-687	[NOTICE]	 2	[ 2 ~ 3 ]:[ 4.2 ]	7.52697
+2013-05-24 21:31:31-700	[NOTICE]	 2	[ 3 ~ 4 ]:[ 4.2 ]	7.4863
+2013-05-24 21:31:31-715	[NOTICE]	 2	[ 4 ~ 4.2 ]:[ 4.2 ]	7.32971
+2013-05-24 21:31:31-731	[NOTICE]	 3	[ 0 ~ 1 ]:[ 1.3 ]	7.28291
+2013-05-24 21:31:31-743	[NOTICE]	 3	[ 1 ~ 1.3 ]:[ 1.3 ]	7.05734
+2013-05-24 21:31:31-758	[NOTICE]	 4	[ 0 ~ 0.8 ]:[ 0.8 ]	6.94697
+2013-05-24 21:31:31-772	[NOTICE]	 5	[ 0 ~ 1 ]:[ 1.6 ]	7.51325
+2013-05-24 21:31:31-787	[NOTICE]	 5	[ 1 ~ 1.6 ]:[ 1.6 ]	9.0754
+2013-05-24 21:31:31-805	[NOTICE]	 6	[ 0 ~ 1 ]:[ 3.3 ]	9.5439
+2013-05-24 21:31:31-817	[NOTICE]	 6	[ 1 ~ 2 ]:[ 3.3 ]	10.6045
+2013-05-24 21:31:31-829	[NOTICE]	 6	[ 2 ~ 3 ]:[ 3.3 ]	10.6748
+2013-05-24 21:31:31-846	[NOTICE]	 6	[ 3 ~ 3.3 ]:[ 3.3 ]	10.1002
+2013-05-24 21:31:31-858	[NOTICE]	 7	[ 0 ~ 1 ]:[ 2.2 ]	9.75363
+2013-05-24 21:31:31-873	[NOTICE]	 7	[ 1 ~ 2 ]:[ 2.2 ]	9.09651
+2013-05-24 21:31:31-885	[NOTICE]	 7	[ 2 ~ 2.2 ]:[ 2.2 ]	7.99696
+2013-05-24 21:31:31-886	[NOTICE]	 MAX LOD:	Trait 6[2~3] = 10.6748
+2013-05-24 21:31:31-886	[NOTICE]	 
+For LOD Detection: OrderGroup "2/189" will run.
+2013-05-24 21:31:32-235	[NOTICE]	 [1] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 21:31:32-629	[NOTICE]	 [2] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 21:31:32-981	[NOTICE]	 [3] MAX LOD in Random Re-mix: = 9.7719
+2013-05-24 21:31:33-301	[NOTICE]	 [4] MAX LOD in Random Re-mix: = 9.17366
+2013-05-24 21:31:33-618	[NOTICE]	 [5] MAX LOD in Random Re-mix: = 9.4459
+2013-05-24 21:31:33-935	[NOTICE]	 [6] MAX LOD in Random Re-mix: = 8.95577
+2013-05-24 21:31:34-266	[NOTICE]	 [7] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 21:31:34-584	[NOTICE]	 [8] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 21:31:34-908	[NOTICE]	 [9] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 21:31:35-228	[NOTICE]	 [10] MAX LOD in Random Re-mix: = 9.50597
+2013-05-24 21:31:35-228	[NOTICE]	 Max of 10 permutation re-mix data is 10.9209
+2013-05-24 21:31:35-228	[WARN]	 QTL DETECTED: LOD:10.6748
+2013-05-24 21:31:35-228	[NOTICE]	 Please check full log for QTL detail 10.6748
+2013-05-24 21:31:35-228	[NOTICE]	 Total time: 3725.23 ms
+2013-05-24 21:31:35-228	[NOTICE]	 Average time: 338.657 ms
+2013-05-24 21:32:02-580	[NOTICE]	 
+Input Summary:	189 samples of 9 traits in following files:
+	Trait Interval Data in:     data/traitInterval.txt
+	Gene Data of Children in:   data/geneChildFull.txt
+	Gene Data of Parent(F) in:  data/geneParentF.txt
+	Gene Data of Parent(M) in:  data/geneParentM.txt
+	Express Data in:            data/expressData.txt
+Calculation dStep:	1
+2013-05-24 21:32:02-597	[NOTICE]	 1	[ 0 ~ 1 ]:[ 9.1 ]	3.13799
+2013-05-24 21:32:02-611	[NOTICE]	 1	[ 1 ~ 2 ]:[ 9.1 ]	3.69102
+2013-05-24 21:32:02-623	[NOTICE]	 1	[ 2 ~ 3 ]:[ 9.1 ]	4.23699
+2013-05-24 21:32:02-635	[NOTICE]	 1	[ 3 ~ 4 ]:[ 9.1 ]	4.75821
+2013-05-24 21:32:02-648	[NOTICE]	 1	[ 4 ~ 5 ]:[ 9.1 ]	5.24998
+2013-05-24 21:32:02-660	[NOTICE]	 1	[ 5 ~ 6 ]:[ 9.1 ]	5.71234
+2013-05-24 21:32:02-671	[NOTICE]	 1	[ 6 ~ 7 ]:[ 9.1 ]	6.14586
+2013-05-24 21:32:02-683	[NOTICE]	 1	[ 7 ~ 8 ]:[ 9.1 ]	6.55037
+2013-05-24 21:32:02-695	[NOTICE]	 1	[ 8 ~ 9 ]:[ 9.1 ]	6.92516
+2013-05-24 21:32:02-707	[NOTICE]	 1	[ 9 ~ 9.1 ]:[ 9.1 ]	7.2693
+2013-05-24 21:32:02-719	[NOTICE]	 2	[ 0 ~ 1 ]:[ 4.2 ]	7.30199
+2013-05-24 21:32:02-731	[NOTICE]	 2	[ 1 ~ 2 ]:[ 4.2 ]	7.46431
+2013-05-24 21:32:02-743	[NOTICE]	 2	[ 2 ~ 3 ]:[ 4.2 ]	7.52697
+2013-05-24 21:32:02-754	[NOTICE]	 2	[ 3 ~ 4 ]:[ 4.2 ]	7.4863
+2013-05-24 21:32:02-766	[NOTICE]	 2	[ 4 ~ 4.2 ]:[ 4.2 ]	7.32971
+2013-05-24 21:32:02-778	[NOTICE]	 3	[ 0 ~ 1 ]:[ 1.3 ]	7.28291
+2013-05-24 21:32:02-790	[NOTICE]	 3	[ 1 ~ 1.3 ]:[ 1.3 ]	7.05734
+2013-05-24 21:32:02-801	[NOTICE]	 4	[ 0 ~ 0.8 ]:[ 0.8 ]	6.94697
+2013-05-24 21:32:02-814	[NOTICE]	 5	[ 0 ~ 1 ]:[ 1.6 ]	7.51325
+2013-05-24 21:32:02-827	[NOTICE]	 5	[ 1 ~ 1.6 ]:[ 1.6 ]	9.0754
+2013-05-24 21:32:02-839	[NOTICE]	 6	[ 0 ~ 1 ]:[ 3.3 ]	9.5439
+2013-05-24 21:32:02-851	[NOTICE]	 6	[ 1 ~ 2 ]:[ 3.3 ]	10.6045
+2013-05-24 21:32:02-863	[NOTICE]	 6	[ 2 ~ 3 ]:[ 3.3 ]	10.6748
+2013-05-24 21:32:02-877	[NOTICE]	 6	[ 3 ~ 3.3 ]:[ 3.3 ]	10.1002
+2013-05-24 21:32:02-891	[NOTICE]	 7	[ 0 ~ 1 ]:[ 2.2 ]	9.75363
+2013-05-24 21:32:02-903	[NOTICE]	 7	[ 1 ~ 2 ]:[ 2.2 ]	9.09651
+2013-05-24 21:32:02-915	[NOTICE]	 7	[ 2 ~ 2.2 ]:[ 2.2 ]	7.99696
+2013-05-24 21:32:02-915	[NOTICE]	 MAX LOD:	Trait 6[2~3] = 10.6748
+2013-05-24 21:32:02-915	[NOTICE]	 
+For LOD Detection: OrderGroup "2/189" will run.
+2013-05-24 21:32:03-235	[NOTICE]	 [1] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 21:32:03-556	[NOTICE]	 [2] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 21:32:03-887	[NOTICE]	 [3] MAX LOD in Random Re-mix: = 9.7719
+2013-05-24 21:32:04-212	[NOTICE]	 [4] MAX LOD in Random Re-mix: = 9.17366
+2013-05-24 21:32:04-530	[NOTICE]	 [5] MAX LOD in Random Re-mix: = 9.4459
+2013-05-24 21:32:04-854	[NOTICE]	 [6] MAX LOD in Random Re-mix: = 8.95577
+2013-05-24 21:32:05-172	[NOTICE]	 [7] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 21:32:05-494	[NOTICE]	 [8] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 21:32:05-809	[NOTICE]	 [9] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 21:32:06-130	[NOTICE]	 [10] MAX LOD in Random Re-mix: = 9.50597
+2013-05-24 21:32:06-131	[NOTICE]	 Max of 10 permutation re-mix data is 10.9209 >0.0230577%
+2013-05-24 21:32:06-131	[WARN]	 QTL DETECTED: LOD:10.6748
+2013-05-24 21:32:06-131	[NOTICE]	 Please check full log for QTL detail 10.6748
+2013-05-24 21:32:06-131	[NOTICE]	 Total time: 3548.69 ms
+2013-05-24 21:32:06-131	[NOTICE]	 Average time: 322.608 ms
+2013-05-24 21:32:11-149	[NOTICE]	 
+Input Summary:	189 samples of 9 traits in following files:
+	Trait Interval Data in:     data/traitInterval.txt
+	Gene Data of Children in:   data/geneChildFull.txt
+	Gene Data of Parent(F) in:  data/geneParentF.txt
+	Gene Data of Parent(M) in:  data/geneParentM.txt
+	Express Data in:            data/expressData.txt
+Calculation dStep:	1
+2013-05-24 21:32:11-169	[NOTICE]	 1	[ 0 ~ 1 ]:[ 9.1 ]	3.13799
+2013-05-24 21:32:11-184	[NOTICE]	 1	[ 1 ~ 2 ]:[ 9.1 ]	3.69102
+2013-05-24 21:32:11-197	[NOTICE]	 1	[ 2 ~ 3 ]:[ 9.1 ]	4.23699
+2013-05-24 21:32:11-211	[NOTICE]	 1	[ 3 ~ 4 ]:[ 9.1 ]	4.75821
+2013-05-24 21:32:11-227	[NOTICE]	 1	[ 4 ~ 5 ]:[ 9.1 ]	5.24998
+2013-05-24 21:32:11-241	[NOTICE]	 1	[ 5 ~ 6 ]:[ 9.1 ]	5.71234
+2013-05-24 21:32:11-256	[NOTICE]	 1	[ 6 ~ 7 ]:[ 9.1 ]	6.14586
+2013-05-24 21:32:11-269	[NOTICE]	 1	[ 7 ~ 8 ]:[ 9.1 ]	6.55037
+2013-05-24 21:32:11-283	[NOTICE]	 1	[ 8 ~ 9 ]:[ 9.1 ]	6.92516
+2013-05-24 21:32:11-297	[NOTICE]	 1	[ 9 ~ 9.1 ]:[ 9.1 ]	7.2693
+2013-05-24 21:32:11-310	[NOTICE]	 2	[ 0 ~ 1 ]:[ 4.2 ]	7.30199
+2013-05-24 21:32:11-323	[NOTICE]	 2	[ 1 ~ 2 ]:[ 4.2 ]	7.46431
+2013-05-24 21:32:11-335	[NOTICE]	 2	[ 2 ~ 3 ]:[ 4.2 ]	7.52697
+2013-05-24 21:32:11-351	[NOTICE]	 2	[ 3 ~ 4 ]:[ 4.2 ]	7.4863
+2013-05-24 21:32:11-365	[NOTICE]	 2	[ 4 ~ 4.2 ]:[ 4.2 ]	7.32971
+2013-05-24 21:32:11-380	[NOTICE]	 3	[ 0 ~ 1 ]:[ 1.3 ]	7.28291
+2013-05-24 21:32:11-396	[NOTICE]	 3	[ 1 ~ 1.3 ]:[ 1.3 ]	7.05734
+2013-05-24 21:32:11-414	[NOTICE]	 4	[ 0 ~ 0.8 ]:[ 0.8 ]	6.94697
+2013-05-24 21:32:11-430	[NOTICE]	 5	[ 0 ~ 1 ]:[ 1.6 ]	7.51325
+2013-05-24 21:32:11-447	[NOTICE]	 5	[ 1 ~ 1.6 ]:[ 1.6 ]	9.0754
+2013-05-24 21:32:11-463	[NOTICE]	 6	[ 0 ~ 1 ]:[ 3.3 ]	9.5439
+2013-05-24 21:32:11-477	[NOTICE]	 6	[ 1 ~ 2 ]:[ 3.3 ]	10.6045
+2013-05-24 21:32:11-494	[NOTICE]	 6	[ 2 ~ 3 ]:[ 3.3 ]	10.6748
+2013-05-24 21:32:11-512	[NOTICE]	 6	[ 3 ~ 3.3 ]:[ 3.3 ]	10.1002
+2013-05-24 21:32:11-526	[NOTICE]	 7	[ 0 ~ 1 ]:[ 2.2 ]	9.75363
+2013-05-24 21:32:11-542	[NOTICE]	 7	[ 1 ~ 2 ]:[ 2.2 ]	9.09651
+2013-05-24 21:32:11-560	[NOTICE]	 7	[ 2 ~ 2.2 ]:[ 2.2 ]	7.99696
+2013-05-24 21:32:11-560	[NOTICE]	 MAX LOD:	Trait 6[2~3] = 10.6748
+2013-05-24 21:32:11-561	[NOTICE]	 
+For LOD Detection: OrderGroup "2/189" will run.
+2013-05-24 21:32:11-950	[NOTICE]	 [1] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 21:32:12-274	[NOTICE]	 [2] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 21:32:12-605	[NOTICE]	 [3] MAX LOD in Random Re-mix: = 9.7719
+2013-05-24 21:32:12-953	[NOTICE]	 [4] MAX LOD in Random Re-mix: = 9.17366
+2013-05-24 21:32:13-281	[NOTICE]	 [5] MAX LOD in Random Re-mix: = 9.4459
+2013-05-24 21:32:13-621	[NOTICE]	 [6] MAX LOD in Random Re-mix: = 8.95577
+2013-05-24 21:32:13-950	[NOTICE]	 [7] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 21:32:14-272	[NOTICE]	 [8] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 21:32:14-591	[NOTICE]	 [9] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 21:32:14-910	[NOTICE]	 [10] MAX LOD in Random Re-mix: = 9.50597
+2013-05-24 21:32:14-910	[NOTICE]	 Max of 10 permutation re-mix data is 10.9209 >0.0230577%
+2013-05-24 21:32:14-910	[WARN]	 QTL DETECTED: LOD:10.6748
+2013-05-24 21:32:14-910	[NOTICE]	 Please check full log for QTL detail 10.6748
+2013-05-24 21:32:14-910	[NOTICE]	 Total time: 3748.81 ms
+2013-05-24 21:32:14-910	[NOTICE]	 Average time: 340.801 ms
+2013-05-24 21:32:47-630	[NOTICE]	 
+Input Summary:	189 samples of 9 traits in following files:
+	Trait Interval Data in:     data/traitInterval.txt
+	Gene Data of Children in:   data/geneChildFull.txt
+	Gene Data of Parent(F) in:  data/geneParentF.txt
+	Gene Data of Parent(M) in:  data/geneParentM.txt
+	Express Data in:            data/expressData.txt
+Calculation dStep:	1
+2013-05-24 21:32:47-649	[NOTICE]	 1	[ 0 ~ 1 ]:[ 9.1 ]	3.13799
+2013-05-24 21:32:47-664	[NOTICE]	 1	[ 1 ~ 2 ]:[ 9.1 ]	3.69102
+2013-05-24 21:32:47-680	[NOTICE]	 1	[ 2 ~ 3 ]:[ 9.1 ]	4.23699
+2013-05-24 21:32:47-692	[NOTICE]	 1	[ 3 ~ 4 ]:[ 9.1 ]	4.75821
+2013-05-24 21:32:47-706	[NOTICE]	 1	[ 4 ~ 5 ]:[ 9.1 ]	5.24998
+2013-05-24 21:32:47-718	[NOTICE]	 1	[ 5 ~ 6 ]:[ 9.1 ]	5.71234
+2013-05-24 21:32:47-731	[NOTICE]	 1	[ 6 ~ 7 ]:[ 9.1 ]	6.14586
+2013-05-24 21:32:47-749	[NOTICE]	 1	[ 7 ~ 8 ]:[ 9.1 ]	6.55037
+2013-05-24 21:32:47-762	[NOTICE]	 1	[ 8 ~ 9 ]:[ 9.1 ]	6.92516
+2013-05-24 21:32:47-775	[NOTICE]	 1	[ 9 ~ 9.1 ]:[ 9.1 ]	7.2693
+2013-05-24 21:32:47-788	[NOTICE]	 2	[ 0 ~ 1 ]:[ 4.2 ]	7.30199
+2013-05-24 21:32:47-804	[NOTICE]	 2	[ 1 ~ 2 ]:[ 4.2 ]	7.46431
+2013-05-24 21:32:47-819	[NOTICE]	 2	[ 2 ~ 3 ]:[ 4.2 ]	7.52697
+2013-05-24 21:32:47-836	[NOTICE]	 2	[ 3 ~ 4 ]:[ 4.2 ]	7.4863
+2013-05-24 21:32:47-851	[NOTICE]	 2	[ 4 ~ 4.2 ]:[ 4.2 ]	7.32971
+2013-05-24 21:32:47-865	[NOTICE]	 3	[ 0 ~ 1 ]:[ 1.3 ]	7.28291
+2013-05-24 21:32:47-879	[NOTICE]	 3	[ 1 ~ 1.3 ]:[ 1.3 ]	7.05734
+2013-05-24 21:32:47-896	[NOTICE]	 4	[ 0 ~ 0.8 ]:[ 0.8 ]	6.94697
+2013-05-24 21:32:47-908	[NOTICE]	 5	[ 0 ~ 1 ]:[ 1.6 ]	7.51325
+2013-05-24 21:32:47-925	[NOTICE]	 5	[ 1 ~ 1.6 ]:[ 1.6 ]	9.0754
+2013-05-24 21:32:47-942	[NOTICE]	 6	[ 0 ~ 1 ]:[ 3.3 ]	9.5439
+2013-05-24 21:32:47-958	[NOTICE]	 6	[ 1 ~ 2 ]:[ 3.3 ]	10.6045
+2013-05-24 21:32:47-970	[NOTICE]	 6	[ 2 ~ 3 ]:[ 3.3 ]	10.6748
+2013-05-24 21:32:47-985	[NOTICE]	 6	[ 3 ~ 3.3 ]:[ 3.3 ]	10.1002
+2013-05-24 21:32:47-999	[NOTICE]	 7	[ 0 ~ 1 ]:[ 2.2 ]	9.75363
+2013-05-24 21:32:48-015	[NOTICE]	 7	[ 1 ~ 2 ]:[ 2.2 ]	9.09651
+2013-05-24 21:32:48-029	[NOTICE]	 7	[ 2 ~ 2.2 ]:[ 2.2 ]	7.99696
+2013-05-24 21:32:48-029	[NOTICE]	 MAX LOD:	Trait 6[2~3] = 10.6748
+2013-05-24 21:32:48-029	[NOTICE]	 
+For LOD Detection: OrderGroup "2/189" will run.
+2013-05-24 21:32:48-423	[NOTICE]	 [1] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 21:32:48-774	[NOTICE]	 [2] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 21:32:49-120	[NOTICE]	 [3] MAX LOD in Random Re-mix: = 9.7719
+2013-05-24 21:32:49-465	[NOTICE]	 [4] MAX LOD in Random Re-mix: = 9.17366
+2013-05-24 21:32:49-797	[NOTICE]	 [5] MAX LOD in Random Re-mix: = 9.4459
+2013-05-24 21:32:50-116	[NOTICE]	 [6] MAX LOD in Random Re-mix: = 8.95577
+2013-05-24 21:32:50-440	[NOTICE]	 [7] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 21:32:50-760	[NOTICE]	 [8] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 21:32:51-081	[NOTICE]	 [9] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 21:32:51-403	[NOTICE]	 [10] MAX LOD in Random Re-mix: = 9.50597
+2013-05-24 21:32:51-403	[NOTICE]	 Max of 10 permutation re-mix data is 10.9209 >2.30577%
+2013-05-24 21:32:51-403	[WARN]	 QTL DETECTED: LOD:10.6748
+2013-05-24 21:32:51-403	[NOTICE]	 Please check full log for QTL detail 10.6748
+2013-05-24 21:32:51-403	[NOTICE]	 Total time: 3763.68 ms
+2013-05-24 21:32:51-403	[NOTICE]	 Average time: 342.153 ms
+2013-05-24 21:53:24-138	[NOTICE]	 
+Input Summary:	189 samples of 9 traits in following files:
+	Trait Interval Data in:     data/traitInterval.txt
+	Gene Data of Children in:   data/geneChildFull.txt
+	Gene Data of Parent(F) in:  data/geneParentF.txt
+	Gene Data of Parent(M) in:  data/geneParentM.txt
+	Express Data in:            data/expressData.txt
+Calculation dStep:	1
+2013-05-24 21:53:24-155	[NOTICE]	 1	[ 0 ~ 1 ]:[ 9.1 ]	3.13799
+2013-05-24 21:53:24-166	[NOTICE]	 1	[ 1 ~ 2 ]:[ 9.1 ]	3.69102
+2013-05-24 21:53:24-179	[NOTICE]	 1	[ 2 ~ 3 ]:[ 9.1 ]	4.23699
+2013-05-24 21:53:24-194	[NOTICE]	 1	[ 3 ~ 4 ]:[ 9.1 ]	4.75821
+2013-05-24 21:53:24-206	[NOTICE]	 1	[ 4 ~ 5 ]:[ 9.1 ]	5.24998
+2013-05-24 21:53:24-218	[NOTICE]	 1	[ 5 ~ 6 ]:[ 9.1 ]	5.71234
+2013-05-24 21:53:24-230	[NOTICE]	 1	[ 6 ~ 7 ]:[ 9.1 ]	6.14586
+2013-05-24 21:53:24-246	[NOTICE]	 1	[ 7 ~ 8 ]:[ 9.1 ]	6.55037
+2013-05-24 21:53:24-265	[NOTICE]	 1	[ 8 ~ 9 ]:[ 9.1 ]	6.92516
+2013-05-24 21:53:24-281	[NOTICE]	 1	[ 9 ~ 9.1 ]:[ 9.1 ]	7.2693
+2013-05-24 21:53:24-298	[NOTICE]	 2	[ 0 ~ 1 ]:[ 4.2 ]	7.30199
+2013-05-24 21:53:24-312	[NOTICE]	 2	[ 1 ~ 2 ]:[ 4.2 ]	7.46431
+2013-05-24 21:53:24-325	[NOTICE]	 2	[ 2 ~ 3 ]:[ 4.2 ]	7.52697
+2013-05-24 21:53:24-338	[NOTICE]	 2	[ 3 ~ 4 ]:[ 4.2 ]	7.4863
+2013-05-24 21:53:24-357	[NOTICE]	 2	[ 4 ~ 4.2 ]:[ 4.2 ]	7.32971
+2013-05-24 21:53:24-371	[NOTICE]	 3	[ 0 ~ 1 ]:[ 1.3 ]	7.28291
+2013-05-24 21:53:24-385	[NOTICE]	 3	[ 1 ~ 1.3 ]:[ 1.3 ]	7.05734
+2013-05-24 21:53:24-396	[NOTICE]	 4	[ 0 ~ 0.8 ]:[ 0.8 ]	6.94697
+2013-05-24 21:53:24-410	[NOTICE]	 5	[ 0 ~ 1 ]:[ 1.6 ]	7.51325
+2013-05-24 21:53:24-422	[NOTICE]	 5	[ 1 ~ 1.6 ]:[ 1.6 ]	9.0754
+2013-05-24 21:53:24-433	[NOTICE]	 6	[ 0 ~ 1 ]:[ 3.3 ]	9.5439
+2013-05-24 21:53:24-446	[NOTICE]	 6	[ 1 ~ 2 ]:[ 3.3 ]	10.6045
+2013-05-24 21:53:24-458	[NOTICE]	 6	[ 2 ~ 3 ]:[ 3.3 ]	10.6748
+2013-05-24 21:53:24-470	[NOTICE]	 6	[ 3 ~ 3.3 ]:[ 3.3 ]	10.1002
+2013-05-24 21:53:24-482	[NOTICE]	 7	[ 0 ~ 1 ]:[ 2.2 ]	9.75363
+2013-05-24 21:53:24-495	[NOTICE]	 7	[ 1 ~ 2 ]:[ 2.2 ]	9.09651
+2013-05-24 21:53:24-508	[NOTICE]	 7	[ 2 ~ 2.2 ]:[ 2.2 ]	7.99696
+2013-05-24 21:53:24-508	[NOTICE]	 MAX LOD:	Trait 6[2~3] = 10.6748
+2013-05-24 21:53:24-508	[NOTICE]	 
+For LOD Detection: OrderGroup "2/189" will run.
+2013-05-24 21:53:24-841	[NOTICE]	 [1] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 21:53:24-841	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.9209)
+2013-05-24 21:53:25-187	[NOTICE]	 [2] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 21:53:25-187	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.8124)
+2013-05-24 21:53:25-516	[NOTICE]	 [3] MAX LOD in Random Re-mix: = 9.7719
+2013-05-24 21:53:25-840	[NOTICE]	 [4] MAX LOD in Random Re-mix: = 9.17366
+2013-05-24 21:53:26-175	[NOTICE]	 [5] MAX LOD in Random Re-mix: = 9.4459
+2013-05-24 21:53:26-505	[NOTICE]	 [6] MAX LOD in Random Re-mix: = 8.95577
+2013-05-24 21:53:26-831	[NOTICE]	 [7] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 21:53:26-831	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.9209)
+2013-05-24 21:53:27-156	[NOTICE]	 [8] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 21:53:27-156	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.8124)
+2013-05-24 21:53:27-472	[NOTICE]	 [9] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 21:53:27-788	[NOTICE]	 [10] MAX LOD in Random Re-mix: = 9.50597
+2013-05-24 21:53:28-104	[NOTICE]	 [11] MAX LOD in Random Re-mix: = 9.67605
+2013-05-24 21:53:28-421	[NOTICE]	 [12] MAX LOD in Random Re-mix: = 9.28362
+2013-05-24 21:53:28-736	[NOTICE]	 [13] MAX LOD in Random Re-mix: = 9.7719
+2013-05-24 21:53:29-055	[NOTICE]	 [14] MAX LOD in Random Re-mix: = 9.17366
+2013-05-24 21:53:29-372	[NOTICE]	 [15] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 21:53:29-691	[NOTICE]	 [16] MAX LOD in Random Re-mix: = 9.50597
+2013-05-24 21:53:30-007	[NOTICE]	 [17] MAX LOD in Random Re-mix: = 8.14217
+2013-05-24 21:53:30-328	[NOTICE]	 [18] MAX LOD in Random Re-mix: = 8.24009
+2013-05-24 21:53:30-642	[NOTICE]	 [19] MAX LOD in Random Re-mix: = 9.4459
+2013-05-24 21:53:30-956	[NOTICE]	 [20] MAX LOD in Random Re-mix: = 8.95577
+2013-05-24 21:53:31-271	[NOTICE]	 [21] MAX LOD in Random Re-mix: = 9.67605
+2013-05-24 21:53:31-600	[NOTICE]	 [22] MAX LOD in Random Re-mix: = 9.28362
+2013-05-24 21:53:31-926	[NOTICE]	 [23] MAX LOD in Random Re-mix: = 8.14217
+2013-05-24 21:53:32-269	[NOTICE]	 [24] MAX LOD in Random Re-mix: = 8.24009
+2013-05-24 21:53:32-598	[NOTICE]	 [25] MAX LOD in Random Re-mix: = 10.4154
+2013-05-24 21:54:59-843	[NOTICE]	 
+Input Summary:	189 samples of 9 traits in following files:
+	Trait Interval Data in:     data/traitInterval.txt
+	Gene Data of Children in:   data/geneChildFull.txt
+	Gene Data of Parent(F) in:  data/geneParentF.txt
+	Gene Data of Parent(M) in:  data/geneParentM.txt
+	Express Data in:            data/expressData.txt
+Calculation dStep:	1
+2013-05-24 21:54:59-862	[NOTICE]	 1	[ 0 ~ 1 ]:[ 9.1 ]	3.13799
+2013-05-24 21:54:59-875	[NOTICE]	 1	[ 1 ~ 2 ]:[ 9.1 ]	3.69102
+2013-05-24 21:54:59-888	[NOTICE]	 1	[ 2 ~ 3 ]:[ 9.1 ]	4.23699
+2013-05-24 21:54:59-901	[NOTICE]	 1	[ 3 ~ 4 ]:[ 9.1 ]	4.75821
+2013-05-24 21:54:59-915	[NOTICE]	 1	[ 4 ~ 5 ]:[ 9.1 ]	5.24998
+2013-05-24 21:54:59-928	[NOTICE]	 1	[ 5 ~ 6 ]:[ 9.1 ]	5.71234
+2013-05-24 21:54:59-940	[NOTICE]	 1	[ 6 ~ 7 ]:[ 9.1 ]	6.14586
+2013-05-24 21:54:59-952	[NOTICE]	 1	[ 7 ~ 8 ]:[ 9.1 ]	6.55037
+2013-05-24 21:54:59-965	[NOTICE]	 1	[ 8 ~ 9 ]:[ 9.1 ]	6.92516
+2013-05-24 21:54:59-978	[NOTICE]	 1	[ 9 ~ 9.1 ]:[ 9.1 ]	7.2693
+2013-05-24 21:54:59-990	[NOTICE]	 2	[ 0 ~ 1 ]:[ 4.2 ]	7.30199
+2013-05-24 21:55:00-007	[NOTICE]	 2	[ 1 ~ 2 ]:[ 4.2 ]	7.46431
+2013-05-24 21:55:00-024	[NOTICE]	 2	[ 2 ~ 3 ]:[ 4.2 ]	7.52697
+2013-05-24 21:55:00-042	[NOTICE]	 2	[ 3 ~ 4 ]:[ 4.2 ]	7.4863
+2013-05-24 21:55:00-055	[NOTICE]	 2	[ 4 ~ 4.2 ]:[ 4.2 ]	7.32971
+2013-05-24 21:55:00-071	[NOTICE]	 3	[ 0 ~ 1 ]:[ 1.3 ]	7.28291
+2013-05-24 21:55:00-087	[NOTICE]	 3	[ 1 ~ 1.3 ]:[ 1.3 ]	7.05734
+2013-05-24 21:55:00-105	[NOTICE]	 4	[ 0 ~ 0.8 ]:[ 0.8 ]	6.94697
+2013-05-24 21:55:00-121	[NOTICE]	 5	[ 0 ~ 1 ]:[ 1.6 ]	7.51325
+2013-05-24 21:55:00-138	[NOTICE]	 5	[ 1 ~ 1.6 ]:[ 1.6 ]	9.0754
+2013-05-24 21:55:00-152	[NOTICE]	 6	[ 0 ~ 1 ]:[ 3.3 ]	9.5439
+2013-05-24 21:55:00-167	[NOTICE]	 6	[ 1 ~ 2 ]:[ 3.3 ]	10.6045
+2013-05-24 21:55:00-186	[NOTICE]	 6	[ 2 ~ 3 ]:[ 3.3 ]	10.6748
+2013-05-24 21:55:00-205	[NOTICE]	 6	[ 3 ~ 3.3 ]:[ 3.3 ]	10.1002
+2013-05-24 21:55:00-225	[NOTICE]	 7	[ 0 ~ 1 ]:[ 2.2 ]	9.75363
+2013-05-24 21:55:00-241	[NOTICE]	 7	[ 1 ~ 2 ]:[ 2.2 ]	9.09651
+2013-05-24 21:55:00-254	[NOTICE]	 7	[ 2 ~ 2.2 ]:[ 2.2 ]	7.99696
+2013-05-24 21:55:00-254	[NOTICE]	 MAX LOD:	Trait 6[2~3] = 10.6748
+2013-05-24 21:55:00-255	[NOTICE]	 
+For LOD Detection: OrderGroup "2/189" will run.
+2013-05-24 21:55:00-637	[NOTICE]	 [1] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 21:55:00-637	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.9209 - 2.30577%)
+2013-05-24 21:55:00-990	[NOTICE]	 [2] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 21:55:00-990	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.8124 - 1.2894%)
+2013-05-24 21:55:01-321	[NOTICE]	 [3] MAX LOD in Random Re-mix: = 9.7719
+2013-05-24 21:55:01-661	[NOTICE]	 [4] MAX LOD in Random Re-mix: = 9.17366
+2013-05-24 21:55:01-987	[NOTICE]	 [5] MAX LOD in Random Re-mix: = 9.4459
+2013-05-24 21:55:02-308	[NOTICE]	 [6] MAX LOD in Random Re-mix: = 8.95577
+2013-05-24 21:55:02-624	[NOTICE]	 [7] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 21:55:02-624	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.9209 - 2.30577%)
+2013-05-24 21:55:02-944	[NOTICE]	 [8] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 21:55:02-944	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data(10.8124 - 1.2894%)
+2013-05-24 21:55:03-271	[NOTICE]	 [9] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 21:55:03-595	[NOTICE]	 [10] MAX LOD in Random Re-mix: = 9.50597
+2013-05-24 21:55:03-927	[NOTICE]	 [11] MAX LOD in Random Re-mix: = 9.67605
+2013-05-24 21:55:04-254	[NOTICE]	 [12] MAX LOD in Random Re-mix: = 9.28362
+2013-05-24 21:55:04-588	[NOTICE]	 [13] MAX LOD in Random Re-mix: = 9.7719
+2013-05-24 21:55:04-923	[NOTICE]	 [14] MAX LOD in Random Re-mix: = 9.17366
+2013-05-24 21:55:05-255	[NOTICE]	 [15] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 21:55:05-583	[NOTICE]	 [16] MAX LOD in Random Re-mix: = 9.50597
+2013-05-24 21:55:05-915	[NOTICE]	 [17] MAX LOD in Random Re-mix: = 8.14217
+2013-05-24 21:55:06-247	[NOTICE]	 [18] MAX LOD in Random Re-mix: = 8.24009
+2013-05-24 21:55:06-587	[NOTICE]	 [19] MAX LOD in Random Re-mix: = 9.4459
+2013-05-24 21:55:27-313	[NOTICE]	 
+Input Summary:	189 samples of 9 traits in following files:
+	Trait Interval Data in:     data/traitInterval.txt
+	Gene Data of Children in:   data/geneChildFull.txt
+	Gene Data of Parent(F) in:  data/geneParentF.txt
+	Gene Data of Parent(M) in:  data/geneParentM.txt
+	Express Data in:            data/expressData.txt
+Calculation dStep:	1
+2013-05-24 21:55:27-331	[NOTICE]	 1	[ 0 ~ 1 ]:[ 9.1 ]	3.13799
+2013-05-24 21:55:27-345	[NOTICE]	 1	[ 1 ~ 2 ]:[ 9.1 ]	3.69102
+2013-05-24 21:55:27-361	[NOTICE]	 1	[ 2 ~ 3 ]:[ 9.1 ]	4.23699
+2013-05-24 21:55:27-374	[NOTICE]	 1	[ 3 ~ 4 ]:[ 9.1 ]	4.75821
+2013-05-24 21:55:27-386	[NOTICE]	 1	[ 4 ~ 5 ]:[ 9.1 ]	5.24998
+2013-05-24 21:55:27-398	[NOTICE]	 1	[ 5 ~ 6 ]:[ 9.1 ]	5.71234
+2013-05-24 21:55:27-414	[NOTICE]	 1	[ 6 ~ 7 ]:[ 9.1 ]	6.14586
+2013-05-24 21:55:27-430	[NOTICE]	 1	[ 7 ~ 8 ]:[ 9.1 ]	6.55037
+2013-05-24 21:55:27-442	[NOTICE]	 1	[ 8 ~ 9 ]:[ 9.1 ]	6.92516
+2013-05-24 21:55:27-460	[NOTICE]	 1	[ 9 ~ 9.1 ]:[ 9.1 ]	7.2693
+2013-05-24 21:55:27-477	[NOTICE]	 2	[ 0 ~ 1 ]:[ 4.2 ]	7.30199
+2013-05-24 21:55:27-490	[NOTICE]	 2	[ 1 ~ 2 ]:[ 4.2 ]	7.46431
+2013-05-24 21:55:27-502	[NOTICE]	 2	[ 2 ~ 3 ]:[ 4.2 ]	7.52697
+2013-05-24 21:55:27-514	[NOTICE]	 2	[ 3 ~ 4 ]:[ 4.2 ]	7.4863
+2013-05-24 21:55:27-527	[NOTICE]	 2	[ 4 ~ 4.2 ]:[ 4.2 ]	7.32971
+2013-05-24 21:55:27-543	[NOTICE]	 3	[ 0 ~ 1 ]:[ 1.3 ]	7.28291
+2013-05-24 21:55:27-559	[NOTICE]	 3	[ 1 ~ 1.3 ]:[ 1.3 ]	7.05734
+2013-05-24 21:55:27-577	[NOTICE]	 4	[ 0 ~ 0.8 ]:[ 0.8 ]	6.94697
+2013-05-24 21:55:27-590	[NOTICE]	 5	[ 0 ~ 1 ]:[ 1.6 ]	7.51325
+2013-05-24 21:55:27-608	[NOTICE]	 5	[ 1 ~ 1.6 ]:[ 1.6 ]	9.0754
+2013-05-24 21:55:27-620	[NOTICE]	 6	[ 0 ~ 1 ]:[ 3.3 ]	9.5439
+2013-05-24 21:55:27-638	[NOTICE]	 6	[ 1 ~ 2 ]:[ 3.3 ]	10.6045
+2013-05-24 21:55:27-652	[NOTICE]	 6	[ 2 ~ 3 ]:[ 3.3 ]	10.6748
+2013-05-24 21:55:27-664	[NOTICE]	 6	[ 3 ~ 3.3 ]:[ 3.3 ]	10.1002
+2013-05-24 21:55:27-676	[NOTICE]	 7	[ 0 ~ 1 ]:[ 2.2 ]	9.75363
+2013-05-24 21:55:27-688	[NOTICE]	 7	[ 1 ~ 2 ]:[ 2.2 ]	9.09651
+2013-05-24 21:55:27-700	[NOTICE]	 7	[ 2 ~ 2.2 ]:[ 2.2 ]	7.99696
+2013-05-24 21:55:27-700	[NOTICE]	 MAX LOD:	Trait 6[2~3] = 10.6748
+2013-05-24 21:55:27-700	[NOTICE]	 
+For LOD Detection: OrderGroup "2/189" will run.
+2013-05-24 21:55:28-048	[NOTICE]	 [1] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 21:55:28-048	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data[10.9209-(2.30577%)]
+2013-05-24 21:55:28-485	[NOTICE]	 [2] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 21:55:28-485	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data[10.8124-(1.2894%)]
+2013-05-24 21:55:28-812	[NOTICE]	 [3] MAX LOD in Random Re-mix: = 9.7719
+2013-05-24 21:55:29-137	[NOTICE]	 [4] MAX LOD in Random Re-mix: = 9.17366
+2013-05-24 21:55:29-455	[NOTICE]	 [5] MAX LOD in Random Re-mix: = 9.4459
+2013-05-24 21:55:29-777	[NOTICE]	 [6] MAX LOD in Random Re-mix: = 8.95577
+2013-05-24 21:55:30-092	[NOTICE]	 [7] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 21:55:30-092	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data[10.9209-(2.30577%)]
+2013-05-24 21:55:30-416	[NOTICE]	 [8] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 21:55:30-416	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data[10.8124-(1.2894%)]
+2013-05-24 21:55:30-744	[NOTICE]	 [9] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 21:55:31-069	[NOTICE]	 [10] MAX LOD in Random Re-mix: = 9.50597
+2013-05-24 21:55:31-391	[NOTICE]	 [11] MAX LOD in Random Re-mix: = 9.67605
+2013-05-24 21:55:31-712	[NOTICE]	 [12] MAX LOD in Random Re-mix: = 9.28362
+2013-05-24 21:55:32-032	[NOTICE]	 [13] MAX LOD in Random Re-mix: = 9.7719
+2013-05-24 21:55:32-363	[NOTICE]	 [14] MAX LOD in Random Re-mix: = 9.17366
+2013-05-24 21:55:32-698	[NOTICE]	 [15] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 21:55:33-026	[NOTICE]	 [16] MAX LOD in Random Re-mix: = 9.50597
+2013-05-24 21:55:47-637	[NOTICE]	 
+Input Summary:	189 samples of 9 traits in following files:
+	Trait Interval Data in:     data/traitInterval.txt
+	Gene Data of Children in:   data/geneChildFull.txt
+	Gene Data of Parent(F) in:  data/geneParentF.txt
+	Gene Data of Parent(M) in:  data/geneParentM.txt
+	Express Data in:            data/expressData.txt
+Calculation dStep:	1
+2013-05-24 21:55:47-654	[NOTICE]	 1	[ 0 ~ 1 ]:[ 9.1 ]	3.13799
+2013-05-24 21:55:47-666	[NOTICE]	 1	[ 1 ~ 2 ]:[ 9.1 ]	3.69102
+2013-05-24 21:55:47-678	[NOTICE]	 1	[ 2 ~ 3 ]:[ 9.1 ]	4.23699
+2013-05-24 21:55:47-690	[NOTICE]	 1	[ 3 ~ 4 ]:[ 9.1 ]	4.75821
+2013-05-24 21:55:47-704	[NOTICE]	 1	[ 4 ~ 5 ]:[ 9.1 ]	5.24998
+2013-05-24 21:55:47-719	[NOTICE]	 1	[ 5 ~ 6 ]:[ 9.1 ]	5.71234
+2013-05-24 21:55:47-735	[NOTICE]	 1	[ 6 ~ 7 ]:[ 9.1 ]	6.14586
+2013-05-24 21:55:47-746	[NOTICE]	 1	[ 7 ~ 8 ]:[ 9.1 ]	6.55037
+2013-05-24 21:55:47-759	[NOTICE]	 1	[ 8 ~ 9 ]:[ 9.1 ]	6.92516
+2013-05-24 21:55:47-770	[NOTICE]	 1	[ 9 ~ 9.1 ]:[ 9.1 ]	7.2693
+2013-05-24 21:55:47-782	[NOTICE]	 2	[ 0 ~ 1 ]:[ 4.2 ]	7.30199
+2013-05-24 21:55:47-794	[NOTICE]	 2	[ 1 ~ 2 ]:[ 4.2 ]	7.46431
+2013-05-24 21:55:47-806	[NOTICE]	 2	[ 2 ~ 3 ]:[ 4.2 ]	7.52697
+2013-05-24 21:55:47-819	[NOTICE]	 2	[ 3 ~ 4 ]:[ 4.2 ]	7.4863
+2013-05-24 21:55:47-830	[NOTICE]	 2	[ 4 ~ 4.2 ]:[ 4.2 ]	7.32971
+2013-05-24 21:55:47-842	[NOTICE]	 3	[ 0 ~ 1 ]:[ 1.3 ]	7.28291
+2013-05-24 21:55:47-853	[NOTICE]	 3	[ 1 ~ 1.3 ]:[ 1.3 ]	7.05734
+2013-05-24 21:55:47-865	[NOTICE]	 4	[ 0 ~ 0.8 ]:[ 0.8 ]	6.94697
+2013-05-24 21:55:47-877	[NOTICE]	 5	[ 0 ~ 1 ]:[ 1.6 ]	7.51325
+2013-05-24 21:55:47-894	[NOTICE]	 5	[ 1 ~ 1.6 ]:[ 1.6 ]	9.0754
+2013-05-24 21:55:47-907	[NOTICE]	 6	[ 0 ~ 1 ]:[ 3.3 ]	9.5439
+2013-05-24 21:55:47-921	[NOTICE]	 6	[ 1 ~ 2 ]:[ 3.3 ]	10.6045
+2013-05-24 21:55:47-935	[NOTICE]	 6	[ 2 ~ 3 ]:[ 3.3 ]	10.6748
+2013-05-24 21:55:47-946	[NOTICE]	 6	[ 3 ~ 3.3 ]:[ 3.3 ]	10.1002
+2013-05-24 21:55:47-959	[NOTICE]	 7	[ 0 ~ 1 ]:[ 2.2 ]	9.75363
+2013-05-24 21:55:47-971	[NOTICE]	 7	[ 1 ~ 2 ]:[ 2.2 ]	9.09651
+2013-05-24 21:55:47-984	[NOTICE]	 7	[ 2 ~ 2.2 ]:[ 2.2 ]	7.99696
+2013-05-24 21:55:47-984	[NOTICE]	 MAX LOD:	Trait 6[2~3] = 10.6748
+2013-05-24 21:55:47-984	[NOTICE]	 
+For LOD Detection: OrderGroup "2/189" will run.
+2013-05-24 21:55:48-304	[NOTICE]	 [1] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 21:55:48-304	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data[10.9209>(2.30577%)]
+2013-05-24 21:55:48-625	[NOTICE]	 [2] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 21:55:48-625	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data[10.8124>(1.2894%)]
+2013-05-24 21:55:48-943	[NOTICE]	 [3] MAX LOD in Random Re-mix: = 9.7719
+2013-05-24 21:55:49-260	[NOTICE]	 [4] MAX LOD in Random Re-mix: = 9.17366
+2013-05-24 21:55:49-575	[NOTICE]	 [5] MAX LOD in Random Re-mix: = 9.4459
+2013-05-24 21:55:49-896	[NOTICE]	 [6] MAX LOD in Random Re-mix: = 8.95577
+2013-05-24 21:55:50-217	[NOTICE]	 [7] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 21:55:50-217	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data[10.9209>(2.30577%)]
+2013-05-24 21:55:50-591	[NOTICE]	 [8] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 21:55:50-591	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data[10.8124>(1.2894%)]
+2013-05-24 21:55:50-938	[NOTICE]	 [9] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 21:55:51-294	[NOTICE]	 [10] MAX LOD in Random Re-mix: = 9.50597
+2013-05-24 21:55:51-643	[NOTICE]	 [11] MAX LOD in Random Re-mix: = 9.67605
+2013-05-24 21:55:52-016	[NOTICE]	 [12] MAX LOD in Random Re-mix: = 9.28362
+2013-05-24 21:55:52-346	[NOTICE]	 [13] MAX LOD in Random Re-mix: = 9.7719
+2013-05-24 21:55:52-668	[NOTICE]	 [14] MAX LOD in Random Re-mix: = 9.17366
+2013-05-24 21:55:52-991	[NOTICE]	 [15] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 21:55:53-314	[NOTICE]	 [16] MAX LOD in Random Re-mix: = 9.50597
+2013-05-24 21:55:53-634	[NOTICE]	 [17] MAX LOD in Random Re-mix: = 8.14217
+2013-05-24 21:55:53-960	[NOTICE]	 [18] MAX LOD in Random Re-mix: = 8.24009
+2013-05-24 21:55:54-289	[NOTICE]	 [19] MAX LOD in Random Re-mix: = 9.4459
+2013-05-24 21:55:54-603	[NOTICE]	 [20] MAX LOD in Random Re-mix: = 8.95577
+2013-05-24 21:55:54-928	[NOTICE]	 [21] MAX LOD in Random Re-mix: = 9.67605
+2013-05-24 21:55:55-246	[NOTICE]	 [22] MAX LOD in Random Re-mix: = 9.28362
+2013-05-24 21:55:55-579	[NOTICE]	 [23] MAX LOD in Random Re-mix: = 8.14217
+2013-05-24 21:55:55-911	[NOTICE]	 [24] MAX LOD in Random Re-mix: = 8.24009
+2013-05-24 21:55:56-276	[NOTICE]	 [25] MAX LOD in Random Re-mix: = 10.4154
+2013-05-24 22:02:21-678	[NOTICE]	 
+Input Summary:	189 samples of 9 traits in following files:
+	Trait Interval Data in:     data/traitInterval.txt
+	Gene Data of Children in:   data/geneChildFull.txt
+	Gene Data of Parent(F) in:  data/geneParentF.txt
+	Gene Data of Parent(M) in:  data/geneParentM.txt
+	Express Data in:            data/expressData.txt
+Calculation dStep:	1
+2013-05-24 22:02:21-694	[NOTICE]	 1	[ 0 ~ 1 ]:[ 9.1 ]	3.13799
+2013-05-24 22:02:21-708	[NOTICE]	 1	[ 1 ~ 2 ]:[ 9.1 ]	3.69102
+2013-05-24 22:02:21-721	[NOTICE]	 1	[ 2 ~ 3 ]:[ 9.1 ]	4.23699
+2013-05-24 22:02:21-741	[NOTICE]	 1	[ 3 ~ 4 ]:[ 9.1 ]	4.75821
+2013-05-24 22:02:21-761	[NOTICE]	 1	[ 4 ~ 5 ]:[ 9.1 ]	5.24998
+2013-05-24 22:02:21-778	[NOTICE]	 1	[ 5 ~ 6 ]:[ 9.1 ]	5.71234
+2013-05-24 22:02:21-792	[NOTICE]	 1	[ 6 ~ 7 ]:[ 9.1 ]	6.14586
+2013-05-24 22:02:21-809	[NOTICE]	 1	[ 7 ~ 8 ]:[ 9.1 ]	6.55037
+2013-05-24 22:02:21-826	[NOTICE]	 1	[ 8 ~ 9 ]:[ 9.1 ]	6.92516
+2013-05-24 22:02:21-839	[NOTICE]	 1	[ 9 ~ 9.1 ]:[ 9.1 ]	7.2693
+2013-05-24 22:02:21-853	[NOTICE]	 2	[ 0 ~ 1 ]:[ 4.2 ]	7.30199
+2013-05-24 22:02:21-867	[NOTICE]	 2	[ 1 ~ 2 ]:[ 4.2 ]	7.46431
+2013-05-24 22:02:21-885	[NOTICE]	 2	[ 2 ~ 3 ]:[ 4.2 ]	7.52697
+2013-05-24 22:02:21-901	[NOTICE]	 2	[ 3 ~ 4 ]:[ 4.2 ]	7.4863
+2013-05-24 22:02:21-918	[NOTICE]	 2	[ 4 ~ 4.2 ]:[ 4.2 ]	7.32971
+2013-05-24 22:02:21-933	[NOTICE]	 3	[ 0 ~ 1 ]:[ 1.3 ]	7.28291
+2013-05-24 22:02:21-947	[NOTICE]	 3	[ 1 ~ 1.3 ]:[ 1.3 ]	7.05734
+2013-05-24 22:02:21-962	[NOTICE]	 4	[ 0 ~ 0.8 ]:[ 0.8 ]	6.94697
+2013-05-24 22:02:21-975	[NOTICE]	 5	[ 0 ~ 1 ]:[ 1.6 ]	7.51325
+2013-05-24 22:02:21-992	[NOTICE]	 5	[ 1 ~ 1.6 ]:[ 1.6 ]	9.0754
+2013-05-24 22:02:22-005	[NOTICE]	 6	[ 0 ~ 1 ]:[ 3.3 ]	9.5439
+2013-05-24 22:02:22-017	[NOTICE]	 6	[ 1 ~ 2 ]:[ 3.3 ]	10.6045
+2013-05-24 22:02:22-029	[NOTICE]	 6	[ 2 ~ 3 ]:[ 3.3 ]	10.6748
+2013-05-24 22:02:22-042	[NOTICE]	 6	[ 3 ~ 3.3 ]:[ 3.3 ]	10.1002
+2013-05-24 22:02:22-054	[NOTICE]	 7	[ 0 ~ 1 ]:[ 2.2 ]	9.75363
+2013-05-24 22:02:22-066	[NOTICE]	 7	[ 1 ~ 2 ]:[ 2.2 ]	9.09651
+2013-05-24 22:02:22-079	[NOTICE]	 7	[ 2 ~ 2.2 ]:[ 2.2 ]	7.99696
+2013-05-24 22:02:22-079	[NOTICE]	 MAX LOD:	Trait 6[2~3] = 10.6748
+2013-05-24 22:02:22-079	[NOTICE]	 
+For LOD Detection: OrderGroup "2/189" will run.
+2013-05-24 22:02:22-425	[NOTICE]	 [1] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 22:02:22-425	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data[10.9209>(2.30577%)]
+2013-05-24 22:02:22-743	[NOTICE]	 [2] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 22:02:22-743	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data[10.8124>(1.2894%)]
+2013-05-24 22:02:23-074	[NOTICE]	 [3] MAX LOD in Random Re-mix: = 9.7719
+2013-05-24 22:02:23-409	[NOTICE]	 [4] MAX LOD in Random Re-mix: = 9.17366
+2013-05-24 22:02:23-727	[NOTICE]	 [5] MAX LOD in Random Re-mix: = 9.4459
+2013-05-24 22:02:24-049	[NOTICE]	 [6] MAX LOD in Random Re-mix: = 8.95577
+2013-05-24 22:02:24-371	[NOTICE]	 [7] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 22:02:24-371	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data[10.9209>(2.30577%)]
+2013-05-24 22:02:24-689	[NOTICE]	 [8] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 22:02:24-689	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data[10.8124>(1.2894%)]
+2013-05-24 22:02:25-011	[NOTICE]	 [9] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 22:02:25-338	[NOTICE]	 [10] MAX LOD in Random Re-mix: = 9.50597
+2013-05-24 22:02:25-652	[NOTICE]	 [11] MAX LOD in Random Re-mix: = 9.67605
+2013-05-24 22:02:25-974	[NOTICE]	 [12] MAX LOD in Random Re-mix: = 9.28362
+2013-05-24 22:02:26-293	[NOTICE]	 [13] MAX LOD in Random Re-mix: = 9.7719
+2013-05-24 22:02:26-614	[NOTICE]	 [14] MAX LOD in Random Re-mix: = 9.17366
+2013-05-24 22:02:26-932	[NOTICE]	 [15] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 22:02:27-252	[NOTICE]	 [16] MAX LOD in Random Re-mix: = 9.50597
+2013-05-24 22:02:27-569	[NOTICE]	 [17] MAX LOD in Random Re-mix: = 8.14217
+2013-05-24 22:02:27-887	[NOTICE]	 [18] MAX LOD in Random Re-mix: = 8.24009
+2013-05-24 22:02:28-208	[NOTICE]	 [19] MAX LOD in Random Re-mix: = 9.4459
+2013-05-24 22:02:28-524	[NOTICE]	 [20] MAX LOD in Random Re-mix: = 8.95577
+2013-05-24 22:02:28-850	[NOTICE]	 [21] MAX LOD in Random Re-mix: = 9.67605
+2013-05-24 22:02:29-168	[NOTICE]	 [22] MAX LOD in Random Re-mix: = 9.28362
+2013-05-24 22:02:29-492	[NOTICE]	 [23] MAX LOD in Random Re-mix: = 8.14217
+2013-05-24 22:02:29-817	[NOTICE]	 [24] MAX LOD in Random Re-mix: = 8.24009
+2013-05-24 22:02:30-134	[NOTICE]	 [25] MAX LOD in Random Re-mix: = 10.4154
+2013-05-24 22:02:30-458	[NOTICE]	 [26] MAX LOD in Random Re-mix: = 10.306
+2013-05-24 22:02:30-775	[NOTICE]	 [27] MAX LOD in Random Re-mix: = 9.31836
+2013-05-24 22:02:31-095	[NOTICE]	 [28] MAX LOD in Random Re-mix: = 8.71386
+2013-05-24 22:02:31-416	[NOTICE]	 [29] MAX LOD in Random Re-mix: = 9.00128
+2013-05-24 22:02:31-740	[NOTICE]	 [30] MAX LOD in Random Re-mix: = 8.50578
+2013-05-24 22:02:32-065	[NOTICE]	 [31] MAX LOD in Random Re-mix: = 10.4154
+2013-05-24 22:02:32-387	[NOTICE]	 [32] MAX LOD in Random Re-mix: = 10.306
+2013-05-24 22:02:32-715	[NOTICE]	 [33] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 22:02:33-035	[NOTICE]	 [34] MAX LOD in Random Re-mix: = 9.70944
+2013-05-24 22:02:33-355	[NOTICE]	 [35] MAX LOD in Random Re-mix: = 9.67605
+2013-05-24 22:02:33-675	[NOTICE]	 [36] MAX LOD in Random Re-mix: = 9.48815
+2013-05-24 22:02:33-997	[NOTICE]	 [37] MAX LOD in Random Re-mix: = 9.31836
+2013-05-24 22:02:34-321	[NOTICE]	 [38] MAX LOD in Random Re-mix: = 8.71386
+2013-05-24 22:02:34-641	[NOTICE]	 [39] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 22:02:34-965	[NOTICE]	 [40] MAX LOD in Random Re-mix: = 9.70944
+2013-05-24 22:02:35-295	[NOTICE]	 [41] MAX LOD in Random Re-mix: = 8.14217
+2013-05-24 22:02:35-627	[NOTICE]	 [42] MAX LOD in Random Re-mix: = 8.45009
+2013-05-24 22:02:35-956	[NOTICE]	 [43] MAX LOD in Random Re-mix: = 9.00128
+2013-05-24 22:02:36-294	[NOTICE]	 [44] MAX LOD in Random Re-mix: = 8.50578
+2013-05-24 22:02:36-626	[NOTICE]	 [45] MAX LOD in Random Re-mix: = 9.67605
+2013-05-24 22:02:36-956	[NOTICE]	 [46] MAX LOD in Random Re-mix: = 9.48815
+2013-05-24 22:02:37-294	[NOTICE]	 [47] MAX LOD in Random Re-mix: = 8.14217
+2013-05-24 22:02:37-625	[NOTICE]	 [48] MAX LOD in Random Re-mix: = 8.45009
+2013-05-24 22:02:37-957	[NOTICE]	 [49] MAX LOD in Random Re-mix: = 10.1713
+2013-05-24 22:02:38-291	[NOTICE]	 [50] MAX LOD in Random Re-mix: = 10.0615
+2013-05-24 22:02:49-475	[NOTICE]	 
+Input Summary:	189 samples of 9 traits in following files:
+	Trait Interval Data in:     data/traitInterval.txt
+	Gene Data of Children in:   data/geneChildFull.txt
+	Gene Data of Parent(F) in:  data/geneParentF.txt
+	Gene Data of Parent(M) in:  data/geneParentM.txt
+	Express Data in:            data/expressData.txt
+Calculation dStep:	1
+2013-05-24 22:02:49-494	[NOTICE]	 1	[ 0 ~ 1 ]:[ 9.1 ]	3.13799
+2013-05-24 22:02:49-506	[NOTICE]	 1	[ 1 ~ 2 ]:[ 9.1 ]	3.69102
+2013-05-24 22:02:49-518	[NOTICE]	 1	[ 2 ~ 3 ]:[ 9.1 ]	4.23699
+2013-05-24 22:02:49-532	[NOTICE]	 1	[ 3 ~ 4 ]:[ 9.1 ]	4.75821
+2013-05-24 22:02:49-545	[NOTICE]	 1	[ 4 ~ 5 ]:[ 9.1 ]	5.24998
+2013-05-24 22:02:49-558	[NOTICE]	 1	[ 5 ~ 6 ]:[ 9.1 ]	5.71234
+2013-05-24 22:02:49-569	[NOTICE]	 1	[ 6 ~ 7 ]:[ 9.1 ]	6.14586
+2013-05-24 22:02:49-581	[NOTICE]	 1	[ 7 ~ 8 ]:[ 9.1 ]	6.55037
+2013-05-24 22:02:49-593	[NOTICE]	 1	[ 8 ~ 9 ]:[ 9.1 ]	6.92516
+2013-05-24 22:02:49-605	[NOTICE]	 1	[ 9 ~ 9.1 ]:[ 9.1 ]	7.2693
+2013-05-24 22:02:49-617	[NOTICE]	 2	[ 0 ~ 1 ]:[ 4.2 ]	7.30199
+2013-05-24 22:02:49-629	[NOTICE]	 2	[ 1 ~ 2 ]:[ 4.2 ]	7.46431
+2013-05-24 22:02:49-641	[NOTICE]	 2	[ 2 ~ 3 ]:[ 4.2 ]	7.52697
+2013-05-24 22:02:49-653	[NOTICE]	 2	[ 3 ~ 4 ]:[ 4.2 ]	7.4863
+2013-05-24 22:02:49-664	[NOTICE]	 2	[ 4 ~ 4.2 ]:[ 4.2 ]	7.32971
+2013-05-24 22:02:49-676	[NOTICE]	 3	[ 0 ~ 1 ]:[ 1.3 ]	7.28291
+2013-05-24 22:02:49-690	[NOTICE]	 3	[ 1 ~ 1.3 ]:[ 1.3 ]	7.05734
+2013-05-24 22:02:49-701	[NOTICE]	 4	[ 0 ~ 0.8 ]:[ 0.8 ]	6.94697
+2013-05-24 22:02:49-713	[NOTICE]	 5	[ 0 ~ 1 ]:[ 1.6 ]	7.51325
+2013-05-24 22:02:49-725	[NOTICE]	 5	[ 1 ~ 1.6 ]:[ 1.6 ]	9.0754
+2013-05-24 22:02:49-737	[NOTICE]	 6	[ 0 ~ 1 ]:[ 3.3 ]	9.5439
+2013-05-24 22:02:49-749	[NOTICE]	 6	[ 1 ~ 2 ]:[ 3.3 ]	10.6045
+2013-05-24 22:02:49-761	[NOTICE]	 6	[ 2 ~ 3 ]:[ 3.3 ]	10.6748
+2013-05-24 22:02:49-773	[NOTICE]	 6	[ 3 ~ 3.3 ]:[ 3.3 ]	10.1002
+2013-05-24 22:02:49-785	[NOTICE]	 7	[ 0 ~ 1 ]:[ 2.2 ]	9.75363
+2013-05-24 22:02:49-797	[NOTICE]	 7	[ 1 ~ 2 ]:[ 2.2 ]	9.09651
+2013-05-24 22:02:49-809	[NOTICE]	 7	[ 2 ~ 2.2 ]:[ 2.2 ]	7.99696
+2013-05-24 22:02:49-809	[NOTICE]	 MAX LOD:	Trait 6[2~3] = 10.6748
+2013-05-24 22:02:49-809	[NOTICE]	 
+For LOD Detection: OrderGroup "2/189" will run.
+2013-05-24 22:02:50-136	[NOTICE]	 [1] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 22:02:50-136	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data[10.9209>(2.30577%)]
+2013-05-24 22:02:50-468	[NOTICE]	 [2] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 22:02:50-468	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data[10.8124>(1.2894%)]
+2013-05-24 22:02:50-791	[NOTICE]	 [3] MAX LOD in Random Re-mix: = 9.7719
+2013-05-24 22:02:51-121	[NOTICE]	 [4] MAX LOD in Random Re-mix: = 9.17366
+2013-05-24 22:02:51-443	[NOTICE]	 [5] MAX LOD in Random Re-mix: = 9.4459
+2013-05-24 22:02:51-773	[NOTICE]	 [6] MAX LOD in Random Re-mix: = 8.95577
+2013-05-24 22:02:52-098	[NOTICE]	 [7] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 22:02:52-098	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data[10.9209>(2.30577%)]
+2013-05-24 22:02:52-421	[NOTICE]	 [8] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 22:02:52-421	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data[10.8124>(1.2894%)]
+2013-05-24 22:02:52-754	[NOTICE]	 [9] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 22:02:53-126	[NOTICE]	 [10] MAX LOD in Random Re-mix: = 9.50597
+2013-05-24 22:02:53-127	[NOTICE]	 Max of 10 permutation re-mix data is 10.9209 >2.30577%
+2013-05-24 22:02:53-127	[WARN]	 QTL DETECTED: LOD:10.6748
+2013-05-24 22:02:53-127	[NOTICE]	 Please check full log for QTL detail 10.6748
+2013-05-24 22:02:53-127	[NOTICE]	 Total time: 3644.83 ms
+2013-05-24 22:02:53-127	[NOTICE]	 Average time: 331.348 ms
+2013-05-24 22:02:56-138	[NOTICE]	 
+Input Summary:	189 samples of 9 traits in following files:
+	Trait Interval Data in:     data/traitInterval.txt
+	Gene Data of Children in:   data/geneChildFull.txt
+	Gene Data of Parent(F) in:  data/geneParentF.txt
+	Gene Data of Parent(M) in:  data/geneParentM.txt
+	Express Data in:            data/expressData.txt
+Calculation dStep:	1
+2013-05-24 22:02:56-154	[NOTICE]	 1	[ 0 ~ 1 ]:[ 9.1 ]	3.13799
+2013-05-24 22:02:56-170	[NOTICE]	 1	[ 1 ~ 2 ]:[ 9.1 ]	3.69102
+2013-05-24 22:02:56-187	[NOTICE]	 1	[ 2 ~ 3 ]:[ 9.1 ]	4.23699
+2013-05-24 22:02:56-204	[NOTICE]	 1	[ 3 ~ 4 ]:[ 9.1 ]	4.75821
+2013-05-24 22:02:56-217	[NOTICE]	 1	[ 4 ~ 5 ]:[ 9.1 ]	5.24998
+2013-05-24 22:02:56-231	[NOTICE]	 1	[ 5 ~ 6 ]:[ 9.1 ]	5.71234
+2013-05-24 22:02:56-243	[NOTICE]	 1	[ 6 ~ 7 ]:[ 9.1 ]	6.14586
+2013-05-24 22:02:56-257	[NOTICE]	 1	[ 7 ~ 8 ]:[ 9.1 ]	6.55037
+2013-05-24 22:02:56-270	[NOTICE]	 1	[ 8 ~ 9 ]:[ 9.1 ]	6.92516
+2013-05-24 22:02:56-284	[NOTICE]	 1	[ 9 ~ 9.1 ]:[ 9.1 ]	7.2693
+2013-05-24 22:02:56-303	[NOTICE]	 2	[ 0 ~ 1 ]:[ 4.2 ]	7.30199
+2013-05-24 22:02:56-316	[NOTICE]	 2	[ 1 ~ 2 ]:[ 4.2 ]	7.46431
+2013-05-24 22:02:56-329	[NOTICE]	 2	[ 2 ~ 3 ]:[ 4.2 ]	7.52697
+2013-05-24 22:02:56-347	[NOTICE]	 2	[ 3 ~ 4 ]:[ 4.2 ]	7.4863
+2013-05-24 22:02:56-367	[NOTICE]	 2	[ 4 ~ 4.2 ]:[ 4.2 ]	7.32971
+2013-05-24 22:02:56-383	[NOTICE]	 3	[ 0 ~ 1 ]:[ 1.3 ]	7.28291
+2013-05-24 22:02:56-400	[NOTICE]	 3	[ 1 ~ 1.3 ]:[ 1.3 ]	7.05734
+2013-05-24 22:02:56-415	[NOTICE]	 4	[ 0 ~ 0.8 ]:[ 0.8 ]	6.94697
+2013-05-24 22:02:56-427	[NOTICE]	 5	[ 0 ~ 1 ]:[ 1.6 ]	7.51325
+2013-05-24 22:02:56-441	[NOTICE]	 5	[ 1 ~ 1.6 ]:[ 1.6 ]	9.0754
+2013-05-24 22:02:56-456	[NOTICE]	 6	[ 0 ~ 1 ]:[ 3.3 ]	9.5439
+2013-05-24 22:02:56-473	[NOTICE]	 6	[ 1 ~ 2 ]:[ 3.3 ]	10.6045
+2013-05-24 22:02:56-489	[NOTICE]	 6	[ 2 ~ 3 ]:[ 3.3 ]	10.6748
+2013-05-24 22:02:56-505	[NOTICE]	 6	[ 3 ~ 3.3 ]:[ 3.3 ]	10.1002
+2013-05-24 22:02:56-521	[NOTICE]	 7	[ 0 ~ 1 ]:[ 2.2 ]	9.75363
+2013-05-24 22:02:56-535	[NOTICE]	 7	[ 1 ~ 2 ]:[ 2.2 ]	9.09651
+2013-05-24 22:02:56-547	[NOTICE]	 7	[ 2 ~ 2.2 ]:[ 2.2 ]	7.99696
+2013-05-24 22:02:56-547	[NOTICE]	 MAX LOD:	Trait 6[2~3] = 10.6748
+2013-05-24 22:02:56-548	[NOTICE]	 
+For LOD Detection: OrderGroup "2/189" will run.
+2013-05-24 22:02:56-898	[NOTICE]	 [1] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 22:02:56-898	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data[10.9209>(2.30577%)]
+2013-05-24 22:02:57-219	[NOTICE]	 [2] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 22:02:57-219	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data[10.8124>(1.2894%)]
+2013-05-24 22:02:57-544	[NOTICE]	 [3] MAX LOD in Random Re-mix: = 9.7719
+2013-05-24 22:02:57-883	[NOTICE]	 [4] MAX LOD in Random Re-mix: = 9.17366
+2013-05-24 22:02:58-209	[NOTICE]	 [5] MAX LOD in Random Re-mix: = 9.4459
+2013-05-24 22:02:58-539	[NOTICE]	 [6] MAX LOD in Random Re-mix: = 8.95577
+2013-05-24 22:02:58-859	[NOTICE]	 [7] MAX LOD in Random Re-mix: = 10.9209
+2013-05-24 22:02:58-859	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data[10.9209>(2.30577%)]
+2013-05-24 22:02:59-180	[NOTICE]	 [8] MAX LOD in Random Re-mix: = 10.8124
+2013-05-24 22:02:59-180	[WARN]	 maxLOD (10.6748) is challenged by a re-mix data[10.8124>(1.2894%)]
+2013-05-24 22:02:59-500	[NOTICE]	 [9] MAX LOD in Random Re-mix: = 10.0066
+2013-05-24 22:02:59-820	[NOTICE]	 [10] MAX LOD in Random Re-mix: = 9.50597
+2013-05-24 22:02:59-820	[NOTICE]	 Max of 10 permutation re-mix data is 10.9209 >2.30577%
+2013-05-24 22:02:59-820	[WARN]	 QTL DETECTED: LOD:10.6748
+2013-05-24 22:02:59-820	[NOTICE]	 Please check full log for QTL detail 10.6748
+2013-05-24 22:02:59-821	[NOTICE]	 Total time: 3677.61 ms
+2013-05-24 22:02:59-821	[NOTICE]	 Average time: 334.329 ms
+2013-05-24 22:04:05-446	[NOTICE]	 
+Input Summary:	189 samples of 9 traits in following files:
+	Trait Interval Data in:     data/traitInterval.txt
+	Gene Data of Children in:   data/geneChildFull.txt
+	Gene Data of Parent(F) in:  data/geneParentF.txt
+	Gene Data of Parent(M) in:  data/geneParentM.txt
+	Express Data in:            data/expressData.txt
+Calculation dStep:	1
+2013-05-24 22:04:05-465	[NOTICE]	 1	[ 0 ~ 1 ]:[ 9.1 ]	3.13799
+2013-05-24 22:04:05-477	[NOTICE]	 1	[ 1 ~ 2 ]:[ 9.1 ]	3.69102
+2013-05-24 22:04:05-491	[NOTICE]	 1	[ 2 ~ 3 ]:[ 9.1 ]	4.23699
+2013-05-24 22:04:05-506	[NOTICE]	 1	[ 3 ~ 4 ]:[ 9.1 ]	4.75821
+2013-05-24 22:04:05-520	[NOTICE]	 1	[ 4 ~ 5 ]:[ 9.1 ]	5.24998
+2013-05-24 22:04:05-534	[NOTICE]	 1	[ 5 ~ 6 ]:[ 9.1 ]	5.71234
+2013-05-24 22:04:05-546	[NOTICE]	 1	[ 6 ~ 7 ]:[ 9.1 ]	6.14586
+2013-05-24 22:04:05-558	[NOTICE]	 1	[ 7 ~ 8 ]:[ 9.1 ]	6.55037
+2013-05-24 22:04:05-571	[NOTICE]	 1	[ 8 ~ 9 ]:[ 9.1 ]	6.92516
+2013-05-24 22:04:05-590	[NOTICE]	 1	[ 9 ~ 9.1 ]:[ 9.1 ]	7.2693
+2013-05-24 22:04:05-607	[NOTICE]	 2	[ 0 ~ 1 ]:[ 4.2 ]	7.30199
+2013-05-24 22:04:05-621	[NOTICE]	 2	[ 1 ~ 2 ]:[ 4.2 ]	7.46431
+2013-05-24 22:04:05-639	[NOTICE]	 2	[ 2 ~ 3 ]:[ 4.2 ]	7.52697
+2013-05-24 22:04:05-657	[NOTICE]	 2	[ 3 ~ 4 ]:[ 4.2 ]	7.4863
+2013-05-24 22:04:05-673	[NOTICE]	 2	[ 4 ~ 4.2 ]:[ 4.2 ]	7.32971
+2013-05-24 22:04:05-688	[NOTICE]	 3	[ 0 ~ 1 ]:[ 1.3 ]	7.28291
+2013-05-24 22:04:05-703	[NOTICE]	 3	[ 1 ~ 1.3 ]:[ 1.3 ]	7.05734
+2013-05-24 22:04:05-715	[NOTICE]	 4	[ 0 ~ 0.8 ]:[ 0.8 ]	6.94697
+2013-05-24 22:04:05-729	[NOTICE]	 5	[ 0 ~ 1 ]:[ 1.6 ]	7.51325
+2013-05-24 22:04:05-744	[NOTICE]	 5	[ 1 ~ 1.6 ]:[ 1.6 ]	9.0754
+2013-05-24 22:04:05-756	[NOTICE]	 6	[ 0 ~ 1 ]:[ 3.3 ]	9.5439
+2013-05-24 22:04:05-773	[NOTICE]	 6	[ 1 ~ 2 ]:[ 3.3 ]	10.6045
+2013-05-24 22:04:05-791	[NOTICE]	 6	[ 2 ~ 3 ]:[ 3.3 ]	10.6748
+2013-05-24 22:04:05-805	[NOTICE]	 6	[ 3 ~ 3.3 ]:[ 3.3 ]	10.1002
+2013-05-24 22:04:05-817	[NOTICE]	 7	[ 0 ~ 1 ]:[ 2.2 ]	9.75363
+2013-05-24 22:04:05-829	[NOTICE]	 7	[ 1 ~ 2 ]:[ 2.2 ]	9.09651
+2013-05-24 22:04:05-847	[NOTICE]	 7	[ 2 ~ 2.2 ]:[ 2.2 ]	7.99696
+2013-05-24 22:04:05-847	[NOTICE]	 MAX LOD:	Trait 6[2~3] = 10.6748
+2013-05-24 22:04:05-847	[NOTICE]	 
+For LOD Detection: 100 random data will run.
+2013-05-24 22:04:06-181	[NOTICE]	 [1] MAX LOD in Random Re-mix: = 0.615813
+2013-05-24 22:04:06-518	[NOTICE]	 [2] MAX LOD in Random Re-mix: = 1.01219
+2013-05-24 22:04:06-858	[NOTICE]	 [3] MAX LOD in Random Re-mix: = 0.119327
+2013-05-24 22:04:07-185	[NOTICE]	 [4] MAX LOD in Random Re-mix: = 0.531487
+2013-05-24 22:04:07-503	[NOTICE]	 [5] MAX LOD in Random Re-mix: = 0.426308
+2013-05-24 22:04:07-823	[NOTICE]	 [6] MAX LOD in Random Re-mix: = 0.38951
+2013-05-24 22:04:08-145	[NOTICE]	 [7] MAX LOD in Random Re-mix: = 0.658653
+2013-05-24 22:04:08-475	[NOTICE]	 [8] MAX LOD in Random Re-mix: = 0.39276
+2013-05-24 22:04:08-793	[NOTICE]	 [9] MAX LOD in Random Re-mix: = 0.572093
+2013-05-24 22:04:09-108	[NOTICE]	 [10] MAX LOD in Random Re-mix: = 0.720349
+2013-05-24 22:04:09-428	[NOTICE]	 [11] MAX LOD in Random Re-mix: = 0.514655
+2013-05-24 22:04:09-747	[NOTICE]	 [12] MAX LOD in Random Re-mix: = 0.693171
+2013-05-24 22:04:10-067	[NOTICE]	 [13] MAX LOD in Random Re-mix: = 1.0642
+2013-05-24 22:04:10-389	[NOTICE]	 [14] MAX LOD in Random Re-mix: = 0.542712
+2013-05-24 22:04:10-721	[NOTICE]	 [15] MAX LOD in Random Re-mix: = 1.38145
+2013-05-24 22:04:11-043	[NOTICE]	 [16] MAX LOD in Random Re-mix: = 0.388268
+2013-05-24 22:04:11-367	[NOTICE]	 [17] MAX LOD in Random Re-mix: = 1.24154
+2013-05-24 22:04:11-688	[NOTICE]	 [18] MAX LOD in Random Re-mix: = 1.06349
+2013-05-24 22:04:12-012	[NOTICE]	 [19] MAX LOD in Random Re-mix: = 0.288483
+2013-05-24 22:04:12-333	[NOTICE]	 [20] MAX LOD in Random Re-mix: = 0.162901
+2013-05-24 22:04:12-653	[NOTICE]	 [21] MAX LOD in Random Re-mix: = 0.269582
+2013-05-24 22:04:12-971	[NOTICE]	 [22] MAX LOD in Random Re-mix: = 2.6929
+2013-05-24 22:04:13-305	[NOTICE]	 [23] MAX LOD in Random Re-mix: = 0.469252
+2013-05-24 22:04:13-627	[NOTICE]	 [24] MAX LOD in Random Re-mix: = 0.616408
+2013-05-24 22:04:13-953	[NOTICE]	 [25] MAX LOD in Random Re-mix: = 1.30327
+2013-05-24 22:04:14-282	[NOTICE]	 [26] MAX LOD in Random Re-mix: = 1.05294
+2013-05-24 22:04:14-598	[NOTICE]	 [27] MAX LOD in Random Re-mix: = 0.296294
+2013-05-24 22:04:14-924	[NOTICE]	 [28] MAX LOD in Random Re-mix: = 0.29677
+2013-05-24 22:04:15-243	[NOTICE]	 [29] MAX LOD in Random Re-mix: = 1.68434
+2013-05-24 22:04:15-569	[NOTICE]	 [30] MAX LOD in Random Re-mix: = 0.757243
+2013-05-24 22:04:15-887	[NOTICE]	 [31] MAX LOD in Random Re-mix: = 3.5155
+2013-05-24 22:04:16-208	[NOTICE]	 [32] MAX LOD in Random Re-mix: = 0.339958
+2013-05-24 22:04:16-540	[NOTICE]	 [33] MAX LOD in Random Re-mix: = 0.598239
+2013-05-24 22:04:16-861	[NOTICE]	 [34] MAX LOD in Random Re-mix: = 0.481612
+2013-05-24 22:04:17-180	[NOTICE]	 [35] MAX LOD in Random Re-mix: = 0.701391
+2013-05-24 22:04:17-500	[NOTICE]	 [36] MAX LOD in Random Re-mix: = 2.79999
+2013-05-24 22:04:17-818	[NOTICE]	 [37] MAX LOD in Random Re-mix: = 0.487298
+2013-05-24 22:04:18-138	[NOTICE]	 [38] MAX LOD in Random Re-mix: = 0.797866
+2013-05-24 22:04:18-463	[NOTICE]	 [39] MAX LOD in Random Re-mix: = 0.297923
+2013-05-24 22:04:18-782	[NOTICE]	 [40] MAX LOD in Random Re-mix: = 0.757806
+2013-05-24 22:04:19-102	[NOTICE]	 [41] MAX LOD in Random Re-mix: = 0.538378
+2013-05-24 22:04:19-422	[NOTICE]	 [42] MAX LOD in Random Re-mix: = 2.42827
+2013-05-24 22:04:19-738	[NOTICE]	 [43] MAX LOD in Random Re-mix: = 0.683634
+2013-05-24 22:04:20-060	[NOTICE]	 [44] MAX LOD in Random Re-mix: = 0.743588
+2013-05-24 22:04:20-375	[NOTICE]	 [45] MAX LOD in Random Re-mix: = 0.561211
+2013-05-24 22:04:20-701	[NOTICE]	 [46] MAX LOD in Random Re-mix: = 1.10685
+2013-05-24 22:04:21-024	[NOTICE]	 [47] MAX LOD in Random Re-mix: = 0.537024
+2013-05-24 22:04:21-341	[NOTICE]	 [48] MAX LOD in Random Re-mix: = 0.396902
+2013-05-24 22:04:21-670	[NOTICE]	 [49] MAX LOD in Random Re-mix: = 0.832542
+2013-05-24 22:04:21-986	[NOTICE]	 [50] MAX LOD in Random Re-mix: = 0.565738
+2013-05-24 22:04:22-306	[NOTICE]	 [51] MAX LOD in Random Re-mix: = 0.478998
+2013-05-24 22:04:22-623	[NOTICE]	 [52] MAX LOD in Random Re-mix: = 0.359912
+2013-05-24 22:04:22-937	[NOTICE]	 [53] MAX LOD in Random Re-mix: = 0.314533
+2013-05-24 22:04:23-255	[NOTICE]	 [54] MAX LOD in Random Re-mix: = 0.904917
+2013-05-24 22:04:23-590	[NOTICE]	 [55] MAX LOD in Random Re-mix: = 0.920122
+2013-05-24 22:04:23-912	[NOTICE]	 [56] MAX LOD in Random Re-mix: = 0.551081
+2013-05-24 22:04:24-232	[NOTICE]	 [57] MAX LOD in Random Re-mix: = 0.981189
+2013-05-24 22:04:24-555	[NOTICE]	 [58] MAX LOD in Random Re-mix: = 0.300715
+2013-05-24 22:04:24-870	[NOTICE]	 [59] MAX LOD in Random Re-mix: = 0.433114
+2013-05-24 22:04:25-187	[NOTICE]	 [60] MAX LOD in Random Re-mix: = 0.533732
+2013-05-24 22:04:25-508	[NOTICE]	 [61] MAX LOD in Random Re-mix: = 0.21158
+2013-05-24 22:04:25-825	[NOTICE]	 [62] MAX LOD in Random Re-mix: = 0.103978
+2013-05-24 22:04:26-148	[NOTICE]	 [63] MAX LOD in Random Re-mix: = 1.44269
+2013-05-24 22:04:26-468	[NOTICE]	 [64] MAX LOD in Random Re-mix: = 0.716816
+2013-05-24 22:04:26-792	[NOTICE]	 [65] MAX LOD in Random Re-mix: = 0.179581
+2013-05-24 22:04:27-114	[NOTICE]	 [66] MAX LOD in Random Re-mix: = 0.357617
+2013-05-24 22:04:27-435	[NOTICE]	 [67] MAX LOD in Random Re-mix: = 1.02989
+2013-05-24 22:04:27-751	[NOTICE]	 [68] MAX LOD in Random Re-mix: = 0.614929
+2013-05-24 22:04:28-071	[NOTICE]	 [69] MAX LOD in Random Re-mix: = 0.638427
+2013-05-24 22:04:28-401	[NOTICE]	 [70] MAX LOD in Random Re-mix: = 1.00253
+2013-05-24 22:04:28-717	[NOTICE]	 [71] MAX LOD in Random Re-mix: = 0.340792
+2013-05-24 22:04:29-042	[NOTICE]	 [72] MAX LOD in Random Re-mix: = 0.258551
+2013-05-24 22:04:29-358	[NOTICE]	 [73] MAX LOD in Random Re-mix: = 0.820914
+2013-05-24 22:04:29-677	[NOTICE]	 [74] MAX LOD in Random Re-mix: = 0.799181
+2013-05-24 22:04:29-994	[NOTICE]	 [75] MAX LOD in Random Re-mix: = 0.850175
+2013-05-24 22:04:30-315	[NOTICE]	 [76] MAX LOD in Random Re-mix: = 0.750973
+2013-05-24 22:04:30-632	[NOTICE]	 [77] MAX LOD in Random Re-mix: = 1.00773
+2013-05-24 22:04:30-956	[NOTICE]	 [78] MAX LOD in Random Re-mix: = 0.744199
+2013-05-24 22:04:31-280	[NOTICE]	 [79] MAX LOD in Random Re-mix: = 1.23498
+2013-05-24 22:04:31-601	[NOTICE]	 [80] MAX LOD in Random Re-mix: = 0.857315
+2013-05-24 22:04:31-918	[NOTICE]	 [81] MAX LOD in Random Re-mix: = 0.246547
+2013-05-24 22:04:32-239	[NOTICE]	 [82] MAX LOD in Random Re-mix: = 0.627493
+2013-05-24 22:04:32-555	[NOTICE]	 [83] MAX LOD in Random Re-mix: = 2.11849
+2013-05-24 22:04:32-877	[NOTICE]	 [84] MAX LOD in Random Re-mix: = 0.473099
+2013-05-24 22:04:33-196	[NOTICE]	 [85] MAX LOD in Random Re-mix: = 0.702355
+2013-05-24 22:04:33-518	[NOTICE]	 [86] MAX LOD in Random Re-mix: = 0.573198
+2013-05-24 22:04:33-840	[NOTICE]	 [87] MAX LOD in Random Re-mix: = 0.61357
+2013-05-24 22:04:34-158	[NOTICE]	 [88] MAX LOD in Random Re-mix: = 0.38897
+2013-05-24 22:04:34-474	[NOTICE]	 [89] MAX LOD in Random Re-mix: = 0.260068
+2013-05-24 22:04:34-792	[NOTICE]	 [90] MAX LOD in Random Re-mix: = 0.316984
+2013-05-24 22:04:35-115	[NOTICE]	 [91] MAX LOD in Random Re-mix: = 0.546704
+2013-05-24 22:04:35-438	[NOTICE]	 [92] MAX LOD in Random Re-mix: = 0.747252
+2013-05-24 22:04:35-755	[NOTICE]	 [93] MAX LOD in Random Re-mix: = 1.60181
+2013-05-24 22:04:36-077	[NOTICE]	 [94] MAX LOD in Random Re-mix: = 0.862243
+2013-05-24 22:04:36-400	[NOTICE]	 [95] MAX LOD in Random Re-mix: = 0.49729
+2013-05-24 22:04:36-722	[NOTICE]	 [96] MAX LOD in Random Re-mix: = 0.253102
+2013-05-24 22:04:37-039	[NOTICE]	 [97] MAX LOD in Random Re-mix: = 0.343988
+2013-05-24 22:04:37-368	[NOTICE]	 [98] MAX LOD in Random Re-mix: = 0.564013
+2013-05-24 22:04:37-688	[NOTICE]	 [99] MAX LOD in Random Re-mix: = 1.39784
+2013-05-24 22:04:38-004	[NOTICE]	 [100] MAX LOD in Random Re-mix: = 0.179888
+2013-05-24 22:04:38-004	[NOTICE]	 Max of 100 random re-mix data is 3.5155 >-67.0672%
+2013-05-24 22:04:38-004	[WARN]	 QTL DETECTED: LOD:10.6748
+2013-05-24 22:04:38-004	[NOTICE]	 Please check full log for QTL detail 10.6748
+2013-05-24 22:04:38-004	[NOTICE]	 Total time: 32541.6 ms
+2013-05-24 22:04:38-004	[NOTICE]	 Average time: 322.194 ms
+2013-05-24 22:06:13-482	[NOTICE]	 
+Input Summary:	189 samples of 9 traits in following files:
+	Trait Interval Data in:     data/traitInterval.txt
+	Gene Data of Children in:   data/geneChildFull.txt
+	Gene Data of Parent(F) in:  data/geneParentF.txt
+	Gene Data of Parent(M) in:  data/geneParentM.txt
+	Express Data in:            data/expressData.txt
+Calculation dStep:	1
+2013-05-24 22:06:13-501	[NOTICE]	 1	[ 0 ~ 1 ]:[ 9.1 ]	3.13799
+2013-05-24 22:06:13-514	[NOTICE]	 1	[ 1 ~ 2 ]:[ 9.1 ]	3.69102
+2013-05-24 22:06:13-527	[NOTICE]	 1	[ 2 ~ 3 ]:[ 9.1 ]	4.23699
+2013-05-24 22:06:13-540	[NOTICE]	 1	[ 3 ~ 4 ]:[ 9.1 ]	4.75821
+2013-05-24 22:06:13-555	[NOTICE]	 1	[ 4 ~ 5 ]:[ 9.1 ]	5.24998
+2013-05-24 22:06:13-575	[NOTICE]	 1	[ 5 ~ 6 ]:[ 9.1 ]	5.71234
+2013-05-24 22:06:13-589	[NOTICE]	 1	[ 6 ~ 7 ]:[ 9.1 ]	6.14586
+2013-05-24 22:06:13-602	[NOTICE]	 1	[ 7 ~ 8 ]:[ 9.1 ]	6.55037
+2013-05-24 22:06:13-616	[NOTICE]	 1	[ 8 ~ 9 ]:[ 9.1 ]	6.92516
+2013-05-24 22:06:13-632	[NOTICE]	 1	[ 9 ~ 9.1 ]:[ 9.1 ]	7.2693
+2013-05-24 22:06:13-647	[NOTICE]	 2	[ 0 ~ 1 ]:[ 4.2 ]	7.30199
+2013-05-24 22:06:13-666	[NOTICE]	 2	[ 1 ~ 2 ]:[ 4.2 ]	7.46431
+2013-05-24 22:06:13-685	[NOTICE]	 2	[ 2 ~ 3 ]:[ 4.2 ]	7.52697
+2013-05-24 22:06:13-703	[NOTICE]	 2	[ 3 ~ 4 ]:[ 4.2 ]	7.4863
+2013-05-24 22:06:13-717	[NOTICE]	 2	[ 4 ~ 4.2 ]:[ 4.2 ]	7.32971
+2013-05-24 22:06:13-732	[NOTICE]	 3	[ 0 ~ 1 ]:[ 1.3 ]	7.28291
+2013-05-24 22:06:13-747	[NOTICE]	 3	[ 1 ~ 1.3 ]:[ 1.3 ]	7.05734
+2013-05-24 22:06:13-765	[NOTICE]	 4	[ 0 ~ 0.8 ]:[ 0.8 ]	6.94697
+2013-05-24 22:06:13-781	[NOTICE]	 5	[ 0 ~ 1 ]:[ 1.6 ]	7.51325
+2013-05-24 22:06:13-796	[NOTICE]	 5	[ 1 ~ 1.6 ]:[ 1.6 ]	9.0754
+2013-05-24 22:06:13-810	[NOTICE]	 6	[ 0 ~ 1 ]:[ 3.3 ]	9.5439
+2013-05-24 22:06:13-823	[NOTICE]	 6	[ 1 ~ 2 ]:[ 3.3 ]	10.6045
+2013-05-24 22:06:13-837	[NOTICE]	 6	[ 2 ~ 3 ]:[ 3.3 ]	10.6748
+2013-05-24 22:06:13-850	[NOTICE]	 6	[ 3 ~ 3.3 ]:[ 3.3 ]	10.1002
+2013-05-24 22:06:13-864	[NOTICE]	 7	[ 0 ~ 1 ]:[ 2.2 ]	9.75363
+2013-05-24 22:06:13-878	[NOTICE]	 7	[ 1 ~ 2 ]:[ 2.2 ]	9.09651
+2013-05-24 22:06:13-894	[NOTICE]	 7	[ 2 ~ 2.2 ]:[ 2.2 ]	7.99696
+2013-05-24 22:06:13-894	[NOTICE]	 MAX LOD:	Trait 6[2~3] = 10.6748
+2013-05-24 22:06:13-894	[NOTICE]	 
+For LOD Detection: 100 random data will run.
+2013-05-24 22:06:14-296	[NOTICE]	 [1] MAX LOD in Random Re-mix: = 0.615813
+2013-05-24 22:06:14-674	[NOTICE]	 [2] MAX LOD in Random Re-mix: = 1.01219
+2013-05-24 22:06:15-007	[NOTICE]	 [3] MAX LOD in Random Re-mix: = 0.119327
+2013-05-24 22:06:15-333	[NOTICE]	 [4] MAX LOD in Random Re-mix: = 0.531487
+2013-05-24 22:06:15-661	[NOTICE]	 [5] MAX LOD in Random Re-mix: = 0.426308
+2013-05-24 22:06:15-988	[NOTICE]	 [6] MAX LOD in Random Re-mix: = 0.38951
+2013-05-24 22:06:16-313	[NOTICE]	 [7] MAX LOD in Random Re-mix: = 0.658653
+2013-05-24 22:06:16-644	[NOTICE]	 [8] MAX LOD in Random Re-mix: = 0.39276
+2013-05-24 22:06:16-968	[NOTICE]	 [9] MAX LOD in Random Re-mix: = 0.572093
+2013-05-24 22:06:17-294	[NOTICE]	 [10] MAX LOD in Random Re-mix: = 0.720349
+2013-05-24 22:06:17-617	[NOTICE]	 [11] MAX LOD in Random Re-mix: = 0.514655
+2013-05-24 22:06:17-953	[NOTICE]	 [12] MAX LOD in Random Re-mix: = 0.693171
+2013-05-24 22:06:18-273	[NOTICE]	 [13] MAX LOD in Random Re-mix: = 1.0642
+2013-05-24 22:06:18-602	[NOTICE]	 [14] MAX LOD in Random Re-mix: = 0.542712
+2013-05-24 22:06:18-932	[NOTICE]	 [15] MAX LOD in Random Re-mix: = 1.38145
+2013-05-24 22:06:19-254	[NOTICE]	 [16] MAX LOD in Random Re-mix: = 0.388268
+2013-05-24 22:06:19-573	[NOTICE]	 [17] MAX LOD in Random Re-mix: = 1.24154
+2013-05-24 22:06:19-899	[NOTICE]	 [18] MAX LOD in Random Re-mix: = 1.06349
+2013-05-24 22:06:20-225	[NOTICE]	 [19] MAX LOD in Random Re-mix: = 0.288483
+2013-05-24 22:06:20-545	[NOTICE]	 [20] MAX LOD in Random Re-mix: = 0.162901
+2013-05-24 22:06:20-870	[NOTICE]	 [21] MAX LOD in Random Re-mix: = 0.269582
+2013-05-24 22:06:21-195	[NOTICE]	 [22] MAX LOD in Random Re-mix: = 2.6929
+2013-05-24 22:06:21-520	[NOTICE]	 [23] MAX LOD in Random Re-mix: = 0.469252
+2013-05-24 22:06:21-844	[NOTICE]	 [24] MAX LOD in Random Re-mix: = 0.616408
+2013-05-24 22:06:22-173	[NOTICE]	 [25] MAX LOD in Random Re-mix: = 1.30327
+2013-05-24 22:06:22-495	[NOTICE]	 [26] MAX LOD in Random Re-mix: = 1.05294
+2013-05-24 22:06:22-815	[NOTICE]	 [27] MAX LOD in Random Re-mix: = 0.296294
+2013-05-24 22:06:23-135	[NOTICE]	 [28] MAX LOD in Random Re-mix: = 0.29677
+2013-05-24 22:06:23-464	[NOTICE]	 [29] MAX LOD in Random Re-mix: = 1.68434
+2013-05-24 22:06:23-784	[NOTICE]	 [30] MAX LOD in Random Re-mix: = 0.757243
+2013-05-24 22:06:24-109	[NOTICE]	 [31] MAX LOD in Random Re-mix: = 3.5155
+2013-05-24 22:06:24-445	[NOTICE]	 [32] MAX LOD in Random Re-mix: = 0.339958
+2013-05-24 22:06:24-772	[NOTICE]	 [33] MAX LOD in Random Re-mix: = 0.598239
+2013-05-24 22:06:25-097	[NOTICE]	 [34] MAX LOD in Random Re-mix: = 0.481612
+2013-05-24 22:06:25-425	[NOTICE]	 [35] MAX LOD in Random Re-mix: = 0.701391
+2013-05-24 22:06:25-751	[NOTICE]	 [36] MAX LOD in Random Re-mix: = 2.79999
+2013-05-24 22:06:26-072	[NOTICE]	 [37] MAX LOD in Random Re-mix: = 0.487298
+2013-05-24 22:06:26-400	[NOTICE]	 [38] MAX LOD in Random Re-mix: = 0.797866
+2013-05-24 22:06:26-734	[NOTICE]	 [39] MAX LOD in Random Re-mix: = 0.297923
+2013-05-24 22:06:27-060	[NOTICE]	 [40] MAX LOD in Random Re-mix: = 0.757806
+2013-05-24 22:06:27-379	[NOTICE]	 [41] MAX LOD in Random Re-mix: = 0.538378
+2013-05-24 22:06:27-704	[NOTICE]	 [42] MAX LOD in Random Re-mix: = 2.42827
+2013-05-24 22:06:28-025	[NOTICE]	 [43] MAX LOD in Random Re-mix: = 0.683634
+2013-05-24 22:06:28-353	[NOTICE]	 [44] MAX LOD in Random Re-mix: = 0.743588
+2013-05-24 22:06:28-674	[NOTICE]	 [45] MAX LOD in Random Re-mix: = 0.561211
+2013-05-24 22:06:28-995	[NOTICE]	 [46] MAX LOD in Random Re-mix: = 1.10685
+2013-05-24 22:06:29-318	[NOTICE]	 [47] MAX LOD in Random Re-mix: = 0.537024
+2013-05-24 22:06:29-639	[NOTICE]	 [48] MAX LOD in Random Re-mix: = 0.396902
+2013-05-24 22:06:29-961	[NOTICE]	 [49] MAX LOD in Random Re-mix: = 0.832542
+2013-05-24 22:06:30-287	[NOTICE]	 [50] MAX LOD in Random Re-mix: = 0.565738
+2013-05-24 22:06:30-607	[NOTICE]	 [51] MAX LOD in Random Re-mix: = 0.478998
+2013-05-24 22:06:30-927	[NOTICE]	 [52] MAX LOD in Random Re-mix: = 0.359912
+2013-05-24 22:06:31-257	[NOTICE]	 [53] MAX LOD in Random Re-mix: = 0.314533
+2013-05-24 22:06:31-582	[NOTICE]	 [54] MAX LOD in Random Re-mix: = 0.904917
+2013-05-24 22:06:31-902	[NOTICE]	 [55] MAX LOD in Random Re-mix: = 0.920122
+2013-05-24 22:06:32-223	[NOTICE]	 [56] MAX LOD in Random Re-mix: = 0.551081
+2013-05-24 22:06:32-551	[NOTICE]	 [57] MAX LOD in Random Re-mix: = 0.981189
+2013-05-24 22:06:32-873	[NOTICE]	 [58] MAX LOD in Random Re-mix: = 0.300715
+2013-05-24 22:06:33-204	[NOTICE]	 [59] MAX LOD in Random Re-mix: = 0.433114
+2013-05-24 22:06:33-530	[NOTICE]	 [60] MAX LOD in Random Re-mix: = 0.533732
+2013-05-24 22:06:33-852	[NOTICE]	 [61] MAX LOD in Random Re-mix: = 0.21158
+2013-05-24 22:06:34-184	[NOTICE]	 [62] MAX LOD in Random Re-mix: = 0.103978
+2013-05-24 22:06:34-507	[NOTICE]	 [63] MAX LOD in Random Re-mix: = 1.44269
+2013-05-24 22:06:34-833	[NOTICE]	 [64] MAX LOD in Random Re-mix: = 0.716816
+2013-05-24 22:06:35-160	[NOTICE]	 [65] MAX LOD in Random Re-mix: = 0.179581
+2013-05-24 22:06:35-480	[NOTICE]	 [66] MAX LOD in Random Re-mix: = 0.357617
+2013-05-24 22:06:35-807	[NOTICE]	 [67] MAX LOD in Random Re-mix: = 1.02989
+2013-05-24 22:06:36-147	[NOTICE]	 [68] MAX LOD in Random Re-mix: = 0.614929
+2013-05-24 22:06:36-520	[NOTICE]	 [69] MAX LOD in Random Re-mix: = 0.638427
+2013-05-24 22:06:36-847	[NOTICE]	 [70] MAX LOD in Random Re-mix: = 1.00253
+2013-05-24 22:06:37-189	[NOTICE]	 [71] MAX LOD in Random Re-mix: = 0.340792
+2013-05-24 22:06:37-519	[NOTICE]	 [72] MAX LOD in Random Re-mix: = 0.258551
+2013-05-24 22:06:37-844	[NOTICE]	 [73] MAX LOD in Random Re-mix: = 0.820914
+2013-05-24 22:06:38-170	[NOTICE]	 [74] MAX LOD in Random Re-mix: = 0.799181
+2013-05-24 22:06:38-494	[NOTICE]	 [75] MAX LOD in Random Re-mix: = 0.850175
+2013-05-24 22:06:38-818	[NOTICE]	 [76] MAX LOD in Random Re-mix: = 0.750973
+2013-05-24 22:06:39-148	[NOTICE]	 [77] MAX LOD in Random Re-mix: = 1.00773
+2013-05-24 22:06:39-485	[NOTICE]	 [78] MAX LOD in Random Re-mix: = 0.744199
+2013-05-24 22:06:39-812	[NOTICE]	 [79] MAX LOD in Random Re-mix: = 1.23498
+2013-05-24 22:06:40-145	[NOTICE]	 [80] MAX LOD in Random Re-mix: = 0.857315
+2013-05-24 22:06:40-482	[NOTICE]	 [81] MAX LOD in Random Re-mix: = 0.246547
+2013-05-24 22:06:40-816	[NOTICE]	 [82] MAX LOD in Random Re-mix: = 0.627493
+2013-05-24 22:06:41-262	[NOTICE]	 [83] MAX LOD in Random Re-mix: = 2.11849
+2013-05-24 22:06:41-686	[NOTICE]	 [84] MAX LOD in Random Re-mix: = 0.473099
+2013-05-24 22:06:42-049	[NOTICE]	 [85] MAX LOD in Random Re-mix: = 0.702355
+2013-05-24 22:06:42-471	[NOTICE]	 [86] MAX LOD in Random Re-mix: = 0.573198
+2013-05-24 22:06:42-835	[NOTICE]	 [87] MAX LOD in Random Re-mix: = 0.61357
+2013-05-24 22:06:43-193	[NOTICE]	 [88] MAX LOD in Random Re-mix: = 0.38897
+2013-05-24 22:06:43-530	[NOTICE]	 [89] MAX LOD in Random Re-mix: = 0.260068
+2013-05-24 22:06:43-953	[NOTICE]	 [90] MAX LOD in Random Re-mix: = 0.316984
+2013-05-24 22:06:44-375	[NOTICE]	 [91] MAX LOD in Random Re-mix: = 0.546704
+2013-05-24 22:06:44-784	[NOTICE]	 [92] MAX LOD in Random Re-mix: = 0.747252
+2013-05-24 22:06:45-115	[NOTICE]	 [93] MAX LOD in Random Re-mix: = 1.60181
+2013-05-24 22:06:45-515	[NOTICE]	 [94] MAX LOD in Random Re-mix: = 0.862243
+2013-05-24 22:06:45-918	[NOTICE]	 [95] MAX LOD in Random Re-mix: = 0.49729
+2013-05-24 22:06:46-252	[NOTICE]	 [96] MAX LOD in Random Re-mix: = 0.253102
+2013-05-24 22:06:46-589	[NOTICE]	 [97] MAX LOD in Random Re-mix: = 0.343988
+2013-05-24 22:06:46-978	[NOTICE]	 [98] MAX LOD in Random Re-mix: = 0.564013
+2013-05-24 22:06:47-338	[NOTICE]	 [99] MAX LOD in Random Re-mix: = 1.39784
+2013-05-24 22:06:47-674	[NOTICE]	 [100] MAX LOD in Random Re-mix: = 0.179888
+2013-05-24 22:06:47-675	[NOTICE]	 Max of 100 random re-mix data is 3.5155 >-67.0672%
+2013-05-24 22:06:47-675	[WARN]	 QTL DETECTED: LOD:10.6748
+2013-05-24 22:06:47-675	[NOTICE]	 Please check full log for QTL detail 10.6748
+2013-05-24 22:06:47-675	[NOTICE]	 Total time: 34117.5 ms
+2013-05-24 22:06:47-675	[NOTICE]	 Average time: 337.797 ms
+2013-05-24 22:08:29-246	[NOTICE]	 
+Input Summary:	189 samples of 9 traits in following files:
+	Trait Interval Data in:     data/traitInterval.txt
+	Gene Data of Children in:   data/geneChildFull.txt
+	Gene Data of Parent(F) in:  data/geneParentF.txt
+	Gene Data of Parent(M) in:  data/geneParentM.txt
+	Express Data in:            data/expressData.txt
+Calculation dStep:	1
+2013-05-24 22:08:29-262	[NOTICE]	 1	[ 0 ~ 1 ]:[ 9.1 ]	3.13799
+2013-05-24 22:08:29-279	[NOTICE]	 1	[ 1 ~ 2 ]:[ 9.1 ]	3.69102
+2013-05-24 22:08:29-298	[NOTICE]	 1	[ 2 ~ 3 ]:[ 9.1 ]	4.23699
+2013-05-24 22:08:29-318	[NOTICE]	 1	[ 3 ~ 4 ]:[ 9.1 ]	4.75821
+2013-05-24 22:08:29-332	[NOTICE]	 1	[ 4 ~ 5 ]:[ 9.1 ]	5.24998
+2013-05-24 22:08:29-345	[NOTICE]	 1	[ 5 ~ 6 ]:[ 9.1 ]	5.71234
+2013-05-24 22:08:29-361	[NOTICE]	 1	[ 6 ~ 7 ]:[ 9.1 ]	6.14586
+2013-05-24 22:08:29-380	[NOTICE]	 1	[ 7 ~ 8 ]:[ 9.1 ]	6.55037
+2013-05-24 22:08:29-395	[NOTICE]	 1	[ 8 ~ 9 ]:[ 9.1 ]	6.92516
+2013-05-24 22:08:29-413	[NOTICE]	 1	[ 9 ~ 9.1 ]:[ 9.1 ]	7.2693
+2013-05-24 22:08:29-431	[NOTICE]	 2	[ 0 ~ 1 ]:[ 4.2 ]	7.30199
+2013-05-24 22:08:29-448	[NOTICE]	 2	[ 1 ~ 2 ]:[ 4.2 ]	7.46431
+2013-05-24 22:08:29-465	[NOTICE]	 2	[ 2 ~ 3 ]:[ 4.2 ]	7.52697
+2013-05-24 22:08:29-482	[NOTICE]	 2	[ 3 ~ 4 ]:[ 4.2 ]	7.4863
+2013-05-24 22:08:29-497	[NOTICE]	 2	[ 4 ~ 4.2 ]:[ 4.2 ]	7.32971
+2013-05-24 22:08:29-516	[NOTICE]	 3	[ 0 ~ 1 ]:[ 1.3 ]	7.28291
+2013-05-24 22:08:29-535	[NOTICE]	 3	[ 1 ~ 1.3 ]:[ 1.3 ]	7.05734
+2013-05-24 22:08:29-549	[NOTICE]	 4	[ 0 ~ 0.8 ]:[ 0.8 ]	6.94697
+2013-05-24 22:08:29-562	[NOTICE]	 5	[ 0 ~ 1 ]:[ 1.6 ]	7.51325
+2013-05-24 22:08:29-577	[NOTICE]	 5	[ 1 ~ 1.6 ]:[ 1.6 ]	9.0754
+2013-05-24 22:08:29-592	[NOTICE]	 6	[ 0 ~ 1 ]:[ 3.3 ]	9.5439
+2013-05-24 22:08:29-606	[NOTICE]	 6	[ 1 ~ 2 ]:[ 3.3 ]	10.6045
+2013-05-24 22:08:29-623	[NOTICE]	 6	[ 2 ~ 3 ]:[ 3.3 ]	10.6748
+2013-05-24 22:08:29-639	[NOTICE]	 6	[ 3 ~ 3.3 ]:[ 3.3 ]	10.1002
+2013-05-24 22:08:29-651	[NOTICE]	 7	[ 0 ~ 1 ]:[ 2.2 ]	9.75363
+2013-05-24 22:08:29-668	[NOTICE]	 7	[ 1 ~ 2 ]:[ 2.2 ]	9.09651
+2013-05-24 22:08:29-682	[NOTICE]	 7	[ 2 ~ 2.2 ]:[ 2.2 ]	7.99696
+2013-05-24 22:08:29-682	[NOTICE]	 MAX LOD:	Trait 6[2~3] = 10.6748
+2013-05-24 22:08:29-682	[NOTICE]	 
+For LOD Detection: 100 random data will run.
+2013-05-24 22:08:30-046	[NOTICE]	 [1] MAX LOD in Random Re-mix: = 0.615813
+2013-05-24 22:08:30-383	[NOTICE]	 [2] MAX LOD in Random Re-mix: = 1.01219
+2013-05-24 22:08:30-738	[NOTICE]	 [3] MAX LOD in Random Re-mix: = 0.119327
+2013-05-24 22:08:31-082	[NOTICE]	 [4] MAX LOD in Random Re-mix: = 0.531487
+2013-05-24 22:08:31-423	[NOTICE]	 [5] MAX LOD in Random Re-mix: = 0.426308
+2013-05-24 22:08:31-767	[NOTICE]	 [6] MAX LOD in Random Re-mix: = 0.38951
+2013-05-24 22:08:32-104	[NOTICE]	 [7] MAX LOD in Random Re-mix: = 0.658653
+2013-05-24 22:08:32-437	[NOTICE]	 [8] MAX LOD in Random Re-mix: = 0.39276
+2013-05-24 22:08:32-767	[NOTICE]	 [9] MAX LOD in Random Re-mix: = 0.572093
+2013-05-24 22:08:33-099	[NOTICE]	 [10] MAX LOD in Random Re-mix: = 0.720349
+2013-05-24 22:08:33-441	[NOTICE]	 [11] MAX LOD in Random Re-mix: = 0.514655
+2013-05-24 22:08:33-777	[NOTICE]	 [12] MAX LOD in Random Re-mix: = 0.693171
+2013-05-24 22:08:34-107	[NOTICE]	 [13] MAX LOD in Random Re-mix: = 1.0642
+2013-05-24 22:08:34-444	[NOTICE]	 [14] MAX LOD in Random Re-mix: = 0.542712
+2013-05-24 22:08:34-776	[NOTICE]	 [15] MAX LOD in Random Re-mix: = 1.38145
+2013-05-24 22:08:35-118	[NOTICE]	 [16] MAX LOD in Random Re-mix: = 0.388268
+2013-05-24 22:08:35-450	[NOTICE]	 [17] MAX LOD in Random Re-mix: = 1.24154
+2013-05-24 22:08:35-792	[NOTICE]	 [18] MAX LOD in Random Re-mix: = 1.06349
+2013-05-24 22:08:36-139	[NOTICE]	 [19] MAX LOD in Random Re-mix: = 0.288483
+2013-05-24 22:08:36-480	[NOTICE]	 [20] MAX LOD in Random Re-mix: = 0.162901
+2013-05-24 22:08:36-838	[NOTICE]	 [21] MAX LOD in Random Re-mix: = 0.269582
+2013-05-24 22:08:37-173	[NOTICE]	 [22] MAX LOD in Random Re-mix: = 2.6929
+2013-05-24 22:08:37-528	[NOTICE]	 [23] MAX LOD in Random Re-mix: = 0.469252
+2013-05-24 22:08:37-870	[NOTICE]	 [24] MAX LOD in Random Re-mix: = 0.616408
+2013-05-24 22:08:38-208	[NOTICE]	 [25] MAX LOD in Random Re-mix: = 1.30327
+2013-05-24 22:08:38-554	[NOTICE]	 [26] MAX LOD in Random Re-mix: = 1.05294
+2013-05-24 22:08:38-896	[NOTICE]	 [27] MAX LOD in Random Re-mix: = 0.296294
+2013-05-24 22:08:39-244	[NOTICE]	 [28] MAX LOD in Random Re-mix: = 0.29677
+2013-05-24 22:08:39-612	[NOTICE]	 [29] MAX LOD in Random Re-mix: = 1.68434
+2013-05-24 22:08:39-970	[NOTICE]	 [30] MAX LOD in Random Re-mix: = 0.757243
+2013-05-24 22:08:40-325	[NOTICE]	 [31] MAX LOD in Random Re-mix: = 3.5155
+2013-05-24 22:08:42-192	[NOTICE]	 
+Input Summary:	189 samples of 9 traits in following files:
+	Trait Interval Data in:     data/traitInterval.txt
+	Gene Data of Children in:   data/geneChildFull.txt
+	Gene Data of Parent(F) in:  data/geneParentF.txt
+	Gene Data of Parent(M) in:  data/geneParentM.txt
+	Express Data in:            data/expressData.txt
+Calculation dStep:	1
+2013-05-24 22:08:42-210	[NOTICE]	 1	[ 0 ~ 1 ]:[ 9.1 ]	3.13799
+2013-05-24 22:08:42-235	[NOTICE]	 1	[ 1 ~ 2 ]:[ 9.1 ]	3.69102
+2013-05-24 22:08:42-250	[NOTICE]	 1	[ 2 ~ 3 ]:[ 9.1 ]	4.23699
+2013-05-24 22:08:42-265	[NOTICE]	 1	[ 3 ~ 4 ]:[ 9.1 ]	4.75821
+2013-05-24 22:08:42-277	[NOTICE]	 1	[ 4 ~ 5 ]:[ 9.1 ]	5.24998
+2013-05-24 22:08:42-290	[NOTICE]	 1	[ 5 ~ 6 ]:[ 9.1 ]	5.71234
+2013-05-24 22:08:42-308	[NOTICE]	 1	[ 6 ~ 7 ]:[ 9.1 ]	6.14586
+2013-05-24 22:08:42-323	[NOTICE]	 1	[ 7 ~ 8 ]:[ 9.1 ]	6.55037
+2013-05-24 22:08:42-338	[NOTICE]	 1	[ 8 ~ 9 ]:[ 9.1 ]	6.92516
+2013-05-24 22:08:42-351	[NOTICE]	 1	[ 9 ~ 9.1 ]:[ 9.1 ]	7.2693
+2013-05-24 22:08:42-363	[NOTICE]	 2	[ 0 ~ 1 ]:[ 4.2 ]	7.30199
+2013-05-24 22:08:42-375	[NOTICE]	 2	[ 1 ~ 2 ]:[ 4.2 ]	7.46431
+2013-05-24 22:08:42-391	[NOTICE]	 2	[ 2 ~ 3 ]:[ 4.2 ]	7.52697
+2013-05-24 22:08:42-403	[NOTICE]	 2	[ 3 ~ 4 ]:[ 4.2 ]	7.4863
+2013-05-24 22:08:42-416	[NOTICE]	 2	[ 4 ~ 4.2 ]:[ 4.2 ]	7.32971
+2013-05-24 22:08:42-428	[NOTICE]	 3	[ 0 ~ 1 ]:[ 1.3 ]	7.28291
+2013-05-24 22:08:42-444	[NOTICE]	 3	[ 1 ~ 1.3 ]:[ 1.3 ]	7.05734
+2013-05-24 22:08:42-457	[NOTICE]	 4	[ 0 ~ 0.8 ]:[ 0.8 ]	6.94697
+2013-05-24 22:08:42-470	[NOTICE]	 5	[ 0 ~ 1 ]:[ 1.6 ]	7.51325
+2013-05-24 22:08:42-486	[NOTICE]	 5	[ 1 ~ 1.6 ]:[ 1.6 ]	9.0754
+2013-05-24 22:08:42-503	[NOTICE]	 6	[ 0 ~ 1 ]:[ 3.3 ]	9.5439
+2013-05-24 22:08:42-519	[NOTICE]	 6	[ 1 ~ 2 ]:[ 3.3 ]	10.6045
+2013-05-24 22:08:42-536	[NOTICE]	 6	[ 2 ~ 3 ]:[ 3.3 ]	10.6748
+2013-05-24 22:08:42-555	[NOTICE]	 6	[ 3 ~ 3.3 ]:[ 3.3 ]	10.1002
+2013-05-24 22:08:42-573	[NOTICE]	 7	[ 0 ~ 1 ]:[ 2.2 ]	9.75363
+2013-05-24 22:08:42-587	[NOTICE]	 7	[ 1 ~ 2 ]:[ 2.2 ]	9.09651
+2013-05-24 22:08:42-601	[NOTICE]	 7	[ 2 ~ 2.2 ]:[ 2.2 ]	7.99696
+2013-05-24 22:08:42-601	[NOTICE]	 MAX LOD:	Trait 6[2~3] = 10.6748
+2013-05-24 22:08:42-601	[NOTICE]	 
+For LOD Detection: 10 random data will run.
+2013-05-24 22:08:42-981	[NOTICE]	 [1] MAX LOD in Random Re-mix: = 0.615813
+2013-05-24 22:08:43-306	[NOTICE]	 [2] MAX LOD in Random Re-mix: = 1.01219
+2013-05-24 22:08:43-644	[NOTICE]	 [3] MAX LOD in Random Re-mix: = 0.119327
+2013-05-24 22:08:43-981	[NOTICE]	 [4] MAX LOD in Random Re-mix: = 0.531487
+2013-05-24 22:08:44-322	[NOTICE]	 [5] MAX LOD in Random Re-mix: = 0.426308
+2013-05-24 22:08:44-653	[NOTICE]	 [6] MAX LOD in Random Re-mix: = 0.38951
+2013-05-24 22:08:44-977	[NOTICE]	 [7] MAX LOD in Random Re-mix: = 0.658653
+2013-05-24 22:08:45-302	[NOTICE]	 [8] MAX LOD in Random Re-mix: = 0.39276
+2013-05-24 22:08:45-629	[NOTICE]	 [9] MAX LOD in Random Re-mix: = 0.572093
+2013-05-24 22:08:45-957	[NOTICE]	 [10] MAX LOD in Random Re-mix: = 0.720349
+2013-05-24 22:08:45-957	[NOTICE]	 Max of 10 random re-mix data is 1.01219 >-90.5179%
+2013-05-24 22:08:45-957	[WARN]	 QTL DETECTED: LOD:10.6748
+2013-05-24 22:08:45-957	[NOTICE]	 Please check full log for QTL detail 10.6748
+2013-05-24 22:08:45-957	[NOTICE]	 Total time: 3755.95 ms
+2013-05-24 22:08:45-957	[NOTICE]	 Average time: 341.45 ms

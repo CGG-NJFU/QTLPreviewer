@@ -85,6 +85,8 @@ Functions</h2></td></tr>
 <tr class="separator:a281d222255b84f3bac40625ca2c6410a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58dcbea940f35795f0bd7f59d8db7412"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_logger_8h.html#a58dcbea940f35795f0bd7f59d8db7412">printGeneCP</a> (const vector&lt; string &gt; &amp;geneMatrix, const vector&lt; double &gt; rMatrix)</td></tr>
 <tr class="separator:a58dcbea940f35795f0bd7f59d8db7412"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea5998d3c15d8e4cb96de07577002a80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_logger_8h.html#aea5998d3c15d8e4cb96de07577002a80">printLODJudgement</a> (const bool ifOK, const string methodName, const unsigned int timer, const double refLOD, const double maxLOD)</td></tr>
+<tr class="separator:aea5998d3c15d8e4cb96de07577002a80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1b40d6e60d0d427086a7a5efe3b4239"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_logger_8h.html#af1b40d6e60d0d427086a7a5efe3b4239">initLoggers</a> ()</td></tr>
 <tr class="separator:af1b40d6e60d0d427086a7a5efe3b4239"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab360540241d677a922d40033bd90c391"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_m_q_t_l_logger_8h.html#ab360540241d677a922d40033bd90c391">haltLoggers</a> ()</td></tr>
@@ -114,7 +116,7 @@ Variables</h2></td></tr>
 
 <p>References <a class="el" href="_i_m_q_t_l_logger_8cpp_source.html#l00010">logger</a>.</p>
 
-<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00522">mainRun()</a>.</p>
+<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00631">mainRun()</a>.</p>
 
 </div>
 </div>
@@ -137,7 +139,7 @@ Variables</h2></td></tr>
 
 <p>References <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00034">f()</a>, and <a class="el" href="_i_m_q_t_l_logger_8cpp_source.html#l00010">logger</a>.</p>
 
-<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00522">mainRun()</a>.</p>
+<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00631">mainRun()</a>.</p>
 
 </div>
 </div>
@@ -193,7 +195,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_i_m_q_t_l_logger_8cpp_source.html#l00041">41</a> of file <a class="el" href="_i_m_q_t_l_logger_8cpp_source.html">IMQTLLogger.cpp</a>.</p>
 
-<p>References <a class="el" href="_q_t_l_utils_8h_source.html#l00135">printVectorData()</a>.</p>
+<p>References <a class="el" href="_q_t_l_utils_8h_source.html#l00162">printVectorData()</a>.</p>
 
 <p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00044">initExpressData()</a>.</p>
 
@@ -237,7 +239,7 @@ Variables</h2></td></tr>
 
 <p>References <a class="el" href="_i_m_q_t_l_logger_8cpp_source.html#l00010">logger</a>.</p>
 
-<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00352">calcGeneCP()</a>.</p>
+<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00349">calcGeneCP()</a>.</p>
 
 </div>
 </div>
@@ -264,9 +266,72 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_i_m_q_t_l_logger_8cpp_source.html#l00049">49</a> of file <a class="el" href="_i_m_q_t_l_logger_8cpp_source.html">IMQTLLogger.cpp</a>.</p>
 
-<p>References <a class="el" href="_q_t_l_utils_8h_source.html#l00135">printVectorData()</a>.</p>
+<p>References <a class="el" href="_q_t_l_utils_8h_source.html#l00162">printVectorData()</a>.</p>
 
 <p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00087">initIntervalData()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aea5998d3c15d8e4cb96de07577002a80"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printLODJudgement </td>
+          <td>(</td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>ifOK</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string&#160;</td>
+          <td class="paramname"><em>methodName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>timer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>refLOD</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>maxLOD</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>打印LOD判定结果 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ifOK</td><td>判定条件 </td></tr>
+    <tr><td class="paramname">methodName</td><td>方法名称 </td></tr>
+    <tr><td class="paramname">timer</td><td>计数器 </td></tr>
+    <tr><td class="paramname">refLOD</td><td>参考LOD值 </td></tr>
+    <tr><td class="paramname">maxLOD</td><td>LOD最大值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>若通过特殊性检查，则QTL识别成功</p>
+<p>否则，该位点QTL不存在 </p>
+
+<p>Definition at line <a class="el" href="_i_m_q_t_l_logger_8cpp_source.html#l00103">103</a> of file <a class="el" href="_i_m_q_t_l_logger_8cpp_source.html">IMQTLLogger.cpp</a>.</p>
+
+<p>References <a class="el" href="_i_m_q_t_l_logger_8cpp_source.html#l00010">logger</a>.</p>
+
+<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00548">LODPermutationRun()</a>, and <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00597">LODRandomRun()</a>.</p>
 
 </div>
 </div>
@@ -304,7 +369,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_i_m_q_t_l_logger_8cpp_source.html#l00075">75</a> of file <a class="el" href="_i_m_q_t_l_logger_8cpp_source.html">IMQTLLogger.cpp</a>.</p>
 
-<p>References <a class="el" href="_q_t_l_utils_8h_source.html#l00135">printVectorData()</a>.</p>
+<p>References <a class="el" href="_q_t_l_utils_8h_source.html#l00162">printVectorData()</a>.</p>
 
 <p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00071">initParentGeneData()</a>.</p>
 
@@ -331,7 +396,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="_i_m_q_t_l_logger_8h.html">IMQTLLogger.h</a></li>
-    <li class="footer">Generated on Sun May 19 2013 21:50:37 for QTLPreviewers by
+    <li class="footer">Generated on Fri May 24 2013 22:16:03 for QTLPreviewers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3 </li>
   </ul>

@@ -1,9 +1,13 @@
-189
-9
+189 9
 1.0
 data/traitInterval.txt
 data/geneChildFull.txt
 data/geneParentF.txt
 data/geneParentM.txt
 data/expressData.txt
-100
+1 10
+# 此行以后不会被读取
+# 最后1行（第9行）：
+# 1表示随机，第二个数字表示随机次数，如1 10，表示随机10次
+# 0表示排列，第二个数字表示排列序号，如0 2，表示以2开头的随机序列
+# 0 0宝石不进行LOD验证

@@ -54,12 +54,37 @@ string to_string(T const& value) {
 }
 
 //---------------------------------
+//----------- 集合函数 -----------
+//---------------------------------
+/**
+ * 按顺序要求重排向量
+ * @param target 被重排向量
+ * @param order 序列顺序，下标范围[0~size()-1]
+ * @return 重排成功返回1，否则返回0
+ */
+template<typename T>
+int reorderTargetBy(vector<T>& target, vector<int> order) {
+	if ( target.size() != order.size() ) {
+		return 0;
+	}
+	vector<T> copy = vector<T>(target.size());
+	for (unsigned int i=0;i<copy.size();i++) {
+		copy[i] = target[order[i]];
+	}
+	target = vector<T>(copy);
+	return 1;
+}
+
+vector<int> first_permutation_order(const unsigned int length, const unsigned int start=1);
+vector<int> last_permutation_order(const unsigned int length, const unsigned int start=1);
+
+//---------------------------------
 //----------- 遗传学函数 -----------
 //---------------------------------
 double d2r(const double x);
 double d2rKosambi(const double d);
 double d2rHaldane(const double d);
-//vector<string> generateAllGeneType(const string inputGene);
+vector<string> generateAllGeneType(const string inputGene);
 
 //---------------------------------
 //------------- 时间 --------------
@@ -97,13 +122,15 @@ double getVariance(const Iterator begin, const Iterator end, const double averag
 	double a = 0;
 	if (0 == average) {
 		a = getAverage(begin, end);
+	} else {
+		a = average;
 	}
 
 	Iterator it;
 	double sum = 0;
 	int size = 0;
 	for ( it = begin; it != end; it++, size++) {
-		sum += (*it - average) * (*it - average);
+		sum += (*it - a) * (*it - a);
 	}
 
 	return sum / (double)size;
@@ -126,7 +153,7 @@ void inputValueFromKeyboard(string variableName, T* variableValue) {
 	cout <<endl;
 }
 
-int inputBooleanFromKeyboard(string info=NULL);
+bool inputBooleanFromKeyboard(string info=NULL);
 
 //-----------------------------------
 //------------- 屏幕输出--------------

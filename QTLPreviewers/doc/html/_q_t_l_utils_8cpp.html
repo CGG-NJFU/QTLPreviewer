@@ -76,16 +76,22 @@ $(document).ready(function(){initNavTree('_q_t_l_utils_8cpp.html','');});
 Functions</h2></td></tr>
 <tr class="memitem:a61ae7d76247994917031b7110ebd20e8"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_q_t_l_utils_8cpp.html#a61ae7d76247994917031b7110ebd20e8">getTimeStamp</a> ()</td></tr>
 <tr class="separator:a61ae7d76247994917031b7110ebd20e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2099c32fc1d6f07eddb30a904ed696f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_q_t_l_utils_8cpp.html#ac2099c32fc1d6f07eddb30a904ed696f">inputBooleanFromKeyboard</a> (string info)</td></tr>
-<tr class="separator:ac2099c32fc1d6f07eddb30a904ed696f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdb20a4e032c515d389cb4197c1b076c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_q_t_l_utils_8cpp.html#acdb20a4e032c515d389cb4197c1b076c">inputBooleanFromKeyboard</a> (string info)</td></tr>
+<tr class="separator:acdb20a4e032c515d389cb4197c1b076c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbb6c145db5257263606578123130359"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_q_t_l_utils_8cpp.html#abbb6c145db5257263606578123130359">d2rHaldane</a> (const double d)</td></tr>
 <tr class="separator:abbb6c145db5257263606578123130359"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fbc43095643934f23c956ad2104862b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_q_t_l_utils_8cpp.html#a9fbc43095643934f23c956ad2104862b">d2rKosambi</a> (const double d)</td></tr>
 <tr class="separator:a9fbc43095643934f23c956ad2104862b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7317c4d28bb0e51117586d9fddf4d281"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_q_t_l_utils_8cpp.html#a7317c4d28bb0e51117586d9fddf4d281">d2r</a> (const double x)</td></tr>
 <tr class="separator:a7317c4d28bb0e51117586d9fddf4d281"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59caa4b3a05a0d2253322f96ae33a8bb"><td class="memItemLeft" align="right" valign="top">vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_q_t_l_utils_8cpp.html#a59caa4b3a05a0d2253322f96ae33a8bb">generateAllGeneType</a> (const string inputGene)</td></tr>
+<tr class="separator:a59caa4b3a05a0d2253322f96ae33a8bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1bf46e1f45b4a7981b81caee0ee52ce1"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_q_t_l_utils_8cpp.html#a1bf46e1f45b4a7981b81caee0ee52ce1">reorderStr</a> (const string input)</td></tr>
 <tr class="separator:a1bf46e1f45b4a7981b81caee0ee52ce1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33a57bf49904711e7f112fe08c07155b"><td class="memItemLeft" align="right" valign="top">vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_q_t_l_utils_8cpp.html#a33a57bf49904711e7f112fe08c07155b">first_permutation_order</a> (const unsigned int length, const unsigned int first)</td></tr>
+<tr class="separator:a33a57bf49904711e7f112fe08c07155b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae52578579ca7bd93929fe60a0f25c258"><td class="memItemLeft" align="right" valign="top">vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_q_t_l_utils_8cpp.html#ae52578579ca7bd93929fe60a0f25c258">last_permutation_order</a> (const unsigned int length, const unsigned int first)</td></tr>
+<tr class="separator:ae52578579ca7bd93929fe60a0f25c258"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a7317c4d28bb0e51117586d9fddf4d281"></a>
@@ -114,7 +120,7 @@ Functions</h2></td></tr>
 
 <p>References <a class="el" href="_q_t_l_utils_8cpp_source.html#l00034">d2rHaldane()</a>.</p>
 
-<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00408">intervalQTL()</a>.</p>
+<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00405">intervalQTL()</a>.</p>
 
 </div>
 </div>
@@ -172,6 +178,73 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a33a57bf49904711e7f112fe08c07155b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;int&gt; first_permutation_order </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>first</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>生成序列顺序向量 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">length</td><td>序列长度 </td></tr>
+    <tr><td class="paramname">first</td><td>首序列标号，下标范围[0~length-1] </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>生成的序列顺序向量 </dd></dl>
+
+<p>Definition at line <a class="el" href="_q_t_l_utils_8cpp_source.html#l00086">86</a> of file <a class="el" href="_q_t_l_utils_8cpp_source.html">QTLUtils.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="_q_t_l_utils_8cpp_source.html#l00096">last_permutation_order()</a>, and <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00548">LODPermutationRun()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a59caa4b3a05a0d2253322f96ae33a8bb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;string&gt; generateAllGeneType </td>
+          <td>(</td>
+          <td class="paramtype">const string&#160;</td>
+          <td class="paramname"><em>inputGene</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>生成全基因型排列，如Qq=》{QQ, Qq, qq} </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inputGene</td><td>基因型字母 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>基因型字母全排列 </dd></dl>
+
+<p>Definition at line <a class="el" href="_q_t_l_utils_8cpp_source.html#l00061">61</a> of file <a class="el" href="_q_t_l_utils_8cpp_source.html">QTLUtils.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00136">calcGP()</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a61ae7d76247994917031b7110ebd20e8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -191,16 +264,16 @@ Functions</h2></td></tr>
 
 <p>References <a class="el" href="_q_t_l_utils_8h_source.html#l00030">SECOND_TO_MS</a>.</p>
 
-<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00522">mainRun()</a>.</p>
+<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00631">mainRun()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ac2099c32fc1d6f07eddb30a904ed696f"></a>
+<a class="anchor" id="acdb20a4e032c515d389cb4197c1b076c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int inputBooleanFromKeyboard </td>
+          <td class="memname">bool inputBooleanFromKeyboard </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>info</em></td><td>)</td>
@@ -218,6 +291,40 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>判断值 </dd></dl>
 
 <p>Definition at line <a class="el" href="_q_t_l_utils_8cpp_source.html#l00021">21</a> of file <a class="el" href="_q_t_l_utils_8cpp_source.html">QTLUtils.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00631">mainRun()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae52578579ca7bd93929fe60a0f25c258"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;int&gt; last_permutation_order </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>first</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_q_t_l_utils_8cpp_source.html#l00096">96</a> of file <a class="el" href="_q_t_l_utils_8cpp_source.html">QTLUtils.cpp</a>.</p>
+
+<p>References <a class="el" href="_q_t_l_utils_8cpp_source.html#l00086">first_permutation_order()</a>.</p>
+
+<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00548">LODPermutationRun()</a>.</p>
 
 </div>
 </div>
@@ -243,9 +350,9 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_q_t_l_utils_8cpp_source.html#l00069">69</a> of file <a class="el" href="_q_t_l_utils_8cpp_source.html">QTLUtils.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_q_t_l_utils_8cpp_source.html#l00074">74</a> of file <a class="el" href="_q_t_l_utils_8cpp_source.html">QTLUtils.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00329">reorderGene()</a>.</p>
+<p>Referenced by <a class="el" href="_i_m_q_t_l_previewer_8cpp_source.html#l00326">sortGene()</a>.</p>
 
 </div>
 </div>
@@ -255,7 +362,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="_q_t_l_utils_8cpp.html">QTLUtils.cpp</a></li>
-    <li class="footer">Generated on Sun May 19 2013 21:50:37 for QTLPreviewers by
+    <li class="footer">Generated on Fri May 24 2013 22:16:03 for QTLPreviewers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3 </li>
   </ul>
