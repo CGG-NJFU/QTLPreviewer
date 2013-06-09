@@ -104,8 +104,9 @@ void printLODJudgement(const bool ifOK, const string methodName, const unsigned 
 		const double refLOD, const double maxLOD) {
 	if (ifOK) { ///若通过特殊性检查，则QTL识别成功
 		logger << Priority::NOTICE << "Max of " << timer - 1
-				<< " " <<methodName <<" re-mix data is " << refLOD << " >"
-				<< (refLOD / maxLOD - 1) * 100 << "%";
+				<< " " <<methodName <<" re-mix data is " << refLOD
+				<< " " <<(refLOD>maxLOD?">":"<") <<" "
+				<< fabs(refLOD / maxLOD-1) * 100 << "%";
 		logger << Priority::WARN << "QTL DETECTED: LOD:" << maxLOD;
 		logger << Priority::NOTICE << "Please check full log for QTL detail "
 				<< maxLOD;

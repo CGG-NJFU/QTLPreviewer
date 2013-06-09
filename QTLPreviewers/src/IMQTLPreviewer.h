@@ -25,5 +25,6 @@
 #define GENE_CP_BIT 3
 #define MAX_PERMUTATION 65535
 #define LOD_THRESHOLD 1.05
+#define IF_USE_CACHE false
 
 #endif /* IMQTLPREVIEWER_H_ */

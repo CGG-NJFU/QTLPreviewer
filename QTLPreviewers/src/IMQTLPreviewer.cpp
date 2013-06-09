@@ -16,6 +16,12 @@ extern Category& logger;
 using namespace std;
 using namespace log4cpp;
 
+//缓存变量
+vector<vector<string> > cachedGeneMatrix;
+vector<vector<double> > cachedRMatrix;
+vector<string> cachedFind;
+vector<double> cachedResult;
+
 /**
  * 概率密度函数
  * @param x 输入
@@ -92,8 +98,33 @@ void initIntervalData(const string fileName, const int intervalNumber, vector<do
  * @param find 查找的匹配基因型
  * @return 基因型的条件概率
  */
-double findGeneCP(const vector<string> geneMatrix, const vector<double> rMatrix, const string find) {
-	logger <<Priority::DEBUG <<"start to find Gene Conditional Possibility of " <<find;
+double findGeneCP(const vector<string> geneMatrix, const vector<double> rMatrix, const string find, const bool ifUseCache=IF_USE_CACHE) {
+	logger <<Priority::DEBUG <<"start to find Gene Conditional Possibility of " <<find
+			<<", " <<(ifUseCache?"":"not ") << "using cache";
+
+	bool ifInCacheFlag = true;
+
+	///若启用缓存机制
+	if (ifUseCache) {
+		unsigned int i;
+		///在缓存中查找
+		for (i=0; i<cachedFind.size(); i++) {
+			if ( cachedGeneMatrix[i]==geneMatrix &&
+				cachedRMatrix[i]==rMatrix &&
+				cachedFind[i]==find ){
+				logger <<Priority::DEBUG <<"match cache";
+
+				ifInCacheFlag = true;
+				return cachedResult[i];
+			}
+		}
+
+		///没有命中缓存，修改标记
+		if (i==cachedFind.size()) {
+			ifInCacheFlag = false;
+		}
+	}
+
 	double same=0; //该基因型概率之和
 	double all=0; //总概率之和，相当书上表格横行之和
 	for (unsigned int i=0; i<geneMatrix.size(); i++) {
@@ -112,6 +143,17 @@ double findGeneCP(const vector<string> geneMatrix, const vector<double> rMatrix,
 
 	logger <<Priority::DEBUG <<"CP: " <<re <<" (" <<same <<"/" <<all <<")";
 
+	if (ifUseCache) {
+		if ( !ifInCacheFlag ) {
+			logger <<Priority::DEBUG <<"not match cache, adding";
+			///如果使用缓存，且结果不在缓存序列中，将结果加入缓存序列
+			cachedGeneMatrix.push_back(geneMatrix);
+			cachedRMatrix.push_back(rMatrix);
+			cachedFind.push_back(find);
+			cachedResult.push_back(re);
+		}
+	}
+
 	return re;
 }
 
@@ -127,6 +169,7 @@ double findGeneCP(const vector<string> geneMatrix, const vector<double> rMatrix,
  */
 void calcGP(vector<vector<double> >& gp, const vector<vector<string> >& mk, const string qtlGene, const int sampleIndex1,
 		const int sampleIndex2, const vector<string>& geneMatrix, const vector<double>& rMatrix) {
+	///生成QTL基因型
 	vector<string> qtl = generateAllGeneType(qtlGene);
 
 	unsigned int sampleSize = mk[0].size();
@@ -142,9 +185,15 @@ void calcGP(vector<vector<double> >& gp, const vector<vector<string> >& mk, cons
 
 		///计算实际分布概率
 		for (int j=0; j<3; j++) {
-			gp[i][j] = findGeneCP(geneMatrix, rMatrix, gene+qtl[j]);
+			gp[i][j] = findGeneCP(geneMatrix, rMatrix, gene+qtl[j], IF_USE_CACHE);
 		}
 	}
+
+	///若开启缓存，清除缓存
+	cachedGeneMatrix.clear();
+	cachedRMatrix.clear();
+	cachedFind.clear();
+	cachedResult.clear();
 
 	logger <<Priority::DEBUG << "=======GPData======";
 	for (unsigned int c = 0; c < sampleSize; c++) {
@@ -359,8 +408,10 @@ int calcGeneCP(vector<string>& geneMatrix, vector<double>& rMatrix,
 		bitset<3> bs_up(fGene);
 		bitset<3> bs_down(mGene);
 
+		/// 计算并填充条件概率
 		rMatrix[i] = calcCross(bs_up, r1, r2, r, zeta) * calcCross(bs_down, r1, r2, r, zeta);
 
+		/// 计算并填充基因型数据
 		geneMatrix[i] =
 				(i&0x20?f.substr(1,1):f.substr(0,1)) +
 				(i&0x10?f.substr(3,1):f.substr(2,1)) +
@@ -570,7 +621,7 @@ unsigned int LODPermutationRun(const int permutationOrder,
 	}
 	///打印判定结果
 	printLODJudgement( order==end||timer>max_permutation, "permutation", timer, secLOD, maxLOD);
-	return timer;
+	return timer-1;
 }
 
 /**
@@ -617,7 +668,7 @@ unsigned int LODRandomRun(const unsigned int iRandomLODTimer, const double maxLO
 		///若配置中检查次数为0，则视为跳过检查阶段
 		logger <<Priority::WARN <<"Re-mix verification passed, QTL detection is in-completed.";
 	}
-	return timer;
+	return timer-1;
 }
 
 int mainRun(int args, char* argv[]) {
@@ -723,11 +774,11 @@ int mainRun(int args, char* argv[]) {
 	if (bIfUseRandomLOD) {
 		/// 方法一：利用随机排列混淆表型数据，计算LOD参考值
 		logger <<Priority::NOTICE <<"\nFor LOD Detection: " <<iRandomLODTimer <<" random data will run.";
-		timer = LODRandomRun(iRandomLODTimer, maxLOD, mk, expData, traitInterval, fGene, mGene, qGene, dStep);
+		timer += LODRandomRun(iRandomLODTimer, maxLOD, mk, expData, traitInterval, fGene, mGene, qGene, dStep);
 	} else {
 		/// 方法二：利用排列数向量混淆表型数据，计算LOD参考值
 		logger <<Priority::NOTICE <<"\nFor LOD Detection: OrderGroup \"" <<iPermutationOrder <<"/"<<iSampleSize <<"\" will run.";
-		timer = LODPermutationRun(iPermutationOrder, maxLOD, mk, expData, traitInterval, fGene, mGene, qGene, dStep);
+		timer += LODPermutationRun(iPermutationOrder, maxLOD, mk, expData, traitInterval, fGene, mGene, qGene, dStep);
 	}
 
 	/// 若日志系统故障，只通过标准流输出最终结果，并提示检查日志系统
@@ -751,4 +802,3 @@ int mainRun(int args, char* argv[]) {
 int main(int args, char* argv[]) {
 	return mainRun(args, argv);
 }
-
