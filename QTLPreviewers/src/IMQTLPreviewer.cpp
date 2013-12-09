@@ -99,7 +99,7 @@ void initIntervalData(const string fileName, const int intervalNumber, vector<do
  * @return 基因型的条件概率
  */
 double findGeneCP(const vector<string> geneMatrix, const vector<double> rMatrix, const string find, const bool ifUseCache=IF_USE_CACHE) {
-	logger <<Priority::DEBUG <<"start to find Gene Conditional Possibility of " <<find
+	logger <<Priority::NOTSET <<"start to find Gene Conditional Possibility of " <<find
 			<<", " <<(ifUseCache?"":"not ") << "using cache";
 
 	bool ifInCacheFlag = true;
@@ -141,7 +141,7 @@ double findGeneCP(const vector<string> geneMatrix, const vector<double> rMatrix,
 	double re;
 	if ( all == 0 ) re = 0; else re = same/all;
 
-	logger <<Priority::DEBUG <<"CP: " <<re <<" (" <<same <<"/" <<all <<")";
+	logger <<Priority::NOTSET <<"CP: " <<re <<" (" <<same <<"/" <<all <<")";
 
 	if (ifUseCache) {
 		if ( !ifInCacheFlag ) {
@@ -197,7 +197,7 @@ void calcGP(vector<vector<double> >& gp, const vector<vector<string> >& mk, cons
 
 	logger <<Priority::DEBUG << "=======GPData======";
 	for (unsigned int c = 0; c < sampleSize; c++) {
-		logger <<Priority::DEBUG << c << "\t" <<gp[c][0] <<"\t" <<gp[c][1] <<"\t"<<gp[c][1];
+		logger <<Priority::DEBUG << c << "\t" <<gp[c][0] <<"\t" <<gp[c][1] <<"\t"<<gp[c][2];
 	}
 }
 
@@ -518,7 +518,7 @@ double QTLRun(const vector<vector<string> >& mk, const vector<EXPData>& expData,
 	int maxLODTrait;
 	int maxLODPosition;
 
-	for (int currentTrait = 0; currentTrait < iTraitNumber - 1;
+	for (int currentTrait = 0; currentTrait <= iTraitNumber - 1;
 			currentTrait++) {
 		if (iRemixExpDataTimer==0) { //重排模式下不输出详细日志
 			logger <<Priority::INFO << "---------" << (currentTrait + 1) << "---("
@@ -529,7 +529,7 @@ double QTLRun(const vector<vector<string> >& mk, const vector<EXPData>& expData,
 		for (double startPoint = 0.0; startPoint < traitInterval[currentTrait];
 				startPoint += step) {
 			double LOD = intervalQTL(currentTrait, u0, s0,
-					traitInterval[currentTrait], startPoint, mk, useExpData, iSampleSize, fGene[currentTrait], mGene[currentTrait], qGene[currentTrait]);
+					traitInterval[currentTrait], startPoint, mk, useExpData, iSampleSize, fGene[currentTrait]+fGene[currentTrait+1], mGene[currentTrait]+mGene[currentTrait+1], qGene[currentTrait]);
 			if (LOD > maxLOD) {
 				maxLOD = LOD;
 				maxLODTrait = currentTrait;
@@ -643,7 +643,7 @@ unsigned int LODRandomRun(const unsigned int iRandomLODTimer, const double maxLO
 		const vector<string>& mGene, const vector<string>& qGene,
 		const double dStep) {
 	double secLOD = 0;
-	unsigned int timer;
+	unsigned int timer=1;
 	///启动LOD特殊性检查
 	if ( iRandomLODTimer > 0 ) {
 		logger <<Priority::INFO <<"========= REMIX =========";
@@ -730,6 +730,7 @@ int mainRun(int args, char* argv[]) {
 	} else {
 		/// 参数个数错误，打印帮助。
 		printHelp(argv[0]);
+		return 0;
 	}
 
 	/// 汇总显示各输入参数
@@ -753,9 +754,9 @@ int mainRun(int args, char* argv[]) {
 	initChildrenGeneData(sChildrenGeneDataFile, mk);
 
 	/// 初始化亲本的基因型
-	vector<string> fGene(iTraitNumber, "abab");
+	vector<string> fGene(iTraitNumber, "ab");
 	initParentGeneData(sFParentsGeneDataFile, fGene, iTraitNumber, "Parent(F)");
-	vector<string> mGene(iTraitNumber, "abab");
+	vector<string> mGene(iTraitNumber, "ab");
 	initParentGeneData(sMParentsGeneDataFile, mGene, iTraitNumber, "Parent(M)");
 	vector<string> qGene(iTraitNumber, "Qq");
 
